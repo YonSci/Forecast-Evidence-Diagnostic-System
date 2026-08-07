@@ -1,0 +1,50 @@
+source,file,variable,dims,shape,units,long_name
+NMME_realtime_anom,D:\jjas-elnino-et\data\nmme\realtime_anom\ENSMEAN\2026050800\CanESM5.prate.202605.ENSMEAN.anom.nc,fcst,"target, lat, lon","(9, 181, 360)",mm/s,CanESM5 prate 202605 ensemble mean anomaly
+NMME_realtime_anom,D:\jjas-elnino-et\data\nmme\realtime_anom\ENSMEAN\2026050800\CanESM5.prate.202605.ENSMEAN.fcst.nc,fcst,"target, lat, lon","(12, 181, 360)",mm/s,CanESM5 prate 202605 ensemble mean forecast
+NMME_realtime_anom,D:\jjas-elnino-et\data\nmme\realtime_anom\ENSMEAN\2026050800\CanESM5.tmp2m.202605.ENSMEAN.anom.nc,fcst,"target, lat, lon","(9, 181, 360)",K,CanESM5 tmp2m 202605 ensemble mean anomaly
+NMME_realtime_anom,D:\jjas-elnino-et\data\nmme\realtime_anom\ENSMEAN\2026050800\CanESM5.tmp2m.202605.ENSMEAN.fcst.nc,fcst,"target, lat, lon","(12, 181, 360)",K,CanESM5 tmp2m 202605 ensemble mean forecast
+NMME_realtime_anom,D:\jjas-elnino-et\data\nmme\realtime_anom\ENSMEAN\2026050800\CanESM5.tmpsfc.202605.ENSMEAN.anom.nc,fcst,"target, lat, lon","(9, 181, 360)",K,CanESM5 tmpsfc 202605 ensemble mean anomaly
+NMME_realtime_anom,D:\jjas-elnino-et\data\nmme\realtime_anom\ENSMEAN\2026050800\CanESM5.tmpsfc.202605.ENSMEAN.fcst.nc,fcst,"target, lat, lon","(12, 181, 360)",K,CanESM5 tmpsfc 202605 ensemble mean forecast
+NMME_realtime_anom,D:\jjas-elnino-et\data\nmme\realtime_anom\ENSMEAN\2026050800\CFSv2.prate.202605.ENSMEAN.anom.nc,fcst,"target, lat, lon","(9, 181, 360)",mm/s,CFSv2 prate 202605 ensemble mean anomaly
+NMME_realtime_anom,D:\jjas-elnino-et\data\nmme\realtime_anom\ENSMEAN\2026050800\CFSv2.prate.202605.ENSMEAN.fcst.nc,fcst,"target, lat, lon","(9, 181, 360)",mm/s,CFSv2 prate 202605 ensemble mean forecast
+NMME_realtime_anom,D:\jjas-elnino-et\data\nmme\realtime_anom\ENSMEAN\2026050800\CFSv2.tmp2m.202605.ENSMEAN.anom.nc,fcst,"target, lat, lon","(9, 181, 360)",K,CFSv2 tmp2m 202605 ensemble mean anomaly
+NMME_realtime_anom,D:\jjas-elnino-et\data\nmme\realtime_anom\ENSMEAN\2026050800\CFSv2.tmp2m.202605.ENSMEAN.fcst.nc,fcst,"target, lat, lon","(9, 181, 360)",K,CFSv2 tmp2m 202605 ensemble mean forecast
+NMME_realtime_anom,D:\jjas-elnino-et\data\nmme\realtime_anom\ENSMEAN\2026050800\CFSv2.tmpsfc.202605.ENSMEAN.anom.nc,fcst,"target, lat, lon","(9, 181, 360)",K,CFSv2 tmpsfc 202605 ensemble mean anomaly
+NMME_realtime_anom,D:\jjas-elnino-et\data\nmme\realtime_anom\ENSMEAN\2026050800\CFSv2.tmpsfc.202605.ENSMEAN.fcst.nc,fcst,"target, lat, lon","(9, 181, 360)",K,CFSv2 tmpsfc 202605 ensemble mean forecast
+NMME_realtime_anom,D:\jjas-elnino-et\data\nmme\realtime_anom\ENSMEAN\2026050800\GEM5.2_NEMO.prate.202605.ENSMEAN.anom.nc,fcst,"target, lat, lon","(9, 181, 360)",mm/s,GEM5.2_NEMO prate 202605 ensemble mean anomaly
+NMME_realtime_anom,D:\jjas-elnino-et\data\nmme\realtime_anom\ENSMEAN\2026050800\GEM5.2_NEMO.prate.202605.ENSMEAN.fcst.nc,fcst,"target, lat, lon","(12, 181, 360)",mm/s,GEM5.2_NEMO prate 202605 ensemble mean forecast
+NMME_realtime_anom,D:\jjas-elnino-et\data\nmme\realtime_anom\ENSMEAN\2026050800\GEM5.2_NEMO.tmp2m.202605.ENSMEAN.anom.nc,fcst,"target, lat, lon","(9, 181, 360)",K,GEM5.2_NEMO tmp2m 202605 ensemble mean anomaly
+NMME_realtime_anom,D:\jjas-elnino-et\data\nmme\realtime_anom\ENSMEAN\2026050800\GEM5.2_NEMO.tmp2m.202605.ENSMEAN.fcst.nc,fcst,"target, lat, lon","(12, 181, 360)",K,GEM5.2_NEMO tmp2m 202605 ensemble mean forecast
+NMME_realtime_anom,D:\jjas-elnino-et\data\nmme\realtime_anom\ENSMEAN\2026050800\GEM5.2_NEMO.tmpsfc.202605.ENSMEAN.anom.nc,fcst,"target, lat, lon","(9, 181, 360)",K,GEM5.2_NEMO tmpsfc 202605 ensemble mean anomaly
+NMME_realtime_anom,D:\jjas-elnino-et\data\nmme\realtime_anom\ENSMEAN\2026050800\GEM5.2_NEMO.tmpsfc.202605.ENSMEAN.fcst.nc,fcst,"target, lat, lon","(12, 181, 360)",K,GEM5.2_NEMO tmpsfc 202605 ensemble mean forecast
+NMME_realtime_anom,D:\jjas-elnino-et\data\nmme\realtime_anom\ENSMEAN\2026050800\NASA_GEOS5v2.prate.202605.ENSMEAN.anom.nc,fcst,"target, lat, lon","(9, 181, 360)",mm/s,NASA_GEOS5v2 prate 202605 ensemble mean anomaly
+NMME_realtime_anom,D:\jjas-elnino-et\data\nmme\realtime_anom\ENSMEAN\2026050800\NASA_GEOS5v2.prate.202605.ENSMEAN.fcst.nc,fcst,"target, lat, lon","(9, 181, 360)",mm/s,NASA_GEOS5v2 prate 202605 ensemble mean forecast
+NMME_realtime_anom,D:\jjas-elnino-et\data\nmme\realtime_anom\ENSMEAN\2026050800\NASA_GEOS5v2.tmp2m.202605.ENSMEAN.anom.nc,fcst,"target, lat, lon","(9, 181, 360)",K,NASA_GEOS5v2 tmp2m 202605 ensemble mean anomaly
+NMME_realtime_anom,D:\jjas-elnino-et\data\nmme\realtime_anom\ENSMEAN\2026050800\NASA_GEOS5v2.tmp2m.202605.ENSMEAN.fcst.nc,fcst,"target, lat, lon","(9, 181, 360)",K,NASA_GEOS5v2 tmp2m 202605 ensemble mean forecast
+NMME_realtime_anom,D:\jjas-elnino-et\data\nmme\realtime_anom\ENSMEAN\2026050800\NASA_GEOS5v2.tmpsfc.202605.ENSMEAN.anom.nc,fcst,"target, lat, lon","(9, 181, 360)",K,NASA_GEOS5v2 tmpsfc 202605 ensemble mean anomaly
+NMME_realtime_anom,D:\jjas-elnino-et\data\nmme\realtime_anom\ENSMEAN\2026050800\NASA_GEOS5v2.tmpsfc.202605.ENSMEAN.fcst.nc,fcst,"target, lat, lon","(9, 181, 360)",K,NASA_GEOS5v2 tmpsfc 202605 ensemble mean forecast
+NMME_realtime_anom,D:\jjas-elnino-et\data\nmme\realtime_anom\ENSMEAN\2026050800\NCAR_CCSM4.prate.202605.ENSMEAN.anom.nc,fcst,"target, lat, lon","(9, 181, 360)",mm/s,NCAR_CCSM4 prate 202605 ensemble mean anomaly
+NMME_realtime_anom,D:\jjas-elnino-et\data\nmme\realtime_anom\ENSMEAN\2026050800\NCAR_CCSM4.prate.202605.ENSMEAN.fcst.nc,fcst,"target, lat, lon","(12, 181, 360)",mm/s,NCAR_CCSM4 prate 202605 ensemble mean forecast
+NMME_realtime_anom,D:\jjas-elnino-et\data\nmme\realtime_anom\ENSMEAN\2026050800\NCAR_CCSM4.tmp2m.202605.ENSMEAN.anom.nc,fcst,"target, lat, lon","(9, 181, 360)",K,NCAR_CCSM4 tmp2m 202605 ensemble mean anomaly
+NMME_realtime_anom,D:\jjas-elnino-et\data\nmme\realtime_anom\ENSMEAN\2026050800\NCAR_CCSM4.tmp2m.202605.ENSMEAN.fcst.nc,fcst,"target, lat, lon","(12, 181, 360)",K,NCAR_CCSM4 tmp2m 202605 ensemble mean forecast
+NMME_realtime_anom,D:\jjas-elnino-et\data\nmme\realtime_anom\ENSMEAN\2026050800\NCAR_CCSM4.tmpsfc.202605.ENSMEAN.anom.nc,fcst,"target, lat, lon","(9, 181, 360)",K,NCAR_CCSM4 tmpsfc 202605 ensemble mean anomaly
+NMME_realtime_anom,D:\jjas-elnino-et\data\nmme\realtime_anom\ENSMEAN\2026050800\NCAR_CCSM4.tmpsfc.202605.ENSMEAN.fcst.nc,fcst,"target, lat, lon","(12, 181, 360)",K,NCAR_CCSM4 tmpsfc 202605 ensemble mean forecast
+NMME_realtime_anom,D:\jjas-elnino-et\data\nmme\realtime_anom\ENSMEAN\2026050800\NCAR_CESM1.prate.202605.ENSMEAN.anom.nc,fcst,"target, lat, lon","(9, 181, 360)",mm/s,NCAR_CESM1 prate 202605 ensemble mean anomaly
+NMME_realtime_anom,D:\jjas-elnino-et\data\nmme\realtime_anom\ENSMEAN\2026050800\NCAR_CESM1.prate.202605.ENSMEAN.fcst.nc,fcst,"target, lat, lon","(12, 181, 360)",mm/s,NCAR_CESM1 prate 202605 ensemble mean forecast
+NMME_realtime_anom,D:\jjas-elnino-et\data\nmme\realtime_anom\ENSMEAN\2026050800\NCAR_CESM1.tmp2m.202605.ENSMEAN.anom.nc,fcst,"target, lat, lon","(9, 181, 360)",K,NCAR_CESM1 tmp2m 202605 ensemble mean anomaly
+NMME_realtime_anom,D:\jjas-elnino-et\data\nmme\realtime_anom\ENSMEAN\2026050800\NCAR_CESM1.tmp2m.202605.ENSMEAN.fcst.nc,fcst,"target, lat, lon","(12, 181, 360)",K,NCAR_CESM1 tmp2m 202605 ensemble mean forecast
+NMME_realtime_anom,D:\jjas-elnino-et\data\nmme\realtime_anom\ENSMEAN\2026050800\NCAR_CESM1.tmpsfc.202605.ENSMEAN.anom.nc,fcst,"target, lat, lon","(9, 181, 360)",K,NCAR_CESM1 tmpsfc 202605 ensemble mean anomaly
+NMME_realtime_anom,D:\jjas-elnino-et\data\nmme\realtime_anom\ENSMEAN\2026050800\NCAR_CESM1.tmpsfc.202605.ENSMEAN.fcst.nc,fcst,"target, lat, lon","(12, 181, 360)",K,NCAR_CESM1 tmpsfc 202605 ensemble mean forecast
+NMME_realtime_anom,D:\jjas-elnino-et\data\nmme\realtime_anom\ENSMEAN\2026050800\NMME.prate.202605.ENSMEAN.anom.nc,fcst,"target, lat, lon","(12, 181, 360)",mm/s,NMME prate 202605 ensemble mean anomaly
+NMME_realtime_anom,D:\jjas-elnino-et\data\nmme\realtime_anom\ENSMEAN\2026050800\NMME.tmax.202605.ENSMEAN.anom.nc,fcst,"target, lat, lon","(12, 181, 360)",K,NMME tmax 202605 ensemble mean anomaly
+NMME_realtime_anom,D:\jjas-elnino-et\data\nmme\realtime_anom\ENSMEAN\2026050800\NMME.tmin.202605.ENSMEAN.anom.nc,fcst,"target, lat, lon","(12, 181, 360)",K,NMME tmin 202605 ensemble mean anomaly
+NMME_realtime_anom,D:\jjas-elnino-et\data\nmme\realtime_anom\ENSMEAN\2026050800\NMME.tmp2m.202605.ENSMEAN.anom.nc,fcst,"target, lat, lon","(12, 181, 360)",K,NMME tmp2m 202605 ensemble mean anomaly
+NMME_realtime_anom,D:\jjas-elnino-et\data\nmme\realtime_anom\ENSMEAN\2026050800\NMME.tmpsfc.202605.ENSMEAN.anom.nc,fcst,"target, lat, lon","(12, 181, 360)",K,NMME tmpsfc 202605 ensemble mean anomaly
+NMME_realtime_anom,D:\jjas-elnino-et\data\nmme\realtime_anom\ENSMEAN\2026050800\NMME.z200.202605.ENSMEAN.anom.nc,fcst,"target, lat, lon","(12, 181, 360)",m,NMME z200 202605 ensemble mean anomaly
+ERA5_pressure_levels,D:\jjas-elnino-et\data\era5\monthly\pressure_levels\era5_pressure_levels_africa_indian_1991_2020_JJAS.nc,u,"time, level, lat, lon","(120, 4, 321, 681)",m s**-1,U component of wind
+ERA5_pressure_levels,D:\jjas-elnino-et\data\era5\monthly\pressure_levels\era5_pressure_levels_africa_indian_1991_2020_JJAS.nc,v,"time, level, lat, lon","(120, 4, 321, 681)",m s**-1,V component of wind
+ERA5_pressure_levels,D:\jjas-elnino-et\data\era5\monthly\pressure_levels\era5_pressure_levels_africa_indian_1991_2020_JJAS.nc,q,"time, level, lat, lon","(120, 4, 321, 681)",kg kg**-1,Specific humidity
+ERA5_pressure_levels,D:\jjas-elnino-et\data\era5\monthly\pressure_levels\era5_pressure_levels_africa_indian_1991_2020_JJAS.nc,w,"time, level, lat, lon","(120, 4, 321, 681)",Pa s**-1,Vertical velocity
+ERA5_pressure_levels,D:\jjas-elnino-et\data\era5\monthly\pressure_levels\era5_pressure_levels_africa_indian_1991_2020_JJAS.nc,z,"time, level, lat, lon","(120, 4, 321, 681)",m**2 s**-2,Geopotential
+ERA5_pressure_levels,D:\jjas-elnino-et\data\era5\monthly\pressure_levels\era5_pressure_levels_africa_indian_1991_2020_JJAS.nc,d,"time, level, lat, lon","(120, 4, 321, 681)",s**-1,Divergence
+ERA5_single_levels,D:\jjas-elnino-et\data\era5\monthly\single_levels\era5_sst_tropical_global_1991_2020_JJAS.nc,sst,"time, lat, lon","(120, 241, 1440)",K,Sea surface temperature

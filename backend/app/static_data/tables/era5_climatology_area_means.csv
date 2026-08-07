@@ -1,0 +1,331 @@
+field,period,domain,area_mean,units,aggregation
+u200,month_06,ethiopia,-15.02742603804608,m s**-1,monthly_climatology
+u200,month_06,greater_horn,-6.877721818556868,m s**-1,monthly_climatology
+u200,month_06,east_africa,-7.974973483126073,m s**-1,monthly_climatology
+u200,month_06,atlantic_congo_ethiopia,-0.7068972272448659,m s**-1,monthly_climatology
+u200,month_06,indian_ocean,1.0763875668776213,m s**-1,monthly_climatology
+u200,month_07,ethiopia,-19.945327283608695,m s**-1,monthly_climatology
+u200,month_07,greater_horn,-11.8131100106486,m s**-1,monthly_climatology
+u200,month_07,east_africa,-11.933352466231373,m s**-1,monthly_climatology
+u200,month_07,atlantic_congo_ethiopia,-4.9729883122465095,m s**-1,monthly_climatology
+u200,month_07,indian_ocean,-3.4571957461259437,m s**-1,monthly_climatology
+u200,month_08,ethiopia,-18.239413908431843,m s**-1,monthly_climatology
+u200,month_08,greater_horn,-10.177394256169915,m s**-1,monthly_climatology
+u200,month_08,east_africa,-10.351036967775242,m s**-1,monthly_climatology
+u200,month_08,atlantic_congo_ethiopia,-4.807627021583227,m s**-1,monthly_climatology
+u200,month_08,indian_ocean,-3.1147332630833313,m s**-1,monthly_climatology
+u200,month_09,ethiopia,-12.10355547370072,m s**-1,monthly_climatology
+u200,month_09,greater_horn,-4.780746416028591,m s**-1,monthly_climatology
+u200,month_09,east_africa,-5.493872873479332,m s**-1,monthly_climatology
+u200,month_09,atlantic_congo_ethiopia,-0.6797367746164713,m s**-1,monthly_climatology
+u200,month_09,indian_ocean,0.025629164208410264,m s**-1,monthly_climatology
+u200,JJA,ethiopia,-17.737389043689372,m s**-1,seasonal_climatology
+u200,JJA,greater_horn,-9.62274154185885,m s**-1,seasonal_climatology
+u200,JJA,east_africa,-10.086453820778855,m s**-1,seasonal_climatology
+u200,JJA,atlantic_congo_ethiopia,-3.4958367558366548,m s**-1,seasonal_climatology
+u200,JJA,indian_ocean,-1.8318464410406228,m s**-1,seasonal_climatology
+u200,JJAS,ethiopia,-16.328928144021468,m s**-1,seasonal_climatology
+u200,JJAS,greater_horn,-8.412241855592326,m s**-1,seasonal_climatology
+u200,JJAS,east_africa,-8.93830757478277,m s**-1,seasonal_climatology
+u200,JJAS,atlantic_congo_ethiopia,-2.7918110572579096,m s**-1,seasonal_climatology
+u200,JJAS,indian_ocean,-1.3674769822243844,m s**-1,seasonal_climatology
+v200,month_06,ethiopia,0.7520575637361173,m s**-1,monthly_climatology
+v200,month_06,greater_horn,-0.2802673975307012,m s**-1,monthly_climatology
+v200,month_06,east_africa,-0.9831076800345353,m s**-1,monthly_climatology
+v200,month_06,atlantic_congo_ethiopia,-1.6142934091056464,m s**-1,monthly_climatology
+v200,month_06,indian_ocean,-2.799670123245521,m s**-1,monthly_climatology
+v200,month_07,ethiopia,-0.3164687829345808,m s**-1,monthly_climatology
+v200,month_07,greater_horn,-0.9555606521294431,m s**-1,monthly_climatology
+v200,month_07,east_africa,-1.4912377058018396,m s**-1,monthly_climatology
+v200,month_07,atlantic_congo_ethiopia,-1.8350946190496227,m s**-1,monthly_climatology
+v200,month_07,indian_ocean,-3.589944405079588,m s**-1,monthly_climatology
+v200,month_08,ethiopia,-0.34083693006690446,m s**-1,monthly_climatology
+v200,month_08,greater_horn,-0.6656356677163956,m s**-1,monthly_climatology
+v200,month_08,east_africa,-1.1973477973639781,m s**-1,monthly_climatology
+v200,month_08,atlantic_congo_ethiopia,-1.8122738583143994,m s**-1,monthly_climatology
+v200,month_08,indian_ocean,-3.4031438219330132,m s**-1,monthly_climatology
+v200,month_09,ethiopia,1.1703741105479948,m s**-1,monthly_climatology
+v200,month_09,greater_horn,0.3031113191408167,m s**-1,monthly_climatology
+v200,month_09,east_africa,-0.23272041276241678,m s**-1,monthly_climatology
+v200,month_09,atlantic_congo_ethiopia,-1.1721838802569702,m s**-1,monthly_climatology
+v200,month_09,indian_ocean,-2.275923526037143,m s**-1,monthly_climatology
+v200,JJA,ethiopia,0.03158395973157135,m s**-1,seasonal_climatology
+v200,JJA,greater_horn,-0.6338212640732519,m s**-1,seasonal_climatology
+v200,JJA,east_africa,-1.223897728188308,m s**-1,seasonal_climatology
+v200,JJA,atlantic_congo_ethiopia,-1.7538872906081533,m s**-1,seasonal_climatology
+v200,JJA,indian_ocean,-3.2642526593915098,m s**-1,seasonal_climatology
+v200,JJAS,ethiopia,0.3162815131577115,m s**-1,seasonal_climatology
+v200,JJAS,greater_horn,-0.39958807885797576,m s**-1,seasonal_climatology
+v200,JJAS,east_africa,-0.9761033710456514,m s**-1,seasonal_climatology
+v200,JJAS,atlantic_congo_ethiopia,-1.608461469224671,m s**-1,seasonal_climatology
+v200,JJAS,indian_ocean,-3.0171702972841508,m s**-1,seasonal_climatology
+u850,month_06,ethiopia,2.8692769562992604,m s**-1,monthly_climatology
+u850,month_06,greater_horn,-0.24203310335821843,m s**-1,monthly_climatology
+u850,month_06,east_africa,-0.23806625482186847,m s**-1,monthly_climatology
+u850,month_06,atlantic_congo_ethiopia,-1.7342417880826961,m s**-1,monthly_climatology
+u850,month_06,indian_ocean,0.8512463327149854,m s**-1,monthly_climatology
+u850,month_07,ethiopia,3.6107644608615863,m s**-1,monthly_climatology
+u850,month_07,greater_horn,0.4635135460071325,m s**-1,monthly_climatology
+u850,month_07,east_africa,0.4008916539574299,m s**-1,monthly_climatology
+u850,month_07,atlantic_congo_ethiopia,-1.037779114325695,m s**-1,monthly_climatology
+u850,month_07,indian_ocean,0.9309892404295619,m s**-1,monthly_climatology
+u850,month_08,ethiopia,3.0574254490743487,m s**-1,monthly_climatology
+u850,month_08,greater_horn,-0.13491921456215056,m s**-1,monthly_climatology
+u850,month_08,east_africa,-0.13460520226773112,m s**-1,monthly_climatology
+u850,month_08,atlantic_congo_ethiopia,-0.9889634795037993,m s**-1,monthly_climatology
+u850,month_08,indian_ocean,0.4657851217527403,m s**-1,monthly_climatology
+u850,month_09,ethiopia,1.3587746869117583,m s**-1,monthly_climatology
+u850,month_09,greater_horn,-1.444639821551766,m s**-1,monthly_climatology
+u850,month_09,east_africa,-1.4025145910272148,m s**-1,monthly_climatology
+u850,month_09,atlantic_congo_ethiopia,-1.985057854612498,m s**-1,monthly_climatology
+u850,month_09,indian_ocean,-0.4861598640410942,m s**-1,monthly_climatology
+u850,JJA,ethiopia,3.1791555776817115,m s**-1,seasonal_climatology
+u850,JJA,greater_horn,0.02885360405048431,m s**-1,seasonal_climatology
+u850,JJA,east_africa,0.009406591475336673,m s**-1,seasonal_climatology
+u850,JJA,atlantic_congo_ethiopia,-1.2536615738227228,m s**-1,seasonal_climatology
+u850,JJA,indian_ocean,0.7493402480932981,m s**-1,seasonal_climatology
+u850,JJAS,ethiopia,2.724060262211903,m s**-1,seasonal_climatology
+u850,JJAS,greater_horn,-0.3395195496198508,m s**-1,seasonal_climatology
+u850,JJAS,east_africa,-0.34357345408446194,m s**-1,seasonal_climatology
+u850,JJAS,atlantic_congo_ethiopia,-1.4365103132514077,m s**-1,seasonal_climatology
+u850,JJAS,indian_ocean,0.44046557723014074,m s**-1,seasonal_climatology
+v850,month_06,ethiopia,3.5025496910977996,m s**-1,monthly_climatology
+v850,month_06,greater_horn,2.550950908909668,m s**-1,monthly_climatology
+v850,month_06,east_africa,3.4388378700195594,m s**-1,monthly_climatology
+v850,month_06,atlantic_congo_ethiopia,1.6450279735215638,m s**-1,monthly_climatology
+v850,month_06,indian_ocean,1.714096998753878,m s**-1,monthly_climatology
+v850,month_07,ethiopia,3.9499605616207583,m s**-1,monthly_climatology
+v850,month_07,greater_horn,2.9562988514739774,m s**-1,monthly_climatology
+v850,month_07,east_africa,3.910181308212518,m s**-1,monthly_climatology
+v850,month_07,atlantic_congo_ethiopia,1.7974247235022176,m s**-1,monthly_climatology
+v850,month_07,indian_ocean,2.009645794558097,m s**-1,monthly_climatology
+v850,month_08,ethiopia,3.781250134238028,m s**-1,monthly_climatology
+v850,month_08,greater_horn,2.3654413364716063,m s**-1,monthly_climatology
+v850,month_08,east_africa,3.1748082538997338,m s**-1,monthly_climatology
+v850,month_08,atlantic_congo_ethiopia,1.382436438250695,m s**-1,monthly_climatology
+v850,month_08,indian_ocean,1.6503868203688568,m s**-1,monthly_climatology
+v850,month_09,ethiopia,2.865650388219028,m s**-1,monthly_climatology
+v850,month_09,greater_horn,1.3393839383867658,m s**-1,monthly_climatology
+v850,month_09,east_africa,1.9093061602936947,m s**-1,monthly_climatology
+v850,month_09,atlantic_congo_ethiopia,0.7611795098607227,m s**-1,monthly_climatology
+v850,month_09,indian_ocean,1.0509253463365833,m s**-1,monthly_climatology
+v850,JJA,ethiopia,3.744587422278719,m s**-1,seasonal_climatology
+v850,JJA,greater_horn,2.6242309133315005,m s**-1,seasonal_climatology
+v850,JJA,east_africa,3.5079430449183775,m s**-1,seasonal_climatology
+v850,JJA,atlantic_congo_ethiopia,1.6082965644397595,m s**-1,seasonal_climatology
+v850,JJA,indian_ocean,1.7913767597751296,m s**-1,seasonal_climatology
+v850,JJAS,ethiopia,3.5248535390018536,m s**-1,seasonal_climatology
+v850,JJAS,greater_horn,2.3030194665951074,m s**-1,seasonal_climatology
+v850,JJAS,east_africa,3.1082841154226823,m s**-1,seasonal_climatology
+v850,JJAS,atlantic_congo_ethiopia,1.3965173932128387,m s**-1,seasonal_climatology
+v850,JJAS,indian_ocean,1.606264047811426,m s**-1,seasonal_climatology
+q850,month_06,ethiopia,0.010532652573887838,kg kg**-1,monthly_climatology
+q850,month_06,greater_horn,0.008690005207659418,kg kg**-1,monthly_climatology
+q850,month_06,east_africa,0.00930312947948441,kg kg**-1,monthly_climatology
+q850,month_06,atlantic_congo_ethiopia,0.00871698935254689,kg kg**-1,monthly_climatology
+q850,month_06,indian_ocean,0.009489360654601611,kg kg**-1,monthly_climatology
+q850,month_07,ethiopia,0.01082237030477916,kg kg**-1,monthly_climatology
+q850,month_07,greater_horn,0.008888176949364177,kg kg**-1,monthly_climatology
+q850,month_07,east_africa,0.009388279310210875,kg kg**-1,monthly_climatology
+q850,month_07,atlantic_congo_ethiopia,0.008709726797963564,kg kg**-1,monthly_climatology
+q850,month_07,indian_ocean,0.009469412552437016,kg kg**-1,monthly_climatology
+q850,month_08,ethiopia,0.011026834004467946,kg kg**-1,monthly_climatology
+q850,month_08,greater_horn,0.009261230720556747,kg kg**-1,monthly_climatology
+q850,month_08,east_africa,0.009725928302342849,kg kg**-1,monthly_climatology
+q850,month_08,atlantic_congo_ethiopia,0.009082648452922623,kg kg**-1,monthly_climatology
+q850,month_08,indian_ocean,0.009342193046167893,kg kg**-1,monthly_climatology
+q850,month_09,ethiopia,0.010634818163279902,kg kg**-1,monthly_climatology
+q850,month_09,greater_horn,0.00903076806776328,kg kg**-1,monthly_climatology
+q850,month_09,east_africa,0.009562033078227603,kg kg**-1,monthly_climatology
+q850,month_09,atlantic_congo_ethiopia,0.009062850111377042,kg kg**-1,monthly_climatology
+q850,month_09,indian_ocean,0.008995834469899306,kg kg**-1,monthly_climatology
+q850,JJA,ethiopia,0.010793952054361487,kg kg**-1,seasonal_climatology
+q850,JJA,greater_horn,0.008946470706803317,kg kg**-1,seasonal_climatology
+q850,JJA,east_africa,0.009472445321086823,kg kg**-1,seasonal_climatology
+q850,JJA,atlantic_congo_ethiopia,0.008836454606565078,kg kg**-1,seasonal_climatology
+q850,JJA,indian_ocean,0.009433655365624322,kg kg**-1,seasonal_climatology
+q850,JJAS,ethiopia,0.01075416926417202,kg kg**-1,seasonal_climatology
+q850,JJAS,greater_horn,0.008967545340810604,kg kg**-1,seasonal_climatology
+q850,JJAS,east_africa,0.009494842696248574,kg kg**-1,seasonal_climatology
+q850,JJAS,atlantic_congo_ethiopia,0.008893053879509278,kg kg**-1,seasonal_climatology
+q850,JJAS,indian_ocean,0.009324200499263914,kg kg**-1,seasonal_climatology
+omega500,month_06,ethiopia,-0.018629559388504805,Pa s**-1,monthly_climatology
+omega500,month_06,greater_horn,0.0070385716542677845,Pa s**-1,monthly_climatology
+omega500,month_06,east_africa,0.004897537895771122,Pa s**-1,monthly_climatology
+omega500,month_06,atlantic_congo_ethiopia,0.006782827750310994,Pa s**-1,monthly_climatology
+omega500,month_06,indian_ocean,-0.0035955656766307183,Pa s**-1,monthly_climatology
+omega500,month_07,ethiopia,-0.034239830440559525,Pa s**-1,monthly_climatology
+omega500,month_07,greater_horn,0.001219710437530547,Pa s**-1,monthly_climatology
+omega500,month_07,east_africa,5.4984196690635995e-05,Pa s**-1,monthly_climatology
+omega500,month_07,atlantic_congo_ethiopia,0.003753027467778188,Pa s**-1,monthly_climatology
+omega500,month_07,indian_ocean,-0.004953370751328028,Pa s**-1,monthly_climatology
+omega500,month_08,ethiopia,-0.03193089666463488,Pa s**-1,monthly_climatology
+omega500,month_08,greater_horn,-0.0010222855800493614,Pa s**-1,monthly_climatology
+omega500,month_08,east_africa,-0.0026833859848426583,Pa s**-1,monthly_climatology
+omega500,month_08,atlantic_congo_ethiopia,0.00022484936351985395,Pa s**-1,monthly_climatology
+omega500,month_08,indian_ocean,-0.0024383472364820492,Pa s**-1,monthly_climatology
+omega500,month_09,ethiopia,-0.010430849133957787,Pa s**-1,monthly_climatology
+omega500,month_09,greater_horn,0.0044503043798489825,Pa s**-1,monthly_climatology
+omega500,month_09,east_africa,0.0023774042882528596,Pa s**-1,monthly_climatology
+omega500,month_09,atlantic_congo_ethiopia,0.0020953786739270923,Pa s**-1,monthly_climatology
+omega500,month_09,indian_ocean,0.00028011654344954455,Pa s**-1,monthly_climatology
+omega500,JJA,ethiopia,-0.028266761325303955,Pa s**-1,seasonal_climatology
+omega500,JJA,greater_horn,0.0024119987956915004,Pa s**-1,seasonal_climatology
+omega500,JJA,east_africa,0.0007563787015723892,Pa s**-1,seasonal_climatology
+omega500,JJA,atlantic_congo_ethiopia,0.0035869015005483705,Pa s**-1,seasonal_climatology
+omega500,JJA,indian_ocean,-0.0036624274197056116,Pa s**-1,seasonal_climatology
+omega500,JJAS,ethiopia,-0.023807782786430864,Pa s**-1,seasonal_climatology
+omega500,JJAS,greater_horn,0.0029215753902888625,Pa s**-1,seasonal_climatology
+omega500,JJAS,east_africa,0.0011616353120165778,Pa s**-1,seasonal_climatology
+omega500,JJAS,atlantic_congo_ethiopia,0.0032140210119424796,Pa s**-1,seasonal_climatology
+omega500,JJAS,indian_ocean,-0.0026767910998561515,Pa s**-1,seasonal_climatology
+omega700,month_06,ethiopia,-0.047580626284696156,Pa s**-1,monthly_climatology
+omega700,month_06,greater_horn,-0.0050631348027532835,Pa s**-1,monthly_climatology
+omega700,month_06,east_africa,-0.007362620075619632,Pa s**-1,monthly_climatology
+omega700,month_06,atlantic_congo_ethiopia,-0.0006512435278197484,Pa s**-1,monthly_climatology
+omega700,month_06,indian_ocean,-0.0049419137824525845,Pa s**-1,monthly_climatology
+omega700,month_07,ethiopia,-0.038176476595720564,Pa s**-1,monthly_climatology
+omega700,month_07,greater_horn,-0.0074394948646964425,Pa s**-1,monthly_climatology
+omega700,month_07,east_africa,-0.008022374411783904,Pa s**-1,monthly_climatology
+omega700,month_07,atlantic_congo_ethiopia,-0.0005147204051054864,Pa s**-1,monthly_climatology
+omega700,month_07,indian_ocean,-0.005287503443377138,Pa s**-1,monthly_climatology
+omega700,month_08,ethiopia,-0.030182583443468882,Pa s**-1,monthly_climatology
+omega700,month_08,greater_horn,-0.009233478735298043,Pa s**-1,monthly_climatology
+omega700,month_08,east_africa,-0.009685950266689034,Pa s**-1,monthly_climatology
+omega700,month_08,atlantic_congo_ethiopia,-0.0033678193777332437,Pa s**-1,monthly_climatology
+omega700,month_08,indian_ocean,-0.0037398247233247,Pa s**-1,monthly_climatology
+omega700,month_09,ethiopia,-0.03404286543707696,Pa s**-1,monthly_climatology
+omega700,month_09,greater_horn,-0.008217183334702003,Pa s**-1,monthly_climatology
+omega700,month_09,east_africa,-0.011219814197543716,Pa s**-1,monthly_climatology
+omega700,month_09,atlantic_congo_ethiopia,-0.005499908820986515,Pa s**-1,monthly_climatology
+omega700,month_09,indian_ocean,-0.0021471618518499012,Pa s**-1,monthly_climatology
+omega700,JJA,ethiopia,-0.038646564624698294,Pa s**-1,seasonal_climatology
+omega700,JJA,greater_horn,-0.007245370949724354,Pa s**-1,seasonal_climatology
+omega700,JJA,east_africa,-0.008356982945943404,Pa s**-1,seasonal_climatology
+omega700,JJA,atlantic_congo_ethiopia,-0.0015112617889725835,Pa s**-1,seasonal_climatology
+omega700,JJA,indian_ocean,-0.004656414759632427,Pa s**-1,seasonal_climatology
+omega700,JJAS,ethiopia,-0.03749563327358184,Pa s**-1,seasonal_climatology
+omega700,JJAS,greater_horn,-0.007488320105178979,Pa s**-1,seasonal_climatology
+omega700,JJAS,east_africa,-0.009072687193515883,Pa s**-1,seasonal_climatology
+omega700,JJAS,atlantic_congo_ethiopia,-0.00250842166150505,Pa s**-1,seasonal_climatology
+omega700,JJAS,indian_ocean,-0.004029099508026737,Pa s**-1,seasonal_climatology
+z200,month_06,ethiopia,12442.076433051265,m,monthly_climatology
+z200,month_06,greater_horn,12443.560515546858,m,monthly_climatology
+z200,month_06,east_africa,12438.003260060892,m,monthly_climatology
+z200,month_06,atlantic_congo_ethiopia,12428.354345017773,m,monthly_climatology
+z200,month_06,indian_ocean,12425.21717013273,m,monthly_climatology
+z200,month_07,ethiopia,12423.639607590088,m,monthly_climatology
+z200,month_07,greater_horn,12431.985649568076,m,monthly_climatology
+z200,month_07,east_africa,12419.869991948595,m,monthly_climatology
+z200,month_07,atlantic_congo_ethiopia,12411.376201061077,m,monthly_climatology
+z200,month_07,indian_ocean,12420.295041584115,m,monthly_climatology
+z200,month_08,ethiopia,12425.462519276765,m,monthly_climatology
+z200,month_08,greater_horn,12431.88397999646,m,monthly_climatology
+z200,month_08,east_africa,12421.160869401689,m,monthly_climatology
+z200,month_08,atlantic_congo_ethiopia,12413.411105746407,m,monthly_climatology
+z200,month_08,indian_ocean,12418.298171983006,m,monthly_climatology
+z200,month_09,ethiopia,12422.64815393405,m,monthly_climatology
+z200,month_09,greater_horn,12423.813204887485,m,monthly_climatology
+z200,month_09,east_africa,12418.443636642867,m,monthly_climatology
+z200,month_09,atlantic_congo_ethiopia,12408.983510786553,m,monthly_climatology
+z200,month_09,indian_ocean,12410.130694305584,m,monthly_climatology
+z200,JJA,ethiopia,12430.392802027922,m,seasonal_climatology
+z200,JJA,greater_horn,12435.810039754997,m,seasonal_climatology
+z200,JJA,east_africa,12426.34469404897,m,seasonal_climatology
+z200,JJA,atlantic_congo_ethiopia,12417.713869658619,m,seasonal_climatology
+z200,JJA,indian_ocean,12421.270135771165,m,seasonal_climatology
+z200,JJAS,ethiopia,12428.456717553387,m,seasonal_climatology
+z200,JJAS,greater_horn,12432.810849076983,m,seasonal_climatology
+z200,JJAS,east_africa,12424.369453234836,m,seasonal_climatology
+z200,JJAS,atlantic_congo_ethiopia,12415.531316089764,m,seasonal_climatology
+z200,JJAS,indian_ocean,12418.485283067002,m,seasonal_climatology
+z500,month_06,ethiopia,5874.503758989358,m,monthly_climatology
+z500,month_06,greater_horn,5875.584097097581,m,monthly_climatology
+z500,month_06,east_africa,5873.4829474341705,m,monthly_climatology
+z500,month_06,atlantic_congo_ethiopia,5876.440974615559,m,monthly_climatology
+z500,month_06,indian_ocean,5852.671959780413,m,monthly_climatology
+z500,month_07,ethiopia,5868.635037247624,m,monthly_climatology
+z500,month_07,greater_horn,5869.828050180087,m,monthly_climatology
+z500,month_07,east_africa,5867.6805430881905,m,monthly_climatology
+z500,month_07,atlantic_congo_ethiopia,5870.486498496494,m,monthly_climatology
+z500,month_07,indian_ocean,5848.953977504881,m,monthly_climatology
+z500,month_08,ethiopia,5868.855900514815,m,monthly_climatology
+z500,month_08,greater_horn,5871.786496867663,m,monthly_climatology
+z500,month_08,east_africa,5868.813928799207,m,monthly_climatology
+z500,month_08,atlantic_congo_ethiopia,5870.792795985722,m,monthly_climatology
+z500,month_08,indian_ocean,5851.6975921381345,m,monthly_climatology
+z500,month_09,ethiopia,5868.468994944927,m,monthly_climatology
+z500,month_09,greater_horn,5871.086150001962,m,monthly_climatology
+z500,month_09,east_africa,5868.484729450224,m,monthly_climatology
+z500,month_09,atlantic_congo_ethiopia,5870.044417642943,m,monthly_climatology
+z500,month_09,indian_ocean,5855.311468423689,m,monthly_climatology
+z500,JJA,ethiopia,5870.664920002976,m,seasonal_climatology
+z500,JJA,greater_horn,5872.399552383643,m,seasonal_climatology
+z500,JJA,east_africa,5869.992477910312,m,seasonal_climatology
+z500,JJA,atlantic_congo_ethiopia,5872.573427585518,m,seasonal_climatology
+z500,JJA,indian_ocean,5851.107841468835,m,seasonal_climatology
+z500,JJAS,ethiopia,5870.115965339222,m,seasonal_climatology
+z500,JJAS,greater_horn,5872.071225043201,m,seasonal_climatology
+z500,JJAS,east_africa,5869.61556377125,m,seasonal_climatology
+z500,JJAS,atlantic_congo_ethiopia,5871.941179467057,m,seasonal_climatology
+z500,JJAS,indian_ocean,5852.158757089979,m,seasonal_climatology
+divergence200,month_06,ethiopia,-1.229693986470377e-06,s**-1,monthly_climatology
+divergence200,month_06,greater_horn,-5.822870727898359e-07,s**-1,monthly_climatology
+divergence200,month_06,east_africa,-5.793023096478391e-07,s**-1,monthly_climatology
+divergence200,month_06,atlantic_congo_ethiopia,-4.4760037221009184e-07,s**-1,monthly_climatology
+divergence200,month_06,indian_ocean,1.414138270761513e-07,s**-1,monthly_climatology
+divergence200,month_07,ethiopia,-3.581771402497405e-07,s**-1,monthly_climatology
+divergence200,month_07,greater_horn,-5.462492932944533e-07,s**-1,monthly_climatology
+divergence200,month_07,east_africa,-5.436130065601618e-07,s**-1,monthly_climatology
+divergence200,month_07,atlantic_congo_ethiopia,-4.046187898574242e-07,s**-1,monthly_climatology
+divergence200,month_07,indian_ocean,1.8539945524535968e-07,s**-1,monthly_climatology
+divergence200,month_08,ethiopia,-4.1827435630500473e-07,s**-1,monthly_climatology
+divergence200,month_08,greater_horn,-5.351188758982833e-07,s**-1,monthly_climatology
+divergence200,month_08,east_africa,-5.187626576968378e-07,s**-1,monthly_climatology
+divergence200,month_08,atlantic_congo_ethiopia,-2.7214145322579715e-07,s**-1,monthly_climatology
+divergence200,month_08,indian_ocean,3.6763200448266684e-08,s**-1,monthly_climatology
+divergence200,month_09,ethiopia,-1.264375788241099e-06,s**-1,monthly_climatology
+divergence200,month_09,greater_horn,-6.08704468705871e-07,s**-1,monthly_climatology
+divergence200,month_09,east_africa,-5.868766274635483e-07,s**-1,monthly_climatology
+divergence200,month_09,atlantic_congo_ethiopia,-3.317697043121246e-07,s**-1,monthly_climatology
+divergence200,month_09,indian_ocean,-1.3465648576631468e-07,s**-1,monthly_climatology
+divergence200,JJA,ethiopia,-6.68714864554884e-07,s**-1,seasonal_climatology
+divergence200,JJA,greater_horn,-5.545516409753287e-07,s**-1,seasonal_climatology
+divergence200,JJA,east_africa,-5.472258709115904e-07,s**-1,seasonal_climatology
+divergence200,JJA,atlantic_congo_ethiopia,-3.747867408756278e-07,s**-1,seasonal_climatology
+divergence200,JJA,indian_ocean,1.2119238994347808e-07,s**-1,seasonal_climatology
+divergence200,JJAS,ethiopia,-8.176301199516803e-07,s**-1,seasonal_climatology
+divergence200,JJAS,greater_horn,-5.680899177697516e-07,s**-1,seasonal_climatology
+divergence200,JJAS,east_africa,-5.571386386839789e-07,s**-1,seasonal_climatology
+divergence200,JJAS,atlantic_congo_ethiopia,-3.640325413520029e-07,s**-1,seasonal_climatology
+divergence200,JJAS,indian_ocean,5.72301240834361e-08,s**-1,seasonal_climatology
+sst,month_06,ethiopia,303.35287546307836,K,monthly_climatology
+sst,month_06,greater_horn,300.57376738634986,K,monthly_climatology
+sst,month_06,east_africa,300.50253353125714,K,monthly_climatology
+sst,month_06,atlantic_congo_ethiopia,298.70958643590575,K,monthly_climatology
+sst,month_06,indian_ocean,300.27510154455456,K,monthly_climatology
+sst,month_07,ethiopia,302.5218976478467,K,monthly_climatology
+sst,month_07,greater_horn,299.5459852548859,K,monthly_climatology
+sst,month_07,east_africa,299.3702058917557,K,monthly_climatology
+sst,month_07,atlantic_congo_ethiopia,297.6043193007148,K,monthly_climatology
+sst,month_07,indian_ocean,299.51458246087867,K,monthly_climatology
+sst,month_08,ethiopia,302.43719810959897,K,monthly_climatology
+sst,month_08,greater_horn,299.37406245621037,K,monthly_climatology
+sst,month_08,east_africa,299.15815729166434,K,monthly_climatology
+sst,month_08,atlantic_congo_ethiopia,297.0838256838507,K,monthly_climatology
+sst,month_08,indian_ocean,299.1577805757637,K,monthly_climatology
+sst,month_09,ethiopia,303.3875103737068,K,monthly_climatology
+sst,month_09,greater_horn,299.8051158934245,K,monthly_climatology
+sst,month_09,east_africa,299.6283308649504,K,monthly_climatology
+sst,month_09,atlantic_congo_ethiopia,297.2470817007937,K,monthly_climatology
+sst,month_09,indian_ocean,299.2679626316946,K,monthly_climatology
+sst,JJA,ethiopia,302.77063972313795,K,seasonal_climatology
+sst,JJA,greater_horn,299.83125065134107,K,seasonal_climatology
+sst,JJA,east_africa,299.6769446656222,K,seasonal_climatology
+sst,JJA,atlantic_congo_ethiopia,297.7992195323802,K,seasonal_climatology
+sst,JJA,indian_ocean,299.64913210188564,K,seasonal_climatology
+sst,JJAS,ethiopia,302.92486332755453,K,seasonal_climatology
+sst,JJAS,greater_horn,299.82472397507075,K,seasonal_climatology
+sst,JJAS,east_africa,299.6647982329874,K,seasonal_climatology
+sst,JJAS,atlantic_congo_ethiopia,297.66119445186496,K,seasonal_climatology
+sst,JJAS,indian_ocean,299.5538483246349,K,seasonal_climatology

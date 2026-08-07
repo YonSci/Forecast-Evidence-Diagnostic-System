@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.pyc
+.jjas_env/
+*.egg-info/
+
+# Large local pipeline data/outputs -- NOT needed to run or deploy the app.
+# backend/app/static_data/ (the curated copy the API actually serves) is
+# tracked separately and is not covered by these rules.
+/data/
+/outputs/
+/NMME_May2026/
+/nmme_data/
+/nmme_plots/
+/nmme_plots_individual/
+/plots/
+/logs/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+frontend/.env.*.local
+
+# Backend
+backend/.env
+backend/__pycache__/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

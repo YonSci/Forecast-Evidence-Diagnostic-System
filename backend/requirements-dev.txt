@@ -1,0 +1,5 @@
+# Only needed to run scripts/sync_static_data.py locally when refreshing
+# the curated static_data/ folder from the project's outputs/ tree. Not
+# required by the deployed API itself.
+-r requirements.txt
+Pillow==11.1.0

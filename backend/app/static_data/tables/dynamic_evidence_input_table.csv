@@ -1,0 +1,8 @@
+evidence_group,period,indicator,value,units,classification,supports_dry_kiremt,note
+rainfall_forecast,JJA,Ethiopia NMME rainfall anomaly,-31.823720932006836,mm/season,below_normal_dry_signal,yes,Direct NMME precipitation anomaly signal.
+rainfall_forecast,JJAS,Ethiopia NMME rainfall anomaly,-40.89413070678711,mm/season,below_normal_dry_signal,yes,Direct NMME precipitation anomaly signal.
+ocean_driver,JJA,Nino3.4 tmpsfc anomaly proxy,1.4461687803268433,K,el_nino_like,yes,El Niño-like warming usually increases dry-risk for Ethiopia Kiremt.
+ocean_driver,JJA,DMI/IOD tmpsfc proxy,0.2251499891281128,K,iod_neutral_or_weak,mixed,IOD influence over Ethiopia is spatially mixed; interpret with caution.
+ocean_driver,JJAS,Nino3.4 tmpsfc anomaly proxy,1.6860640048980713,K,el_nino_like,yes,El Niño-like warming usually increases dry-risk for Ethiopia Kiremt.
+ocean_driver,JJAS,DMI/IOD tmpsfc proxy,0.379563644528389,K,iod_neutral_or_weak,mixed,IOD influence over Ethiopia is spatially mixed; interpret with caution.
+circulation_baseline,JJAS,ERA5 TEJ / moisture / omega climatology,,,baseline_only,not_direct_forecast_evidence,"ERA5 1991-2020 fields provide climatological baseline. To dynamically confirm 2026 anomalies, future forecast or observed 2026 fields are still needed."

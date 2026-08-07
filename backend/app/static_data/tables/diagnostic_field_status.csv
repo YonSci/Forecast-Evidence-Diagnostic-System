@@ -1,0 +1,12 @@
+diagnostic,preferred_field,source,status,notes
+Rainfall anomaly,NMME prate,NMME,available,Used for rainfall anomaly maps.
+SST / surface temperature anomaly,NMME tmpsfc + ERA5 sst climatology,NMME/ERA5,available,NMME tmpsfc is useful; ERA5 SST is used for climatology and index boxes.
+TEJ / upper-level zonal wind,u200,ERA5 climatology,available,Needed for TEJ climatology and anomaly diagnostics.
+Upper-level meridional wind,v200,ERA5 climatology,available,Supports upper-level circulation diagnosis.
+Low-level zonal wind,u850,ERA5 climatology,available,Needed for moisture flux.
+Low-level meridional wind,v850,ERA5 climatology,available,Needed for moisture flux.
+Low-level moisture,q850,ERA5 climatology,available,Needed for q*u and q*v moisture transport.
+Vertical motion,omega500/omega700,ERA5 climatology,available,Positive omega means subsidence; negative omega means rising motion.
+Upper-level divergence,divergence200,ERA5 climatology,available,Positive divergence supports convection.
+Walker circulation proxy,velocity_potential200,ERA5 climatology,missing_variable,Positive VP anomaly can indicate suppressed convection.
+Rossby-wave / height pattern,z200/z500,NMME/ERA5,available,Used to diagnose upper/mid-level circulation wave patterns.

@@ -1,0 +1,941 @@
+file,family,valid_month,dataset_index,variable,long_name,standard_name,units,dims,shape,typeOfLevel,level_values,step
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,0,pwat,Precipitable water,unknown,kg m**-2,"latitude, longitude","(190, 384)",,,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,0,tcc,Total Cloud Cover,unknown,%,"latitude, longitude","(190, 384)",,,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,0,cwork,Cloud work function,unknown,J kg**-1,"latitude, longitude","(190, 384)",,,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,1,tcc,Total Cloud Cover,unknown,%,"latitude, longitude","(190, 384)",,,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,2,avg_pres,Time-mean pressure,unknown,Pa,"latitude, longitude","(190, 384)",,,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,3,tcc,Total Cloud Cover,unknown,%,"latitude, longitude","(190, 384)",,,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,4,avg_pres,Time-mean pressure,unknown,Pa,"latitude, longitude","(190, 384)",,,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,5,ssw,Soil moisture content,unknown,kg m**-2,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,6,avg_t,Time-mean temperature,air_temperature,K,"depthBelowLandLayer, latitude, longitude","(4, 190, 384)",,[0.  0.1 0.4 1. ],2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,6,soilw,Volumetric soil moisture content,unknown,Proportion,"depthBelowLandLayer, latitude, longitude","(4, 190, 384)",,[0.  0.1 0.4 1. ],2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,6,soill,Liquid volumetric soil moisture (non-frozen),unknown,Proportion,"depthBelowLandLayer, latitude, longitude","(4, 190, 384)",,[0.  0.1 0.4 1. ],2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,7,tmax,Maximum temperature,unknown,K,"latitude, longitude","(190, 384)",,2.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,7,tmin,Minimum temperature,unknown,K,"latitude, longitude","(190, 384)",,2.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,7,avg_2t,Time-mean 2 metre temperature,air_temperature,K,"latitude, longitude","(190, 384)",,2.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,7,avg_2sh,Time-mean 2 metre specific humidity,specific_humidity,kg kg**-1,"latitude, longitude","(190, 384)",,2.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,7,qmax,Maximum specific humidity at 2m,unknown,kg kg**-1,"latitude, longitude","(190, 384)",,2.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,7,qmin,Minimum specific humidity at 2m,unknown,kg kg**-1,"latitude, longitude","(190, 384)",,2.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,8,avg_10u,Time-mean 10 metre U wind component,eastward_wind,m s**-1,"latitude, longitude","(190, 384)",,10.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,8,avg_10v,Time-mean 10 metre V wind component,northward_wind,m s**-1,"latitude, longitude","(190, 384)",,10.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,9,avg_pres,Time-mean pressure,unknown,Pa,"latitude, longitude","(190, 384)",,,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,10,tcc,Total Cloud Cover,unknown,%,"latitude, longitude","(190, 384)",,,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,11,avg_pres,Time-mean pressure,unknown,Pa,"latitude, longitude","(190, 384)",,,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,11,avg_t,Time-mean temperature,air_temperature,K,"latitude, longitude","(190, 384)",,,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,12,gh,Geopotential height,geopotential_height,gpm,"latitude, longitude","(190, 384)",,,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,12,avg_t,Time-mean temperature,air_temperature,K,"latitude, longitude","(190, 384)",,,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,12,avg_u,Time-mean U component of wind,eastward_wind,m s**-1,"latitude, longitude","(190, 384)",,,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,12,avg_v,Time-mean V component of wind,northward_wind,m s**-1,"latitude, longitude","(190, 384)",,,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,12,avg_q,Time-mean specific humidity,specific_humidity,kg kg**-1,"latitude, longitude","(190, 384)",,,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,13,avg_pres,Time-mean pressure,unknown,Pa,"latitude, longitude","(190, 384)",,,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,14,tcc,Total Cloud Cover,unknown,%,"latitude, longitude","(190, 384)",,,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,15,avg_pres,Time-mean pressure,unknown,Pa,"latitude, longitude","(190, 384)",,,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,15,avg_t,Time-mean temperature,air_temperature,K,"latitude, longitude","(190, 384)",,,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,16,avg_pres,Time-mean pressure,unknown,Pa,"latitude, longitude","(190, 384)",,,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,17,tcc,Total Cloud Cover,unknown,%,"latitude, longitude","(190, 384)",,,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,18,avg_pres,Time-mean pressure,unknown,Pa,"latitude, longitude","(190, 384)",,,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,18,avg_t,Time-mean temperature,air_temperature,K,"latitude, longitude","(190, 384)",,,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,19,sdswrf,Surface downward short-wave radiation flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,19,suswrf,Surface upward short-wave radiation flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,19,sulwrf,Surface upward long-wave radiation flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,19,csusf,Clear Sky Upward Solar Flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,19,csulf,Clear Sky Upward Long Wave Flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,unknown,unknown,unknown,unknown,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,slt,Soil type,unknown,(Code table 4.213),"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,lsm,Land-sea mask,land_binary_mask,(0 - 1),"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,prate,Precipitation rate,unknown,kg m**-2 s**-1,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,sde,Snow depth,lwe_thickness_of_surface_snow_amount,m,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,avg_utaua,Time-mean U-component of atmospheric surface momentum flux,unknown,N m**-2,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,avg_vtaua,Time-mean V-component of atmospheric surface momentum flux,unknown,N m**-2,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,orog,Orography,geopotential_height,m,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,avg_ishf,Time-mean surface sensible heat flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,avg_slhtf,Time-mean surface latent heat flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,avg_ci,Time-mean sea ice area fraction,sea_ice_area_fraction,(0 - 1),"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,avg_t,Time-mean temperature,air_temperature,K,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,avg_sp,Time-mean surface pressure,surface_air_pressure,Pa,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,avg_fsr,Time-mean forecast surface roughness,unknown,m,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,avg_al,Time-mean forecast albedo,surface_albedo,%,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,avg_veg,Time-mean vegetation,unknown,%,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,snohf,Snow phase change heat flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,srweq,Snowfall rate water equivalent,unknown,kg m**-2 s**-1,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,crain,Categorical rain,unknown,(Code table 4.222),"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,cpr,Convective precipitation rate,unknown,kg m**-2 s**-1,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,snowc,Snow cover,unknown,%,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,sdwe,Water equivalent of accumulated snow depth (deprecated),unknown,kg m**-2,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,fricv,Frictional velocity,unknown,m s**-1,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,iegwss,Instantaneous eastward gravity wave surface stress,unknown,N m**-2,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,ingwss,Instantaneous northward gravity wave surface stress,unknown,N m**-2,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,sdswrf,Surface downward short-wave radiation flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,suswrf,Surface upward short-wave radiation flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,sdlwrf,Surface downward long-wave radiation flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,sulwrf,Surface upward long-wave radiation flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,ssrun,Storm surface runoff,unknown,kg m**-2,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,watr,Water runoff,unknown,kg m**-2,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,gflux,Ground heat flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,sfexc,Exchange coefficient,unknown,kg m**-2 s**-1,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,cnwat,Plant canopy surface water,unknown,kg m**-2,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,sbsno,Sublimation (evaporation from snow),unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,duvb,UV-B downward solar flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,cduvb,Clear sky UV-B downward solar flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,csdsf,Clear Sky Downward Solar Flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,csusf,Clear Sky Upward Solar Flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,vbdsf,Visible Beam Downward Solar Flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,vddsf,Visible Diffuse Downward Solar Flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,nbdsf,Near IR Beam Downward Solar Flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,nddsf,Near IR Diffuse Downward Solar Flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,csulf,Clear Sky Upward Long Wave Flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,csdlf,Clear Sky Downward Long Wave Flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,vgtyp,Vegetation Type,unknown,Integer(0-13),"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,acond,Aerodynamic conductance,unknown,m s**-1,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,evcw,Canopy water evaporation,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,trans,Transpiration,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,sltyp,Surface Slope Type,unknown,Index,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,evbs,Direct evaporation from bare soil,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202606.avrg.grib.grb2,flxf_flux_radiation_surface,202606,20,avg_sithick,Time-mean sea ice thickness,unknown,m,"latitude, longitude","(190, 384)",,0.0,2592000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,0,pwat,Precipitable water,unknown,kg m**-2,"latitude, longitude","(190, 384)",,,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,0,tcc,Total Cloud Cover,unknown,%,"latitude, longitude","(190, 384)",,,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,0,cwork,Cloud work function,unknown,J kg**-1,"latitude, longitude","(190, 384)",,,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,1,tcc,Total Cloud Cover,unknown,%,"latitude, longitude","(190, 384)",,,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,2,avg_pres,Time-mean pressure,unknown,Pa,"latitude, longitude","(190, 384)",,,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,3,tcc,Total Cloud Cover,unknown,%,"latitude, longitude","(190, 384)",,,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,4,avg_pres,Time-mean pressure,unknown,Pa,"latitude, longitude","(190, 384)",,,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,5,ssw,Soil moisture content,unknown,kg m**-2,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,6,avg_t,Time-mean temperature,air_temperature,K,"depthBelowLandLayer, latitude, longitude","(4, 190, 384)",,[0.  0.1 0.4 1. ],5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,6,soilw,Volumetric soil moisture content,unknown,Proportion,"depthBelowLandLayer, latitude, longitude","(4, 190, 384)",,[0.  0.1 0.4 1. ],5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,6,soill,Liquid volumetric soil moisture (non-frozen),unknown,Proportion,"depthBelowLandLayer, latitude, longitude","(4, 190, 384)",,[0.  0.1 0.4 1. ],5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,7,tmax,Maximum temperature,unknown,K,"latitude, longitude","(190, 384)",,2.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,7,tmin,Minimum temperature,unknown,K,"latitude, longitude","(190, 384)",,2.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,7,avg_2t,Time-mean 2 metre temperature,air_temperature,K,"latitude, longitude","(190, 384)",,2.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,7,avg_2sh,Time-mean 2 metre specific humidity,specific_humidity,kg kg**-1,"latitude, longitude","(190, 384)",,2.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,7,qmax,Maximum specific humidity at 2m,unknown,kg kg**-1,"latitude, longitude","(190, 384)",,2.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,7,qmin,Minimum specific humidity at 2m,unknown,kg kg**-1,"latitude, longitude","(190, 384)",,2.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,8,avg_10u,Time-mean 10 metre U wind component,eastward_wind,m s**-1,"latitude, longitude","(190, 384)",,10.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,8,avg_10v,Time-mean 10 metre V wind component,northward_wind,m s**-1,"latitude, longitude","(190, 384)",,10.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,9,avg_pres,Time-mean pressure,unknown,Pa,"latitude, longitude","(190, 384)",,,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,10,tcc,Total Cloud Cover,unknown,%,"latitude, longitude","(190, 384)",,,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,11,avg_pres,Time-mean pressure,unknown,Pa,"latitude, longitude","(190, 384)",,,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,11,avg_t,Time-mean temperature,air_temperature,K,"latitude, longitude","(190, 384)",,,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,12,gh,Geopotential height,geopotential_height,gpm,"latitude, longitude","(190, 384)",,,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,12,avg_t,Time-mean temperature,air_temperature,K,"latitude, longitude","(190, 384)",,,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,12,avg_u,Time-mean U component of wind,eastward_wind,m s**-1,"latitude, longitude","(190, 384)",,,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,12,avg_v,Time-mean V component of wind,northward_wind,m s**-1,"latitude, longitude","(190, 384)",,,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,12,avg_q,Time-mean specific humidity,specific_humidity,kg kg**-1,"latitude, longitude","(190, 384)",,,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,13,avg_pres,Time-mean pressure,unknown,Pa,"latitude, longitude","(190, 384)",,,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,14,tcc,Total Cloud Cover,unknown,%,"latitude, longitude","(190, 384)",,,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,15,avg_pres,Time-mean pressure,unknown,Pa,"latitude, longitude","(190, 384)",,,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,15,avg_t,Time-mean temperature,air_temperature,K,"latitude, longitude","(190, 384)",,,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,16,avg_pres,Time-mean pressure,unknown,Pa,"latitude, longitude","(190, 384)",,,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,17,tcc,Total Cloud Cover,unknown,%,"latitude, longitude","(190, 384)",,,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,18,avg_pres,Time-mean pressure,unknown,Pa,"latitude, longitude","(190, 384)",,,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,18,avg_t,Time-mean temperature,air_temperature,K,"latitude, longitude","(190, 384)",,,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,19,sdswrf,Surface downward short-wave radiation flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,19,suswrf,Surface upward short-wave radiation flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,19,sulwrf,Surface upward long-wave radiation flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,19,csusf,Clear Sky Upward Solar Flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,19,csulf,Clear Sky Upward Long Wave Flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,unknown,unknown,unknown,unknown,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,slt,Soil type,unknown,(Code table 4.213),"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,lsm,Land-sea mask,land_binary_mask,(0 - 1),"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,prate,Precipitation rate,unknown,kg m**-2 s**-1,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,sde,Snow depth,lwe_thickness_of_surface_snow_amount,m,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,avg_utaua,Time-mean U-component of atmospheric surface momentum flux,unknown,N m**-2,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,avg_vtaua,Time-mean V-component of atmospheric surface momentum flux,unknown,N m**-2,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,orog,Orography,geopotential_height,m,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,avg_ishf,Time-mean surface sensible heat flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,avg_slhtf,Time-mean surface latent heat flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,avg_ci,Time-mean sea ice area fraction,sea_ice_area_fraction,(0 - 1),"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,avg_t,Time-mean temperature,air_temperature,K,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,avg_sp,Time-mean surface pressure,surface_air_pressure,Pa,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,avg_fsr,Time-mean forecast surface roughness,unknown,m,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,avg_al,Time-mean forecast albedo,surface_albedo,%,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,avg_veg,Time-mean vegetation,unknown,%,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,snohf,Snow phase change heat flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,srweq,Snowfall rate water equivalent,unknown,kg m**-2 s**-1,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,crain,Categorical rain,unknown,(Code table 4.222),"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,cpr,Convective precipitation rate,unknown,kg m**-2 s**-1,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,snowc,Snow cover,unknown,%,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,sdwe,Water equivalent of accumulated snow depth (deprecated),unknown,kg m**-2,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,fricv,Frictional velocity,unknown,m s**-1,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,iegwss,Instantaneous eastward gravity wave surface stress,unknown,N m**-2,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,ingwss,Instantaneous northward gravity wave surface stress,unknown,N m**-2,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,sdswrf,Surface downward short-wave radiation flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,suswrf,Surface upward short-wave radiation flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,sdlwrf,Surface downward long-wave radiation flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,sulwrf,Surface upward long-wave radiation flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,ssrun,Storm surface runoff,unknown,kg m**-2,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,watr,Water runoff,unknown,kg m**-2,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,gflux,Ground heat flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,sfexc,Exchange coefficient,unknown,kg m**-2 s**-1,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,cnwat,Plant canopy surface water,unknown,kg m**-2,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,sbsno,Sublimation (evaporation from snow),unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,duvb,UV-B downward solar flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,cduvb,Clear sky UV-B downward solar flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,csdsf,Clear Sky Downward Solar Flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,csusf,Clear Sky Upward Solar Flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,vbdsf,Visible Beam Downward Solar Flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,vddsf,Visible Diffuse Downward Solar Flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,nbdsf,Near IR Beam Downward Solar Flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,nddsf,Near IR Diffuse Downward Solar Flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,csulf,Clear Sky Upward Long Wave Flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,csdlf,Clear Sky Downward Long Wave Flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,vgtyp,Vegetation Type,unknown,Integer(0-13),"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,acond,Aerodynamic conductance,unknown,m s**-1,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,evcw,Canopy water evaporation,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,trans,Transpiration,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,sltyp,Surface Slope Type,unknown,Index,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,evbs,Direct evaporation from bare soil,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202607.avrg.grib.grb2,flxf_flux_radiation_surface,202607,20,avg_sithick,Time-mean sea ice thickness,unknown,m,"latitude, longitude","(190, 384)",,0.0,5184000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,0,pwat,Precipitable water,unknown,kg m**-2,"latitude, longitude","(190, 384)",,,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,0,tcc,Total Cloud Cover,unknown,%,"latitude, longitude","(190, 384)",,,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,0,cwork,Cloud work function,unknown,J kg**-1,"latitude, longitude","(190, 384)",,,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,1,tcc,Total Cloud Cover,unknown,%,"latitude, longitude","(190, 384)",,,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,2,avg_pres,Time-mean pressure,unknown,Pa,"latitude, longitude","(190, 384)",,,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,3,tcc,Total Cloud Cover,unknown,%,"latitude, longitude","(190, 384)",,,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,4,avg_pres,Time-mean pressure,unknown,Pa,"latitude, longitude","(190, 384)",,,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,5,ssw,Soil moisture content,unknown,kg m**-2,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,6,avg_t,Time-mean temperature,air_temperature,K,"depthBelowLandLayer, latitude, longitude","(4, 190, 384)",,[0.  0.1 0.4 1. ],7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,6,soilw,Volumetric soil moisture content,unknown,Proportion,"depthBelowLandLayer, latitude, longitude","(4, 190, 384)",,[0.  0.1 0.4 1. ],7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,6,soill,Liquid volumetric soil moisture (non-frozen),unknown,Proportion,"depthBelowLandLayer, latitude, longitude","(4, 190, 384)",,[0.  0.1 0.4 1. ],7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,7,tmax,Maximum temperature,unknown,K,"latitude, longitude","(190, 384)",,2.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,7,tmin,Minimum temperature,unknown,K,"latitude, longitude","(190, 384)",,2.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,7,avg_2t,Time-mean 2 metre temperature,air_temperature,K,"latitude, longitude","(190, 384)",,2.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,7,avg_2sh,Time-mean 2 metre specific humidity,specific_humidity,kg kg**-1,"latitude, longitude","(190, 384)",,2.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,7,qmax,Maximum specific humidity at 2m,unknown,kg kg**-1,"latitude, longitude","(190, 384)",,2.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,7,qmin,Minimum specific humidity at 2m,unknown,kg kg**-1,"latitude, longitude","(190, 384)",,2.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,8,avg_10u,Time-mean 10 metre U wind component,eastward_wind,m s**-1,"latitude, longitude","(190, 384)",,10.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,8,avg_10v,Time-mean 10 metre V wind component,northward_wind,m s**-1,"latitude, longitude","(190, 384)",,10.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,9,avg_pres,Time-mean pressure,unknown,Pa,"latitude, longitude","(190, 384)",,,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,10,tcc,Total Cloud Cover,unknown,%,"latitude, longitude","(190, 384)",,,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,11,avg_pres,Time-mean pressure,unknown,Pa,"latitude, longitude","(190, 384)",,,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,11,avg_t,Time-mean temperature,air_temperature,K,"latitude, longitude","(190, 384)",,,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,12,gh,Geopotential height,geopotential_height,gpm,"latitude, longitude","(190, 384)",,,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,12,avg_t,Time-mean temperature,air_temperature,K,"latitude, longitude","(190, 384)",,,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,12,avg_u,Time-mean U component of wind,eastward_wind,m s**-1,"latitude, longitude","(190, 384)",,,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,12,avg_v,Time-mean V component of wind,northward_wind,m s**-1,"latitude, longitude","(190, 384)",,,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,12,avg_q,Time-mean specific humidity,specific_humidity,kg kg**-1,"latitude, longitude","(190, 384)",,,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,13,avg_pres,Time-mean pressure,unknown,Pa,"latitude, longitude","(190, 384)",,,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,14,tcc,Total Cloud Cover,unknown,%,"latitude, longitude","(190, 384)",,,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,15,avg_pres,Time-mean pressure,unknown,Pa,"latitude, longitude","(190, 384)",,,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,15,avg_t,Time-mean temperature,air_temperature,K,"latitude, longitude","(190, 384)",,,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,16,avg_pres,Time-mean pressure,unknown,Pa,"latitude, longitude","(190, 384)",,,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,17,tcc,Total Cloud Cover,unknown,%,"latitude, longitude","(190, 384)",,,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,18,avg_pres,Time-mean pressure,unknown,Pa,"latitude, longitude","(190, 384)",,,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,18,avg_t,Time-mean temperature,air_temperature,K,"latitude, longitude","(190, 384)",,,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,19,sdswrf,Surface downward short-wave radiation flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,19,suswrf,Surface upward short-wave radiation flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,19,sulwrf,Surface upward long-wave radiation flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,19,csusf,Clear Sky Upward Solar Flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,19,csulf,Clear Sky Upward Long Wave Flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,unknown,unknown,unknown,unknown,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,slt,Soil type,unknown,(Code table 4.213),"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,lsm,Land-sea mask,land_binary_mask,(0 - 1),"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,prate,Precipitation rate,unknown,kg m**-2 s**-1,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,sde,Snow depth,lwe_thickness_of_surface_snow_amount,m,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,avg_utaua,Time-mean U-component of atmospheric surface momentum flux,unknown,N m**-2,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,avg_vtaua,Time-mean V-component of atmospheric surface momentum flux,unknown,N m**-2,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,orog,Orography,geopotential_height,m,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,avg_ishf,Time-mean surface sensible heat flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,avg_slhtf,Time-mean surface latent heat flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,avg_ci,Time-mean sea ice area fraction,sea_ice_area_fraction,(0 - 1),"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,avg_t,Time-mean temperature,air_temperature,K,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,avg_sp,Time-mean surface pressure,surface_air_pressure,Pa,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,avg_fsr,Time-mean forecast surface roughness,unknown,m,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,avg_al,Time-mean forecast albedo,surface_albedo,%,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,avg_veg,Time-mean vegetation,unknown,%,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,snohf,Snow phase change heat flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,srweq,Snowfall rate water equivalent,unknown,kg m**-2 s**-1,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,crain,Categorical rain,unknown,(Code table 4.222),"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,cpr,Convective precipitation rate,unknown,kg m**-2 s**-1,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,snowc,Snow cover,unknown,%,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,sdwe,Water equivalent of accumulated snow depth (deprecated),unknown,kg m**-2,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,fricv,Frictional velocity,unknown,m s**-1,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,iegwss,Instantaneous eastward gravity wave surface stress,unknown,N m**-2,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,ingwss,Instantaneous northward gravity wave surface stress,unknown,N m**-2,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,sdswrf,Surface downward short-wave radiation flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,suswrf,Surface upward short-wave radiation flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,sdlwrf,Surface downward long-wave radiation flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,sulwrf,Surface upward long-wave radiation flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,ssrun,Storm surface runoff,unknown,kg m**-2,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,watr,Water runoff,unknown,kg m**-2,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,gflux,Ground heat flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,sfexc,Exchange coefficient,unknown,kg m**-2 s**-1,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,cnwat,Plant canopy surface water,unknown,kg m**-2,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,sbsno,Sublimation (evaporation from snow),unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,duvb,UV-B downward solar flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,cduvb,Clear sky UV-B downward solar flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,csdsf,Clear Sky Downward Solar Flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,csusf,Clear Sky Upward Solar Flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,vbdsf,Visible Beam Downward Solar Flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,vddsf,Visible Diffuse Downward Solar Flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,nbdsf,Near IR Beam Downward Solar Flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,nddsf,Near IR Diffuse Downward Solar Flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,csulf,Clear Sky Upward Long Wave Flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,csdlf,Clear Sky Downward Long Wave Flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,vgtyp,Vegetation Type,unknown,Integer(0-13),"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,acond,Aerodynamic conductance,unknown,m s**-1,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,evcw,Canopy water evaporation,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,trans,Transpiration,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,sltyp,Surface Slope Type,unknown,Index,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,evbs,Direct evaporation from bare soil,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202608.avrg.grib.grb2,flxf_flux_radiation_surface,202608,20,avg_sithick,Time-mean sea ice thickness,unknown,m,"latitude, longitude","(190, 384)",,0.0,7776000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,0,pwat,Precipitable water,unknown,kg m**-2,"latitude, longitude","(190, 384)",,,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,0,tcc,Total Cloud Cover,unknown,%,"latitude, longitude","(190, 384)",,,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,0,cwork,Cloud work function,unknown,J kg**-1,"latitude, longitude","(190, 384)",,,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,1,tcc,Total Cloud Cover,unknown,%,"latitude, longitude","(190, 384)",,,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,2,avg_pres,Time-mean pressure,unknown,Pa,"latitude, longitude","(190, 384)",,,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,3,tcc,Total Cloud Cover,unknown,%,"latitude, longitude","(190, 384)",,,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,4,avg_pres,Time-mean pressure,unknown,Pa,"latitude, longitude","(190, 384)",,,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,5,ssw,Soil moisture content,unknown,kg m**-2,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,6,avg_t,Time-mean temperature,air_temperature,K,"depthBelowLandLayer, latitude, longitude","(4, 190, 384)",,[0.  0.1 0.4 1. ],10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,6,soilw,Volumetric soil moisture content,unknown,Proportion,"depthBelowLandLayer, latitude, longitude","(4, 190, 384)",,[0.  0.1 0.4 1. ],10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,6,soill,Liquid volumetric soil moisture (non-frozen),unknown,Proportion,"depthBelowLandLayer, latitude, longitude","(4, 190, 384)",,[0.  0.1 0.4 1. ],10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,7,tmax,Maximum temperature,unknown,K,"latitude, longitude","(190, 384)",,2.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,7,tmin,Minimum temperature,unknown,K,"latitude, longitude","(190, 384)",,2.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,7,avg_2t,Time-mean 2 metre temperature,air_temperature,K,"latitude, longitude","(190, 384)",,2.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,7,avg_2sh,Time-mean 2 metre specific humidity,specific_humidity,kg kg**-1,"latitude, longitude","(190, 384)",,2.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,7,qmax,Maximum specific humidity at 2m,unknown,kg kg**-1,"latitude, longitude","(190, 384)",,2.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,7,qmin,Minimum specific humidity at 2m,unknown,kg kg**-1,"latitude, longitude","(190, 384)",,2.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,8,avg_10u,Time-mean 10 metre U wind component,eastward_wind,m s**-1,"latitude, longitude","(190, 384)",,10.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,8,avg_10v,Time-mean 10 metre V wind component,northward_wind,m s**-1,"latitude, longitude","(190, 384)",,10.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,9,avg_pres,Time-mean pressure,unknown,Pa,"latitude, longitude","(190, 384)",,,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,10,tcc,Total Cloud Cover,unknown,%,"latitude, longitude","(190, 384)",,,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,11,avg_pres,Time-mean pressure,unknown,Pa,"latitude, longitude","(190, 384)",,,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,11,avg_t,Time-mean temperature,air_temperature,K,"latitude, longitude","(190, 384)",,,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,12,gh,Geopotential height,geopotential_height,gpm,"latitude, longitude","(190, 384)",,,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,12,avg_t,Time-mean temperature,air_temperature,K,"latitude, longitude","(190, 384)",,,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,12,avg_u,Time-mean U component of wind,eastward_wind,m s**-1,"latitude, longitude","(190, 384)",,,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,12,avg_v,Time-mean V component of wind,northward_wind,m s**-1,"latitude, longitude","(190, 384)",,,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,12,avg_q,Time-mean specific humidity,specific_humidity,kg kg**-1,"latitude, longitude","(190, 384)",,,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,13,avg_pres,Time-mean pressure,unknown,Pa,"latitude, longitude","(190, 384)",,,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,14,tcc,Total Cloud Cover,unknown,%,"latitude, longitude","(190, 384)",,,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,15,avg_pres,Time-mean pressure,unknown,Pa,"latitude, longitude","(190, 384)",,,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,15,avg_t,Time-mean temperature,air_temperature,K,"latitude, longitude","(190, 384)",,,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,16,avg_pres,Time-mean pressure,unknown,Pa,"latitude, longitude","(190, 384)",,,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,17,tcc,Total Cloud Cover,unknown,%,"latitude, longitude","(190, 384)",,,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,18,avg_pres,Time-mean pressure,unknown,Pa,"latitude, longitude","(190, 384)",,,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,18,avg_t,Time-mean temperature,air_temperature,K,"latitude, longitude","(190, 384)",,,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,19,sdswrf,Surface downward short-wave radiation flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,19,suswrf,Surface upward short-wave radiation flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,19,sulwrf,Surface upward long-wave radiation flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,19,csusf,Clear Sky Upward Solar Flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,19,csulf,Clear Sky Upward Long Wave Flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,unknown,unknown,unknown,unknown,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,slt,Soil type,unknown,(Code table 4.213),"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,lsm,Land-sea mask,land_binary_mask,(0 - 1),"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,prate,Precipitation rate,unknown,kg m**-2 s**-1,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,sde,Snow depth,lwe_thickness_of_surface_snow_amount,m,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,avg_utaua,Time-mean U-component of atmospheric surface momentum flux,unknown,N m**-2,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,avg_vtaua,Time-mean V-component of atmospheric surface momentum flux,unknown,N m**-2,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,orog,Orography,geopotential_height,m,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,avg_ishf,Time-mean surface sensible heat flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,avg_slhtf,Time-mean surface latent heat flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,avg_ci,Time-mean sea ice area fraction,sea_ice_area_fraction,(0 - 1),"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,avg_t,Time-mean temperature,air_temperature,K,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,avg_sp,Time-mean surface pressure,surface_air_pressure,Pa,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,avg_fsr,Time-mean forecast surface roughness,unknown,m,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,avg_al,Time-mean forecast albedo,surface_albedo,%,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,avg_veg,Time-mean vegetation,unknown,%,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,snohf,Snow phase change heat flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,srweq,Snowfall rate water equivalent,unknown,kg m**-2 s**-1,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,crain,Categorical rain,unknown,(Code table 4.222),"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,cpr,Convective precipitation rate,unknown,kg m**-2 s**-1,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,snowc,Snow cover,unknown,%,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,sdwe,Water equivalent of accumulated snow depth (deprecated),unknown,kg m**-2,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,fricv,Frictional velocity,unknown,m s**-1,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,iegwss,Instantaneous eastward gravity wave surface stress,unknown,N m**-2,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,ingwss,Instantaneous northward gravity wave surface stress,unknown,N m**-2,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,sdswrf,Surface downward short-wave radiation flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,suswrf,Surface upward short-wave radiation flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,sdlwrf,Surface downward long-wave radiation flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,sulwrf,Surface upward long-wave radiation flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,ssrun,Storm surface runoff,unknown,kg m**-2,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,watr,Water runoff,unknown,kg m**-2,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,gflux,Ground heat flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,sfexc,Exchange coefficient,unknown,kg m**-2 s**-1,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,cnwat,Plant canopy surface water,unknown,kg m**-2,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,sbsno,Sublimation (evaporation from snow),unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,duvb,UV-B downward solar flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,cduvb,Clear sky UV-B downward solar flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,csdsf,Clear Sky Downward Solar Flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,csusf,Clear Sky Upward Solar Flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,vbdsf,Visible Beam Downward Solar Flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,vddsf,Visible Diffuse Downward Solar Flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,nbdsf,Near IR Beam Downward Solar Flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,nddsf,Near IR Diffuse Downward Solar Flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,csulf,Clear Sky Upward Long Wave Flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,csdlf,Clear Sky Downward Long Wave Flux,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,vgtyp,Vegetation Type,unknown,Integer(0-13),"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,acond,Aerodynamic conductance,unknown,m s**-1,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,evcw,Canopy water evaporation,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,trans,Transpiration,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,sltyp,Surface Slope Type,unknown,Index,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,evbs,Direct evaporation from bare soil,unknown,W m**-2,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+flxf.01.2026061000.202609.avrg.grib.grb2,flxf_flux_radiation_surface,202609,20,avg_sithick,Time-mean sea ice thickness,unknown,m,"latitude, longitude","(190, 384)",,0.0,10368000000000000 nanoseconds
+ocnh.01.2026061000.202606.avrg.grib.grb2,ocnh_ocean,202606,0,unknown,unknown,unknown,unknown,"depthBelowSea, latitude, longitude","(40, 360, 720)",,"[   5.   15.   25.   35.   45.   55.   65.   75.   85.   95.  105.  115.
+  125.  135.  145.  155.  165.  175.  185.  195.  205.  215.  225.  238.
+  262.  303.  366.  459.  584.  747.  949. 1193. 1479. 1807. 2174. 2579.
+ 3016. 3483. 3972. 4478.]",2592000000000000 nanoseconds
+ocnh.01.2026061000.202606.avrg.grib.grb2,ocnh_ocean,202606,0,s,Salinity,unknown,kg kg**-1,"depthBelowSea, latitude, longitude","(40, 360, 720)",,"[   5.   15.   25.   35.   45.   55.   65.   75.   85.   95.  105.  115.
+  125.  135.  145.  155.  165.  175.  185.  195.  205.  215.  225.  238.
+  262.  303.  366.  459.  584.  747.  949. 1193. 1479. 1807. 2174. 2579.
+ 3016. 3483. 3972. 4478.]",2592000000000000 nanoseconds
+ocnh.01.2026061000.202606.avrg.grib.grb2,ocnh_ocean,202606,0,avg_pt,Time-mean potential temperature,unknown,K,"depthBelowSea, latitude, longitude","(40, 360, 720)",,"[   5.   15.   25.   35.   45.   55.   65.   75.   85.   95.  105.  115.
+  125.  135.  145.  155.  165.  175.  185.  195.  205.  215.  225.  238.
+  262.  303.  366.  459.  584.  747.  949. 1193. 1479. 1807. 2174. 2579.
+ 3016. 3483. 3972. 4478.]",2592000000000000 nanoseconds
+ocnh.01.2026061000.202606.avrg.grib.grb2,ocnh_ocean,202606,0,wz,Geometric vertical velocity,unknown,m s**-1,"depthBelowSea, latitude, longitude","(40, 360, 720)",,"[   5.   15.   25.   35.   45.   55.   65.   75.   85.   95.  105.  115.
+  125.  135.  145.  155.  165.  175.  185.  195.  205.  215.  225.  238.
+  262.  303.  366.  459.  584.  747.  949. 1193. 1479. 1807. 2174. 2579.
+ 3016. 3483. 3972. 4478.]",2592000000000000 nanoseconds
+ocnh.01.2026061000.202606.avrg.grib.grb2,ocnh_ocean,202606,1,dbss,Geometric Depth Below Sea Surface,unknown,m,"oceanIsotherm, latitude, longitude","(7, 360, 720)",,,2592000000000000 nanoseconds
+ocnh.01.2026061000.202606.avrg.grib.grb2,ocnh_ocean,202606,2,unknown,unknown,unknown,unknown,"latitude, longitude","(360, 720)",,0.0,2592000000000000 nanoseconds
+ocnh.01.2026061000.202606.avrg.grib.grb2,ocnh_ocean,202606,2,sde,Snow depth,lwe_thickness_of_surface_snow_amount,m,"latitude, longitude","(360, 720)",,0.0,2592000000000000 nanoseconds
+ocnh.01.2026061000.202606.avrg.grib.grb2,ocnh_ocean,202606,2,avg_utaua,Time-mean U-component of atmospheric surface momentum flux,unknown,N m**-2,"latitude, longitude","(360, 720)",,0.0,2592000000000000 nanoseconds
+ocnh.01.2026061000.202606.avrg.grib.grb2,ocnh_ocean,202606,2,avg_vtaua,Time-mean V-component of atmospheric surface momentum flux,unknown,N m**-2,"latitude, longitude","(360, 720)",,0.0,2592000000000000 nanoseconds
+ocnh.01.2026061000.202606.avrg.grib.grb2,ocnh_ocean,202606,2,avg_ci,Time-mean sea ice area fraction,sea_ice_area_fraction,(0 - 1),"latitude, longitude","(360, 720)",,0.0,2592000000000000 nanoseconds
+ocnh.01.2026061000.202606.avrg.grib.grb2,ocnh_ocean,202606,2,avg_t,Time-mean temperature,air_temperature,K,"latitude, longitude","(360, 720)",,0.0,2592000000000000 nanoseconds
+ocnh.01.2026061000.202606.avrg.grib.grb2,ocnh_ocean,202606,2,thflx,Total Downward Heat Flux at Surface,unknown,W m**-2,"latitude, longitude","(360, 720)",,0.0,2592000000000000 nanoseconds
+ocnh.01.2026061000.202606.avrg.grib.grb2,ocnh_ocean,202606,2,emnp,Evaporation - Precipitation,unknown,cm per day,"latitude, longitude","(360, 720)",,0.0,2592000000000000 nanoseconds
+ocnh.01.2026061000.202606.avrg.grib.grb2,ocnh_ocean,202606,2,sshg,Sea Surface Height Relative to Geoid,unknown,m,"latitude, longitude","(360, 720)",,0.0,2592000000000000 nanoseconds
+ocnh.01.2026061000.202606.avrg.grib.grb2,ocnh_ocean,202606,2,avg_sithick,Time-mean sea ice thickness,unknown,m,"latitude, longitude","(360, 720)",,0.0,2592000000000000 nanoseconds
+ocnh.01.2026061000.202606.avrg.grib.grb2,ocnh_ocean,202606,3,tchp,Tropical Cyclone Heat Potential,unknown,J m**-2 K**-1,"latitude, longitude","(360, 720)",,,2592000000000000 nanoseconds
+ocnh.01.2026061000.202606.avrg.grib.grb2,ocnh_ocean,202606,4,dbss,Geometric Depth Below Sea Surface,unknown,m,"latitude, longitude","(360, 720)",,,2592000000000000 nanoseconds
+ocnh.01.2026061000.202606.avrg.grib.grb2,ocnh_ocean,202606,4,ohc,Ocean Heat Content,unknown,J m**-2,"latitude, longitude","(360, 720)",,,2592000000000000 nanoseconds
+ocnh.01.2026061000.202607.avrg.grib.grb2,ocnh_ocean,202607,0,unknown,unknown,unknown,unknown,"depthBelowSea, latitude, longitude","(40, 360, 720)",,"[   5.   15.   25.   35.   45.   55.   65.   75.   85.   95.  105.  115.
+  125.  135.  145.  155.  165.  175.  185.  195.  205.  215.  225.  238.
+  262.  303.  366.  459.  584.  747.  949. 1193. 1479. 1807. 2174. 2579.
+ 3016. 3483. 3972. 4478.]",5184000000000000 nanoseconds
+ocnh.01.2026061000.202607.avrg.grib.grb2,ocnh_ocean,202607,0,s,Salinity,unknown,kg kg**-1,"depthBelowSea, latitude, longitude","(40, 360, 720)",,"[   5.   15.   25.   35.   45.   55.   65.   75.   85.   95.  105.  115.
+  125.  135.  145.  155.  165.  175.  185.  195.  205.  215.  225.  238.
+  262.  303.  366.  459.  584.  747.  949. 1193. 1479. 1807. 2174. 2579.
+ 3016. 3483. 3972. 4478.]",5184000000000000 nanoseconds
+ocnh.01.2026061000.202607.avrg.grib.grb2,ocnh_ocean,202607,0,avg_pt,Time-mean potential temperature,unknown,K,"depthBelowSea, latitude, longitude","(40, 360, 720)",,"[   5.   15.   25.   35.   45.   55.   65.   75.   85.   95.  105.  115.
+  125.  135.  145.  155.  165.  175.  185.  195.  205.  215.  225.  238.
+  262.  303.  366.  459.  584.  747.  949. 1193. 1479. 1807. 2174. 2579.
+ 3016. 3483. 3972. 4478.]",5184000000000000 nanoseconds
+ocnh.01.2026061000.202607.avrg.grib.grb2,ocnh_ocean,202607,0,wz,Geometric vertical velocity,unknown,m s**-1,"depthBelowSea, latitude, longitude","(40, 360, 720)",,"[   5.   15.   25.   35.   45.   55.   65.   75.   85.   95.  105.  115.
+  125.  135.  145.  155.  165.  175.  185.  195.  205.  215.  225.  238.
+  262.  303.  366.  459.  584.  747.  949. 1193. 1479. 1807. 2174. 2579.
+ 3016. 3483. 3972. 4478.]",5184000000000000 nanoseconds
+ocnh.01.2026061000.202607.avrg.grib.grb2,ocnh_ocean,202607,1,dbss,Geometric Depth Below Sea Surface,unknown,m,"oceanIsotherm, latitude, longitude","(7, 360, 720)",,,5184000000000000 nanoseconds
+ocnh.01.2026061000.202607.avrg.grib.grb2,ocnh_ocean,202607,2,unknown,unknown,unknown,unknown,"latitude, longitude","(360, 720)",,0.0,5184000000000000 nanoseconds
+ocnh.01.2026061000.202607.avrg.grib.grb2,ocnh_ocean,202607,2,sde,Snow depth,lwe_thickness_of_surface_snow_amount,m,"latitude, longitude","(360, 720)",,0.0,5184000000000000 nanoseconds
+ocnh.01.2026061000.202607.avrg.grib.grb2,ocnh_ocean,202607,2,avg_utaua,Time-mean U-component of atmospheric surface momentum flux,unknown,N m**-2,"latitude, longitude","(360, 720)",,0.0,5184000000000000 nanoseconds
+ocnh.01.2026061000.202607.avrg.grib.grb2,ocnh_ocean,202607,2,avg_vtaua,Time-mean V-component of atmospheric surface momentum flux,unknown,N m**-2,"latitude, longitude","(360, 720)",,0.0,5184000000000000 nanoseconds
+ocnh.01.2026061000.202607.avrg.grib.grb2,ocnh_ocean,202607,2,avg_ci,Time-mean sea ice area fraction,sea_ice_area_fraction,(0 - 1),"latitude, longitude","(360, 720)",,0.0,5184000000000000 nanoseconds
+ocnh.01.2026061000.202607.avrg.grib.grb2,ocnh_ocean,202607,2,avg_t,Time-mean temperature,air_temperature,K,"latitude, longitude","(360, 720)",,0.0,5184000000000000 nanoseconds
+ocnh.01.2026061000.202607.avrg.grib.grb2,ocnh_ocean,202607,2,thflx,Total Downward Heat Flux at Surface,unknown,W m**-2,"latitude, longitude","(360, 720)",,0.0,5184000000000000 nanoseconds
+ocnh.01.2026061000.202607.avrg.grib.grb2,ocnh_ocean,202607,2,emnp,Evaporation - Precipitation,unknown,cm per day,"latitude, longitude","(360, 720)",,0.0,5184000000000000 nanoseconds
+ocnh.01.2026061000.202607.avrg.grib.grb2,ocnh_ocean,202607,2,sshg,Sea Surface Height Relative to Geoid,unknown,m,"latitude, longitude","(360, 720)",,0.0,5184000000000000 nanoseconds
+ocnh.01.2026061000.202607.avrg.grib.grb2,ocnh_ocean,202607,2,avg_sithick,Time-mean sea ice thickness,unknown,m,"latitude, longitude","(360, 720)",,0.0,5184000000000000 nanoseconds
+ocnh.01.2026061000.202607.avrg.grib.grb2,ocnh_ocean,202607,3,tchp,Tropical Cyclone Heat Potential,unknown,J m**-2 K**-1,"latitude, longitude","(360, 720)",,,5184000000000000 nanoseconds
+ocnh.01.2026061000.202607.avrg.grib.grb2,ocnh_ocean,202607,4,dbss,Geometric Depth Below Sea Surface,unknown,m,"latitude, longitude","(360, 720)",,,5184000000000000 nanoseconds
+ocnh.01.2026061000.202607.avrg.grib.grb2,ocnh_ocean,202607,4,ohc,Ocean Heat Content,unknown,J m**-2,"latitude, longitude","(360, 720)",,,5184000000000000 nanoseconds
+ocnh.01.2026061000.202608.avrg.grib.grb2,ocnh_ocean,202608,0,unknown,unknown,unknown,unknown,"depthBelowSea, latitude, longitude","(40, 360, 720)",,"[   5.   15.   25.   35.   45.   55.   65.   75.   85.   95.  105.  115.
+  125.  135.  145.  155.  165.  175.  185.  195.  205.  215.  225.  238.
+  262.  303.  366.  459.  584.  747.  949. 1193. 1479. 1807. 2174. 2579.
+ 3016. 3483. 3972. 4478.]",7776000000000000 nanoseconds
+ocnh.01.2026061000.202608.avrg.grib.grb2,ocnh_ocean,202608,0,s,Salinity,unknown,kg kg**-1,"depthBelowSea, latitude, longitude","(40, 360, 720)",,"[   5.   15.   25.   35.   45.   55.   65.   75.   85.   95.  105.  115.
+  125.  135.  145.  155.  165.  175.  185.  195.  205.  215.  225.  238.
+  262.  303.  366.  459.  584.  747.  949. 1193. 1479. 1807. 2174. 2579.
+ 3016. 3483. 3972. 4478.]",7776000000000000 nanoseconds
+ocnh.01.2026061000.202608.avrg.grib.grb2,ocnh_ocean,202608,0,avg_pt,Time-mean potential temperature,unknown,K,"depthBelowSea, latitude, longitude","(40, 360, 720)",,"[   5.   15.   25.   35.   45.   55.   65.   75.   85.   95.  105.  115.
+  125.  135.  145.  155.  165.  175.  185.  195.  205.  215.  225.  238.
+  262.  303.  366.  459.  584.  747.  949. 1193. 1479. 1807. 2174. 2579.
+ 3016. 3483. 3972. 4478.]",7776000000000000 nanoseconds
+ocnh.01.2026061000.202608.avrg.grib.grb2,ocnh_ocean,202608,0,wz,Geometric vertical velocity,unknown,m s**-1,"depthBelowSea, latitude, longitude","(40, 360, 720)",,"[   5.   15.   25.   35.   45.   55.   65.   75.   85.   95.  105.  115.
+  125.  135.  145.  155.  165.  175.  185.  195.  205.  215.  225.  238.
+  262.  303.  366.  459.  584.  747.  949. 1193. 1479. 1807. 2174. 2579.
+ 3016. 3483. 3972. 4478.]",7776000000000000 nanoseconds
+ocnh.01.2026061000.202608.avrg.grib.grb2,ocnh_ocean,202608,1,dbss,Geometric Depth Below Sea Surface,unknown,m,"oceanIsotherm, latitude, longitude","(7, 360, 720)",,,7776000000000000 nanoseconds
+ocnh.01.2026061000.202608.avrg.grib.grb2,ocnh_ocean,202608,2,unknown,unknown,unknown,unknown,"latitude, longitude","(360, 720)",,0.0,7776000000000000 nanoseconds
+ocnh.01.2026061000.202608.avrg.grib.grb2,ocnh_ocean,202608,2,sde,Snow depth,lwe_thickness_of_surface_snow_amount,m,"latitude, longitude","(360, 720)",,0.0,7776000000000000 nanoseconds
+ocnh.01.2026061000.202608.avrg.grib.grb2,ocnh_ocean,202608,2,avg_utaua,Time-mean U-component of atmospheric surface momentum flux,unknown,N m**-2,"latitude, longitude","(360, 720)",,0.0,7776000000000000 nanoseconds
+ocnh.01.2026061000.202608.avrg.grib.grb2,ocnh_ocean,202608,2,avg_vtaua,Time-mean V-component of atmospheric surface momentum flux,unknown,N m**-2,"latitude, longitude","(360, 720)",,0.0,7776000000000000 nanoseconds
+ocnh.01.2026061000.202608.avrg.grib.grb2,ocnh_ocean,202608,2,avg_ci,Time-mean sea ice area fraction,sea_ice_area_fraction,(0 - 1),"latitude, longitude","(360, 720)",,0.0,7776000000000000 nanoseconds
+ocnh.01.2026061000.202608.avrg.grib.grb2,ocnh_ocean,202608,2,avg_t,Time-mean temperature,air_temperature,K,"latitude, longitude","(360, 720)",,0.0,7776000000000000 nanoseconds
+ocnh.01.2026061000.202608.avrg.grib.grb2,ocnh_ocean,202608,2,thflx,Total Downward Heat Flux at Surface,unknown,W m**-2,"latitude, longitude","(360, 720)",,0.0,7776000000000000 nanoseconds
+ocnh.01.2026061000.202608.avrg.grib.grb2,ocnh_ocean,202608,2,emnp,Evaporation - Precipitation,unknown,cm per day,"latitude, longitude","(360, 720)",,0.0,7776000000000000 nanoseconds
+ocnh.01.2026061000.202608.avrg.grib.grb2,ocnh_ocean,202608,2,sshg,Sea Surface Height Relative to Geoid,unknown,m,"latitude, longitude","(360, 720)",,0.0,7776000000000000 nanoseconds
+ocnh.01.2026061000.202608.avrg.grib.grb2,ocnh_ocean,202608,2,avg_sithick,Time-mean sea ice thickness,unknown,m,"latitude, longitude","(360, 720)",,0.0,7776000000000000 nanoseconds
+ocnh.01.2026061000.202608.avrg.grib.grb2,ocnh_ocean,202608,3,tchp,Tropical Cyclone Heat Potential,unknown,J m**-2 K**-1,"latitude, longitude","(360, 720)",,,7776000000000000 nanoseconds
+ocnh.01.2026061000.202608.avrg.grib.grb2,ocnh_ocean,202608,4,dbss,Geometric Depth Below Sea Surface,unknown,m,"latitude, longitude","(360, 720)",,,7776000000000000 nanoseconds
+ocnh.01.2026061000.202608.avrg.grib.grb2,ocnh_ocean,202608,4,ohc,Ocean Heat Content,unknown,J m**-2,"latitude, longitude","(360, 720)",,,7776000000000000 nanoseconds
+ocnh.01.2026061000.202609.avrg.grib.grb2,ocnh_ocean,202609,0,unknown,unknown,unknown,unknown,"depthBelowSea, latitude, longitude","(40, 360, 720)",,"[   5.   15.   25.   35.   45.   55.   65.   75.   85.   95.  105.  115.
+  125.  135.  145.  155.  165.  175.  185.  195.  205.  215.  225.  238.
+  262.  303.  366.  459.  584.  747.  949. 1193. 1479. 1807. 2174. 2579.
+ 3016. 3483. 3972. 4478.]",10368000000000000 nanoseconds
+ocnh.01.2026061000.202609.avrg.grib.grb2,ocnh_ocean,202609,0,s,Salinity,unknown,kg kg**-1,"depthBelowSea, latitude, longitude","(40, 360, 720)",,"[   5.   15.   25.   35.   45.   55.   65.   75.   85.   95.  105.  115.
+  125.  135.  145.  155.  165.  175.  185.  195.  205.  215.  225.  238.
+  262.  303.  366.  459.  584.  747.  949. 1193. 1479. 1807. 2174. 2579.
+ 3016. 3483. 3972. 4478.]",10368000000000000 nanoseconds
+ocnh.01.2026061000.202609.avrg.grib.grb2,ocnh_ocean,202609,0,avg_pt,Time-mean potential temperature,unknown,K,"depthBelowSea, latitude, longitude","(40, 360, 720)",,"[   5.   15.   25.   35.   45.   55.   65.   75.   85.   95.  105.  115.
+  125.  135.  145.  155.  165.  175.  185.  195.  205.  215.  225.  238.
+  262.  303.  366.  459.  584.  747.  949. 1193. 1479. 1807. 2174. 2579.
+ 3016. 3483. 3972. 4478.]",10368000000000000 nanoseconds
+ocnh.01.2026061000.202609.avrg.grib.grb2,ocnh_ocean,202609,0,wz,Geometric vertical velocity,unknown,m s**-1,"depthBelowSea, latitude, longitude","(40, 360, 720)",,"[   5.   15.   25.   35.   45.   55.   65.   75.   85.   95.  105.  115.
+  125.  135.  145.  155.  165.  175.  185.  195.  205.  215.  225.  238.
+  262.  303.  366.  459.  584.  747.  949. 1193. 1479. 1807. 2174. 2579.
+ 3016. 3483. 3972. 4478.]",10368000000000000 nanoseconds
+ocnh.01.2026061000.202609.avrg.grib.grb2,ocnh_ocean,202609,1,dbss,Geometric Depth Below Sea Surface,unknown,m,"oceanIsotherm, latitude, longitude","(7, 360, 720)",,,10368000000000000 nanoseconds
+ocnh.01.2026061000.202609.avrg.grib.grb2,ocnh_ocean,202609,2,unknown,unknown,unknown,unknown,"latitude, longitude","(360, 720)",,0.0,10368000000000000 nanoseconds
+ocnh.01.2026061000.202609.avrg.grib.grb2,ocnh_ocean,202609,2,sde,Snow depth,lwe_thickness_of_surface_snow_amount,m,"latitude, longitude","(360, 720)",,0.0,10368000000000000 nanoseconds
+ocnh.01.2026061000.202609.avrg.grib.grb2,ocnh_ocean,202609,2,avg_utaua,Time-mean U-component of atmospheric surface momentum flux,unknown,N m**-2,"latitude, longitude","(360, 720)",,0.0,10368000000000000 nanoseconds
+ocnh.01.2026061000.202609.avrg.grib.grb2,ocnh_ocean,202609,2,avg_vtaua,Time-mean V-component of atmospheric surface momentum flux,unknown,N m**-2,"latitude, longitude","(360, 720)",,0.0,10368000000000000 nanoseconds
+ocnh.01.2026061000.202609.avrg.grib.grb2,ocnh_ocean,202609,2,avg_ci,Time-mean sea ice area fraction,sea_ice_area_fraction,(0 - 1),"latitude, longitude","(360, 720)",,0.0,10368000000000000 nanoseconds
+ocnh.01.2026061000.202609.avrg.grib.grb2,ocnh_ocean,202609,2,avg_t,Time-mean temperature,air_temperature,K,"latitude, longitude","(360, 720)",,0.0,10368000000000000 nanoseconds
+ocnh.01.2026061000.202609.avrg.grib.grb2,ocnh_ocean,202609,2,thflx,Total Downward Heat Flux at Surface,unknown,W m**-2,"latitude, longitude","(360, 720)",,0.0,10368000000000000 nanoseconds
+ocnh.01.2026061000.202609.avrg.grib.grb2,ocnh_ocean,202609,2,emnp,Evaporation - Precipitation,unknown,cm per day,"latitude, longitude","(360, 720)",,0.0,10368000000000000 nanoseconds
+ocnh.01.2026061000.202609.avrg.grib.grb2,ocnh_ocean,202609,2,sshg,Sea Surface Height Relative to Geoid,unknown,m,"latitude, longitude","(360, 720)",,0.0,10368000000000000 nanoseconds
+ocnh.01.2026061000.202609.avrg.grib.grb2,ocnh_ocean,202609,2,avg_sithick,Time-mean sea ice thickness,unknown,m,"latitude, longitude","(360, 720)",,0.0,10368000000000000 nanoseconds
+ocnh.01.2026061000.202609.avrg.grib.grb2,ocnh_ocean,202609,3,tchp,Tropical Cyclone Heat Potential,unknown,J m**-2 K**-1,"latitude, longitude","(360, 720)",,,10368000000000000 nanoseconds
+ocnh.01.2026061000.202609.avrg.grib.grb2,ocnh_ocean,202609,4,dbss,Geometric Depth Below Sea Surface,unknown,m,"latitude, longitude","(360, 720)",,,10368000000000000 nanoseconds
+ocnh.01.2026061000.202609.avrg.grib.grb2,ocnh_ocean,202609,4,ohc,Ocean Heat Content,unknown,J m**-2,"latitude, longitude","(360, 720)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,0,avg_r,Time-mean relative humidity,relative_humidity,%,"latitude, longitude","(181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,0,cwat,Cloud water,unknown,kg m**-2,"latitude, longitude","(181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,0,tozne,Total ozone,unknown,DU,"latitude, longitude","(181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,1,avg_2r,Time-mean 2 metre relative humidity,relative_humidity,%,"latitude, longitude","(181, 360)",,2.0,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,1,avg_2d,Time-mean 2 metre dewpoint temperature,unknown,K,"latitude, longitude","(181, 360)",,2.0,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,2,ustm,U-component storm motion,unknown,m s**-1,"latitude, longitude","(181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,2,vstm,V-component storm motion,unknown,m s**-1,"latitude, longitude","(181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,3,hlcy,Storm relative helicity,unknown,m**2 s**-2,"heightAboveGroundLayer, latitude, longitude","(2, 181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,4,avg_t,Time-mean temperature,air_temperature,K,"heightAboveSea, latitude, longitude","(4, 181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,4,avg_u,Time-mean U component of wind,eastward_wind,m s**-1,"heightAboveSea, latitude, longitude","(4, 181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,4,avg_v,Time-mean V component of wind,northward_wind,m s**-1,"heightAboveSea, latitude, longitude","(4, 181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,5,gh,Geopotential height,geopotential_height,gpm,"latitude, longitude","(181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,5,avg_r,Time-mean relative humidity,relative_humidity,%,"latitude, longitude","(181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,6,strf,Stream function,unknown,m**2 s**-1,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,6,vp,Velocity potential,unknown,m**2 s**-1,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,6,gh,Geopotential height,geopotential_height,gpm,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,6,absv,Absolute vorticity,unknown,s**-1,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,6,avg_t,Time-mean temperature,air_temperature,K,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,6,avg_u,Time-mean U component of wind,eastward_wind,m s**-1,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,6,avg_v,Time-mean V component of wind,northward_wind,m s**-1,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,6,avg_q,Time-mean specific humidity,specific_humidity,kg kg**-1,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,6,avg_w,Time-mean vertical velocity,lagrangian_tendency_of_air_pressure,Pa s**-1,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,6,avg_r,Time-mean relative humidity,relative_humidity,%,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,6,o3mr,Ozone mixing ratio,unknown,kg kg**-1,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,7,gpa,Geopotential height anomaly,unknown,gpm,"isobaricInhPa, latitude, longitude","(2, 181, 360)",,[1000.  500.],2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,8,clwmr,Cloud mixing ratio,unknown,kg kg**-1,"isobaricInhPa, latitude, longitude","(32, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.]",2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,9,wavh5,5-wave geopotential height,unknown,gpm,"latitude, longitude","(181, 360)",,500.0,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,9,wava5,5-wave geopotential height anomaly,unknown,gpm,"latitude, longitude","(181, 360)",,500.0,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,10,gh,Geopotential height,geopotential_height,gpm,"latitude, longitude","(181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,10,avg_r,Time-mean relative humidity,relative_humidity,%,"latitude, longitude","(181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,11,gh,Geopotential height,geopotential_height,gpm,"latitude, longitude","(181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,11,avg_pres,Time-mean pressure,unknown,Pa,"latitude, longitude","(181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,11,avg_t,Time-mean temperature,air_temperature,K,"latitude, longitude","(181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,11,avg_u,Time-mean U component of wind,eastward_wind,m s**-1,"latitude, longitude","(181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,11,avg_v,Time-mean V component of wind,northward_wind,m s**-1,"latitude, longitude","(181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,12,avg_msl,Time-mean mean sea level pressure,air_pressure_at_mean_sea_level,Pa,"latitude, longitude","(181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,12,prmsl,Pressure reduced to MSL,unknown,Pa,"latitude, longitude","(181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,13,gh,Geopotential height,geopotential_height,gpm,"potentialVorticity, latitude, longitude","(2, 181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,13,avg_pres,Time-mean pressure,unknown,Pa,"potentialVorticity, latitude, longitude","(2, 181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,13,avg_t,Time-mean temperature,air_temperature,K,"potentialVorticity, latitude, longitude","(2, 181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,13,avg_u,Time-mean U component of wind,eastward_wind,m s**-1,"potentialVorticity, latitude, longitude","(2, 181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,13,avg_v,Time-mean V component of wind,northward_wind,m s**-1,"potentialVorticity, latitude, longitude","(2, 181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,13,vwsh,Vertical speed shear,unknown,s**-1,"potentialVorticity, latitude, longitude","(2, 181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,14,cape,Convective available potential energy,unknown,J kg**-1,"latitude, longitude","(181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,14,cin,Convective inhibition,unknown,J kg**-1,"latitude, longitude","(181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,15,dpt,Dew point temperature,unknown,K,"latitude, longitude","(181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,15,pli,Parcel lifted index (to 500 hPa),unknown,K,"latitude, longitude","(181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,15,pwat,Precipitable water,unknown,kg m**-2,"latitude, longitude","(181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,15,avg_t,Time-mean temperature,air_temperature,K,"latitude, longitude","(181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,15,avg_u,Time-mean U component of wind,eastward_wind,m s**-1,"latitude, longitude","(181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,15,avg_v,Time-mean V component of wind,northward_wind,m s**-1,"latitude, longitude","(181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,15,avg_q,Time-mean specific humidity,specific_humidity,kg kg**-1,"latitude, longitude","(181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,15,avg_r,Time-mean relative humidity,relative_humidity,%,"latitude, longitude","(181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,16,avg_t,Time-mean temperature,air_temperature,K,"latitude, longitude","(181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,16,avg_u,Time-mean U component of wind,eastward_wind,m s**-1,"latitude, longitude","(181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,16,avg_v,Time-mean V component of wind,northward_wind,m s**-1,"latitude, longitude","(181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,16,avg_w,Time-mean vertical velocity,lagrangian_tendency_of_air_pressure,Pa s**-1,"latitude, longitude","(181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,16,avg_r,Time-mean relative humidity,relative_humidity,%,"latitude, longitude","(181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,16,avg_pt,Time-mean potential temperature,unknown,K,"latitude, longitude","(181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,17,avg_r,Time-mean relative humidity,relative_humidity,%,"sigmaLayer, latitude, longitude","(3, 181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,18,cape,Convective available potential energy,unknown,J kg**-1,"latitude, longitude","(181, 360)",,0.0,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,18,acpcp,Convective precipitation (water),lwe_thickness_of_convective_precipitation_amount,kg m**-2,"latitude, longitude","(181, 360)",,0.0,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,18,cin,Convective inhibition,unknown,J kg**-1,"latitude, longitude","(181, 360)",,0.0,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,18,tp,Total Precipitation,unknown,kg m**-2,"latitude, longitude","(181, 360)",,0.0,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,18,ncpcp,Large scale precipitation (non-convective),unknown,kg m**-2,"latitude, longitude","(181, 360)",,0.0,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,18,crain,Categorical rain,unknown,(Code table 4.222),"latitude, longitude","(181, 360)",,0.0,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,18,cfrzr,Categorical freezing rain,unknown,(Code table 4.222),"latitude, longitude","(181, 360)",,0.0,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,18,cicep,Categorical ice pellets,unknown,(Code table 4.222),"latitude, longitude","(181, 360)",,0.0,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,18,csnow,Categorical snow,unknown,(Code table 4.222),"latitude, longitude","(181, 360)",,0.0,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,18,lftx,Surface lifted index,unknown,K,"latitude, longitude","(181, 360)",,0.0,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,18,lftx4,Best (4-layer) lifted index,unknown,K,"latitude, longitude","(181, 360)",,0.0,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,19,gh,Geopotential height,geopotential_height,gpm,"latitude, longitude","(181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,19,avg_t,Time-mean temperature,air_temperature,K,"latitude, longitude","(181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,19,avg_u,Time-mean U component of wind,eastward_wind,m s**-1,"latitude, longitude","(181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,19,avg_v,Time-mean V component of wind,northward_wind,m s**-1,"latitude, longitude","(181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,19,avg_trpp,Time-mean tropopause pressure,unknown,Pa,"latitude, longitude","(181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202606.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202606,19,vwsh,Vertical speed shear,unknown,s**-1,"latitude, longitude","(181, 360)",,,2592000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,0,avg_r,Time-mean relative humidity,relative_humidity,%,"latitude, longitude","(181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,0,cwat,Cloud water,unknown,kg m**-2,"latitude, longitude","(181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,0,tozne,Total ozone,unknown,DU,"latitude, longitude","(181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,1,avg_2r,Time-mean 2 metre relative humidity,relative_humidity,%,"latitude, longitude","(181, 360)",,2.0,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,1,avg_2d,Time-mean 2 metre dewpoint temperature,unknown,K,"latitude, longitude","(181, 360)",,2.0,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,2,ustm,U-component storm motion,unknown,m s**-1,"latitude, longitude","(181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,2,vstm,V-component storm motion,unknown,m s**-1,"latitude, longitude","(181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,3,hlcy,Storm relative helicity,unknown,m**2 s**-2,"heightAboveGroundLayer, latitude, longitude","(2, 181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,4,avg_t,Time-mean temperature,air_temperature,K,"heightAboveSea, latitude, longitude","(4, 181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,4,avg_u,Time-mean U component of wind,eastward_wind,m s**-1,"heightAboveSea, latitude, longitude","(4, 181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,4,avg_v,Time-mean V component of wind,northward_wind,m s**-1,"heightAboveSea, latitude, longitude","(4, 181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,5,gh,Geopotential height,geopotential_height,gpm,"latitude, longitude","(181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,5,avg_r,Time-mean relative humidity,relative_humidity,%,"latitude, longitude","(181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,6,strf,Stream function,unknown,m**2 s**-1,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,6,vp,Velocity potential,unknown,m**2 s**-1,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,6,gh,Geopotential height,geopotential_height,gpm,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,6,absv,Absolute vorticity,unknown,s**-1,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,6,avg_t,Time-mean temperature,air_temperature,K,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,6,avg_u,Time-mean U component of wind,eastward_wind,m s**-1,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,6,avg_v,Time-mean V component of wind,northward_wind,m s**-1,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,6,avg_q,Time-mean specific humidity,specific_humidity,kg kg**-1,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,6,avg_w,Time-mean vertical velocity,lagrangian_tendency_of_air_pressure,Pa s**-1,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,6,avg_r,Time-mean relative humidity,relative_humidity,%,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,6,o3mr,Ozone mixing ratio,unknown,kg kg**-1,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,7,gpa,Geopotential height anomaly,unknown,gpm,"isobaricInhPa, latitude, longitude","(2, 181, 360)",,[1000.  500.],5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,8,clwmr,Cloud mixing ratio,unknown,kg kg**-1,"isobaricInhPa, latitude, longitude","(32, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.]",5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,9,wavh5,5-wave geopotential height,unknown,gpm,"latitude, longitude","(181, 360)",,500.0,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,9,wava5,5-wave geopotential height anomaly,unknown,gpm,"latitude, longitude","(181, 360)",,500.0,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,10,gh,Geopotential height,geopotential_height,gpm,"latitude, longitude","(181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,10,avg_r,Time-mean relative humidity,relative_humidity,%,"latitude, longitude","(181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,11,gh,Geopotential height,geopotential_height,gpm,"latitude, longitude","(181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,11,avg_pres,Time-mean pressure,unknown,Pa,"latitude, longitude","(181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,11,avg_t,Time-mean temperature,air_temperature,K,"latitude, longitude","(181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,11,avg_u,Time-mean U component of wind,eastward_wind,m s**-1,"latitude, longitude","(181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,11,avg_v,Time-mean V component of wind,northward_wind,m s**-1,"latitude, longitude","(181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,12,avg_msl,Time-mean mean sea level pressure,air_pressure_at_mean_sea_level,Pa,"latitude, longitude","(181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,12,prmsl,Pressure reduced to MSL,unknown,Pa,"latitude, longitude","(181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,13,gh,Geopotential height,geopotential_height,gpm,"potentialVorticity, latitude, longitude","(2, 181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,13,avg_pres,Time-mean pressure,unknown,Pa,"potentialVorticity, latitude, longitude","(2, 181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,13,avg_t,Time-mean temperature,air_temperature,K,"potentialVorticity, latitude, longitude","(2, 181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,13,avg_u,Time-mean U component of wind,eastward_wind,m s**-1,"potentialVorticity, latitude, longitude","(2, 181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,13,avg_v,Time-mean V component of wind,northward_wind,m s**-1,"potentialVorticity, latitude, longitude","(2, 181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,13,vwsh,Vertical speed shear,unknown,s**-1,"potentialVorticity, latitude, longitude","(2, 181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,14,cape,Convective available potential energy,unknown,J kg**-1,"latitude, longitude","(181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,14,cin,Convective inhibition,unknown,J kg**-1,"latitude, longitude","(181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,15,dpt,Dew point temperature,unknown,K,"latitude, longitude","(181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,15,pli,Parcel lifted index (to 500 hPa),unknown,K,"latitude, longitude","(181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,15,pwat,Precipitable water,unknown,kg m**-2,"latitude, longitude","(181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,15,avg_t,Time-mean temperature,air_temperature,K,"latitude, longitude","(181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,15,avg_u,Time-mean U component of wind,eastward_wind,m s**-1,"latitude, longitude","(181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,15,avg_v,Time-mean V component of wind,northward_wind,m s**-1,"latitude, longitude","(181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,15,avg_q,Time-mean specific humidity,specific_humidity,kg kg**-1,"latitude, longitude","(181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,15,avg_r,Time-mean relative humidity,relative_humidity,%,"latitude, longitude","(181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,16,avg_t,Time-mean temperature,air_temperature,K,"latitude, longitude","(181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,16,avg_u,Time-mean U component of wind,eastward_wind,m s**-1,"latitude, longitude","(181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,16,avg_v,Time-mean V component of wind,northward_wind,m s**-1,"latitude, longitude","(181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,16,avg_w,Time-mean vertical velocity,lagrangian_tendency_of_air_pressure,Pa s**-1,"latitude, longitude","(181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,16,avg_r,Time-mean relative humidity,relative_humidity,%,"latitude, longitude","(181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,16,avg_pt,Time-mean potential temperature,unknown,K,"latitude, longitude","(181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,17,avg_r,Time-mean relative humidity,relative_humidity,%,"sigmaLayer, latitude, longitude","(3, 181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,18,cape,Convective available potential energy,unknown,J kg**-1,"latitude, longitude","(181, 360)",,0.0,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,18,acpcp,Convective precipitation (water),lwe_thickness_of_convective_precipitation_amount,kg m**-2,"latitude, longitude","(181, 360)",,0.0,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,18,cin,Convective inhibition,unknown,J kg**-1,"latitude, longitude","(181, 360)",,0.0,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,18,tp,Total Precipitation,unknown,kg m**-2,"latitude, longitude","(181, 360)",,0.0,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,18,ncpcp,Large scale precipitation (non-convective),unknown,kg m**-2,"latitude, longitude","(181, 360)",,0.0,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,18,crain,Categorical rain,unknown,(Code table 4.222),"latitude, longitude","(181, 360)",,0.0,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,18,cfrzr,Categorical freezing rain,unknown,(Code table 4.222),"latitude, longitude","(181, 360)",,0.0,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,18,cicep,Categorical ice pellets,unknown,(Code table 4.222),"latitude, longitude","(181, 360)",,0.0,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,18,csnow,Categorical snow,unknown,(Code table 4.222),"latitude, longitude","(181, 360)",,0.0,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,18,lftx,Surface lifted index,unknown,K,"latitude, longitude","(181, 360)",,0.0,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,18,lftx4,Best (4-layer) lifted index,unknown,K,"latitude, longitude","(181, 360)",,0.0,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,19,gh,Geopotential height,geopotential_height,gpm,"latitude, longitude","(181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,19,avg_t,Time-mean temperature,air_temperature,K,"latitude, longitude","(181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,19,avg_u,Time-mean U component of wind,eastward_wind,m s**-1,"latitude, longitude","(181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,19,avg_v,Time-mean V component of wind,northward_wind,m s**-1,"latitude, longitude","(181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,19,avg_trpp,Time-mean tropopause pressure,unknown,Pa,"latitude, longitude","(181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202607.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202607,19,vwsh,Vertical speed shear,unknown,s**-1,"latitude, longitude","(181, 360)",,,5184000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,0,avg_r,Time-mean relative humidity,relative_humidity,%,"latitude, longitude","(181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,0,cwat,Cloud water,unknown,kg m**-2,"latitude, longitude","(181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,0,tozne,Total ozone,unknown,DU,"latitude, longitude","(181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,1,avg_2r,Time-mean 2 metre relative humidity,relative_humidity,%,"latitude, longitude","(181, 360)",,2.0,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,1,avg_2d,Time-mean 2 metre dewpoint temperature,unknown,K,"latitude, longitude","(181, 360)",,2.0,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,2,ustm,U-component storm motion,unknown,m s**-1,"latitude, longitude","(181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,2,vstm,V-component storm motion,unknown,m s**-1,"latitude, longitude","(181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,3,hlcy,Storm relative helicity,unknown,m**2 s**-2,"heightAboveGroundLayer, latitude, longitude","(2, 181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,4,avg_t,Time-mean temperature,air_temperature,K,"heightAboveSea, latitude, longitude","(4, 181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,4,avg_u,Time-mean U component of wind,eastward_wind,m s**-1,"heightAboveSea, latitude, longitude","(4, 181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,4,avg_v,Time-mean V component of wind,northward_wind,m s**-1,"heightAboveSea, latitude, longitude","(4, 181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,5,gh,Geopotential height,geopotential_height,gpm,"latitude, longitude","(181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,5,avg_r,Time-mean relative humidity,relative_humidity,%,"latitude, longitude","(181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,6,strf,Stream function,unknown,m**2 s**-1,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,6,vp,Velocity potential,unknown,m**2 s**-1,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,6,gh,Geopotential height,geopotential_height,gpm,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,6,absv,Absolute vorticity,unknown,s**-1,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,6,avg_t,Time-mean temperature,air_temperature,K,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,6,avg_u,Time-mean U component of wind,eastward_wind,m s**-1,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,6,avg_v,Time-mean V component of wind,northward_wind,m s**-1,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,6,avg_q,Time-mean specific humidity,specific_humidity,kg kg**-1,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,6,avg_w,Time-mean vertical velocity,lagrangian_tendency_of_air_pressure,Pa s**-1,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,6,avg_r,Time-mean relative humidity,relative_humidity,%,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,6,o3mr,Ozone mixing ratio,unknown,kg kg**-1,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,7,gpa,Geopotential height anomaly,unknown,gpm,"isobaricInhPa, latitude, longitude","(2, 181, 360)",,[1000.  500.],7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,8,clwmr,Cloud mixing ratio,unknown,kg kg**-1,"isobaricInhPa, latitude, longitude","(32, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.]",7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,9,wavh5,5-wave geopotential height,unknown,gpm,"latitude, longitude","(181, 360)",,500.0,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,9,wava5,5-wave geopotential height anomaly,unknown,gpm,"latitude, longitude","(181, 360)",,500.0,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,10,gh,Geopotential height,geopotential_height,gpm,"latitude, longitude","(181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,10,avg_r,Time-mean relative humidity,relative_humidity,%,"latitude, longitude","(181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,11,gh,Geopotential height,geopotential_height,gpm,"latitude, longitude","(181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,11,avg_pres,Time-mean pressure,unknown,Pa,"latitude, longitude","(181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,11,avg_t,Time-mean temperature,air_temperature,K,"latitude, longitude","(181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,11,avg_u,Time-mean U component of wind,eastward_wind,m s**-1,"latitude, longitude","(181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,11,avg_v,Time-mean V component of wind,northward_wind,m s**-1,"latitude, longitude","(181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,12,avg_msl,Time-mean mean sea level pressure,air_pressure_at_mean_sea_level,Pa,"latitude, longitude","(181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,12,prmsl,Pressure reduced to MSL,unknown,Pa,"latitude, longitude","(181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,13,gh,Geopotential height,geopotential_height,gpm,"potentialVorticity, latitude, longitude","(2, 181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,13,avg_pres,Time-mean pressure,unknown,Pa,"potentialVorticity, latitude, longitude","(2, 181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,13,avg_t,Time-mean temperature,air_temperature,K,"potentialVorticity, latitude, longitude","(2, 181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,13,avg_u,Time-mean U component of wind,eastward_wind,m s**-1,"potentialVorticity, latitude, longitude","(2, 181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,13,avg_v,Time-mean V component of wind,northward_wind,m s**-1,"potentialVorticity, latitude, longitude","(2, 181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,13,vwsh,Vertical speed shear,unknown,s**-1,"potentialVorticity, latitude, longitude","(2, 181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,14,cape,Convective available potential energy,unknown,J kg**-1,"latitude, longitude","(181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,14,cin,Convective inhibition,unknown,J kg**-1,"latitude, longitude","(181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,15,dpt,Dew point temperature,unknown,K,"latitude, longitude","(181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,15,pli,Parcel lifted index (to 500 hPa),unknown,K,"latitude, longitude","(181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,15,pwat,Precipitable water,unknown,kg m**-2,"latitude, longitude","(181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,15,avg_t,Time-mean temperature,air_temperature,K,"latitude, longitude","(181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,15,avg_u,Time-mean U component of wind,eastward_wind,m s**-1,"latitude, longitude","(181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,15,avg_v,Time-mean V component of wind,northward_wind,m s**-1,"latitude, longitude","(181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,15,avg_q,Time-mean specific humidity,specific_humidity,kg kg**-1,"latitude, longitude","(181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,15,avg_r,Time-mean relative humidity,relative_humidity,%,"latitude, longitude","(181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,16,avg_t,Time-mean temperature,air_temperature,K,"latitude, longitude","(181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,16,avg_u,Time-mean U component of wind,eastward_wind,m s**-1,"latitude, longitude","(181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,16,avg_v,Time-mean V component of wind,northward_wind,m s**-1,"latitude, longitude","(181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,16,avg_w,Time-mean vertical velocity,lagrangian_tendency_of_air_pressure,Pa s**-1,"latitude, longitude","(181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,16,avg_r,Time-mean relative humidity,relative_humidity,%,"latitude, longitude","(181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,16,avg_pt,Time-mean potential temperature,unknown,K,"latitude, longitude","(181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,17,avg_r,Time-mean relative humidity,relative_humidity,%,"sigmaLayer, latitude, longitude","(3, 181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,18,cape,Convective available potential energy,unknown,J kg**-1,"latitude, longitude","(181, 360)",,0.0,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,18,acpcp,Convective precipitation (water),lwe_thickness_of_convective_precipitation_amount,kg m**-2,"latitude, longitude","(181, 360)",,0.0,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,18,cin,Convective inhibition,unknown,J kg**-1,"latitude, longitude","(181, 360)",,0.0,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,18,tp,Total Precipitation,unknown,kg m**-2,"latitude, longitude","(181, 360)",,0.0,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,18,ncpcp,Large scale precipitation (non-convective),unknown,kg m**-2,"latitude, longitude","(181, 360)",,0.0,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,18,crain,Categorical rain,unknown,(Code table 4.222),"latitude, longitude","(181, 360)",,0.0,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,18,cfrzr,Categorical freezing rain,unknown,(Code table 4.222),"latitude, longitude","(181, 360)",,0.0,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,18,cicep,Categorical ice pellets,unknown,(Code table 4.222),"latitude, longitude","(181, 360)",,0.0,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,18,csnow,Categorical snow,unknown,(Code table 4.222),"latitude, longitude","(181, 360)",,0.0,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,18,lftx,Surface lifted index,unknown,K,"latitude, longitude","(181, 360)",,0.0,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,18,lftx4,Best (4-layer) lifted index,unknown,K,"latitude, longitude","(181, 360)",,0.0,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,19,gh,Geopotential height,geopotential_height,gpm,"latitude, longitude","(181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,19,avg_t,Time-mean temperature,air_temperature,K,"latitude, longitude","(181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,19,avg_u,Time-mean U component of wind,eastward_wind,m s**-1,"latitude, longitude","(181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,19,avg_v,Time-mean V component of wind,northward_wind,m s**-1,"latitude, longitude","(181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,19,avg_trpp,Time-mean tropopause pressure,unknown,Pa,"latitude, longitude","(181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202608.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202608,19,vwsh,Vertical speed shear,unknown,s**-1,"latitude, longitude","(181, 360)",,,7776000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,0,avg_r,Time-mean relative humidity,relative_humidity,%,"latitude, longitude","(181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,0,cwat,Cloud water,unknown,kg m**-2,"latitude, longitude","(181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,0,tozne,Total ozone,unknown,DU,"latitude, longitude","(181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,1,avg_2r,Time-mean 2 metre relative humidity,relative_humidity,%,"latitude, longitude","(181, 360)",,2.0,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,1,avg_2d,Time-mean 2 metre dewpoint temperature,unknown,K,"latitude, longitude","(181, 360)",,2.0,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,2,ustm,U-component storm motion,unknown,m s**-1,"latitude, longitude","(181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,2,vstm,V-component storm motion,unknown,m s**-1,"latitude, longitude","(181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,3,hlcy,Storm relative helicity,unknown,m**2 s**-2,"heightAboveGroundLayer, latitude, longitude","(2, 181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,4,avg_t,Time-mean temperature,air_temperature,K,"heightAboveSea, latitude, longitude","(4, 181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,4,avg_u,Time-mean U component of wind,eastward_wind,m s**-1,"heightAboveSea, latitude, longitude","(4, 181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,4,avg_v,Time-mean V component of wind,northward_wind,m s**-1,"heightAboveSea, latitude, longitude","(4, 181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,5,gh,Geopotential height,geopotential_height,gpm,"latitude, longitude","(181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,5,avg_r,Time-mean relative humidity,relative_humidity,%,"latitude, longitude","(181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,6,strf,Stream function,unknown,m**2 s**-1,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,6,vp,Velocity potential,unknown,m**2 s**-1,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,6,gh,Geopotential height,geopotential_height,gpm,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,6,absv,Absolute vorticity,unknown,s**-1,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,6,avg_t,Time-mean temperature,air_temperature,K,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,6,avg_u,Time-mean U component of wind,eastward_wind,m s**-1,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,6,avg_v,Time-mean V component of wind,northward_wind,m s**-1,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,6,avg_q,Time-mean specific humidity,specific_humidity,kg kg**-1,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,6,avg_w,Time-mean vertical velocity,lagrangian_tendency_of_air_pressure,Pa s**-1,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,6,avg_r,Time-mean relative humidity,relative_humidity,%,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,6,o3mr,Ozone mixing ratio,unknown,kg kg**-1,"isobaricInhPa, latitude, longitude","(37, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.    7.    5.    3.    2.
+    1.]",10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,7,gpa,Geopotential height anomaly,unknown,gpm,"isobaricInhPa, latitude, longitude","(2, 181, 360)",,[1000.  500.],10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,8,clwmr,Cloud mixing ratio,unknown,kg kg**-1,"isobaricInhPa, latitude, longitude","(32, 181, 360)",,"[1000.  975.  950.  925.  900.  875.  850.  825.  800.  775.  750.  700.
+  650.  600.  550.  500.  450.  400.  350.  300.  250.  225.  200.  175.
+  150.  125.  100.   70.   50.   30.   20.   10.]",10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,9,wavh5,5-wave geopotential height,unknown,gpm,"latitude, longitude","(181, 360)",,500.0,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,9,wava5,5-wave geopotential height anomaly,unknown,gpm,"latitude, longitude","(181, 360)",,500.0,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,10,gh,Geopotential height,geopotential_height,gpm,"latitude, longitude","(181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,10,avg_r,Time-mean relative humidity,relative_humidity,%,"latitude, longitude","(181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,11,gh,Geopotential height,geopotential_height,gpm,"latitude, longitude","(181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,11,avg_pres,Time-mean pressure,unknown,Pa,"latitude, longitude","(181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,11,avg_t,Time-mean temperature,air_temperature,K,"latitude, longitude","(181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,11,avg_u,Time-mean U component of wind,eastward_wind,m s**-1,"latitude, longitude","(181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,11,avg_v,Time-mean V component of wind,northward_wind,m s**-1,"latitude, longitude","(181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,12,avg_msl,Time-mean mean sea level pressure,air_pressure_at_mean_sea_level,Pa,"latitude, longitude","(181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,12,prmsl,Pressure reduced to MSL,unknown,Pa,"latitude, longitude","(181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,13,gh,Geopotential height,geopotential_height,gpm,"potentialVorticity, latitude, longitude","(2, 181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,13,avg_pres,Time-mean pressure,unknown,Pa,"potentialVorticity, latitude, longitude","(2, 181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,13,avg_t,Time-mean temperature,air_temperature,K,"potentialVorticity, latitude, longitude","(2, 181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,13,avg_u,Time-mean U component of wind,eastward_wind,m s**-1,"potentialVorticity, latitude, longitude","(2, 181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,13,avg_v,Time-mean V component of wind,northward_wind,m s**-1,"potentialVorticity, latitude, longitude","(2, 181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,13,vwsh,Vertical speed shear,unknown,s**-1,"potentialVorticity, latitude, longitude","(2, 181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,14,cape,Convective available potential energy,unknown,J kg**-1,"latitude, longitude","(181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,14,cin,Convective inhibition,unknown,J kg**-1,"latitude, longitude","(181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,15,dpt,Dew point temperature,unknown,K,"latitude, longitude","(181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,15,pli,Parcel lifted index (to 500 hPa),unknown,K,"latitude, longitude","(181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,15,pwat,Precipitable water,unknown,kg m**-2,"latitude, longitude","(181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,15,avg_t,Time-mean temperature,air_temperature,K,"latitude, longitude","(181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,15,avg_u,Time-mean U component of wind,eastward_wind,m s**-1,"latitude, longitude","(181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,15,avg_v,Time-mean V component of wind,northward_wind,m s**-1,"latitude, longitude","(181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,15,avg_q,Time-mean specific humidity,specific_humidity,kg kg**-1,"latitude, longitude","(181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,15,avg_r,Time-mean relative humidity,relative_humidity,%,"latitude, longitude","(181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,16,avg_t,Time-mean temperature,air_temperature,K,"latitude, longitude","(181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,16,avg_u,Time-mean U component of wind,eastward_wind,m s**-1,"latitude, longitude","(181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,16,avg_v,Time-mean V component of wind,northward_wind,m s**-1,"latitude, longitude","(181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,16,avg_w,Time-mean vertical velocity,lagrangian_tendency_of_air_pressure,Pa s**-1,"latitude, longitude","(181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,16,avg_r,Time-mean relative humidity,relative_humidity,%,"latitude, longitude","(181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,16,avg_pt,Time-mean potential temperature,unknown,K,"latitude, longitude","(181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,17,avg_r,Time-mean relative humidity,relative_humidity,%,"sigmaLayer, latitude, longitude","(3, 181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,18,cape,Convective available potential energy,unknown,J kg**-1,"latitude, longitude","(181, 360)",,0.0,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,18,acpcp,Convective precipitation (water),lwe_thickness_of_convective_precipitation_amount,kg m**-2,"latitude, longitude","(181, 360)",,0.0,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,18,cin,Convective inhibition,unknown,J kg**-1,"latitude, longitude","(181, 360)",,0.0,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,18,tp,Total Precipitation,unknown,kg m**-2,"latitude, longitude","(181, 360)",,0.0,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,18,ncpcp,Large scale precipitation (non-convective),unknown,kg m**-2,"latitude, longitude","(181, 360)",,0.0,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,18,crain,Categorical rain,unknown,(Code table 4.222),"latitude, longitude","(181, 360)",,0.0,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,18,cfrzr,Categorical freezing rain,unknown,(Code table 4.222),"latitude, longitude","(181, 360)",,0.0,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,18,cicep,Categorical ice pellets,unknown,(Code table 4.222),"latitude, longitude","(181, 360)",,0.0,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,18,csnow,Categorical snow,unknown,(Code table 4.222),"latitude, longitude","(181, 360)",,0.0,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,18,lftx,Surface lifted index,unknown,K,"latitude, longitude","(181, 360)",,0.0,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,18,lftx4,Best (4-layer) lifted index,unknown,K,"latitude, longitude","(181, 360)",,0.0,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,19,gh,Geopotential height,geopotential_height,gpm,"latitude, longitude","(181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,19,avg_t,Time-mean temperature,air_temperature,K,"latitude, longitude","(181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,19,avg_u,Time-mean U component of wind,eastward_wind,m s**-1,"latitude, longitude","(181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,19,avg_v,Time-mean V component of wind,northward_wind,m s**-1,"latitude, longitude","(181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,19,avg_trpp,Time-mean tropopause pressure,unknown,Pa,"latitude, longitude","(181, 360)",,,10368000000000000 nanoseconds
+pgbf.01.2026061000.202609.avrg.grib.grb2,pgbf_pressure_level_atmosphere,202609,19,vwsh,Vertical speed shear,unknown,s**-1,"latitude, longitude","(181, 360)",,,10368000000000000 nanoseconds

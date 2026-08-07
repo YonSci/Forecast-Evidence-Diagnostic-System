@@ -1,0 +1,61 @@
+field,period,status,source_file,output_file,message,stage
+u200,Jun_2026,field_not_found,D:\jjas-elnino-et\data\cfsv2\monthly_grib\pgbf.01.2026061000.202606.avrg.grib.grb2,,Variable candidates not found: ['u'],monthly_extraction
+v200,Jun_2026,field_not_found,D:\jjas-elnino-et\data\cfsv2\monthly_grib\pgbf.01.2026061000.202606.avrg.grib.grb2,,Variable candidates not found: ['v'],monthly_extraction
+u850,Jun_2026,field_not_found,D:\jjas-elnino-et\data\cfsv2\monthly_grib\pgbf.01.2026061000.202606.avrg.grib.grb2,,Variable candidates not found: ['u'],monthly_extraction
+v850,Jun_2026,field_not_found,D:\jjas-elnino-et\data\cfsv2\monthly_grib\pgbf.01.2026061000.202606.avrg.grib.grb2,,Variable candidates not found: ['v'],monthly_extraction
+q850,Jun_2026,field_not_found,D:\jjas-elnino-et\data\cfsv2\monthly_grib\pgbf.01.2026061000.202606.avrg.grib.grb2,,"Variable candidates not found: ['q', 'spfh']",monthly_extraction
+z500,Jun_2026,available,D:\jjas-elnino-et\data\cfsv2\monthly_grib\pgbf.01.2026061000.202606.avrg.grib.grb2,D:\jjas-elnino-et\data\cfsv2\organized\CFSv2_z500_Jun_2026.nc,Extracted successfully,monthly_extraction
+omega500,Jun_2026,field_not_found,D:\jjas-elnino-et\data\cfsv2\monthly_grib\pgbf.01.2026061000.202606.avrg.grib.grb2,,"Variable candidates not found: ['w', 'vvel']",monthly_extraction
+omega700,Jun_2026,field_not_found,D:\jjas-elnino-et\data\cfsv2\monthly_grib\pgbf.01.2026061000.202606.avrg.grib.grb2,,"Variable candidates not found: ['w', 'vvel']",monthly_extraction
+olr_proxy,Jun_2026,field_not_found,D:\jjas-elnino-et\data\cfsv2\monthly_grib\flxf.01.2026061000.202606.avrg.grib.grb2,,"Variable candidates not found: ['ulwrf', 'ttr', 'lwrad']",monthly_extraction
+sst_proxy,Jun_2026,field_not_found,D:\jjas-elnino-et\data\cfsv2\monthly_grib\ocnh.01.2026061000.202606.avrg.grib.grb2,,"Variable candidates not found: ['sst', 't', 'wtmp', 'water_temp']",monthly_extraction
+u200,Jul_2026,field_not_found,D:\jjas-elnino-et\data\cfsv2\monthly_grib\pgbf.01.2026061000.202607.avrg.grib.grb2,,Variable candidates not found: ['u'],monthly_extraction
+v200,Jul_2026,field_not_found,D:\jjas-elnino-et\data\cfsv2\monthly_grib\pgbf.01.2026061000.202607.avrg.grib.grb2,,Variable candidates not found: ['v'],monthly_extraction
+u850,Jul_2026,field_not_found,D:\jjas-elnino-et\data\cfsv2\monthly_grib\pgbf.01.2026061000.202607.avrg.grib.grb2,,Variable candidates not found: ['u'],monthly_extraction
+v850,Jul_2026,field_not_found,D:\jjas-elnino-et\data\cfsv2\monthly_grib\pgbf.01.2026061000.202607.avrg.grib.grb2,,Variable candidates not found: ['v'],monthly_extraction
+q850,Jul_2026,field_not_found,D:\jjas-elnino-et\data\cfsv2\monthly_grib\pgbf.01.2026061000.202607.avrg.grib.grb2,,"Variable candidates not found: ['q', 'spfh']",monthly_extraction
+z500,Jul_2026,available,D:\jjas-elnino-et\data\cfsv2\monthly_grib\pgbf.01.2026061000.202607.avrg.grib.grb2,D:\jjas-elnino-et\data\cfsv2\organized\CFSv2_z500_Jul_2026.nc,Extracted successfully,monthly_extraction
+omega500,Jul_2026,field_not_found,D:\jjas-elnino-et\data\cfsv2\monthly_grib\pgbf.01.2026061000.202607.avrg.grib.grb2,,"Variable candidates not found: ['w', 'vvel']",monthly_extraction
+omega700,Jul_2026,field_not_found,D:\jjas-elnino-et\data\cfsv2\monthly_grib\pgbf.01.2026061000.202607.avrg.grib.grb2,,"Variable candidates not found: ['w', 'vvel']",monthly_extraction
+olr_proxy,Jul_2026,field_not_found,D:\jjas-elnino-et\data\cfsv2\monthly_grib\flxf.01.2026061000.202607.avrg.grib.grb2,,"Variable candidates not found: ['ulwrf', 'ttr', 'lwrad']",monthly_extraction
+sst_proxy,Jul_2026,field_not_found,D:\jjas-elnino-et\data\cfsv2\monthly_grib\ocnh.01.2026061000.202607.avrg.grib.grb2,,"Variable candidates not found: ['sst', 't', 'wtmp', 'water_temp']",monthly_extraction
+u200,Aug_2026,field_not_found,D:\jjas-elnino-et\data\cfsv2\monthly_grib\pgbf.01.2026061000.202608.avrg.grib.grb2,,Variable candidates not found: ['u'],monthly_extraction
+v200,Aug_2026,field_not_found,D:\jjas-elnino-et\data\cfsv2\monthly_grib\pgbf.01.2026061000.202608.avrg.grib.grb2,,Variable candidates not found: ['v'],monthly_extraction
+u850,Aug_2026,field_not_found,D:\jjas-elnino-et\data\cfsv2\monthly_grib\pgbf.01.2026061000.202608.avrg.grib.grb2,,Variable candidates not found: ['u'],monthly_extraction
+v850,Aug_2026,field_not_found,D:\jjas-elnino-et\data\cfsv2\monthly_grib\pgbf.01.2026061000.202608.avrg.grib.grb2,,Variable candidates not found: ['v'],monthly_extraction
+q850,Aug_2026,field_not_found,D:\jjas-elnino-et\data\cfsv2\monthly_grib\pgbf.01.2026061000.202608.avrg.grib.grb2,,"Variable candidates not found: ['q', 'spfh']",monthly_extraction
+z500,Aug_2026,available,D:\jjas-elnino-et\data\cfsv2\monthly_grib\pgbf.01.2026061000.202608.avrg.grib.grb2,D:\jjas-elnino-et\data\cfsv2\organized\CFSv2_z500_Aug_2026.nc,Extracted successfully,monthly_extraction
+omega500,Aug_2026,field_not_found,D:\jjas-elnino-et\data\cfsv2\monthly_grib\pgbf.01.2026061000.202608.avrg.grib.grb2,,"Variable candidates not found: ['w', 'vvel']",monthly_extraction
+omega700,Aug_2026,field_not_found,D:\jjas-elnino-et\data\cfsv2\monthly_grib\pgbf.01.2026061000.202608.avrg.grib.grb2,,"Variable candidates not found: ['w', 'vvel']",monthly_extraction
+olr_proxy,Aug_2026,field_not_found,D:\jjas-elnino-et\data\cfsv2\monthly_grib\flxf.01.2026061000.202608.avrg.grib.grb2,,"Variable candidates not found: ['ulwrf', 'ttr', 'lwrad']",monthly_extraction
+sst_proxy,Aug_2026,field_not_found,D:\jjas-elnino-et\data\cfsv2\monthly_grib\ocnh.01.2026061000.202608.avrg.grib.grb2,,"Variable candidates not found: ['sst', 't', 'wtmp', 'water_temp']",monthly_extraction
+u200,Sep_2026,field_not_found,D:\jjas-elnino-et\data\cfsv2\monthly_grib\pgbf.01.2026061000.202609.avrg.grib.grb2,,Variable candidates not found: ['u'],monthly_extraction
+v200,Sep_2026,field_not_found,D:\jjas-elnino-et\data\cfsv2\monthly_grib\pgbf.01.2026061000.202609.avrg.grib.grb2,,Variable candidates not found: ['v'],monthly_extraction
+u850,Sep_2026,field_not_found,D:\jjas-elnino-et\data\cfsv2\monthly_grib\pgbf.01.2026061000.202609.avrg.grib.grb2,,Variable candidates not found: ['u'],monthly_extraction
+v850,Sep_2026,field_not_found,D:\jjas-elnino-et\data\cfsv2\monthly_grib\pgbf.01.2026061000.202609.avrg.grib.grb2,,Variable candidates not found: ['v'],monthly_extraction
+q850,Sep_2026,field_not_found,D:\jjas-elnino-et\data\cfsv2\monthly_grib\pgbf.01.2026061000.202609.avrg.grib.grb2,,"Variable candidates not found: ['q', 'spfh']",monthly_extraction
+z500,Sep_2026,available,D:\jjas-elnino-et\data\cfsv2\monthly_grib\pgbf.01.2026061000.202609.avrg.grib.grb2,D:\jjas-elnino-et\data\cfsv2\organized\CFSv2_z500_Sep_2026.nc,Extracted successfully,monthly_extraction
+omega500,Sep_2026,field_not_found,D:\jjas-elnino-et\data\cfsv2\monthly_grib\pgbf.01.2026061000.202609.avrg.grib.grb2,,"Variable candidates not found: ['w', 'vvel']",monthly_extraction
+omega700,Sep_2026,field_not_found,D:\jjas-elnino-et\data\cfsv2\monthly_grib\pgbf.01.2026061000.202609.avrg.grib.grb2,,"Variable candidates not found: ['w', 'vvel']",monthly_extraction
+olr_proxy,Sep_2026,field_not_found,D:\jjas-elnino-et\data\cfsv2\monthly_grib\flxf.01.2026061000.202609.avrg.grib.grb2,,"Variable candidates not found: ['ulwrf', 'ttr', 'lwrad']",monthly_extraction
+sst_proxy,Sep_2026,field_not_found,D:\jjas-elnino-et\data\cfsv2\monthly_grib\ocnh.01.2026061000.202609.avrg.grib.grb2,,"Variable candidates not found: ['sst', 't', 'wtmp', 'water_temp']",monthly_extraction
+u200,JJA_2026,no_monthly_files,,,No monthly files available for seasonal mean.,seasonal_mean
+u200,JJAS_2026,no_monthly_files,,,No monthly files available for seasonal mean.,seasonal_mean
+v200,JJA_2026,no_monthly_files,,,No monthly files available for seasonal mean.,seasonal_mean
+v200,JJAS_2026,no_monthly_files,,,No monthly files available for seasonal mean.,seasonal_mean
+u850,JJA_2026,no_monthly_files,,,No monthly files available for seasonal mean.,seasonal_mean
+u850,JJAS_2026,no_monthly_files,,,No monthly files available for seasonal mean.,seasonal_mean
+v850,JJA_2026,no_monthly_files,,,No monthly files available for seasonal mean.,seasonal_mean
+v850,JJAS_2026,no_monthly_files,,,No monthly files available for seasonal mean.,seasonal_mean
+q850,JJA_2026,no_monthly_files,,,No monthly files available for seasonal mean.,seasonal_mean
+q850,JJAS_2026,no_monthly_files,,,No monthly files available for seasonal mean.,seasonal_mean
+z500,JJA_2026,available,,D:\jjas-elnino-et\data\cfsv2\organized\CFSv2_z500_JJA_2026.nc,Seasonal mean created successfully.,seasonal_mean
+z500,JJAS_2026,available,,D:\jjas-elnino-et\data\cfsv2\organized\CFSv2_z500_JJAS_2026.nc,Seasonal mean created successfully.,seasonal_mean
+omega500,JJA_2026,no_monthly_files,,,No monthly files available for seasonal mean.,seasonal_mean
+omega500,JJAS_2026,no_monthly_files,,,No monthly files available for seasonal mean.,seasonal_mean
+omega700,JJA_2026,no_monthly_files,,,No monthly files available for seasonal mean.,seasonal_mean
+omega700,JJAS_2026,no_monthly_files,,,No monthly files available for seasonal mean.,seasonal_mean
+olr_proxy,JJA_2026,no_monthly_files,,,No monthly files available for seasonal mean.,seasonal_mean
+olr_proxy,JJAS_2026,no_monthly_files,,,No monthly files available for seasonal mean.,seasonal_mean
+sst_proxy,JJA_2026,no_monthly_files,,,No monthly files available for seasonal mean.,seasonal_mean
+sst_proxy,JJAS_2026,no_monthly_files,,,No monthly files available for seasonal mean.,seasonal_mean

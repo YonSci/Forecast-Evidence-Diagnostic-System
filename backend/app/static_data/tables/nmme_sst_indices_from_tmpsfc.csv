@@ -1,0 +1,7 @@
+period,nino34_tmpsfc_anomaly,iod_west_tmpsfc_anomaly,iod_east_tmpsfc_anomaly,dmi_approx,units,note
+Jun_2026,1.0088821649551392,0.4069099724292755,0.37657588720321655,0.03033408522605896,K,Computed from NMME tmpsfc anomaly as an SST proxy over oceanic index boxes.
+Jul_2026,1.4020531177520752,0.4803699851036072,0.3259757459163666,0.1543942391872406,K,Computed from NMME tmpsfc anomaly as an SST proxy over oceanic index boxes.
+Aug_2026,1.9275705814361572,0.641156017780304,0.1504344493150711,0.49072156846523285,K,Computed from NMME tmpsfc anomaly as an SST proxy over oceanic index boxes.
+Sep_2026,2.4057507514953613,0.746721088886261,-0.09608351439237595,0.8428046032786369,K,Computed from NMME tmpsfc anomaly as an SST proxy over oceanic index boxes.
+JJA_2026,1.4461687803268433,0.5094786882400513,0.2843286991119385,0.2251499891281128,K,Seasonal mean computed from available NMME target months.
+JJAS_2026,1.6860640048980713,0.5687893033027649,0.18922565877437592,0.379563644528389,K,Seasonal mean computed from available NMME target months.

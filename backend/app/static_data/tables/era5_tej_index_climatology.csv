@@ -1,0 +1,7 @@
+diagnostic,period,value,units,interpretation
+TEJ_strength_climatology,June,14.382869242257376,m s**-1,Higher value means stronger climatological Tropical Easterly Jet.
+TEJ_strength_climatology,July,19.84536803014227,m s**-1,Higher value means stronger climatological Tropical Easterly Jet.
+TEJ_strength_climatology,August,18.94883529319876,m s**-1,Higher value means stronger climatological Tropical Easterly Jet.
+TEJ_strength_climatology,September,13.853332433986019,m s**-1,Higher value means stronger climatological Tropical Easterly Jet.
+TEJ_strength_climatology,JJA,17.725690855199467,m s**-1,Higher value means stronger climatological Tropical Easterly Jet.
+TEJ_strength_climatology,JJAS,16.757601249896105,m s**-1,Higher value means stronger climatological Tropical Easterly Jet.

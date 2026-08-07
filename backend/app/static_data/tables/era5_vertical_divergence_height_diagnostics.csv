@@ -1,0 +1,511 @@
+diagnostic,period,domain,value,units,interpretation
+omega500,June,ethiopia,-0.018629559388504805,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,June,ethiopia_highlands_broad,-0.05716653871664211,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,June,north_ethiopia,-0.050826591779093606,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,June,central_ethiopia,-0.07585103464159143,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,June,west_ethiopia,-0.07911935581463037,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,June,east_ethiopia,0.01263031881818276,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,June,greater_horn,0.0070385716542677845,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,June,east_africa,0.004897537895771122,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,June,atlantic_congo_ethiopia,0.006782827750310994,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,June,congo_moisture_corridor,-0.018314767778895118,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,June,western_moisture_entry,-0.03655749012713312,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,June,western_indian_ocean,0.006456507906535489,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,June,arabia_red_sea,0.0057750960212573955,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,June,north_africa_arabia,0.019692728257253864,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,June,tej_core,-0.026133988230029503,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,June,somali_jet_box,0.013850655796390905,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,June,turkana_corridor,0.022014015661078478,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,July,ethiopia,-0.034239830440559525,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,July,ethiopia_highlands_broad,-0.08744877502666638,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,July,north_ethiopia,-0.10226388894051192,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,July,central_ethiopia,-0.11897520874011769,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,July,west_ethiopia,-0.08302296197078202,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,July,east_ethiopia,0.0006665725538583303,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,July,greater_horn,0.001219710437530547,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,July,east_africa,5.4984196690635995e-05,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,July,atlantic_congo_ethiopia,0.003753027467778188,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,July,congo_moisture_corridor,-0.021643312084501806,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,July,western_moisture_entry,-0.04019857474387646,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,July,western_indian_ocean,0.009229595989107662,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,July,arabia_red_sea,-0.009321814847347839,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,July,north_africa_arabia,0.006980618099866751,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,July,tej_core,-0.030804728490134707,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,July,somali_jet_box,0.011987352684604076,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,July,turkana_corridor,0.022962472610383956,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,August,ethiopia,-0.03193089666463488,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,August,ethiopia_highlands_broad,-0.08487798504018136,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,August,north_ethiopia,-0.10220396079536484,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,August,central_ethiopia,-0.11462976926113429,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,August,west_ethiopia,-0.08009387927128649,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,August,east_ethiopia,0.0019292996155678161,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,August,greater_horn,-0.0010222855800493614,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,August,east_africa,-0.0026833859848426583,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,August,atlantic_congo_ethiopia,0.00022484936351985395,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,August,congo_moisture_corridor,-0.032437637161628986,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,August,western_moisture_entry,-0.04424605525170731,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,August,western_indian_ocean,0.01051201243877909,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,August,arabia_red_sea,-0.006930597958470099,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,August,north_africa_arabia,0.005967979360279888,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,August,tej_core,-0.02782954162532479,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,August,somali_jet_box,0.01301104571035895,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,August,turkana_corridor,0.021050622501973117,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,September,ethiopia,-0.010430849133957787,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,September,ethiopia_highlands_broad,-0.049928732113579906,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,September,north_ethiopia,-0.04105865923255497,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,September,central_ethiopia,-0.07725446350355072,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,September,west_ethiopia,-0.06506329824477083,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,September,east_ethiopia,0.016018958060493204,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,September,greater_horn,0.0044503043798489825,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,September,east_africa,0.0023774042882528596,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,September,atlantic_congo_ethiopia,0.0020953786739270923,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,September,congo_moisture_corridor,-0.03442836406266805,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,September,western_moisture_entry,-0.035337600066363446,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,September,western_indian_ocean,0.010490125257116529,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,September,arabia_red_sea,0.012065824181484695,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,September,north_africa_arabia,0.018373809661935622,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,September,tej_core,-0.017693665698533926,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,September,somali_jet_box,0.01769518855636489,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,September,turkana_corridor,0.022451559527711287,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,JJA,ethiopia,-0.028266761325303955,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,JJA,ethiopia_highlands_broad,-0.07649776391983412,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,JJA,north_ethiopia,-0.08509814390903957,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,JJA,central_ethiopia,-0.10315200211272357,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,JJA,west_ethiopia,-0.08074539722389508,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,JJA,east_ethiopia,0.00507539688594879,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,JJA,greater_horn,0.0024119987956915004,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,JJA,east_africa,0.0007563787015723892,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,JJA,atlantic_congo_ethiopia,0.0035869015005483705,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,JJA,congo_moisture_corridor,-0.024131904980316005,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,JJA,western_moisture_entry,-0.04033403917904641,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,JJA,western_indian_ocean,0.008732705047558546,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,JJA,arabia_red_sea,-0.003492438685926001,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,JJA,north_africa_arabia,0.010880442346442807,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,JJA,tej_core,-0.028256085490241955,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,JJA,somali_jet_box,0.01294968429087244,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,JJA,turkana_corridor,0.022009037000160252,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,JJAS,ethiopia,-0.023807782786430864,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,JJAS,ethiopia_highlands_broad,-0.0698555048863349,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,JJAS,north_ethiopia,-0.07408827164592673,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,JJAS,central_ethiopia,-0.09667761551810782,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,JJAS,west_ethiopia,-0.07682487116524782,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,JJAS,east_ethiopia,0.0078112872574240344,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,JJAS,greater_horn,0.0029215753902888625,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,JJAS,east_africa,0.0011616353120165778,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,JJAS,atlantic_congo_ethiopia,0.0032140210119424796,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,JJAS,congo_moisture_corridor,-0.026706019259879324,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,JJAS,western_moisture_entry,-0.0390849287151045,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,JJAS,western_indian_ocean,0.009172060078626974,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,JJAS,arabia_red_sea,0.0003971271838613168,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,JJAS,north_africa_arabia,0.01275378441378948,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,JJAS,tej_core,-0.025615480290809053,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,JJAS,somali_jet_box,0.014136060375103104,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega500,JJAS,turkana_corridor,0.0221196678800124,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,June,ethiopia,-0.047580626284696156,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,June,ethiopia_highlands_broad,-0.089405444439566,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,June,north_ethiopia,-0.11741183497144884,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,June,central_ethiopia,-0.10965940633540688,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,June,west_ethiopia,-0.05254465135976631,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,June,east_ethiopia,-0.03530238111957796,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,June,greater_horn,-0.0050631348027532835,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,June,east_africa,-0.007362620075619632,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,June,atlantic_congo_ethiopia,-0.0006512435278197484,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,June,congo_moisture_corridor,-0.022091900681594806,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,June,western_moisture_entry,-0.030243227242439295,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,June,western_indian_ocean,0.0023800149528336854,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,June,arabia_red_sea,-0.027880244566846398,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,June,north_africa_arabia,-0.005444419242546827,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,June,tej_core,-0.03876505862207633,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,June,somali_jet_box,0.00914990081672221,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,June,turkana_corridor,0.01984707690238865,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,July,ethiopia,-0.038176476595720564,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,July,ethiopia_highlands_broad,-0.07172554414230928,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,July,north_ethiopia,-0.09984141006098828,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,July,central_ethiopia,-0.07668381654082938,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,July,west_ethiopia,-0.04869214420105518,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,July,east_ethiopia,-0.026610306612988188,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,July,greater_horn,-0.0074394948646964425,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,July,east_africa,-0.008022374411783904,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,July,atlantic_congo_ethiopia,-0.0005147204051054864,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,July,congo_moisture_corridor,-0.023913006104551496,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,July,western_moisture_entry,-0.0291493972437679,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,July,western_indian_ocean,0.00637724594124779,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,July,arabia_red_sea,-0.04055226044600685,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,July,north_africa_arabia,-0.01229280750188018,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,July,tej_core,-0.03970842427491308,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,July,somali_jet_box,0.014658180199382916,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,July,turkana_corridor,0.018808563265965434,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,August,ethiopia,-0.030182583443468882,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,August,ethiopia_highlands_broad,-0.06830942200793927,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,August,north_ethiopia,-0.09135268637874239,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,August,central_ethiopia,-0.0721621398937077,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,August,west_ethiopia,-0.048248908665811815,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,August,east_ethiopia,-0.009716218591889897,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,August,greater_horn,-0.009233478735298043,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,August,east_africa,-0.009685950266689034,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,August,atlantic_congo_ethiopia,-0.0033678193777332437,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,August,congo_moisture_corridor,-0.027868024144965406,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,August,western_moisture_entry,-0.02785387294342571,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,August,western_indian_ocean,0.008442364651154046,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,August,arabia_red_sea,-0.03773273937763907,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,August,north_africa_arabia,-0.00963374488050746,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,August,tej_core,-0.0340570272492851,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,August,somali_jet_box,0.01735820464916021,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,August,turkana_corridor,0.020014793198229172,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,September,ethiopia,-0.03404286543707696,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,September,ethiopia_highlands_broad,-0.06465833144714496,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,September,north_ethiopia,-0.066135633547445,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,September,central_ethiopia,-0.07718315818707848,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,September,west_ethiopia,-0.03692431145979269,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,September,east_ethiopia,-0.023868333930193986,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,September,greater_horn,-0.008217183334702003,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,September,east_africa,-0.011219814197543716,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,September,atlantic_congo_ethiopia,-0.005499908820986515,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,September,congo_moisture_corridor,-0.027116547731002583,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,September,western_moisture_entry,-0.022726049745636936,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,September,western_indian_ocean,0.00404459824082407,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,September,arabia_red_sea,-0.01725745555048064,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,September,north_africa_arabia,0.0009094401218551922,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,September,tej_core,-0.02688207450008903,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,September,somali_jet_box,0.008673974540618348,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,September,turkana_corridor,0.021173631114765112,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,JJA,ethiopia,-0.038646564624698294,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,JJA,ethiopia_highlands_broad,-0.07648014002574241,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,JJA,north_ethiopia,-0.10286864862740151,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,JJA,central_ethiopia,-0.0861684578965032,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,JJA,west_ethiopia,-0.049828569231434125,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,JJA,east_ethiopia,-0.023876304658163223,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,JJA,greater_horn,-0.007245370949724354,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,JJA,east_africa,-0.008356982945943404,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,JJA,atlantic_congo_ethiopia,-0.0015112617889725835,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,JJA,congo_moisture_corridor,-0.024624310902813463,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,JJA,western_moisture_entry,-0.029082166056703378,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,JJA,western_indian_ocean,0.0057332081152720715,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,JJA,arabia_red_sea,-0.03538841914716354,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,JJA,north_africa_arabia,-0.009123659941544933,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,JJA,tej_core,-0.03751017161670405,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,JJA,somali_jet_box,0.013722094326740212,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,JJA,turkana_corridor,0.019556810218012217,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,JJAS,ethiopia,-0.03749563327358184,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,JJAS,ethiopia_highlands_broad,-0.0735246776898722,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,JJAS,north_ethiopia,-0.09368538085206196,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,JJAS,central_ethiopia,-0.08392212133993168,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,JJAS,west_ethiopia,-0.04660250150711781,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,JJAS,east_ethiopia,-0.02387430378187141,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,JJAS,greater_horn,-0.007488320105178979,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,JJAS,east_africa,-0.009072687193515883,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,JJAS,atlantic_congo_ethiopia,-0.00250842166150505,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,JJAS,congo_moisture_corridor,-0.025247368002447257,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,JJAS,western_moisture_entry,-0.027493136073230007,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,JJAS,western_indian_ocean,0.005311056719786481,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,JJAS,arabia_red_sea,-0.03085566823551771,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,JJAS,north_africa_arabia,-0.0066153784985771855,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,JJAS,tej_core,-0.0348531436808147,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,JJAS,somali_jet_box,0.012460066763810401,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+omega700,JJAS,turkana_corridor,0.019961019891059133,Pa s**-1,Positive omega means subsidence/sinking motion; negative omega means rising motion.
+divergence200,June,ethiopia,-1.229693986470377e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,June,ethiopia_highlands_broad,-2.3598293767813628e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,June,north_ethiopia,4.399878713236712e-08,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,June,central_ethiopia,-7.204450487403883e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,June,west_ethiopia,1.4277316456367058e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,June,east_ethiopia,-2.2413760846756095e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,June,greater_horn,-5.822870727898359e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,June,east_africa,-5.793023096478391e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,June,atlantic_congo_ethiopia,-4.4760037221009184e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,June,congo_moisture_corridor,1.2068587200111944e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,June,western_moisture_entry,1.3512738384872426e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,June,western_indian_ocean,6.320508908245757e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,June,arabia_red_sea,-5.626030050473188e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,June,north_africa_arabia,-9.700287142894161e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,June,tej_core,2.0086367569596833e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,June,somali_jet_box,-9.813304292467373e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,June,turkana_corridor,-3.2970558051439425e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,July,ethiopia,-3.581771402497405e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,July,ethiopia_highlands_broad,1.6496720181893906e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,July,north_ethiopia,2.359574102673578e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,July,central_ethiopia,1.7334625786675592e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,July,west_ethiopia,3.361239220689192e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,July,east_ethiopia,-2.3336771133857702e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,July,greater_horn,-5.462492932944533e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,July,east_africa,-5.436130065601618e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,July,atlantic_congo_ethiopia,-4.046187898574242e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,July,congo_moisture_corridor,1.408557466164297e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,July,western_moisture_entry,1.5583214743385088e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,July,western_indian_ocean,4.749820876109709e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,July,arabia_red_sea,-2.3602261836256667e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,July,north_africa_arabia,-3.4222552587428685e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,July,tej_core,2.0110684720910765e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,July,somali_jet_box,-1.014819822600956e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,July,turkana_corridor,-3.7139845411561802e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,August,ethiopia,-4.1827435630500473e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,August,ethiopia_highlands_broad,2.1096851960462387e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,August,north_ethiopia,2.9983484743812356e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,August,central_ethiopia,2.243388878263865e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,August,west_ethiopia,3.767946186053876e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,August,east_ethiopia,-3.0377294335092198e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,August,greater_horn,-5.351188758982833e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,August,east_africa,-5.187626576968378e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,August,atlantic_congo_ethiopia,-2.7214145322579715e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,August,congo_moisture_corridor,2.3450628081773843e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,August,western_moisture_entry,1.9989933385079187e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,August,western_indian_ocean,-1.9135467967066076e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,August,arabia_red_sea,-4.346348408461343e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,August,north_africa_arabia,-3.0057377847561603e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,August,tej_core,1.721899803878807e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,August,somali_jet_box,-1.7317773920715589e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,August,turkana_corridor,-3.7914267112660266e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,September,ethiopia,-1.264375788241099e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,September,ethiopia_highlands_broad,4.60340924923916e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,September,north_ethiopia,4.7251496146891864e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,September,central_ethiopia,2.520655295825857e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,September,west_ethiopia,2.652908845024695e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,September,east_ethiopia,-3.0366843329877217e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,September,greater_horn,-6.08704468705871e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,September,east_africa,-5.868766274635483e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,September,atlantic_congo_ethiopia,-3.317697043121246e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,September,congo_moisture_corridor,2.8518883981089892e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,September,western_moisture_entry,1.8892468380868606e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,September,western_indian_ocean,-6.198482164816114e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,September,arabia_red_sea,-1.1366024362015053e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,September,north_africa_arabia,-9.736957218061758e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,September,tej_core,1.1357386680227022e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,September,somali_jet_box,-2.4055686752756523e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,September,turkana_corridor,-3.4948638629573863e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,JJA,ethiopia,-6.68714864554884e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,JJA,ethiopia_highlands_broad,1.1744585621126727e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,JJA,north_ethiopia,1.8006408838167612e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,JJA,central_ethiopia,1.0854692566124655e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,JJA,west_ethiopia,2.8523061642644192e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,JJA,east_ethiopia,-2.5375940159769763e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,JJA,greater_horn,-5.545516409753287e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,JJA,east_africa,-5.472258709115904e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,JJA,atlantic_congo_ethiopia,-3.747867408756278e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,JJA,congo_moisture_corridor,1.6534932981432326e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,JJA,western_moisture_entry,1.6361964372181199e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,JJA,western_indian_ocean,3.0522624435515495e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,JJA,arabia_red_sea,-4.110867753268658e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,JJA,north_africa_arabia,-5.376092855620463e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,JJA,tej_core,1.9138686961521355e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,JJA,somali_jet_box,-1.2426424857499774e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,JJA,turkana_corridor,-3.6008218906338135e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,JJAS,ethiopia,-8.176301199516803e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,JJAS,ethiopia_highlands_broad,9.959292631601208e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,JJAS,north_ethiopia,1.4686094491541895e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,JJAS,central_ethiopia,8.77118406896342e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,JJAS,west_ethiopia,2.8024569806390737e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,JJAS,east_ethiopia,-2.662366702175822e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,JJAS,greater_horn,-5.680899177697516e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,JJAS,east_africa,-5.571386386839789e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,JJAS,atlantic_congo_ethiopia,-3.640325413520029e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,JJAS,congo_moisture_corridor,1.9530920848678395e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,JJAS,western_moisture_entry,1.6994590289456473e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,JJAS,western_indian_ocean,7.395751594832133e-08,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,JJAS,arabia_red_sea,-5.92465699523411e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,JJAS,north_africa_arabia,-6.466309388299316e-07,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,JJAS,tej_core,1.719336283279974e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,JJAS,somali_jet_box,-1.5333741678815891e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+divergence200,JJAS,turkana_corridor,-3.5743324133455145e-06,s**-1,Positive 200 hPa divergence supports upper-level outflow and convection.
+z200,June,ethiopia,12442.076433051265,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,June,ethiopia_highlands_broad,12445.826498128978,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,June,north_ethiopia,12456.899972175004,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,June,central_ethiopia,12441.326654694614,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,June,west_ethiopia,12444.136801811435,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,June,east_ethiopia,12436.913812732022,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,June,greater_horn,12443.560515546858,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,June,east_africa,12438.003260060892,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,June,atlantic_congo_ethiopia,12428.354345017773,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,June,congo_moisture_corridor,12433.344233482023,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,June,western_moisture_entry,12437.800312320449,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,June,western_indian_ocean,12431.106732396242,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,June,arabia_red_sea,12483.46792215492,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,June,north_africa_arabia,12443.403014522659,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,June,tej_core,12462.611270802463,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,June,somali_jet_box,12430.299316908073,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,June,turkana_corridor,12424.38624456654,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,July,ethiopia,12423.639607590088,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,July,ethiopia_highlands_broad,12428.73748905825,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,July,north_ethiopia,12444.584384695736,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,July,central_ethiopia,12422.322448828674,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,July,west_ethiopia,12425.704089906121,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,July,east_ethiopia,12416.706050978602,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,July,greater_horn,12431.985649568076,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,July,east_africa,12419.869991948595,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,July,atlantic_congo_ethiopia,12411.376201061077,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,July,congo_moisture_corridor,12411.008246298623,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,July,western_moisture_entry,12417.304909355193,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,July,western_indian_ocean,12407.890390009841,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,July,arabia_red_sea,12502.408211871902,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,July,north_africa_arabia,12494.348439766458,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,July,tej_core,12449.463061321381,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,July,somali_jet_box,12407.255565732088,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,July,turkana_corridor,12398.740363751684,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,August,ethiopia,12425.462519276765,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,August,ethiopia_highlands_broad,12430.375036327985,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,August,north_ethiopia,12445.257585420482,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,August,central_ethiopia,12424.361650288143,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,August,west_ethiopia,12427.522676775301,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,August,east_ethiopia,12418.969889120901,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,August,greater_horn,12431.88397999646,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,August,east_africa,12421.160869401689,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,August,atlantic_congo_ethiopia,12413.411105746407,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,August,congo_moisture_corridor,12413.693525423223,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,August,western_moisture_entry,12419.694073320998,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,August,western_indian_ocean,12409.006162041655,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,August,arabia_red_sea,12496.135833178207,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,August,north_africa_arabia,12484.340308485505,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,August,tej_core,12448.486710259216,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,August,somali_jet_box,12409.72083612186,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,August,turkana_corridor,12402.199395037867,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,September,ethiopia,12422.64815393405,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,September,ethiopia_highlands_broad,12425.336639215979,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,September,north_ethiopia,12435.094559288438,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,September,central_ethiopia,12421.345900619854,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,September,west_ethiopia,12423.532472353503,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,September,east_ethiopia,12418.639532691132,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,September,greater_horn,12423.813204887485,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,September,east_africa,12418.443636642867,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,September,atlantic_congo_ethiopia,12408.983510786553,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,September,congo_moisture_corridor,12414.990532665732,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,September,western_moisture_entry,12418.581627680454,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,September,western_indian_ocean,12411.405934404176,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,September,arabia_red_sea,12460.679855162349,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,September,north_africa_arabia,12427.457342683887,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,September,tej_core,12441.582807412587,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,September,somali_jet_box,12412.69015216445,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,September,turkana_corridor,12407.571385065348,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,JJA,ethiopia,12430.392802027922,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,JJA,ethiopia_highlands_broad,12434.979609831667,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,JJA,north_ethiopia,12448.913939511625,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,JJA,central_ethiopia,12429.336828019854,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,JJA,west_ethiopia,12432.454491258084,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,JJA,east_ethiopia,12424.196540917776,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,JJA,greater_horn,12435.810039754997,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,JJA,east_africa,12426.34469404897,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,JJA,atlantic_congo_ethiopia,12417.713869658619,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,JJA,congo_moisture_corridor,12419.348655304695,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,JJA,western_moisture_entry,12424.933115415863,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,JJA,western_indian_ocean,12416.001092426379,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,JJA,arabia_red_sea,12494.003951662804,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,JJA,north_africa_arabia,12474.030580126715,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,JJA,tej_core,12453.520349420822,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,JJA,somali_jet_box,12415.758562399507,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,JJA,turkana_corridor,12408.441962259152,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,JJAS,ethiopia,12428.456717553387,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,JJAS,ethiopia_highlands_broad,12432.568965137998,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,JJAS,north_ethiopia,12445.459162159419,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,JJAS,central_ethiopia,12427.339356670052,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,JJAS,west_ethiopia,12430.223970998915,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,JJAS,east_ethiopia,12422.807492399097,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,JJAS,greater_horn,12432.810849076983,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,JJAS,east_africa,12424.369453234836,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,JJAS,atlantic_congo_ethiopia,12415.531316089764,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,JJAS,congo_moisture_corridor,12418.259134167594,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,JJAS,western_moisture_entry,12423.345125923146,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,JJAS,western_indian_ocean,12414.852308199715,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,JJAS,arabia_red_sea,12485.672948907582,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,JJAS,north_africa_arabia,12462.38726947016,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,JJAS,tej_core,12450.535966367583,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,JJAS,somali_jet_box,12414.991505803764,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z200,JJAS,turkana_corridor,12408.2244701142,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,June,ethiopia,5874.503758989358,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,June,ethiopia_highlands_broad,5877.5357588968045,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,June,north_ethiopia,5881.782275723771,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,June,central_ethiopia,5875.417887193385,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,June,west_ethiopia,5877.920677819395,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,June,east_ethiopia,5869.932098409844,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,June,greater_horn,5875.584097097581,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,June,east_africa,5873.4829474341705,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,June,atlantic_congo_ethiopia,5876.440974615559,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,June,congo_moisture_corridor,5874.293814876583,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,June,western_moisture_entry,5875.985158490285,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,June,western_indian_ocean,5864.426349370464,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,June,arabia_red_sea,5878.16575117815,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,June,north_africa_arabia,5878.098173799232,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,June,tej_core,5865.273547774657,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,June,somali_jet_box,5867.181916904333,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,June,turkana_corridor,5870.345166208391,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,July,ethiopia,5868.635037247624,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,July,ethiopia_highlands_broad,5871.150638248131,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,July,north_ethiopia,5875.296649499631,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,July,central_ethiopia,5869.252148122746,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,July,west_ethiopia,5871.080599360067,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,July,east_ethiopia,5864.992949345902,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,July,greater_horn,5869.828050180087,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,July,east_africa,5867.6805430881905,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,July,atlantic_congo_ethiopia,5870.486498496494,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,July,congo_moisture_corridor,5867.613045456881,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,July,western_moisture_entry,5869.0238208155,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,July,western_indian_ocean,5858.918168690386,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,July,arabia_red_sea,5875.075847148575,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,July,north_africa_arabia,5880.535779332114,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,July,tej_core,5858.9222116886085,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,July,somali_jet_box,5861.624783758264,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,July,turkana_corridor,5863.915236167723,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,August,ethiopia,5868.855900514815,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,August,ethiopia_highlands_broad,5871.204151694809,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,August,north_ethiopia,5875.8142455606385,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,August,central_ethiopia,5869.1557415971965,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,August,west_ethiopia,5870.897385888813,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,August,east_ethiopia,5865.40097478341,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,August,greater_horn,5871.786496867663,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,August,east_africa,5868.813928799207,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,August,atlantic_congo_ethiopia,5870.792795985722,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,August,congo_moisture_corridor,5866.85393800337,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,August,western_moisture_entry,5868.40638887119,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,August,western_indian_ocean,5861.244141315175,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,August,arabia_red_sea,5880.37273024253,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,August,north_africa_arabia,5884.892855649657,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,August,tej_core,5861.577157020252,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,August,somali_jet_box,5862.836103161371,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,August,turkana_corridor,5863.471545582706,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,September,ethiopia,5868.468994944927,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,September,ethiopia_highlands_broad,5870.920464292631,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,September,north_ethiopia,5875.004571653393,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,September,central_ethiopia,5869.1288405161795,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,September,west_ethiopia,5870.816046449247,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,September,east_ethiopia,5865.365772899666,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,September,greater_horn,5871.086150001962,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,September,east_africa,5868.484729450224,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,September,atlantic_congo_ethiopia,5870.044417642943,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,September,congo_moisture_corridor,5866.341634435416,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,September,western_moisture_entry,5868.1341308783585,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,September,western_indian_ocean,5862.063961629625,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,September,arabia_red_sea,5877.921128357394,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,September,north_africa_arabia,5878.201730118113,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,September,tej_core,5864.104547986078,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,September,somali_jet_box,5863.014192788536,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,September,turkana_corridor,5863.062524383036,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,JJA,ethiopia,5870.664920002976,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,JJA,ethiopia_highlands_broad,5873.296883474962,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,JJA,north_ethiopia,5877.631075329427,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,JJA,central_ethiopia,5871.275365476051,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,JJA,west_ethiopia,5873.299570181113,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,JJA,east_ethiopia,5866.775363813244,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,JJA,greater_horn,5872.399552383643,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,JJA,east_africa,5869.992477910312,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,JJA,atlantic_congo_ethiopia,5872.573427585518,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,JJA,congo_moisture_corridor,5869.586933841815,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,JJA,western_moisture_entry,5871.1384556444345,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,JJA,western_indian_ocean,5861.529554189447,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,JJA,arabia_red_sea,5877.871449817184,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,JJA,north_africa_arabia,5881.1756000238465,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,JJA,tej_core,5861.924305008686,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,JJA,somali_jet_box,5863.880943145853,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,JJA,turkana_corridor,5865.910637995745,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,JJAS,ethiopia,5870.115965339222,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,JJAS,ethiopia_highlands_broad,5872.702802156907,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,JJAS,north_ethiopia,5876.9744263540115,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,JJAS,central_ethiopia,5870.738698530325,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,JJAS,west_ethiopia,5872.678725984,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,JJAS,east_ethiopia,5866.422980775434,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,JJAS,greater_horn,5872.071225043201,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,JJAS,east_africa,5869.61556377125,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,JJAS,atlantic_congo_ethiopia,5871.941179467057,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,JJAS,congo_moisture_corridor,5868.775636626587,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,JJAS,western_moisture_entry,5870.387428847985,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,JJAS,western_indian_ocean,5861.663177583307,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,JJAS,arabia_red_sea,5877.883892114006,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,JJAS,north_africa_arabia,5880.432147422445,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,JJAS,tej_core,5862.469385917371,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,JJAS,somali_jet_box,5863.664272866747,m,Geopotential height climatology used for circulation and Rossby-wave context.
+z500,JJAS,turkana_corridor,5865.1986239817925,m,Geopotential height climatology used for circulation and Rossby-wave context.

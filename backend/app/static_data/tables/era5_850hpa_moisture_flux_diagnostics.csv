@@ -1,0 +1,409 @@
+diagnostic,period,domain,value,units,interpretation
+qu850,JJA,ethiopia,0.032991447018077456,kg kg-1 m s-1,Positive value indicates eastward moisture transport; negative value indicates westward moisture transport.
+qv850,JJA,ethiopia,0.03978189347059901,kg kg-1 m s-1,Positive value indicates northward moisture transport; negative value indicates southward moisture transport.
+wind_speed850,JJA,ethiopia,6.602357156315042,m s**-1,Higher value indicates stronger low-level wind speed.
+mfc850,JJA,ethiopia,8.921479095763144e-09,kg kg-1 s-1 approximately,Positive value indicates moisture convergence; negative value indicates moisture divergence.
+qu850,JJA,ethiopia_highlands_broad,0.012283911648783744,kg kg-1 m s-1,Positive value indicates eastward moisture transport; negative value indicates westward moisture transport.
+qv850,JJA,ethiopia_highlands_broad,0.012504476514668333,kg kg-1 m s-1,Positive value indicates northward moisture transport; negative value indicates southward moisture transport.
+wind_speed850,JJA,ethiopia_highlands_broad,2.5514950040248756,m s**-1,Higher value indicates stronger low-level wind speed.
+mfc850,JJA,ethiopia_highlands_broad,3.530827233187673e-08,kg kg-1 s-1 approximately,Positive value indicates moisture convergence; negative value indicates moisture divergence.
+qu850,JJA,north_ethiopia,0.018951283781393113,kg kg-1 m s-1,Positive value indicates eastward moisture transport; negative value indicates westward moisture transport.
+qv850,JJA,north_ethiopia,-0.0010680323257131793,kg kg-1 m s-1,Positive value indicates northward moisture transport; negative value indicates southward moisture transport.
+wind_speed850,JJA,north_ethiopia,3.050612532400055,m s**-1,Higher value indicates stronger low-level wind speed.
+mfc850,JJA,north_ethiopia,4.717514926985514e-08,kg kg-1 s-1 approximately,Positive value indicates moisture convergence; negative value indicates moisture divergence.
+qu850,JJA,central_ethiopia,0.004601825874398601,kg kg-1 m s-1,Positive value indicates eastward moisture transport; negative value indicates westward moisture transport.
+qv850,JJA,central_ethiopia,0.006935020619692722,kg kg-1 m s-1,Positive value indicates northward moisture transport; negative value indicates southward moisture transport.
+wind_speed850,JJA,central_ethiopia,1.1487994603613179,m s**-1,Higher value indicates stronger low-level wind speed.
+mfc850,JJA,central_ethiopia,2.6171137788676722e-08,kg kg-1 s-1 approximately,Positive value indicates moisture convergence; negative value indicates moisture divergence.
+qu850,JJA,west_ethiopia,0.013607082125577288,kg kg-1 m s-1,Positive value indicates eastward moisture transport; negative value indicates westward moisture transport.
+qv850,JJA,west_ethiopia,0.021806163779517905,kg kg-1 m s-1,Positive value indicates northward moisture transport; negative value indicates southward moisture transport.
+wind_speed850,JJA,west_ethiopia,2.3580980327682686,m s**-1,Higher value indicates stronger low-level wind speed.
+mfc850,JJA,west_ethiopia,2.316220587675968e-08,kg kg-1 s-1 approximately,Positive value indicates moisture convergence; negative value indicates moisture divergence.
+qu850,JJA,east_ethiopia,0.06945411827237573,kg kg-1 m s-1,Positive value indicates eastward moisture transport; negative value indicates westward moisture transport.
+qv850,JJA,east_ethiopia,0.06872912033157776,kg kg-1 m s-1,Positive value indicates northward moisture transport; negative value indicates southward moisture transport.
+wind_speed850,JJA,east_ethiopia,10.541623559021293,m s**-1,Higher value indicates stronger low-level wind speed.
+mfc850,JJA,east_ethiopia,2.1514126084548563e-08,kg kg-1 s-1 approximately,Positive value indicates moisture convergence; negative value indicates moisture divergence.
+qu850,JJA,greater_horn,0.004312207373414494,kg kg-1 m s-1,Positive value indicates eastward moisture transport; negative value indicates westward moisture transport.
+qv850,JJA,greater_horn,0.027455783825070693,kg kg-1 m s-1,Positive value indicates northward moisture transport; negative value indicates southward moisture transport.
+wind_speed850,JJA,greater_horn,6.404907835573809,m s**-1,Higher value indicates stronger low-level wind speed.
+mfc850,JJA,greater_horn,2.0033413539559754e-09,kg kg-1 s-1 approximately,Positive value indicates moisture convergence; negative value indicates moisture divergence.
+qu850,JJA,east_africa,0.004768439631910147,kg kg-1 m s-1,Positive value indicates eastward moisture transport; negative value indicates westward moisture transport.
+qv850,JJA,east_africa,0.03371111455815244,kg kg-1 m s-1,Positive value indicates northward moisture transport; negative value indicates southward moisture transport.
+wind_speed850,JJA,east_africa,6.598979024804092,m s**-1,Higher value indicates stronger low-level wind speed.
+mfc850,JJA,east_africa,2.7669345941401213e-09,kg kg-1 s-1 approximately,Positive value indicates moisture convergence; negative value indicates moisture divergence.
+qu850,JJA,atlantic_congo_ethiopia,-0.003969534342280065,kg kg-1 m s-1,Positive value indicates eastward moisture transport; negative value indicates westward moisture transport.
+qv850,JJA,atlantic_congo_ethiopia,0.014102097564844969,kg kg-1 m s-1,Positive value indicates northward moisture transport; negative value indicates southward moisture transport.
+wind_speed850,JJA,atlantic_congo_ethiopia,4.254638070881536,m s**-1,Higher value indicates stronger low-level wind speed.
+mfc850,JJA,atlantic_congo_ethiopia,-1.7470337420877266e-09,kg kg-1 s-1 approximately,Positive value indicates moisture convergence; negative value indicates moisture divergence.
+qu850,JJA,congo_moisture_corridor,0.008655124673084201,kg kg-1 m s-1,Positive value indicates eastward moisture transport; negative value indicates westward moisture transport.
+qv850,JJA,congo_moisture_corridor,0.01419310982302172,kg kg-1 m s-1,Positive value indicates northward moisture transport; negative value indicates southward moisture transport.
+wind_speed850,JJA,congo_moisture_corridor,2.585945017361741,m s**-1,Higher value indicates stronger low-level wind speed.
+mfc850,JJA,congo_moisture_corridor,1.3544360917615706e-08,kg kg-1 s-1 approximately,Positive value indicates moisture convergence; negative value indicates moisture divergence.
+qu850,JJA,western_moisture_entry,0.015766734485051566,kg kg-1 m s-1,Positive value indicates eastward moisture transport; negative value indicates westward moisture transport.
+qv850,JJA,western_moisture_entry,0.020929891976223632,kg kg-1 m s-1,Positive value indicates northward moisture transport; negative value indicates southward moisture transport.
+wind_speed850,JJA,western_moisture_entry,2.866822164982296,m s**-1,Higher value indicates stronger low-level wind speed.
+mfc850,JJA,western_moisture_entry,1.038076733674837e-08,kg kg-1 s-1 approximately,Positive value indicates moisture convergence; negative value indicates moisture divergence.
+qu850,JJA,western_indian_ocean,0.020712415643490818,kg kg-1 m s-1,Positive value indicates eastward moisture transport; negative value indicates westward moisture transport.
+qv850,JJA,western_indian_ocean,0.05176528999894594,kg kg-1 m s-1,Positive value indicates northward moisture transport; negative value indicates southward moisture transport.
+wind_speed850,JJA,western_indian_ocean,10.284600064365383,m s**-1,Higher value indicates stronger low-level wind speed.
+mfc850,JJA,western_indian_ocean,-5.485438225452951e-09,kg kg-1 s-1 approximately,Positive value indicates moisture convergence; negative value indicates moisture divergence.
+qu850,JJA,arabia_red_sea,0.033792894525958996,kg kg-1 m s-1,Positive value indicates eastward moisture transport; negative value indicates westward moisture transport.
+qv850,JJA,arabia_red_sea,-0.0011852333973908246,kg kg-1 m s-1,Positive value indicates northward moisture transport; negative value indicates southward moisture transport.
+wind_speed850,JJA,arabia_red_sea,6.241327278066861,m s**-1,Higher value indicates stronger low-level wind speed.
+mfc850,JJA,arabia_red_sea,1.7711215034199797e-08,kg kg-1 s-1 approximately,Positive value indicates moisture convergence; negative value indicates moisture divergence.
+qu850,JJA,north_africa_arabia,0.01612485331034843,kg kg-1 m s-1,Positive value indicates eastward moisture transport; negative value indicates westward moisture transport.
+qv850,JJA,north_africa_arabia,-0.006052021345437842,kg kg-1 m s-1,Positive value indicates northward moisture transport; negative value indicates southward moisture transport.
+wind_speed850,JJA,north_africa_arabia,4.961743313996088,m s**-1,Higher value indicates stronger low-level wind speed.
+mfc850,JJA,north_africa_arabia,7.757874954745697e-09,kg kg-1 s-1 approximately,Positive value indicates moisture convergence; negative value indicates moisture divergence.
+qu850,JJA,tej_core,0.0864218729431374,kg kg-1 m s-1,Positive value indicates eastward moisture transport; negative value indicates westward moisture transport.
+qv850,JJA,tej_core,0.020504543817000218,kg kg-1 m s-1,Positive value indicates northward moisture transport; negative value indicates southward moisture transport.
+wind_speed850,JJA,tej_core,9.094000070644219,m s**-1,Higher value indicates stronger low-level wind speed.
+mfc850,JJA,tej_core,1.172567862485358e-08,kg kg-1 s-1 approximately,Positive value indicates moisture convergence; negative value indicates moisture divergence.
+qu850,JJA,somali_jet_box,0.029169979767465194,kg kg-1 m s-1,Positive value indicates eastward moisture transport; negative value indicates westward moisture transport.
+qv850,JJA,somali_jet_box,0.07308096191734854,kg kg-1 m s-1,Positive value indicates northward moisture transport; negative value indicates southward moisture transport.
+wind_speed850,JJA,somali_jet_box,11.31441033515964,m s**-1,Higher value indicates stronger low-level wind speed.
+mfc850,JJA,somali_jet_box,-1.062293157515537e-08,kg kg-1 s-1 approximately,Positive value indicates moisture convergence; negative value indicates moisture divergence.
+qu850,JJA,turkana_corridor,-0.027444591987533642,kg kg-1 m s-1,Positive value indicates eastward moisture transport; negative value indicates westward moisture transport.
+qv850,JJA,turkana_corridor,0.056583691082244,kg kg-1 m s-1,Positive value indicates northward moisture transport; negative value indicates southward moisture transport.
+wind_speed850,JJA,turkana_corridor,7.257122032638336,m s**-1,Higher value indicates stronger low-level wind speed.
+mfc850,JJA,turkana_corridor,-2.5990649420885922e-08,kg kg-1 s-1 approximately,Positive value indicates moisture convergence; negative value indicates moisture divergence.
+qu850,JJAS,ethiopia,0.028203336005932063,kg kg-1 m s-1,Positive value indicates eastward moisture transport; negative value indicates westward moisture transport.
+qv850,JJAS,ethiopia,0.037122450318186034,kg kg-1 m s-1,Positive value indicates northward moisture transport; negative value indicates southward moisture transport.
+wind_speed850,JJAS,ethiopia,6.078277217582907,m s**-1,Higher value indicates stronger low-level wind speed.
+mfc850,JJAS,ethiopia,8.990433528885353e-09,kg kg-1 s-1 approximately,Positive value indicates moisture convergence; negative value indicates moisture divergence.
+qu850,JJAS,ethiopia_highlands_broad,0.009697355245322201,kg kg-1 m s-1,Positive value indicates eastward moisture transport; negative value indicates westward moisture transport.
+qv850,JJAS,ethiopia_highlands_broad,0.011063223133150243,kg kg-1 m s-1,Positive value indicates northward moisture transport; negative value indicates southward moisture transport.
+wind_speed850,JJAS,ethiopia_highlands_broad,2.2978430572330604,m s**-1,Higher value indicates stronger low-level wind speed.
+mfc850,JJAS,ethiopia_highlands_broad,3.396073760401671e-08,kg kg-1 s-1 approximately,Positive value indicates moisture convergence; negative value indicates moisture divergence.
+qu850,JJAS,north_ethiopia,0.015391530325116552,kg kg-1 m s-1,Positive value indicates eastward moisture transport; negative value indicates westward moisture transport.
+qv850,JJAS,north_ethiopia,-0.0018384562040892826,kg kg-1 m s-1,Positive value indicates northward moisture transport; negative value indicates southward moisture transport.
+wind_speed850,JJAS,north_ethiopia,2.686289623097193,m s**-1,Higher value indicates stronger low-level wind speed.
+mfc850,JJAS,north_ethiopia,4.4613792823920977e-08,kg kg-1 s-1 approximately,Positive value indicates moisture convergence; negative value indicates moisture divergence.
+qu850,JJAS,central_ethiopia,0.0031263796371881606,kg kg-1 m s-1,Positive value indicates eastward moisture transport; negative value indicates westward moisture transport.
+qv850,JJAS,central_ethiopia,0.006122785593913729,kg kg-1 m s-1,Positive value indicates northward moisture transport; negative value indicates southward moisture transport.
+wind_speed850,JJAS,central_ethiopia,1.0297633938939208,m s**-1,Higher value indicates stronger low-level wind speed.
+mfc850,JJAS,central_ethiopia,2.628651447427039e-08,kg kg-1 s-1 approximately,Positive value indicates moisture convergence; negative value indicates moisture divergence.
+qu850,JJAS,west_ethiopia,0.010726631285727319,kg kg-1 m s-1,Positive value indicates eastward moisture transport; negative value indicates westward moisture transport.
+qv850,JJAS,west_ethiopia,0.019246063859526926,kg kg-1 m s-1,Positive value indicates northward moisture transport; negative value indicates southward moisture transport.
+wind_speed850,JJAS,west_ethiopia,2.0814654966810835,m s**-1,Higher value indicates stronger low-level wind speed.
+mfc850,JJAS,west_ethiopia,2.0944121872722528e-08,kg kg-1 s-1 approximately,Positive value indicates moisture convergence; negative value indicates moisture divergence.
+qu850,JJAS,east_ethiopia,0.06248791436084679,kg kg-1 m s-1,Positive value indicates eastward moisture transport; negative value indicates westward moisture transport.
+qv850,JJAS,east_ethiopia,0.06446667158490482,kg kg-1 m s-1,Positive value indicates northward moisture transport; negative value indicates southward moisture transport.
+wind_speed850,JJAS,east_ethiopia,9.692322699567997,m s**-1,Higher value indicates stronger low-level wind speed.
+mfc850,JJAS,east_ethiopia,1.9748045157514333e-08,kg kg-1 s-1 approximately,Positive value indicates moisture convergence; negative value indicates moisture divergence.
+qu850,JJAS,greater_horn,0.0009735581645029951,kg kg-1 m s-1,Positive value indicates eastward moisture transport; negative value indicates westward moisture transport.
+qv850,JJAS,greater_horn,0.024135042994820742,kg kg-1 m s-1,Positive value indicates northward moisture transport; negative value indicates southward moisture transport.
+wind_speed850,JJAS,greater_horn,6.061539925810691,m s**-1,Higher value indicates stronger low-level wind speed.
+mfc850,JJAS,greater_horn,2.3486826189825396e-09,kg kg-1 s-1 approximately,Positive value indicates moisture convergence; negative value indicates moisture divergence.
+qu850,JJAS,east_africa,0.0013092274799690938,kg kg-1 m s-1,Positive value indicates eastward moisture transport; negative value indicates westward moisture transport.
+qv850,JJAS,east_africa,0.02980010320278954,kg kg-1 m s-1,Positive value indicates northward moisture transport; negative value indicates southward moisture transport.
+wind_speed850,JJAS,east_africa,6.231757984272948,m s**-1,Higher value indicates stronger low-level wind speed.
+mfc850,JJAS,east_africa,3.3140228211146985e-09,kg kg-1 s-1 approximately,Positive value indicates moisture convergence; negative value indicates moisture divergence.
+qu850,JJAS,atlantic_congo_ethiopia,-0.005805503811493853,kg kg-1 m s-1,Positive value indicates eastward moisture transport; negative value indicates westward moisture transport.
+qv850,JJAS,atlantic_congo_ethiopia,0.011889668043276838,kg kg-1 m s-1,Positive value indicates northward moisture transport; negative value indicates southward moisture transport.
+wind_speed850,JJAS,atlantic_congo_ethiopia,4.145563510856401,m s**-1,Higher value indicates stronger low-level wind speed.
+mfc850,JJAS,atlantic_congo_ethiopia,-1.3131855904279453e-09,kg kg-1 s-1 approximately,Positive value indicates moisture convergence; negative value indicates moisture divergence.
+qu850,JJAS,congo_moisture_corridor,0.006955205123932487,kg kg-1 m s-1,Positive value indicates eastward moisture transport; negative value indicates westward moisture transport.
+qv850,JJAS,congo_moisture_corridor,0.010846103461735415,kg kg-1 m s-1,Positive value indicates northward moisture transport; negative value indicates southward moisture transport.
+wind_speed850,JJAS,congo_moisture_corridor,2.436669669312466,m s**-1,Higher value indicates stronger low-level wind speed.
+mfc850,JJAS,congo_moisture_corridor,1.428162660177116e-08,kg kg-1 s-1 approximately,Positive value indicates moisture convergence; negative value indicates moisture divergence.
+qu850,JJAS,western_moisture_entry,0.011510445615556236,kg kg-1 m s-1,Positive value indicates eastward moisture transport; negative value indicates westward moisture transport.
+qv850,JJAS,western_moisture_entry,0.017597802885686874,kg kg-1 m s-1,Positive value indicates northward moisture transport; negative value indicates southward moisture transport.
+wind_speed850,JJAS,western_moisture_entry,2.561567998227158,m s**-1,Higher value indicates stronger low-level wind speed.
+mfc850,JJAS,western_moisture_entry,9.918949494860545e-09,kg kg-1 s-1 approximately,Positive value indicates moisture convergence; negative value indicates moisture divergence.
+qu850,JJAS,western_indian_ocean,0.01624962568374472,kg kg-1 m s-1,Positive value indicates eastward moisture transport; negative value indicates westward moisture transport.
+qv850,JJAS,western_indian_ocean,0.046502559400363755,kg kg-1 m s-1,Positive value indicates northward moisture transport; negative value indicates southward moisture transport.
+wind_speed850,JJAS,western_indian_ocean,9.560548672008485,m s**-1,Higher value indicates stronger low-level wind speed.
+mfc850,JJAS,western_indian_ocean,-5.023710581074981e-09,kg kg-1 s-1 approximately,Positive value indicates moisture convergence; negative value indicates moisture divergence.
+qu850,JJAS,arabia_red_sea,0.02800776880235807,kg kg-1 m s-1,Positive value indicates eastward moisture transport; negative value indicates westward moisture transport.
+qv850,JJAS,arabia_red_sea,-0.0014518856576766002,kg kg-1 m s-1,Positive value indicates northward moisture transport; negative value indicates southward moisture transport.
+wind_speed850,JJAS,arabia_red_sea,5.638623790611414,m s**-1,Higher value indicates stronger low-level wind speed.
+mfc850,JJAS,arabia_red_sea,1.5501607103335362e-08,kg kg-1 s-1 approximately,Positive value indicates moisture convergence; negative value indicates moisture divergence.
+qu850,JJAS,north_africa_arabia,0.012185107794025882,kg kg-1 m s-1,Positive value indicates eastward moisture transport; negative value indicates westward moisture transport.
+qv850,JJAS,north_africa_arabia,-0.006403433451369199,kg kg-1 m s-1,Positive value indicates northward moisture transport; negative value indicates southward moisture transport.
+wind_speed850,JJAS,north_africa_arabia,4.6834135530081085,m s**-1,Higher value indicates stronger low-level wind speed.
+mfc850,JJAS,north_africa_arabia,6.198508947524868e-09,kg kg-1 s-1 approximately,Positive value indicates moisture convergence; negative value indicates moisture divergence.
+qu850,JJAS,tej_core,0.07598993095660403,kg kg-1 m s-1,Positive value indicates eastward moisture transport; negative value indicates westward moisture transport.
+qv850,JJAS,tej_core,0.01731962027395874,kg kg-1 m s-1,Positive value indicates northward moisture transport; negative value indicates southward moisture transport.
+wind_speed850,JJAS,tej_core,8.234907036747735,m s**-1,Higher value indicates stronger low-level wind speed.
+mfc850,JJAS,tej_core,1.0971282267405964e-08,kg kg-1 s-1 approximately,Positive value indicates moisture convergence; negative value indicates moisture divergence.
+qu850,JJAS,somali_jet_box,0.023636914950620508,kg kg-1 m s-1,Positive value indicates eastward moisture transport; negative value indicates westward moisture transport.
+qv850,JJAS,somali_jet_box,0.06724038127437865,kg kg-1 m s-1,Positive value indicates northward moisture transport; negative value indicates southward moisture transport.
+wind_speed850,JJAS,somali_jet_box,10.530522934394039,m s**-1,Higher value indicates stronger low-level wind speed.
+mfc850,JJAS,somali_jet_box,-9.35941566433698e-09,kg kg-1 s-1 approximately,Positive value indicates moisture convergence; negative value indicates moisture divergence.
+qu850,JJAS,turkana_corridor,-0.02933077547611826,kg kg-1 m s-1,Positive value indicates eastward moisture transport; negative value indicates westward moisture transport.
+qv850,JJAS,turkana_corridor,0.05468712402014175,kg kg-1 m s-1,Positive value indicates northward moisture transport; negative value indicates southward moisture transport.
+wind_speed850,JJAS,turkana_corridor,7.204224787133629,m s**-1,Higher value indicates stronger low-level wind speed.
+mfc850,JJAS,turkana_corridor,-2.640337614024641e-08,kg kg-1 s-1 approximately,Positive value indicates moisture convergence; negative value indicates moisture divergence.
+qu850,June,ethiopia,0.029710094573829688,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,June,ethiopia,0.039615347535877615,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,June,ethiopia,6.264500310591341,m s**-1,Monthly climatological diagnostic.
+mfc850,June,ethiopia,1.6314964027514647e-08,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,June,ethiopia_highlands_broad,0.010274974219739176,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,June,ethiopia_highlands_broad,0.01124151387807697,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,June,ethiopia_highlands_broad,2.5773429519310365,m s**-1,Monthly climatological diagnostic.
+mfc850,June,ethiopia_highlands_broad,4.505316525988856e-08,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,June,north_ethiopia,0.01516583548121056,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,June,north_ethiopia,-0.0032862241306945506,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,June,north_ethiopia,3.108781168737022,m s**-1,Monthly climatological diagnostic.
+mfc850,June,north_ethiopia,6.02993509428521e-08,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,June,central_ethiopia,0.002086022250917963,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,June,central_ethiopia,0.005111768094922801,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,June,central_ethiopia,1.0653584371493798,m s**-1,Monthly climatological diagnostic.
+mfc850,June,central_ethiopia,4.156294735792033e-08,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,June,west_ethiopia,0.01327063117554929,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,June,west_ethiopia,0.02300897418446226,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,June,west_ethiopia,2.50728022758039,m s**-1,Monthly climatological diagnostic.
+mfc850,June,west_ethiopia,2.829833400182565e-08,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,June,east_ethiopia,0.065935793766035,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,June,east_ethiopia,0.06642718904358416,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,June,east_ethiopia,9.856389852798001,m s**-1,Monthly climatological diagnostic.
+mfc850,June,east_ethiopia,2.2998237337128514e-08,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,June,greater_horn,0.0013215765809669472,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,June,greater_horn,0.029298938985094548,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,June,greater_horn,6.218188422850244,m s**-1,Monthly climatological diagnostic.
+mfc850,June,greater_horn,5.665506088649997e-10,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,June,east_africa,0.0016871392410308887,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,June,east_africa,0.03542654590365125,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,June,east_africa,6.385212765416056,m s**-1,Monthly climatological diagnostic.
+mfc850,June,east_africa,1.238319145637672e-09,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,June,atlantic_congo_ethiopia,-0.009724810950030409,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,June,atlantic_congo_ethiopia,0.01592790340248028,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,June,atlantic_congo_ethiopia,4.202899789410572,m s**-1,Monthly climatological diagnostic.
+mfc850,June,atlantic_congo_ethiopia,-2.8433385990660347e-09,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,June,congo_moisture_corridor,0.002969239958728878,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,June,congo_moisture_corridor,0.02008812020990657,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,June,congo_moisture_corridor,2.5499597173683264,m s**-1,Monthly climatological diagnostic.
+mfc850,June,congo_moisture_corridor,1.0849996274523716e-08,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,June,western_moisture_entry,0.012216794706293818,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,June,western_moisture_entry,0.026019019017483744,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,June,western_moisture_entry,2.8956387984424876,m s**-1,Monthly climatological diagnostic.
+mfc850,June,western_moisture_entry,1.3402588988745524e-08,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,June,western_indian_ocean,0.023956734539186203,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,June,western_indian_ocean,0.04999690726757637,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,June,western_indian_ocean,9.808578345672164,m s**-1,Monthly climatological diagnostic.
+mfc850,June,western_indian_ocean,-4.8197960210105735e-09,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,June,arabia_red_sea,0.025226432588717682,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,June,arabia_red_sea,-0.0031709205416806316,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,June,arabia_red_sea,5.565330705621768,m s**-1,Monthly climatological diagnostic.
+mfc850,June,arabia_red_sea,1.4937845207318677e-08,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,June,north_africa_arabia,0.011333088274046445,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,June,north_africa_arabia,-0.005615500008910859,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,June,north_africa_arabia,4.647167221240219,m s**-1,Monthly climatological diagnostic.
+mfc850,June,north_africa_arabia,8.18140802935956e-09,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,June,tej_core,0.07939858322246708,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,June,tej_core,0.02016975922847083,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,June,tej_core,8.4594147439623,m s**-1,Monthly climatological diagnostic.
+mfc850,June,tej_core,1.1829456394481266e-08,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,June,somali_jet_box,0.028716560672933177,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,June,somali_jet_box,0.07269204530064415,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,June,somali_jet_box,10.698783529025551,m s**-1,Monthly climatological diagnostic.
+mfc850,June,somali_jet_box,-8.929631401880528e-09,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,June,turkana_corridor,-0.02744652179241794,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,June,turkana_corridor,0.05878238142906586,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,June,turkana_corridor,7.128045784251937,m s**-1,Monthly climatological diagnostic.
+mfc850,June,turkana_corridor,-2.4555317158185576e-08,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,July,ethiopia,0.037276182410388936,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,July,ethiopia,0.04138420840218163,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,July,ethiopia,7.12726854986664,m s**-1,Monthly climatological diagnostic.
+mfc850,July,ethiopia,7.097439548807148e-09,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,July,ethiopia_highlands_broad,0.014564870351148501,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,July,ethiopia_highlands_broad,0.014208231614038136,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,July,ethiopia_highlands_broad,2.7438297164081633,m s**-1,Monthly climatological diagnostic.
+mfc850,July,ethiopia_highlands_broad,3.1573416705045974e-08,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,July,north_ethiopia,0.022590274964932922,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,July,north_ethiopia,0.0011328080902827005,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,July,north_ethiopia,3.3178000591567502,m s**-1,Monthly climatological diagnostic.
+mfc850,July,north_ethiopia,4.1502568169298e-08,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,July,central_ethiopia,0.00632195230250953,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,July,central_ethiopia,0.008017099780162807,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,July,central_ethiopia,1.2696867724482161,m s**-1,Monthly climatological diagnostic.
+mfc850,July,central_ethiopia,2.1198389042652113e-08,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,July,west_ethiopia,0.015481896590975198,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,July,west_ethiopia,0.02376097590900478,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,July,west_ethiopia,2.550435152531205,m s**-1,Monthly climatological diagnostic.
+mfc850,July,west_ethiopia,2.073207197540162e-08,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,July,east_ethiopia,0.07525695577460635,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,July,east_ethiopia,0.07111834760552872,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,July,east_ethiopia,11.354654794763016,m s**-1,Monthly climatological diagnostic.
+mfc850,July,east_ethiopia,2.7183077865747403e-08,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,July,greater_horn,0.008288254002074374,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,July,greater_horn,0.02985678162255718,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,July,greater_horn,6.841995934036357,m s**-1,Monthly climatological diagnostic.
+mfc850,July,greater_horn,2.1210609535669848e-09,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,July,east_africa,0.008759153879515846,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,July,east_africa,0.03663763055013184,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,July,east_africa,7.0607260528131155,m s**-1,Monthly climatological diagnostic.
+mfc850,July,east_africa,2.8058357879318276e-09,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,July,atlantic_congo_ethiopia,-0.0012168419547864257,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,July,atlantic_congo_ethiopia,0.01537685335943047,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,July,atlantic_congo_ethiopia,4.445699881851333,m s**-1,Monthly climatological diagnostic.
+mfc850,July,atlantic_congo_ethiopia,-1.927993080965517e-09,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,July,congo_moisture_corridor,0.01111012603822935,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,July,congo_moisture_corridor,0.015736567742398847,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,July,congo_moisture_corridor,2.7307954223787947,m s**-1,Monthly climatological diagnostic.
+mfc850,July,congo_moisture_corridor,1.2920285023214024e-08,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,July,western_moisture_entry,0.020375256653005474,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,July,western_moisture_entry,0.0220657722174513,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,July,western_moisture_entry,3.1512091543275664,m s**-1,Monthly climatological diagnostic.
+mfc850,July,western_moisture_entry,8.781335754311556e-09,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,July,western_indian_ocean,0.024060518826771866,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,July,western_indian_ocean,0.057237763841322634,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,July,western_indian_ocean,11.069986077853086,m s**-1,Monthly climatological diagnostic.
+mfc850,July,western_indian_ocean,-5.938154813636716e-09,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,July,arabia_red_sea,0.0413523383909906,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,July,arabia_red_sea,-0.0007278574128536673,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,July,arabia_red_sea,7.056708846740352,m s**-1,Monthly climatological diagnostic.
+mfc850,July,arabia_red_sea,2.0127961363665646e-08,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,July,north_africa_arabia,0.021237154548993685,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,July,north_africa_arabia,-0.0059730710471043716,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,July,north_africa_arabia,5.46341121303582,m s**-1,Monthly climatological diagnostic.
+mfc850,July,north_africa_arabia,9.091810521235925e-09,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,July,tej_core,0.09609853170511369,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,July,tej_core,0.023511629237463718,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,July,tej_core,9.985311730296614,m s**-1,Monthly climatological diagnostic.
+mfc850,July,tej_core,1.2378444627192531e-08,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,July,somali_jet_box,0.03408259809225911,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,July,somali_jet_box,0.07775486725628723,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,July,somali_jet_box,12.150918889541114,m s**-1,Monthly climatological diagnostic.
+mfc850,July,somali_jet_box,-1.1202110348858899e-08,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,July,turkana_corridor,-0.025634909433161157,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,July,turkana_corridor,0.05738710191699422,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,July,turkana_corridor,7.399529763763064,m s**-1,Monthly climatological diagnostic.
+mfc850,July,turkana_corridor,-2.506545843855501e-08,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,August,ethiopia,0.031988063881159205,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,August,ethiopia,0.0383461241535035,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,August,ethiopia,6.415302618369951,m s**-1,Monthly climatological diagnostic.
+mfc850,August,ethiopia,3.352033710967661e-09,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,August,ethiopia_highlands_broad,0.012011890390518155,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,August,ethiopia_highlands_broad,0.012063683877631955,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,August,ethiopia_highlands_broad,2.333312371873475,m s**-1,Monthly climatological diagnostic.
+mfc850,August,ethiopia_highlands_broad,2.929823503069568e-08,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,August,north_ethiopia,0.019097740447097666,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,August,north_ethiopia,-0.0010506805400353782,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,August,north_ethiopia,2.7252564829388444,m s**-1,Monthly climatological diagnostic.
+mfc850,August,north_ethiopia,3.972352869741533e-08,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,August,central_ethiopia,0.00539750321610847,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,August,central_ethiopia,0.007676193325954461,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,August,central_ethiopia,1.1113531287682663,m s**-1,Monthly climatological diagnostic.
+mfc850,August,central_ethiopia,1.5752076965457724e-08,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,August,west_ethiopia,0.012068718707352,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,August,west_ethiopia,0.018648540582068718,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,August,west_ethiopia,2.016578777120941,m s**-1,Monthly climatological diagnostic.
+mfc850,August,west_ethiopia,2.0456211653051764e-08,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,August,east_ethiopia,0.0671696053149334,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,August,east_ethiopia,0.06864182321035019,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,August,east_ethiopia,10.413825887588521,m s**-1,Monthly climatological diagnostic.
+mfc850,August,east_ethiopia,1.4361063050769733e-08,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,August,greater_horn,0.0033267912777407765,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,August,greater_horn,0.02321163087960593,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,August,greater_horn,6.154539149291889,m s**-1,Monthly climatological diagnostic.
+mfc850,August,greater_horn,3.3224124994359293e-09,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,August,east_africa,0.003859025473487036,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,August,east_africa,0.02906916723158733,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,August,east_africa,6.350998249677037,m s**-1,Monthly climatological diagnostic.
+mfc850,August,east_africa,4.256648848850846e-09,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,August,atlantic_congo_ethiopia,-0.0009669502148671437,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,August,atlantic_congo_ethiopia,0.011001535921997117,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,August,atlantic_congo_ethiopia,4.1153145488729574,m s**-1,Monthly climatological diagnostic.
+mfc850,August,atlantic_congo_ethiopia,-4.697695462316254e-10,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,August,congo_moisture_corridor,0.011886007945065965,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,August,congo_moisture_corridor,0.006754641668440926,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,August,congo_moisture_corridor,2.4770799198315188,m s**-1,Monthly climatological diagnostic.
+mfc850,August,congo_moisture_corridor,1.686280145510938e-08,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,August,western_moisture_entry,0.014708152326744413,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,August,western_moisture_entry,0.014704884655409221,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,August,western_moisture_entry,2.5536185310562005,m s**-1,Monthly climatological diagnostic.
+mfc850,August,western_moisture_entry,8.958377267188029e-09,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,August,western_indian_ocean,0.01411999368740761,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,August,western_indian_ocean,0.04806119855144198,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,August,western_indian_ocean,9.97523572698575,m s**-1,Monthly climatological diagnostic.
+mfc850,August,western_indian_ocean,-5.698363841711558e-09,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,August,arabia_red_sea,0.034799912385067196,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,August,arabia_red_sea,0.00034307766602700103,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,August,arabia_red_sea,6.101942244813694,m s**-1,Monthly climatological diagnostic.
+mfc850,August,arabia_red_sea,1.806783853161506e-08,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,August,north_africa_arabia,0.01580431702326104,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,August,north_africa_arabia,-0.006567493026036223,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,August,north_africa_arabia,4.774651477852677,m s**-1,Monthly climatological diagnostic.
+mfc850,August,north_africa_arabia,6.0004063136416125e-09,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,August,tej_core,0.08376850384875974,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,August,tej_core,0.017832242880923402,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,August,tej_core,8.837273691835861,m s**-1,Monthly climatological diagnostic.
+mfc850,August,tej_core,1.0969134852886956e-08,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,August,somali_jet_box,0.024710780018005953,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,August,somali_jet_box,0.0687959729863787,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,August,somali_jet_box,11.09352854124064,m s**-1,Monthly climatological diagnostic.
+mfc850,August,somali_jet_box,-1.1737052974726682e-08,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,August,turkana_corridor,-0.029252345015870304,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,August,turkana_corridor,0.053581591554187465,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,August,turkana_corridor,7.243790506650417,m s**-1,Monthly climatological diagnostic.
+mfc850,August,turkana_corridor,-2.8351172665917185e-08,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,September,ethiopia,0.01383900362703311,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,September,ethiopia,0.0291441201007995,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,September,ethiopia,4.506037489083042,m s**-1,Monthly climatological diagnostic.
+mfc850,September,ethiopia,9.197296828251948e-09,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,September,ethiopia_highlands_broad,0.0019376862316200349,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,September,ethiopia_highlands_broad,0.006739463060248401,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,September,ethiopia_highlands_broad,1.5368872125670963,m s**-1,Monthly climatological diagnostic.
+mfc850,September,ethiopia_highlands_broad,2.991813342043664e-08,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,September,north_ethiopia,0.004712269681630249,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,September,north_ethiopia,-0.004149728631747421,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,September,north_ethiopia,1.5933209395013983,m s**-1,Monthly climatological diagnostic.
+mfc850,September,north_ethiopia,3.6929723486118463e-08,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,September,central_ethiopia,-0.0012999585331944714,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,September,central_ethiopia,0.003686080427226559,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,September,central_ethiopia,0.6726552464793285,m s**-1,Monthly climatological diagnostic.
+mfc850,September,central_ethiopia,2.6632644531051383e-08,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,September,west_ethiopia,0.0020852796758170796,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,September,west_ethiopia,0.01156576364664359,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,September,west_ethiopia,1.2515678131979495,m s**-1,Monthly climatological diagnostic.
+mfc850,September,west_ethiopia,1.4289869860611084e-08,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,September,east_ethiopia,0.041589302688585024,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,September,east_ethiopia,0.05167932415670578,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,September,east_ethiopia,7.144420400876802,m s**-1,Monthly climatological diagnostic.
+mfc850,September,east_ethiopia,1.444980237641166e-08,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,September,greater_horn,-0.009042389340007269,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,September,greater_horn,0.014172820590306815,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,September,greater_horn,5.031436236011822,m s**-1,Monthly climatological diagnostic.
+mfc850,September,greater_horn,3.3847064140622425e-09,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,September,east_africa,-0.00906840884034822,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,September,east_africa,0.018067069253389068,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,September,east_africa,5.130094895652128,m s**-1,Monthly climatological diagnostic.
+mfc850,September,east_africa,4.955287502038444e-09,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,September,atlantic_congo_ethiopia,-0.01131341213594175,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,September,atlantic_congo_ethiopia,0.005252379538643744,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,September,atlantic_congo_ethiopia,3.8183398416918326,m s**-1,Monthly climatological diagnostic.
+mfc850,September,atlantic_congo_ethiopia,-1.1641135448605378e-11,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,September,congo_moisture_corridor,0.0018554464078693604,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,September,congo_moisture_corridor,0.000805084343187431,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,September,congo_moisture_corridor,1.9888436127224454,m s**-1,Monthly climatological diagnostic.
+mfc850,September,congo_moisture_corridor,1.649342365423751e-08,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,September,western_moisture_entry,-0.0012584212686710882,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,September,western_moisture_entry,0.007601535366001495,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,September,western_moisture_entry,1.6458054195866607,m s**-1,Monthly climatological diagnostic.
+mfc850,September,western_moisture_entry,8.533495969197075e-09,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,September,western_indian_ocean,0.0028612559858454006,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,September,western_indian_ocean,0.030714367590952883,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,September,western_indian_ocean,7.388394532060083,m s**-1,Monthly climatological diagnostic.
+mfc850,September,western_indian_ocean,-3.638527647941067e-09,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,September,arabia_red_sea,0.010652391489022476,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,September,arabia_red_sea,-0.0022518425926548904,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,September,arabia_red_sea,3.8305133291042504,m s**-1,Monthly climatological diagnostic.
+mfc850,September,arabia_red_sea,8.872783310742065e-09,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,September,north_africa_arabia,0.00036587115754906535,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,September,north_africa_arabia,-0.007457669790486483,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,September,north_africa_arabia,3.848424276752031,m s**-1,Monthly climatological diagnostic.
+mfc850,September,north_africa_arabia,1.5204109258623728e-09,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,September,tej_core,0.044694104930892674,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,September,tej_core,0.0077648495462862375,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,September,tej_core,5.657627940415818,m s**-1,Monthly climatological diagnostic.
+mfc850,September,tej_core,8.708093195063084e-09,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,September,somali_jet_box,0.007037720938917084,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,September,somali_jet_box,0.04971863927735312,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,September,somali_jet_box,8.178860871148155,m s**-1,Monthly climatological diagnostic.
+mfc850,September,somali_jet_box,-5.568867931881798e-09,kg kg-1 s-1 approximately,Monthly climatological diagnostic.
+qu850,September,turkana_corridor,-0.03498932531855267,kg kg-1 m s-1,Monthly climatological diagnostic.
+qv850,September,turkana_corridor,0.04899742246588544,kg kg-1 m s-1,Monthly climatological diagnostic.
+wind_speed850,September,turkana_corridor,7.045532762779272,m s**-1,Monthly climatological diagnostic.
+mfc850,September,turkana_corridor,-2.764155629832789e-08,kg kg-1 s-1 approximately,Monthly climatological diagnostic.

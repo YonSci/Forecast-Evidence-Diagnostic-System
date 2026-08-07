@@ -1,0 +1,898 @@
+{
+  "may/ethiopia/Jun": {
+    "file": "may/prate_ethiopia_Jun.png",
+    "bounds": [
+      [
+        3,
+        32
+      ],
+      [
+        15,
+        48
+      ]
+    ],
+    "vmin": -37.5249,
+    "vmax": 37.5249,
+    "unit": "mm/month"
+  },
+  "may/greater_horn/Jun": {
+    "file": "may/prate_greater_horn_Jun.png",
+    "bounds": [
+      [
+        -15,
+        20
+      ],
+      [
+        25,
+        55
+      ]
+    ],
+    "vmin": -61.0841,
+    "vmax": 61.0841,
+    "unit": "mm/month"
+  },
+  "may/africa/Jun": {
+    "file": "may/prate_africa_Jun.png",
+    "bounds": [
+      [
+        -35,
+        -20
+      ],
+      [
+        38,
+        52
+      ]
+    ],
+    "vmin": -45.5322,
+    "vmax": 45.5322,
+    "unit": "mm/month"
+  },
+  "may/global/Jun": {
+    "file": "may/prate_global_Jun.png",
+    "bounds": [
+      [
+        -90,
+        -180
+      ],
+      [
+        90,
+        180
+      ]
+    ],
+    "vmin": -67.0619,
+    "vmax": 67.0619,
+    "unit": "mm/month"
+  },
+  "may/ethiopia/Jul": {
+    "file": "may/prate_ethiopia_Jul.png",
+    "bounds": [
+      [
+        3,
+        32
+      ],
+      [
+        15,
+        48
+      ]
+    ],
+    "vmin": -37.5351,
+    "vmax": 37.5351,
+    "unit": "mm/month"
+  },
+  "may/greater_horn/Jul": {
+    "file": "may/prate_greater_horn_Jul.png",
+    "bounds": [
+      [
+        -15,
+        20
+      ],
+      [
+        25,
+        55
+      ]
+    ],
+    "vmin": -61.6589,
+    "vmax": 61.6589,
+    "unit": "mm/month"
+  },
+  "may/africa/Jul": {
+    "file": "may/prate_africa_Jul.png",
+    "bounds": [
+      [
+        -35,
+        -20
+      ],
+      [
+        38,
+        52
+      ]
+    ],
+    "vmin": -34.4934,
+    "vmax": 34.4934,
+    "unit": "mm/month"
+  },
+  "may/global/Jul": {
+    "file": "may/prate_global_Jul.png",
+    "bounds": [
+      [
+        -90,
+        -180
+      ],
+      [
+        90,
+        180
+      ]
+    ],
+    "vmin": -73.8413,
+    "vmax": 73.8413,
+    "unit": "mm/month"
+  },
+  "may/ethiopia/Aug": {
+    "file": "may/prate_ethiopia_Aug.png",
+    "bounds": [
+      [
+        3,
+        32
+      ],
+      [
+        15,
+        48
+      ]
+    ],
+    "vmin": -28.4318,
+    "vmax": 28.4318,
+    "unit": "mm/month"
+  },
+  "may/greater_horn/Aug": {
+    "file": "may/prate_greater_horn_Aug.png",
+    "bounds": [
+      [
+        -15,
+        20
+      ],
+      [
+        25,
+        55
+      ]
+    ],
+    "vmin": -38.171,
+    "vmax": 38.171,
+    "unit": "mm/month"
+  },
+  "may/africa/Aug": {
+    "file": "may/prate_africa_Aug.png",
+    "bounds": [
+      [
+        -35,
+        -20
+      ],
+      [
+        38,
+        52
+      ]
+    ],
+    "vmin": -26.229,
+    "vmax": 26.229,
+    "unit": "mm/month"
+  },
+  "may/global/Aug": {
+    "file": "may/prate_global_Aug.png",
+    "bounds": [
+      [
+        -90,
+        -180
+      ],
+      [
+        90,
+        180
+      ]
+    ],
+    "vmin": -78.6643,
+    "vmax": 78.6643,
+    "unit": "mm/month"
+  },
+  "may/ethiopia/Sep": {
+    "file": "may/prate_ethiopia_Sep.png",
+    "bounds": [
+      [
+        3,
+        32
+      ],
+      [
+        15,
+        48
+      ]
+    ],
+    "vmin": -35.9514,
+    "vmax": 35.9514,
+    "unit": "mm/month"
+  },
+  "may/greater_horn/Sep": {
+    "file": "may/prate_greater_horn_Sep.png",
+    "bounds": [
+      [
+        -15,
+        20
+      ],
+      [
+        25,
+        55
+      ]
+    ],
+    "vmin": -35.2396,
+    "vmax": 35.2396,
+    "unit": "mm/month"
+  },
+  "may/africa/Sep": {
+    "file": "may/prate_africa_Sep.png",
+    "bounds": [
+      [
+        -35,
+        -20
+      ],
+      [
+        38,
+        52
+      ]
+    ],
+    "vmin": -30.1526,
+    "vmax": 30.1526,
+    "unit": "mm/month"
+  },
+  "may/global/Sep": {
+    "file": "may/prate_global_Sep.png",
+    "bounds": [
+      [
+        -90,
+        -180
+      ],
+      [
+        90,
+        180
+      ]
+    ],
+    "vmin": -92.7036,
+    "vmax": 92.7036,
+    "unit": "mm/month"
+  },
+  "may/ethiopia/JJA": {
+    "file": "may/prate_ethiopia_JJA.png",
+    "bounds": [
+      [
+        3,
+        32
+      ],
+      [
+        15,
+        48
+      ]
+    ],
+    "vmin": -91.9392,
+    "vmax": 91.9392,
+    "unit": "mm/season"
+  },
+  "may/greater_horn/JJA": {
+    "file": "may/prate_greater_horn_JJA.png",
+    "bounds": [
+      [
+        -15,
+        20
+      ],
+      [
+        25,
+        55
+      ]
+    ],
+    "vmin": -158.5019,
+    "vmax": 158.5019,
+    "unit": "mm/season"
+  },
+  "may/africa/JJA": {
+    "file": "may/prate_africa_JJA.png",
+    "bounds": [
+      [
+        -35,
+        -20
+      ],
+      [
+        38,
+        52
+      ]
+    ],
+    "vmin": -98.0964,
+    "vmax": 98.0964,
+    "unit": "mm/season"
+  },
+  "may/global/JJA": {
+    "file": "may/prate_global_JJA.png",
+    "bounds": [
+      [
+        -90,
+        -180
+      ],
+      [
+        90,
+        180
+      ]
+    ],
+    "vmin": -199.8746,
+    "vmax": 199.8746,
+    "unit": "mm/season"
+  },
+  "may/ethiopia/JAS": {
+    "file": "may/prate_ethiopia_JAS.png",
+    "bounds": [
+      [
+        3,
+        32
+      ],
+      [
+        15,
+        48
+      ]
+    ],
+    "vmin": -93.4364,
+    "vmax": 93.4364,
+    "unit": "mm/season"
+  },
+  "may/greater_horn/JAS": {
+    "file": "may/prate_greater_horn_JAS.png",
+    "bounds": [
+      [
+        -15,
+        20
+      ],
+      [
+        25,
+        55
+      ]
+    ],
+    "vmin": -118.7337,
+    "vmax": 118.7337,
+    "unit": "mm/season"
+  },
+  "may/africa/JAS": {
+    "file": "may/prate_africa_JAS.png",
+    "bounds": [
+      [
+        -35,
+        -20
+      ],
+      [
+        38,
+        52
+      ]
+    ],
+    "vmin": -82.7806,
+    "vmax": 82.7806,
+    "unit": "mm/season"
+  },
+  "may/global/JAS": {
+    "file": "may/prate_global_JAS.png",
+    "bounds": [
+      [
+        -90,
+        -180
+      ],
+      [
+        90,
+        180
+      ]
+    ],
+    "vmin": -226.9755,
+    "vmax": 226.9755,
+    "unit": "mm/season"
+  },
+  "may/ethiopia/JJAS": {
+    "file": "may/prate_ethiopia_JJAS.png",
+    "bounds": [
+      [
+        3,
+        32
+      ],
+      [
+        15,
+        48
+      ]
+    ],
+    "vmin": -127.7933,
+    "vmax": 127.7933,
+    "unit": "mm/season"
+  },
+  "may/greater_horn/JJAS": {
+    "file": "may/prate_greater_horn_JJAS.png",
+    "bounds": [
+      [
+        -15,
+        20
+      ],
+      [
+        25,
+        55
+      ]
+    ],
+    "vmin": -175.1921,
+    "vmax": 175.1921,
+    "unit": "mm/season"
+  },
+  "may/africa/JJAS": {
+    "file": "may/prate_africa_JJAS.png",
+    "bounds": [
+      [
+        -35,
+        -20
+      ],
+      [
+        38,
+        52
+      ]
+    ],
+    "vmin": -115.8196,
+    "vmax": 115.8196,
+    "unit": "mm/season"
+  },
+  "may/global/JJAS": {
+    "file": "may/prate_global_JJAS.png",
+    "bounds": [
+      [
+        -90,
+        -180
+      ],
+      [
+        90,
+        180
+      ]
+    ],
+    "vmin": -278.5201,
+    "vmax": 278.5201,
+    "unit": "mm/season"
+  },
+  "june/ethiopia/Jul": {
+    "file": "june/prate_ethiopia_Jul.png",
+    "bounds": [
+      [
+        3,
+        32
+      ],
+      [
+        15,
+        48
+      ]
+    ],
+    "vmin": -58.448,
+    "vmax": 58.448,
+    "unit": "mm/month"
+  },
+  "june/greater_horn/Jul": {
+    "file": "june/prate_greater_horn_Jul.png",
+    "bounds": [
+      [
+        -15,
+        20
+      ],
+      [
+        25,
+        55
+      ]
+    ],
+    "vmin": -77.6025,
+    "vmax": 77.6025,
+    "unit": "mm/month"
+  },
+  "june/africa/Jul": {
+    "file": "june/prate_africa_Jul.png",
+    "bounds": [
+      [
+        -35,
+        -20
+      ],
+      [
+        38,
+        52
+      ]
+    ],
+    "vmin": -42.9383,
+    "vmax": 42.9383,
+    "unit": "mm/month"
+  },
+  "june/global/Jul": {
+    "file": "june/prate_global_Jul.png",
+    "bounds": [
+      [
+        -90,
+        -180
+      ],
+      [
+        90,
+        180
+      ]
+    ],
+    "vmin": -87.8897,
+    "vmax": 87.8897,
+    "unit": "mm/month"
+  },
+  "june/ethiopia/Aug": {
+    "file": "june/prate_ethiopia_Aug.png",
+    "bounds": [
+      [
+        3,
+        32
+      ],
+      [
+        15,
+        48
+      ]
+    ],
+    "vmin": -42.36,
+    "vmax": 42.36,
+    "unit": "mm/month"
+  },
+  "june/greater_horn/Aug": {
+    "file": "june/prate_greater_horn_Aug.png",
+    "bounds": [
+      [
+        -15,
+        20
+      ],
+      [
+        25,
+        55
+      ]
+    ],
+    "vmin": -47.2327,
+    "vmax": 47.2327,
+    "unit": "mm/month"
+  },
+  "june/africa/Aug": {
+    "file": "june/prate_africa_Aug.png",
+    "bounds": [
+      [
+        -35,
+        -20
+      ],
+      [
+        38,
+        52
+      ]
+    ],
+    "vmin": -33.2085,
+    "vmax": 33.2085,
+    "unit": "mm/month"
+  },
+  "june/global/Aug": {
+    "file": "june/prate_global_Aug.png",
+    "bounds": [
+      [
+        -90,
+        -180
+      ],
+      [
+        90,
+        180
+      ]
+    ],
+    "vmin": -90.8896,
+    "vmax": 90.8896,
+    "unit": "mm/month"
+  },
+  "june/ethiopia/Sep": {
+    "file": "june/prate_ethiopia_Sep.png",
+    "bounds": [
+      [
+        3,
+        32
+      ],
+      [
+        15,
+        48
+      ]
+    ],
+    "vmin": -37.7554,
+    "vmax": 37.7554,
+    "unit": "mm/month"
+  },
+  "june/greater_horn/Sep": {
+    "file": "june/prate_greater_horn_Sep.png",
+    "bounds": [
+      [
+        -15,
+        20
+      ],
+      [
+        25,
+        55
+      ]
+    ],
+    "vmin": -35.5727,
+    "vmax": 35.5727,
+    "unit": "mm/month"
+  },
+  "june/africa/Sep": {
+    "file": "june/prate_africa_Sep.png",
+    "bounds": [
+      [
+        -35,
+        -20
+      ],
+      [
+        38,
+        52
+      ]
+    ],
+    "vmin": -30.2312,
+    "vmax": 30.2312,
+    "unit": "mm/month"
+  },
+  "june/global/Sep": {
+    "file": "june/prate_global_Sep.png",
+    "bounds": [
+      [
+        -90,
+        -180
+      ],
+      [
+        90,
+        180
+      ]
+    ],
+    "vmin": -98.8767,
+    "vmax": 98.8767,
+    "unit": "mm/month"
+  },
+  "june/ethiopia/JAS": {
+    "file": "june/prate_ethiopia_JAS.png",
+    "bounds": [
+      [
+        3,
+        32
+      ],
+      [
+        15,
+        48
+      ]
+    ],
+    "vmin": -135.3378,
+    "vmax": 135.3378,
+    "unit": "mm/season"
+  },
+  "june/greater_horn/JAS": {
+    "file": "june/prate_greater_horn_JAS.png",
+    "bounds": [
+      [
+        -15,
+        20
+      ],
+      [
+        25,
+        55
+      ]
+    ],
+    "vmin": -147.732,
+    "vmax": 147.732,
+    "unit": "mm/season"
+  },
+  "june/africa/JAS": {
+    "file": "june/prate_africa_JAS.png",
+    "bounds": [
+      [
+        -35,
+        -20
+      ],
+      [
+        38,
+        52
+      ]
+    ],
+    "vmin": -102.4002,
+    "vmax": 102.4002,
+    "unit": "mm/season"
+  },
+  "june/global/JAS": {
+    "file": "june/prate_global_JAS.png",
+    "bounds": [
+      [
+        -90,
+        -180
+      ],
+      [
+        90,
+        180
+      ]
+    ],
+    "vmin": -254.8236,
+    "vmax": 254.8236,
+    "unit": "mm/season"
+  },
+  "july/ethiopia/Aug": {
+    "file": "july/prate_ethiopia_Aug.png",
+    "bounds": [
+      [
+        3,
+        32
+      ],
+      [
+        15,
+        48
+      ]
+    ],
+    "vmin": -50.4538,
+    "vmax": 50.4538,
+    "unit": "mm/month"
+  },
+  "july/greater_horn/Aug": {
+    "file": "july/prate_greater_horn_Aug.png",
+    "bounds": [
+      [
+        -15,
+        20
+      ],
+      [
+        25,
+        55
+      ]
+    ],
+    "vmin": -51.3164,
+    "vmax": 51.3164,
+    "unit": "mm/month"
+  },
+  "july/africa/Aug": {
+    "file": "july/prate_africa_Aug.png",
+    "bounds": [
+      [
+        -35,
+        -20
+      ],
+      [
+        38,
+        52
+      ]
+    ],
+    "vmin": -43.5738,
+    "vmax": 43.5738,
+    "unit": "mm/month"
+  },
+  "july/global/Aug": {
+    "file": "july/prate_global_Aug.png",
+    "bounds": [
+      [
+        -90,
+        -180
+      ],
+      [
+        90,
+        180
+      ]
+    ],
+    "vmin": -108.4442,
+    "vmax": 108.4442,
+    "unit": "mm/month"
+  },
+  "july/ethiopia/Sep": {
+    "file": "july/prate_ethiopia_Sep.png",
+    "bounds": [
+      [
+        3,
+        32
+      ],
+      [
+        15,
+        48
+      ]
+    ],
+    "vmin": -34.7596,
+    "vmax": 34.7596,
+    "unit": "mm/month"
+  },
+  "july/greater_horn/Sep": {
+    "file": "july/prate_greater_horn_Sep.png",
+    "bounds": [
+      [
+        -15,
+        20
+      ],
+      [
+        25,
+        55
+      ]
+    ],
+    "vmin": -29.8392,
+    "vmax": 29.8392,
+    "unit": "mm/month"
+  },
+  "july/africa/Sep": {
+    "file": "july/prate_africa_Sep.png",
+    "bounds": [
+      [
+        -35,
+        -20
+      ],
+      [
+        38,
+        52
+      ]
+    ],
+    "vmin": -30.7763,
+    "vmax": 30.7763,
+    "unit": "mm/month"
+  },
+  "july/global/Sep": {
+    "file": "july/prate_global_Sep.png",
+    "bounds": [
+      [
+        -90,
+        -180
+      ],
+      [
+        90,
+        180
+      ]
+    ],
+    "vmin": -107.0258,
+    "vmax": 107.0258,
+    "unit": "mm/month"
+  },
+  "july/ethiopia/AS": {
+    "file": "july/prate_ethiopia_AS.png",
+    "bounds": [
+      [
+        3,
+        32
+      ],
+      [
+        15,
+        48
+      ]
+    ],
+    "vmin": -80.3499,
+    "vmax": 80.3499,
+    "unit": "mm/season"
+  },
+  "july/greater_horn/AS": {
+    "file": "july/prate_greater_horn_AS.png",
+    "bounds": [
+      [
+        -15,
+        20
+      ],
+      [
+        25,
+        55
+      ]
+    ],
+    "vmin": -75.4885,
+    "vmax": 75.4885,
+    "unit": "mm/season"
+  },
+  "july/africa/AS": {
+    "file": "july/prate_africa_AS.png",
+    "bounds": [
+      [
+        -35,
+        -20
+      ],
+      [
+        38,
+        52
+      ]
+    ],
+    "vmin": -69.4929,
+    "vmax": 69.4929,
+    "unit": "mm/season"
+  },
+  "july/global/AS": {
+    "file": "july/prate_global_AS.png",
+    "bounds": [
+      [
+        -90,
+        -180
+      ],
+      [
+        90,
+        180
+      ]
+    ],
+    "vmin": -206.8056,
+    "vmax": 206.8056,
+    "unit": "mm/season"
+  }
+}
