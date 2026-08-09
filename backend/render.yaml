@@ -8,6 +8,6 @@ services:
     startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: FRONTEND_ORIGIN
-        value: http://localhost:5173
+        value: https://forecast-evidence-diagnostic-system.vercel.app,http://localhost:5173
       - key: PYTHON_VERSION
         value: 3.11.9
