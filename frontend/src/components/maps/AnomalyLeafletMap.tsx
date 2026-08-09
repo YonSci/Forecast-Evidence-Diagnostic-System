@@ -1,10 +1,55 @@
 import { useEffect, useRef } from "react";
-import { MapContainer, TileLayer, ImageOverlay, LayersControl, useMap } from "react-leaflet";
+import { MapContainer, TileLayer, ImageOverlay, GeoJSON, LayersControl, Pane, useMap } from "react-leaflet";
 import L from "leaflet";
 import type { LatLngBoundsExpression, LeafletMouseEvent } from "leaflet";
 import type { OverlayInfo, GridResponse } from "../../api/types";
 import { assetUrl } from "../../api/client";
 import { fmt } from "../../lib/format";
+
+// Static reference layer (Natural Earth 50m, simplified) -- fetched once
+// and reused across every map instance/page, since it never changes.
+let countryBordersPromise: Promise<GeoJSON.FeatureCollection> | null = null;
+function loadCountryBorders(): Promise<GeoJSON.FeatureCollection> {
+  if (!countryBordersPromise) {
+    countryBordersPromise = fetch("/country_borders.geojson").then((r) => r.json());
+  }
+  return countryBordersPromise;
+}
+
+const BORDER_STYLE: L.PathOptions = { color: "#5b6270", weight: 1, opacity: 0.85, fill: false };
+const EMPTY_FEATURE_COLLECTION: GeoJSON.FeatureCollection = { type: "FeatureCollection", features: [] };
+
+function CountryBordersOverlay() {
+  // LayersControl only picks up an overlay it sees on its first render, so
+  // <LayersControl.Overlay> and its <GeoJSON> child must be mounted from the
+  // start (react-leaflet's GeoJSON also doesn't react to a changed `data`
+  // prop after mount) -- start empty and populate the layer imperatively
+  // via the ref once the fetch resolves.
+  const geoJsonRef = useRef<L.GeoJSON | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    loadCountryBorders().then((d) => {
+      if (cancelled || !geoJsonRef.current) return;
+      geoJsonRef.current.clearLayers();
+      geoJsonRef.current.addData(d);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  return (
+    <LayersControl.Overlay name="Country borders" checked>
+      {/* Own pane (z-index above the default overlayPane's 400) so the
+          borders reliably paint above the anomaly ImageOverlay regardless
+          of which mounts first -- more robust than relying on JSX order. */}
+      <Pane name="country-borders-pane" style={{ zIndex: 450 }}>
+        <GeoJSON ref={geoJsonRef} data={EMPTY_FEATURE_COLLECTION} style={BORDER_STYLE} interactive={false} />
+      </Pane>
+    </LayersControl.Overlay>
+  );
+}
 
 const OSM_ATTR = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 const CARTO_ATTR = `${OSM_ATTR} &copy; <a href="https://carto.com/attributions">CARTO</a>`;
@@ -172,6 +217,7 @@ export function AnomalyLeafletMap({
                 <TileLayer url={b.url} attribution={b.attribution} />
               </LayersControl.BaseLayer>
             ))}
+            <CountryBordersOverlay />
           </LayersControl>
           <ImageOverlay url={assetUrl(overlay.url!)} bounds={bounds} opacity={0.82} />
           <FitBounds bounds={bounds} extraZoom={region === "global" ? 0.6 : 0} />
