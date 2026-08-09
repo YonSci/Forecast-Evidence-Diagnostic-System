@@ -30,8 +30,22 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.mount("/static/overlays", StaticFiles(directory=OVERLAYS_DIR), name="overlays")
-app.mount("/static/gallery", StaticFiles(directory=GALLERY_DIR), name="gallery")
+class RevalidateStaticFiles(StaticFiles):
+    """Static overlays/gallery images get regenerated in place (same filename,
+    new pixels) whenever the underlying data pipeline reruns. Without an
+    explicit Cache-Control, browsers apply heuristic freshness to the default
+    Last-Modified/ETag response and can keep serving a stale cached image
+    indefinitely instead of revalidating. `no-cache` forces a conditional GET
+    on every load, so a change on disk is always picked up."""
+
+    def file_response(self, *args, **kwargs):
+        response = super().file_response(*args, **kwargs)
+        response.headers["Cache-Control"] = "no-cache"
+        return response
+
+
+app.mount("/static/overlays", RevalidateStaticFiles(directory=OVERLAYS_DIR), name="overlays")
+app.mount("/static/gallery", RevalidateStaticFiles(directory=GALLERY_DIR), name="gallery")
 
 app.include_router(meta.router)
 app.include_router(anomaly.router)
@@ -44,7 +58,10 @@ app.include_router(gallery.router)
 
 @app.get("/api/health", tags=["health"])
 def health() -> dict:
-    return {"status": "ok"}
+    # "service" is a distinguishing marker, not just a generic {"status":"ok"} --
+    # useful when something else is already listening on the expected port
+    # (e.g. another local API) and would otherwise look "healthy" too.
+    return {"status": "ok", "service": "forecast-evidence-api"}
 
 
 @app.get("/", tags=["health"])

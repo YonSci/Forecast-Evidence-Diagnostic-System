@@ -5,10 +5,12 @@ import pandas as pd
 from fastapi import APIRouter, HTTPException, Query
 
 from app.config import REGIONS, INITIALIZATIONS, PERIOD_LABELS, OVERLAYS_DIR
-from app.models import AnomalySeriesResponse, AnomalyPeriodReading, AnomalyTableRow, OverlayInfo
+from app.models import AnomalySeriesResponse, AnomalyPeriodReading, AnomalyTableRow, OverlayInfo, GridResponse
 from app.services.data import anomaly_table, csv_key_for_init
 
 router = APIRouter(prefix="/api/anomaly", tags=["anomaly"])
+
+GRID_DIR = OVERLAYS_DIR / "grid_data"
 
 
 @lru_cache(maxsize=1)
@@ -16,6 +18,14 @@ def _overlay_index() -> dict:
     path = OVERLAYS_DIR / "overlay_index.json"
     if not path.exists():
         return {}
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+@lru_cache(maxsize=64)
+def _grid_data(init_key: str, region: str, period: str) -> dict | None:
+    path = GRID_DIR / init_key / f"prate_{region}_{period}.json"
+    if not path.exists():
+        return None
     return json.loads(path.read_text(encoding="utf-8"))
 
 
@@ -123,3 +133,28 @@ def get_anomaly_overlay(
         vmax=entry["vmax"],
         unit=entry["unit"],
     )
+
+
+@router.get("/grid", response_model=GridResponse)
+def get_anomaly_grid(
+    init: str = Query(...),
+    region: str = Query(...),
+    period: str = Query(...),
+    variable: str = Query("prate", pattern="^(prate|tmpsfc)$"),
+) -> GridResponse:
+    """Raw (unclipped, rectangular-box) grid values backing the overlay map,
+    for exact-value hover tooltips -- pre-extracted by
+    scripts/23_generate_leaflet_grid_data.py, same pattern as the overlay
+    PNGs and overlay_index.json."""
+    init_meta = _validate_init(init)
+    _validate_region(region)
+
+    if variable != "prate":
+        raise HTTPException(status_code=404, detail="Grid data is only available for rainfall (prate).")
+    if period not in init_meta["periods"]:
+        raise HTTPException(status_code=404, detail=f"Period {period} is not available for this initialization.")
+
+    data = _grid_data(init_meta["csv_key"], region, period)
+    if data is None:
+        raise HTTPException(status_code=404, detail="No grid data for this combination.")
+    return GridResponse(**data)

@@ -42,6 +42,12 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.colors import TwoSlopeNorm, LinearSegmentedColormap
+from matplotlib.patches import PathPatch
+from matplotlib.path import Path as MplPath
+import cartopy.io.shapereader as shpreader
+from cartopy.mpl.patch import geos_to_path
+from shapely.ops import unary_union
+import shapely
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -58,6 +64,85 @@ REGIONS = {
     "africa": [-20, 52, -35, 38],
     "global": [-180, 180, -90, 90],
 }
+
+# Leaflet's default CRS (EPSG:3857 / Web Mercator) is undefined at the poles
+# and Leaflet itself clamps to this latitude internally, so a raster whose
+# stated bounds go all the way to +/-90 gets silently mis-projected by the
+# client.
+WEB_MERCATOR_MAX_LAT = 85.05112878
+
+# Leaflet's ImageOverlay places a raster on screen with a single, uniform
+# affine stretch between the two lat/lon corners it's told about -- it does
+# NOT re-warp the image's internal pixel spacing to match Web Mercator. Our
+# source rasters were pixel-linear in latitude (equirectangular / Plate
+# Carree), while the CARTO basemap tiles underneath are Web Mercator, which
+# compresses latitude non-linearly. For a small box (e.g. Ethiopia, ~12 deg
+# of latitude) that mismatch is a few pixels and invisible; for large boxes
+# (Greater Horn's 40 deg, and especially "global" at 170 deg) it shows up as
+# a clearly visible vertical misalignment against real coastlines. Fix: warp
+# the raster's own pixel rows (and the clip geometry) into Web Mercator
+# meters before rendering, so a uniform stretch back onto the Mercator
+# basemap lines up exactly, the same way real map tiles are pre-projected.
+MERCATOR_R = 6378137.0
+
+
+def lon_to_merc_x(lon_deg):
+    return np.radians(np.asarray(lon_deg, dtype=float)) * MERCATOR_R
+
+
+def lat_to_merc_y(lat_deg):
+    lat_deg = np.clip(np.asarray(lat_deg, dtype=float), -WEB_MERCATOR_MAX_LAT, WEB_MERCATOR_MAX_LAT)
+    return MERCATOR_R * np.log(np.tan(np.pi / 4 + np.radians(lat_deg) / 2))
+
+
+def project_geom_to_mercator(geom):
+    def _tf(coords):
+        return np.column_stack([lon_to_merc_x(coords[:, 0]), lat_to_merc_y(coords[:, 1])])
+
+    return shapely.transform(geom, _tf)
+
+
+def clamp_box_lat(box):
+    lon_min, lon_max, lat_min, lat_max = box
+    return [lon_min, lon_max, max(lat_min, -WEB_MERCATOR_MAX_LAT), min(lat_max, WEB_MERCATOR_MAX_LAT)]
+
+# IGAD member states -- the standard "Greater Horn of Africa" country grouping
+# (FEWS NET / USAID Horn of Africa definition). Natural Earth represents
+# Somaliland as a separate polygon from Somalia (it functions as a de facto
+# separate territory), so it has to be listed explicitly or that whole
+# northern-Somalia strip along the Gulf of Aden is left unclipped/blank.
+GREATER_HORN_COUNTRIES = {
+    "Djibouti", "Eritrea", "Ethiopia", "Kenya", "Somalia", "Somaliland", "South Sudan", "Sudan", "Uganda",
+}
+
+# Region -> matching predicate over Natural Earth admin_0_countries attributes.
+REGION_COUNTRY_FILTER = {
+    "ethiopia": lambda attrs: attrs["NAME_LONG"] == "Ethiopia",
+    "greater_horn": lambda attrs: attrs["NAME_LONG"] in GREATER_HORN_COUNTRIES,
+    "africa": lambda attrs: attrs["CONTINENT"] == "Africa",
+}
+
+
+def load_region_clip_geoms() -> dict:
+    """Build a shapely (multi)polygon per region so raster overlays can be
+    clipped to the real coastline/border shape instead of the lon/lat
+    bounding box used to subset data. Ethiopia/greater_horn/africa clip to
+    their Natural Earth country outlines; "global" clips to all world land
+    (physical land polygons, not split by country) so ocean pixels go
+    transparent instead of the overlay painting a full lat/lon rectangle."""
+    shp_path = shpreader.natural_earth(resolution="10m", category="cultural", name="admin_0_countries")
+    records = list(shpreader.Reader(shp_path).records())
+
+    geoms = {}
+    for region, predicate in REGION_COUNTRY_FILTER.items():
+        matched = [r.geometry for r in records if predicate(r.attributes)]
+        geoms[region] = unary_union(matched)
+
+    land_path = shpreader.natural_earth(resolution="10m", category="physical", name="land")
+    land_geoms = [r.geometry for r in shpreader.Reader(land_path).records()]
+    geoms["global"] = unary_union(land_geoms)
+
+    return geoms
 
 # (init_key, netcdf_dir, {period: (filename, varname, unit, is_seasonal)})
 INIT_JOBS = {
@@ -100,23 +185,45 @@ def area_sub(da, box):
     return da.sel(lat=lat_slice, lon=slice(lon_min, lon_max))
 
 
-def render_overlay(da, box, out_path: Path) -> tuple[float, float]:
+def render_overlay(da, box, out_path: Path, clip_geom=None) -> tuple[float, float]:
+    # box's lat range is expected to already be clamp_box_lat()'d by the caller.
     lon_min, lon_max, lat_min, lat_max = box
     vmax = max(float(np.nanpercentile(np.abs(da.values), 98)), 1e-6)
     norm = TwoSlopeNorm(vmin=-vmax, vcenter=0, vmax=vmax)
 
-    width_deg = lon_max - lon_min
-    height_deg = lat_max - lat_min
-    # target ~110 px/deg on the long side, capped so global renders don't balloon
-    px_per_deg = min(110, 1600 / max(width_deg, height_deg))
-    fig_w, fig_h = width_deg * px_per_deg / 100, height_deg * px_per_deg / 100
+    # Render in Web Mercator meters (not raw lon/lat degrees) so pixel rows
+    # are linear in the same space the Leaflet basemap projects into -- see
+    # the module docstring note above MERCATOR_R for why a plain lon/lat
+    # raster ends up visibly misaligned once Leaflet stretches it onto a
+    # Mercator basemap.
+    merc_x = lon_to_merc_x(da["lon"].values)
+    merc_y = lat_to_merc_y(da["lat"].values)
+    x_min, x_max = lon_to_merc_x(np.array([lon_min, lon_max]))
+    y_min, y_max = lat_to_merc_y(np.array([lat_min, lat_max]))
+
+    width_m = x_max - x_min
+    height_m = max(y_max - y_min, 1.0)
+    # target ~1600px on the long side, capped so global renders don't balloon
+    px_per_m = 1600 / max(width_m, height_m)
+    fig_w, fig_h = width_m * px_per_m / 100, height_m * px_per_m / 100
 
     fig = plt.figure(figsize=(fig_w, fig_h), dpi=100)
     ax = fig.add_axes([0, 0, 1, 1])
-    ax.set_xlim(lon_min, lon_max)
-    ax.set_ylim(lat_min, lat_max)
+    ax.set_xlim(x_min, x_max)
+    ax.set_ylim(y_min, y_max)
     ax.axis("off")
-    ax.pcolormesh(da["lon"], da["lat"], da.values, cmap=CMAP, norm=norm, shading="auto")
+    mesh = ax.pcolormesh(merc_x, merc_y, da.values, cmap=CMAP, norm=norm, shading="auto")
+
+    if clip_geom is not None and not clip_geom.is_empty:
+        # Clip the raster to the region's actual country/coastline shape
+        # (not the rectangular lon/lat box it was subset on), so the overlay
+        # doesn't paint neighboring countries or open ocean. Geometry is in
+        # lat/lon (Natural Earth); project it into the same Mercator meters
+        # the mesh is now plotted in before turning it into a clip path.
+        merc_clip = project_geom_to_mercator(clip_geom)
+        paths = geos_to_path(merc_clip)
+        patch = PathPatch(MplPath.make_compound_path(*paths), transform=ax.transData)
+        mesh.set_clip_path(patch)
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out_path, dpi=100, transparent=True)
@@ -128,6 +235,9 @@ def main():
     print("==================================================")
     print("Generate clean Leaflet ImageOverlay rasters")
     print("==================================================")
+
+    print("Loading Natural Earth country boundaries for region clip masks...")
+    clip_geoms = load_region_clip_geoms()
 
     index = {}
     written = 0
@@ -144,10 +254,14 @@ def main():
 
             for region, box in REGIONS.items():
                 da = area_sub(da_full, box)
+                render_box = clamp_box_lat(box)
                 out_path = OUT_DIR / init_key / f"prate_{region}_{period}.png"
-                vmin, vmax = render_overlay(da, box, out_path)
+                vmin, vmax = render_overlay(da, render_box, out_path, clip_geom=clip_geoms.get(region))
 
-                lon_min, lon_max, lat_min, lat_max = box
+                # Record the clamped box: that's what the image actually
+                # depicts, and it's what Leaflet needs to place it correctly
+                # (it clamps to the same +/-85.05 internally anyway).
+                lon_min, lon_max, lat_min, lat_max = render_box
                 key = f"{init_key}/{region}/{period}"
                 index[key] = {
                     "file": f"{init_key}/prate_{region}_{period}.png",

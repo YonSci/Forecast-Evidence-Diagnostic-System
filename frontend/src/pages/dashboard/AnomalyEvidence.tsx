@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useFetch } from "../../hooks/useFetch";
 import { getJson } from "../../api/client";
-import type { MetaResponse, AnomalySeriesResponse, AnomalyTableRow, OverlayInfo } from "../../api/types";
+import type { MetaResponse, AnomalySeriesResponse, AnomalyTableRow, OverlayInfo, GridResponse } from "../../api/types";
 import { ControlField } from "../../components/ui/ControlField";
 import { StatTile } from "../../components/ui/StatTile";
 import { Callout } from "../../components/ui/Callout";
@@ -19,6 +19,7 @@ export function AnomalyEvidence() {
   const [period, setPeriod] = useState("JJAS");
   const [tableRegion, setTableRegion] = useState<string>("current");
   const [overlay, setOverlay] = useState<OverlayInfo | null>(null);
+  const [grid, setGrid] = useState<GridResponse | null>(null);
   const [tableRows, setTableRows] = useState<AnomalyTableRow[] | null>(null);
 
   const initMeta = meta?.initializations.find((i) => i.key === init);
@@ -39,6 +40,18 @@ export function AnomalyEvidence() {
     getJson<OverlayInfo>("/api/anomaly/overlay", { init, region, period, variable })
       .then(setOverlay)
       .catch(() => setOverlay({ available: false }));
+  }, [init, region, period, variable, initMeta]);
+
+  // Exact-value hover tooltips need the raw grid backing the overlay image;
+  // only available for rainfall (prate), same restriction as the overlay.
+  useEffect(() => {
+    if (!initMeta || !period || variable !== "prate") {
+      setGrid(null);
+      return;
+    }
+    getJson<GridResponse>("/api/anomaly/grid", { init, region, period, variable })
+      .then(setGrid)
+      .catch(() => setGrid(null));
   }, [init, region, period, variable, initMeta]);
 
   const resolvedTableRegion = tableRegion === "current" ? region : tableRegion === "all" ? "all" : tableRegion;
@@ -118,6 +131,8 @@ export function AnomalyEvidence() {
       <div style={{ marginBottom: 26 }}>
         <AnomalyLeafletMap
           overlay={overlay}
+          grid={grid}
+          region={region}
           emptyReason={`No rendered map for ${meta.variables[variable]} · ${regionMeta.label} · ${periodLabel} in this build.`}
         />
       </div>

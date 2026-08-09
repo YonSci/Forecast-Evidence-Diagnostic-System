@@ -52,6 +52,13 @@ class AnomalyTableRow(BaseModel):
     tmpsfc_anomaly_k: Optional[float] = None
 
 
+class GridResponse(BaseModel):
+    lats: list[float]
+    lons: list[float]
+    values: list[list[Optional[float]]]
+    unit: str
+
+
 class OverlayInfo(BaseModel):
     available: bool
     url: Optional[str] = None

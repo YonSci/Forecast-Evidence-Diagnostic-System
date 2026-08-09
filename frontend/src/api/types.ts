@@ -46,6 +46,13 @@ export interface AnomalyTableRow {
   tmpsfc_anomaly_k: number | null;
 }
 
+export interface GridResponse {
+  lats: number[];
+  lons: number[];
+  values: (number | null)[][];
+  unit: string;
+}
+
 export interface OverlayInfo {
   available: boolean;
   url?: string;

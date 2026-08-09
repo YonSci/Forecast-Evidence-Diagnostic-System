@@ -1,5 +1,6 @@
 import { Link, NavLink, Outlet } from "react-router-dom";
 import { ThemeToggle } from "../components/ui/ThemeToggle";
+import { ApiHealthBanner } from "../components/ui/ApiHealthBanner";
 
 const TABS: { to: string; label: string; icon: string }[] = [
   { to: "anomaly", label: "Anomaly Evidence", icon: '<path d="M12 3v11"/><path d="M7 9l5 5 5-5"/><path d="M5 21h14"/>' },
@@ -47,6 +48,7 @@ export function Dashboard() {
       </div>
 
       <div className="wrap">
+        <ApiHealthBanner />
         <Outlet />
       </div>
     </div>
