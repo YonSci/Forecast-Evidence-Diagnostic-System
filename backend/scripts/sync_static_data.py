@@ -35,6 +35,14 @@ if overlays_dst.exists():
 shutil.copytree(overlays_src, overlays_dst)
 print(f"Copied overlay tree -> {overlays_dst}")
 
+# ---- 2b. sst overlays: same pattern, separate tree (global tmpsfc/SST maps) ----
+sst_overlays_src = PROJECT_ROOT / "outputs" / "maps" / "leaflet_overlays_sst"
+sst_overlays_dst = STATIC / "sst_overlays"
+if sst_overlays_dst.exists():
+    shutil.rmtree(sst_overlays_dst)
+shutil.copytree(sst_overlays_src, sst_overlays_dst)
+print(f"Copied SST overlay tree -> {sst_overlays_dst}")
+
 # ---- 3. gallery: curated report-style figures (resized), non-rainfall diagnostics ----
 DYN = PROJECT_ROOT / "outputs" / "maps" / "dynamic_diagnostics"
 GALLERY_SOURCES = {

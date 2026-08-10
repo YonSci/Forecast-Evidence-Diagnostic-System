@@ -33,6 +33,13 @@ def sst_proxy() -> pd.DataFrame:
 
 
 @lru_cache(maxsize=1)
+def sst_indices_extended() -> pd.DataFrame:
+    """Nino1+2/Nino3/Nino3.4/Nino4/IOD-West/IOD-East, across all three
+    initialization cycles -- see scripts/25_compute_expanded_sst_indices.py."""
+    return _read("nmme_sst_indices_extended.csv")
+
+
+@lru_cache(maxsize=1)
 def sst_driver_classification() -> pd.DataFrame:
     return _read("nmme_sst_driver_diagnostics_from_tmpsfc.csv")
 
@@ -73,7 +80,7 @@ def csv_key_for_init(init_date: str) -> str:
 def clear_caches() -> None:
     """Used by tests / hot-reload scenarios."""
     for fn in (
-        evidence_matrix, evidence_summary, sst_proxy, sst_driver_classification,
+        evidence_matrix, evidence_summary, sst_proxy, sst_indices_extended, sst_driver_classification,
         tej_climatology, era5_moisture_flux, era5_vertical_divergence,
         cfsv2_area_mean, anomaly_table,
     ):

@@ -154,6 +154,11 @@ button, select, input { font-family: inherit; }
 }
 .leaflet-legend .bar { width: 160px; height: 8px; border-radius: 4px; margin: 4px 0 2px; }
 .leaflet-legend .ends { display: flex; justify-content: space-between; font-family: var(--mono); }
+.index-box-label {
+  background: rgba(255, 255, 255, 0.82); border: none; box-shadow: none; padding: 1px 5px;
+  font-size: 0.68rem; font-weight: 600; color: #1f2430; font-family: var(--sans);
+}
+.index-box-label::before { display: none; }
 .map-empty-card { text-align: center; padding: 44px 24px; color: var(--muted); }
 .map-empty-card p { font-size: 0.9rem; }
 .map-empty-card p + p { font-size: 0.82rem; margin-top: 6px; }

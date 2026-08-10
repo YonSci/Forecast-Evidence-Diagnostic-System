@@ -101,7 +101,10 @@ export interface EvidenceSummaryRow {
 
 export interface SstProxyRow {
   period: string;
+  nino1_2_anomaly: number | null;
+  nino3_anomaly: number | null;
   nino34_anomaly: number;
+  nino4_anomaly: number | null;
   iod_west_anomaly: number;
   iod_east_anomaly: number;
   dmi_proxy: number;

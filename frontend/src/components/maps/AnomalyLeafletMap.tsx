@@ -1,10 +1,43 @@
 import { useEffect, useRef } from "react";
-import { MapContainer, TileLayer, ImageOverlay, GeoJSON, LayersControl, Pane, useMap } from "react-leaflet";
+import { MapContainer, TileLayer, ImageOverlay, GeoJSON, Rectangle, Tooltip, LayersControl, Pane, useMap } from "react-leaflet";
 import L from "leaflet";
 import type { LatLngBoundsExpression, LeafletMouseEvent } from "leaflet";
 import type { OverlayInfo, GridResponse } from "../../api/types";
 import { assetUrl } from "../../api/client";
 import { fmt } from "../../lib/format";
+
+// A named reference box that may need more than one rectangle (e.g. Nino4
+// straddles the antimeridian at 180deg, which Leaflet can't express as a
+// single lon-wrapping rectangle).
+export interface IndexBox {
+  name: string;
+  rects: LatLngBoundsExpression[];
+}
+
+const INDEX_BOX_STYLE: L.PathOptions = { color: "#1f2430", weight: 1.5, fill: false, dashArray: "4 3" };
+
+function IndexBoxesOverlay({ boxes }: { boxes: IndexBox[] }) {
+  if (boxes.length === 0) return null;
+  return (
+    <LayersControl.Overlay name="Index boxes" checked>
+      {/* Above the country-borders pane (450) so box outlines/labels never
+          get hidden behind them. */}
+      <Pane name="index-boxes-pane" style={{ zIndex: 460 }}>
+        <>
+          {boxes.map((box) =>
+            box.rects.map((rect, i) => (
+              <Rectangle key={`${box.name}-${i}`} bounds={rect} pathOptions={INDEX_BOX_STYLE}>
+                <Tooltip permanent direction="center" className="index-box-label" opacity={0.9}>
+                  {box.name}
+                </Tooltip>
+              </Rectangle>
+            )),
+          )}
+        </>
+      </Pane>
+    </LayersControl.Overlay>
+  );
+}
 
 // Static reference layer (Natural Earth 50m, simplified) -- fetched once
 // and reused across every map instance/page, since it never changes.
@@ -181,11 +214,19 @@ export function AnomalyLeafletMap({
   grid,
   region,
   emptyReason,
+  indexBoxes = [],
+  legendGradient = "linear-gradient(90deg, var(--dry), #f5f1ea, var(--wet))",
 }: {
   overlay: OverlayInfo | null;
   grid?: GridResponse | null;
   region?: string;
   emptyReason?: string;
+  /** Toggleable reference boxes drawn on top of the map (e.g. Nino3.4/IOD
+   * index regions on the Oceanic Evidence SST map). Omit for none. */
+  indexBoxes?: IndexBox[];
+  /** CSS gradient for the legend bar -- defaults to the rainfall dry/wet
+   * scheme; pass a blue-red gradient for temperature/SST overlays. */
+  legendGradient?: string;
 }) {
   if (!overlay || !overlay.available || !overlay.bounds) {
     return (
@@ -218,6 +259,7 @@ export function AnomalyLeafletMap({
               </LayersControl.BaseLayer>
             ))}
             <CountryBordersOverlay />
+            <IndexBoxesOverlay boxes={indexBoxes} />
           </LayersControl>
           <ImageOverlay url={assetUrl(overlay.url!)} bounds={bounds} opacity={0.82} />
           <FitBounds bounds={bounds} extraZoom={region === "global" ? 0.6 : 0} />
@@ -226,7 +268,7 @@ export function AnomalyLeafletMap({
         {overlay.vmin != null && overlay.vmax != null && (
           <div className="leaflet-legend">
             <div>Anomaly ({overlay.unit})</div>
-            <div className="bar" style={{ background: "linear-gradient(90deg, var(--dry), #f5f1ea, var(--wet))" }} />
+            <div className="bar" style={{ background: legendGradient }} />
             <div className="ends">
               <span>{fmt(overlay.vmin, 0)}</span>
               <span>{fmt(overlay.vmax, 0)}</span>

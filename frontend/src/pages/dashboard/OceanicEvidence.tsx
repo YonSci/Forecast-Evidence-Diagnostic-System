@@ -1,13 +1,16 @@
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useFetch } from "../../hooks/useFetch";
-import { assetUrl } from "../../api/client";
-import type { SstProxyRow } from "../../api/types";
+import { getJson, assetUrl } from "../../api/client";
+import type { SstProxyRow, MetaResponse, OverlayInfo, GridResponse } from "../../api/types";
 import { Callout } from "../../components/ui/Callout";
 import { StatTile } from "../../components/ui/StatTile";
+import { ControlField } from "../../components/ui/ControlField";
 import { GroupedBarChart } from "../../components/charts/GroupedBarChart";
 import { DivergingBarChart } from "../../components/charts/DivergingBarChart";
 import type { DivergingDatum } from "../../components/charts/DivergingBarChart";
 import { MapFigure } from "../../components/ui/MapFigure";
+import { AnomalyLeafletMap } from "../../components/maps/AnomalyLeafletMap";
+import type { IndexBox } from "../../components/maps/AnomalyLeafletMap";
 import { fmt, sign, titleCase } from "../../lib/format";
 
 const GALLERY: [string, string][] = [
@@ -17,9 +20,46 @@ const GALLERY: [string, string][] = [
   ["dmi_proxy_chart.png", "NMME-derived DMI proxy by forecast period"],
 ];
 
+// Standard NOAA CPC Nino boxes + the IOD boxes already used elsewhere in
+// this project -- matches scripts/25_compute_expanded_sst_indices.py.
+// Bounds are [[southLat, westLon], [northLat, eastLon]]. Nino4 straddles
+// the antimeridian, so it's drawn as two rectangles.
+const SST_INDEX_BOXES: IndexBox[] = [
+  { name: "Niño 1+2", rects: [[[-10, -90], [0, -80]]] },
+  { name: "Niño 3", rects: [[[-5, -150], [5, -90]]] },
+  { name: "Niño 3.4", rects: [[[-5, -170], [5, -120]]] },
+  {
+    name: "Niño 4",
+    rects: [
+      [[-5, 160], [5, 180]],
+      [[-5, -180], [5, -150]],
+    ],
+  },
+  { name: "IOD West", rects: [[[-10, 50], [10, 70]]] },
+  { name: "IOD East", rects: [[[-10, 90], [0, 110]]] },
+];
+
+const SST_INIT = "2026-05-08";
+
 export function OceanicEvidence() {
+  const { data: meta } = useFetch<MetaResponse>("/api/meta");
   const { data: sst } = useFetch<SstProxyRow[]>("/api/oceanic/sst-proxy");
   const jjas = sst?.find((r) => r.period === "JJAS");
+
+  const initMeta = meta?.initializations.find((i) => i.key === SST_INIT);
+  const [period, setPeriod] = useState("JJAS");
+  const [overlay, setOverlay] = useState<OverlayInfo | null>(null);
+  const [grid, setGrid] = useState<GridResponse | null>(null);
+
+  useEffect(() => {
+    if (!initMeta) return;
+    getJson<OverlayInfo>("/api/oceanic/overlay", { init: SST_INIT, period })
+      .then(setOverlay)
+      .catch(() => setOverlay({ available: false }));
+    getJson<GridResponse>("/api/oceanic/grid", { init: SST_INIT, period })
+      .then(setGrid)
+      .catch(() => setGrid(null));
+  }, [period, initMeta]);
 
   const grouped = useMemo(
     () =>
@@ -46,9 +86,9 @@ export function OceanicEvidence() {
       </div>
 
       <Callout tone="warn" title="Proxy, not an official index.">
-        Ni&ntilde;o3.4, IOD-West, IOD-East, and DMI values here are area means of the NMME forecast temperature field
-        over the Ni&ntilde;o3.4 / IOD boxes &mdash; a convenient proxy, not the dedicated SST index products issued by
-        NOAA, BOM, or JMA.
+        Ni&ntilde;o1+2, Ni&ntilde;o3, Ni&ntilde;o3.4, Ni&ntilde;o4, IOD-West, IOD-East, and DMI values here are area
+        means of the NMME forecast temperature field over the standard Ni&ntilde;o / IOD index boxes &mdash; a
+        convenient proxy, not the dedicated SST index products issued by NOAA, BOM, or JMA.
       </Callout>
 
       {jjas && (
@@ -60,7 +100,30 @@ export function OceanicEvidence() {
         </div>
       )}
 
-      <div className="grid-2">
+      <div className="card-head" style={{ marginTop: 8 }}>
+        <h3>Sea surface temperature map</h3>
+        <span className="hint">NMME tmpsfc anomaly, ocean only &mdash; May 2026 init</span>
+      </div>
+      {initMeta && (
+        <div className="control-bar" style={{ maxWidth: 260, marginBottom: 12 }}>
+          <ControlField
+            label="Forecast period"
+            value={period}
+            onChange={setPeriod}
+            options={initMeta.periods.map((p) => [p, meta!.period_labels[p] ?? p])}
+          />
+        </div>
+      )}
+      <AnomalyLeafletMap
+        overlay={overlay}
+        grid={grid}
+        region="global"
+        indexBoxes={SST_INDEX_BOXES}
+        legendGradient="linear-gradient(90deg, #08306b, #c6dbef, #f7f7f7, #fcbba1, #67000d)"
+        emptyReason="No rendered SST map for this period in this build."
+      />
+
+      <div className="grid-2" style={{ marginTop: 22 }}>
         <div className="chart-card">
           <div className="card-head">
             <h3>Nino3.4 / IOD-West / IOD-East proxy by period</h3>
@@ -118,11 +181,14 @@ export function OceanicEvidence() {
 
       <h3 style={{ margin: "30px 0 12px", fontSize: "1.05rem", fontFamily: "var(--sans)" }}>Full proxy-index readout</h3>
       <div className="table-scroll">
-        <table className="data-table" style={{ minWidth: 680 }}>
+        <table className="data-table" style={{ minWidth: 920 }}>
           <thead>
             <tr>
               <th>Period</th>
+              <th>Nino1+2 (K)</th>
+              <th>Nino3 (K)</th>
               <th>Nino3.4 (K)</th>
+              <th>Nino4 (K)</th>
               <th>IOD-West (K)</th>
               <th>IOD-East (K)</th>
               <th>DMI (K)</th>
@@ -133,7 +199,10 @@ export function OceanicEvidence() {
             {(sst ?? []).map((r) => (
               <tr key={r.period}>
                 <td className="diag">{r.period}</td>
+                <td className="num">{r.nino1_2_anomaly != null ? `${sign(r.nino1_2_anomaly)}${fmt(r.nino1_2_anomaly, 2)}` : "—"}</td>
+                <td className="num">{r.nino3_anomaly != null ? `${sign(r.nino3_anomaly)}${fmt(r.nino3_anomaly, 2)}` : "—"}</td>
                 <td className="num">{sign(r.nino34_anomaly)}{fmt(r.nino34_anomaly, 2)}</td>
+                <td className="num">{r.nino4_anomaly != null ? `${sign(r.nino4_anomaly)}${fmt(r.nino4_anomaly, 2)}` : "—"}</td>
                 <td className="num">{sign(r.iod_west_anomaly)}{fmt(r.iod_west_anomaly, 2)}</td>
                 <td className="num">{sign(r.iod_east_anomaly)}{fmt(r.iod_east_anomaly, 2)}</td>
                 <td className="num">{sign(r.dmi_proxy)}{fmt(r.dmi_proxy, 2)}</td>

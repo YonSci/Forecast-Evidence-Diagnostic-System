@@ -10,6 +10,7 @@ APP_ROOT = Path(__file__).resolve().parent
 STATIC_DATA = APP_ROOT / "static_data"
 TABLES_DIR = STATIC_DATA / "tables"
 OVERLAYS_DIR = STATIC_DATA / "overlays"
+SST_OVERLAYS_DIR = STATIC_DATA / "sst_overlays"
 GALLERY_DIR = STATIC_DATA / "gallery"
 
 # Same four regions used throughout scripts 04/15/19/21 and the dashboard's
