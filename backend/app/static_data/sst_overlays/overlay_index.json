@@ -4,207 +4,207 @@
     "bounds": [
       [
         -85.05112878,
-        -180
+        0
       ],
       [
         85.05112878,
-        180
+        360
       ]
     ],
     "vmin": -2.1767,
     "vmax": 2.1767,
-    "unit": "K"
+    "unit": "\u00b0C"
   },
   "may/global/Jul": {
     "file": "may/tmpsfc_global_Jul.png",
     "bounds": [
       [
         -85.05112878,
-        -180
+        0
       ],
       [
         85.05112878,
-        180
+        360
       ]
     ],
     "vmin": -2.3274,
     "vmax": 2.3274,
-    "unit": "K"
+    "unit": "\u00b0C"
   },
   "may/global/Aug": {
     "file": "may/tmpsfc_global_Aug.png",
     "bounds": [
       [
         -85.05112878,
-        -180
+        0
       ],
       [
         85.05112878,
-        180
+        360
       ]
     ],
     "vmin": -2.5928,
     "vmax": 2.5928,
-    "unit": "K"
+    "unit": "\u00b0C"
   },
   "may/global/Sep": {
     "file": "may/tmpsfc_global_Sep.png",
     "bounds": [
       [
         -85.05112878,
-        -180
+        0
       ],
       [
         85.05112878,
-        180
+        360
       ]
     ],
     "vmin": -2.7454,
     "vmax": 2.7454,
-    "unit": "K"
+    "unit": "\u00b0C"
   },
   "may/global/JJA": {
     "file": "may/tmpsfc_global_JJA.png",
     "bounds": [
       [
         -85.05112878,
-        -180
+        0
       ],
       [
         85.05112878,
-        180
+        360
       ]
     ],
     "vmin": -2.2205,
     "vmax": 2.2205,
-    "unit": "K"
+    "unit": "\u00b0C"
   },
   "may/global/JJAS": {
     "file": "may/tmpsfc_global_JJAS.png",
     "bounds": [
       [
         -85.05112878,
-        -180
+        0
       ],
       [
         85.05112878,
-        180
+        360
       ]
     ],
     "vmin": -2.2353,
     "vmax": 2.2353,
-    "unit": "K"
+    "unit": "\u00b0C"
   },
   "june/global/Jul": {
     "file": "june/tmpsfc_global_Jul.png",
     "bounds": [
       [
         -85.05112878,
-        -180
+        0
       ],
       [
         85.05112878,
-        180
+        360
       ]
     ],
     "vmin": -2.3535,
     "vmax": 2.3535,
-    "unit": "K"
+    "unit": "\u00b0C"
   },
   "june/global/Aug": {
     "file": "june/tmpsfc_global_Aug.png",
     "bounds": [
       [
         -85.05112878,
-        -180
+        0
       ],
       [
         85.05112878,
-        180
+        360
       ]
     ],
     "vmin": -2.5225,
     "vmax": 2.5225,
-    "unit": "K"
+    "unit": "\u00b0C"
   },
   "june/global/Sep": {
     "file": "june/tmpsfc_global_Sep.png",
     "bounds": [
       [
         -85.05112878,
-        -180
+        0
       ],
       [
         85.05112878,
-        180
+        360
       ]
     ],
     "vmin": -2.6289,
     "vmax": 2.6289,
-    "unit": "K"
+    "unit": "\u00b0C"
   },
   "june/global/JAS": {
     "file": "june/tmpsfc_global_JAS.png",
     "bounds": [
       [
         -85.05112878,
-        -180
+        0
       ],
       [
         85.05112878,
-        180
+        360
       ]
     ],
     "vmin": -2.4165,
     "vmax": 2.4165,
-    "unit": "K"
+    "unit": "\u00b0C"
   },
   "july/global/Aug": {
     "file": "july/tmpsfc_global_Aug.png",
     "bounds": [
       [
         -85.05112878,
-        -180
+        0
       ],
       [
         85.05112878,
-        180
+        360
       ]
     ],
     "vmin": -2.5427,
     "vmax": 2.5427,
-    "unit": "K"
+    "unit": "\u00b0C"
   },
   "july/global/Sep": {
     "file": "july/tmpsfc_global_Sep.png",
     "bounds": [
       [
         -85.05112878,
-        -180
+        0
       ],
       [
         85.05112878,
-        180
+        360
       ]
     ],
     "vmin": -2.638,
     "vmax": 2.638,
-    "unit": "K"
+    "unit": "\u00b0C"
   },
   "july/global/AS": {
     "file": "july/tmpsfc_global_AS.png",
     "bounds": [
       [
         -85.05112878,
-        -180
+        0
       ],
       [
         85.05112878,
-        180
+        360
       ]
     ],
     "vmin": -2.5338,
     "vmax": 2.5338,
-    "unit": "K"
+    "unit": "\u00b0C"
   }
 }

@@ -169,8 +169,10 @@ function GridHoverTooltip({ grid }: { grid: GridResponse | null }) {
 
     function onMove(e: LeafletMouseEvent) {
       const { lat } = e.latlng;
-      // Panning a world-wrapping map can push lng outside [-180,180]; fold back in.
-      const lon = ((((e.latlng.lng + 180) % 360) + 360) % 360) - 180;
+      // Panning a world-wrapping map can push lng outside the grid's own
+      // longitude range; fold back into [lonMin, lonMin+360) -- works for
+      // both -180..180 (rainfall) and 0..360 Pacific-centered (SST) grids.
+      const lon = (((e.latlng.lng - lonMin) % 360) + 360) % 360 + lonMin;
 
       if (lat < latMin || lat > latMax || lon < lonMin || lon > lonMax) {
         map.closeTooltip(tooltip);

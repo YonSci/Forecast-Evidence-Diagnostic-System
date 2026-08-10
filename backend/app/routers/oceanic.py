@@ -74,7 +74,11 @@ def get_sst_proxy(init: str = Query("2026-05-08")) -> list[dict]:
             "iod_west_anomaly": row["iod_west_tmpsfc_anomaly"],
             "iod_east_anomaly": row["iod_east_tmpsfc_anomaly"],
             "dmi_proxy": row["dmi_approx"],
-            "units": row["units"],
+            # Source tables say "K", but every value here is an ANOMALY (a
+            # temperature difference), and a 1 Kelvin difference is exactly
+            # a 1 degree Celsius difference -- so this is a display-label
+            # fix only, not a numeric conversion.
+            "units": "°C",
             "nino34_classification": row["nino34_classification"],
             "dmi_classification": row["dmi_classification"],
         })

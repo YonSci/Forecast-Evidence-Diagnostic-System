@@ -11,6 +11,12 @@ masked out, since this is meant to read as a sea-surface-temperature map,
 the same convention as BOM/NOAA SST outlook pages), plus a matching raw
 grid JSON for exact-value hover tooltips.
 
+Rendered Pacific-centered (longitude 0 to 360, not -180 to 180) so the seam
+falls in the Atlantic instead of straight through the Nino boxes -- this
+matches standard ENSO/IOD outlook maps (e.g. BOM's SST anomaly page) and
+keeps the Nino3/3.4/4 region contiguous instead of split across the map's
+left/right edges.
+
 Outputs
 -------
     outputs/maps/leaflet_overlays_sst/<init>/tmpsfc_global_<period>.png
@@ -52,7 +58,7 @@ CMAP = LinearSegmentedColormap.from_list(
     "cool_warm", ["#08306b", "#4292c6", "#c6dbef", "#f7f7f7", "#fcbba1", "#cb181d", "#67000d"]
 )
 
-BOX = [-180, 180, -90, 90]
+BOX = [0, 360, -90, 90]
 
 WEB_MERCATOR_MAX_LAT = 85.05112878
 MERCATOR_R = 6378137.0
@@ -79,12 +85,28 @@ def clamp_box_lat(box):
     return [lon_min, lon_max, max(lat_min, -WEB_MERCATOR_MAX_LAT), min(lat_max, WEB_MERCATOR_MAX_LAT)]
 
 
+def recenter_geom_pacific(geom):
+    """Shift a -180..180 geometry into the 0..360 (Pacific-centered) frame.
+    A plain +360 translation would leave the seam broken wherever a polygon
+    crosses the old prime meridian (lon=0) -- e.g. the UK, France, Nigeria,
+    Spain -- so instead split at lon=0 first (the new frame's seam is at
+    0/360, not -180/180) and only shift the western half."""
+    west_half = geom.intersection(sgeom.box(-180, -90, 0, 90))
+    east_half = geom.intersection(sgeom.box(0, -90, 180, 90))
+    parts = [east_half] if not east_half.is_empty else []
+    if not west_half.is_empty:
+        parts.append(shapely.transform(west_half, lambda coords: coords + [360, 0]))
+    return unary_union(parts)
+
+
 def load_ocean_clip_geom():
     """World rectangle minus all land -- the inverse of script 22's land
-    mask, so the SST raster only paints over ocean pixels."""
+    mask, so the SST raster only paints over ocean pixels. Recentered to
+    the same 0..360 Pacific-centered frame the raster is rendered in."""
     land_path = shpreader.natural_earth(resolution="10m", category="physical", name="land")
     land_union = unary_union([r.geometry for r in shpreader.Reader(land_path).records()])
-    world = sgeom.box(-180, -90, 180, 90)
+    land_union = recenter_geom_pacific(land_union)
+    world = sgeom.box(0, -90, 360, 90)
     return world.difference(land_union)
 
 
@@ -92,38 +114,40 @@ INIT_JOBS = {
     "may": {
         "dir": PROJECT_ROOT / "outputs" / "netcdf" / "nmme_anomalies_may_init_regions",
         "periods": {
-            "Jun": ("NMME_tmpsfc_Jun_2026_anomaly.nc", "tmpsfc_Jun_2026_anomaly", "K"),
-            "Jul": ("NMME_tmpsfc_Jul_2026_anomaly.nc", "tmpsfc_Jul_2026_anomaly", "K"),
-            "Aug": ("NMME_tmpsfc_Aug_2026_anomaly.nc", "tmpsfc_Aug_2026_anomaly", "K"),
-            "Sep": ("NMME_tmpsfc_Sep_2026_anomaly.nc", "tmpsfc_Sep_2026_anomaly", "K"),
-            "JJA": ("NMME_tmpsfc_JJA_2026_mean_anomaly.nc", "tmpsfc_JJA_2026_mean_anomaly", "K"),
-            "JJAS": ("NMME_tmpsfc_JJAS_2026_mean_anomaly.nc", "tmpsfc_JJAS_2026_mean_anomaly", "K"),
+            "Jun": ("NMME_tmpsfc_Jun_2026_anomaly.nc", "tmpsfc_Jun_2026_anomaly", "°C"),
+            "Jul": ("NMME_tmpsfc_Jul_2026_anomaly.nc", "tmpsfc_Jul_2026_anomaly", "°C"),
+            "Aug": ("NMME_tmpsfc_Aug_2026_anomaly.nc", "tmpsfc_Aug_2026_anomaly", "°C"),
+            "Sep": ("NMME_tmpsfc_Sep_2026_anomaly.nc", "tmpsfc_Sep_2026_anomaly", "°C"),
+            "JJA": ("NMME_tmpsfc_JJA_2026_mean_anomaly.nc", "tmpsfc_JJA_2026_mean_anomaly", "°C"),
+            "JJAS": ("NMME_tmpsfc_JJAS_2026_mean_anomaly.nc", "tmpsfc_JJAS_2026_mean_anomaly", "°C"),
         },
     },
     "june": {
         "dir": PROJECT_ROOT / "outputs" / "netcdf" / "nmme_anomalies_june_init",
         "periods": {
-            "Jul": ("NMME_tmpsfc_Jul_2026_anomaly.nc", "tmpsfc_Jul_2026_anomaly", "K"),
-            "Aug": ("NMME_tmpsfc_Aug_2026_anomaly.nc", "tmpsfc_Aug_2026_anomaly", "K"),
-            "Sep": ("NMME_tmpsfc_Sep_2026_anomaly.nc", "tmpsfc_Sep_2026_anomaly", "K"),
-            "JAS": ("NMME_tmpsfc_JAS_2026_mean_anomaly.nc", "tmpsfc_JAS_2026_mean_anomaly", "K"),
+            "Jul": ("NMME_tmpsfc_Jul_2026_anomaly.nc", "tmpsfc_Jul_2026_anomaly", "°C"),
+            "Aug": ("NMME_tmpsfc_Aug_2026_anomaly.nc", "tmpsfc_Aug_2026_anomaly", "°C"),
+            "Sep": ("NMME_tmpsfc_Sep_2026_anomaly.nc", "tmpsfc_Sep_2026_anomaly", "°C"),
+            "JAS": ("NMME_tmpsfc_JAS_2026_mean_anomaly.nc", "tmpsfc_JAS_2026_mean_anomaly", "°C"),
         },
     },
     "july": {
         "dir": PROJECT_ROOT / "outputs" / "netcdf" / "nmme_anomalies_july_init",
         "periods": {
-            "Aug": ("NMME_tmpsfc_Aug_2026_anomaly.nc", "tmpsfc_Aug_2026_anomaly", "K"),
-            "Sep": ("NMME_tmpsfc_Sep_2026_anomaly.nc", "tmpsfc_Sep_2026_anomaly", "K"),
-            "AS": ("NMME_tmpsfc_AS_2026_mean_anomaly.nc", "tmpsfc_AS_2026_mean_anomaly", "K"),
+            "Aug": ("NMME_tmpsfc_Aug_2026_anomaly.nc", "tmpsfc_Aug_2026_anomaly", "°C"),
+            "Sep": ("NMME_tmpsfc_Sep_2026_anomaly.nc", "tmpsfc_Sep_2026_anomaly", "°C"),
+            "AS": ("NMME_tmpsfc_AS_2026_mean_anomaly.nc", "tmpsfc_AS_2026_mean_anomaly", "°C"),
         },
     },
 }
 
 
-def standardize_longitude(da: xr.DataArray) -> xr.DataArray:
+def to_pacific_centered_longitude(da: xr.DataArray) -> xr.DataArray:
+    """Rewrap the lon axis into 0..360 (source data is -180..179), so the
+    raster's own pixel columns already run Pacific-centered before Mercator
+    projection -- matching the ocean clip geometry's frame."""
     lon = da["lon"]
-    if float(lon.max()) > 180:
-        da = da.assign_coords(lon=((lon + 180) % 360) - 180).sortby("lon")
+    da = da.assign_coords(lon=(lon % 360)).sortby("lon")
     return da
 
 
@@ -185,7 +209,7 @@ def main():
                 continue
 
             ds = xr.open_dataset(path, decode_times=False)
-            da = standardize_longitude(ds[varname])
+            da = to_pacific_centered_longitude(ds[varname])
 
             out_path = OUT_DIR / init_key / f"tmpsfc_global_{period}.png"
             vmin, vmax = render_overlay(da, render_box, out_path, ocean_clip)

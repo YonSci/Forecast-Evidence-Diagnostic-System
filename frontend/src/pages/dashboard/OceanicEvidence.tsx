@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { useFetch } from "../../hooks/useFetch";
-import { getJson, assetUrl } from "../../api/client";
+import { getJson } from "../../api/client";
 import type { SstProxyRow, MetaResponse, OverlayInfo, GridResponse } from "../../api/types";
 import { Callout } from "../../components/ui/Callout";
 import { StatTile } from "../../components/ui/StatTile";
@@ -8,38 +8,30 @@ import { ControlField } from "../../components/ui/ControlField";
 import { GroupedBarChart } from "../../components/charts/GroupedBarChart";
 import { DivergingBarChart } from "../../components/charts/DivergingBarChart";
 import type { DivergingDatum } from "../../components/charts/DivergingBarChart";
-import { MapFigure } from "../../components/ui/MapFigure";
+import { MultiLineChart } from "../../components/charts/MultiLineChart";
 import { AnomalyLeafletMap } from "../../components/maps/AnomalyLeafletMap";
 import type { IndexBox } from "../../components/maps/AnomalyLeafletMap";
 import { fmt, sign, titleCase } from "../../lib/format";
 
-const GALLERY: [string, string][] = [
-  ["sst_indian_ocean_jjas.png", "NMME tmpsfc SST-proxy anomaly — Indian Ocean (IOD boxes) — JJAS 2026"],
-  ["sst_pacific_enso_jjas.png", "NMME tmpsfc SST-proxy anomaly — Pacific / Nino3.4 box — JJAS 2026"],
-  ["enso_iod_proxy_chart.png", "NMME-derived Nino3.4 / IOD-West / IOD-East proxy indices by period"],
-  ["dmi_proxy_chart.png", "NMME-derived DMI proxy by forecast period"],
-];
-
 // Standard NOAA CPC Nino boxes + the IOD boxes already used elsewhere in
 // this project -- matches scripts/25_compute_expanded_sst_indices.py.
-// Bounds are [[southLat, westLon], [northLat, eastLon]]. Nino4 straddles
-// the antimeridian, so it's drawn as two rectangles.
+// Bounds are [[southLat, westLon], [northLat, eastLon]], expressed in the
+// same 0-360 (Pacific-centered) longitude frame the SST raster renders in
+// (see scripts/26) -- the map's initial view spans lon 0-360, so a box
+// given in signed -180..180 form (e.g. Nino3.4 as -170 to -120) would
+// render off-screen to the left of that view. In this frame Nino4 no
+// longer needs to be split across the antimeridian either.
 const SST_INDEX_BOXES: IndexBox[] = [
-  { name: "Niño 1+2", rects: [[[-10, -90], [0, -80]]] },
-  { name: "Niño 3", rects: [[[-5, -150], [5, -90]]] },
-  { name: "Niño 3.4", rects: [[[-5, -170], [5, -120]]] },
-  {
-    name: "Niño 4",
-    rects: [
-      [[-5, 160], [5, 180]],
-      [[-5, -180], [5, -150]],
-    ],
-  },
+  { name: "Niño 1+2", rects: [[[-10, 270], [0, 280]]] },
+  { name: "Niño 3", rects: [[[-5, 210], [5, 270]]] },
+  { name: "Niño 3.4", rects: [[[-5, 190], [5, 240]]] },
+  { name: "Niño 4", rects: [[[-5, 160], [5, 210]]] },
   { name: "IOD West", rects: [[[-10, 50], [10, 70]]] },
   { name: "IOD East", rects: [[[-10, 90], [0, 110]]] },
 ];
 
 const SST_INIT = "2026-05-08";
+const MONTHLY_PERIODS = ["Jun", "Jul", "Aug", "Sep"];
 
 export function OceanicEvidence() {
   const { data: meta } = useFetch<MetaResponse>("/api/meta");
@@ -74,6 +66,23 @@ export function OceanicEvidence() {
 
   const dmiData: DivergingDatum[] = useMemo(() => (sst ?? []).map((r) => ({ label: r.period, value: r.dmi_proxy })), [sst]);
 
+  const monthlyTimeseries = useMemo(
+    () =>
+      (sst ?? [])
+        .filter((r) => MONTHLY_PERIODS.includes(r.period))
+        .sort((a, b) => MONTHLY_PERIODS.indexOf(a.period) - MONTHLY_PERIODS.indexOf(b.period))
+        .map((r) => ({
+          label: r.period,
+          nino1_2: r.nino1_2_anomaly,
+          nino3: r.nino3_anomaly,
+          nino34: r.nino34_anomaly,
+          nino4: r.nino4_anomaly,
+          iod_west: r.iod_west_anomaly,
+          iod_east: r.iod_east_anomaly,
+        })),
+    [sst]
+  );
+
   return (
     <div className="tabpanel">
       <div className="panel-head">
@@ -93,10 +102,10 @@ export function OceanicEvidence() {
 
       {jjas && (
         <div className="grid-4" style={{ margin: "22px 0" }}>
-          <StatTile label="Nino3.4 proxy, JJAS" value={jjas.nino34_anomaly} unit="K" footLabel="El Nino-like" footTone="dry" />
-          <StatTile label="IOD-West proxy, JJAS" value={jjas.iod_west_anomaly} unit="K" footLabel={jjas.iod_west_anomaly < 0 ? "Below normal" : "Above normal"} footTone="neutral" />
-          <StatTile label="IOD-East proxy, JJAS" value={jjas.iod_east_anomaly} unit="K" footLabel={jjas.iod_east_anomaly < 0 ? "Below normal" : "Above normal"} footTone="neutral" />
-          <StatTile label="DMI proxy, JJAS" value={jjas.dmi_proxy} unit="K" footLabel={titleCase(jjas.dmi_classification)} footTone="neutral" />
+          <StatTile label="Nino3.4 proxy, JJAS" value={jjas.nino34_anomaly} unit="°C" footLabel="El Nino-like" footTone="dry" />
+          <StatTile label="IOD-West proxy, JJAS" value={jjas.iod_west_anomaly} unit="°C" footLabel={jjas.iod_west_anomaly < 0 ? "Below normal" : "Above normal"} footTone="neutral" />
+          <StatTile label="IOD-East proxy, JJAS" value={jjas.iod_east_anomaly} unit="°C" footLabel={jjas.iod_east_anomaly < 0 ? "Below normal" : "Above normal"} footTone="neutral" />
+          <StatTile label="DMI proxy, JJAS" value={jjas.dmi_proxy} unit="°C" footLabel={titleCase(jjas.dmi_classification)} footTone="neutral" />
         </div>
       )}
 
@@ -127,11 +136,11 @@ export function OceanicEvidence() {
         <div className="chart-card">
           <div className="card-head">
             <h3>Nino3.4 / IOD-West / IOD-East proxy by period</h3>
-            <span className="hint">K, vs. model climatology</span>
+            <span className="hint">&deg;C, vs. model climatology</span>
           </div>
           <GroupedBarChart
             data={grouped}
-            unit="K"
+            unit="°C"
             series={[
               { key: "nino34", name: "Nino3.4", color: "var(--cat-1)" },
               { key: "iod_west", name: "IOD-West", color: "var(--cat-2)" },
@@ -147,9 +156,9 @@ export function OceanicEvidence() {
         <div className="chart-card">
           <div className="card-head">
             <h3>DMI proxy (IOD-West &minus; IOD-East)</h3>
-            <span className="hint">K</span>
+            <span className="hint">&deg;C</span>
           </div>
-          <DivergingBarChart data={dmiData} unit="K" />
+          <DivergingBarChart data={dmiData} unit="°C" />
         </div>
       </div>
 
@@ -173,25 +182,19 @@ export function OceanicEvidence() {
         </div>
       </div>
 
-      <div className="map-grid" style={{ marginTop: 22 }}>
-        {GALLERY.map(([file, caption]) => (
-          <MapFigure key={file} src={assetUrl(`/static/gallery/${file}`)} caption={caption} />
-        ))}
-      </div>
-
       <h3 style={{ margin: "30px 0 12px", fontSize: "1.05rem", fontFamily: "var(--sans)" }}>Full proxy-index readout</h3>
       <div className="table-scroll">
         <table className="data-table" style={{ minWidth: 920 }}>
           <thead>
             <tr>
               <th>Period</th>
-              <th>Nino1+2 (K)</th>
-              <th>Nino3 (K)</th>
-              <th>Nino3.4 (K)</th>
-              <th>Nino4 (K)</th>
-              <th>IOD-West (K)</th>
-              <th>IOD-East (K)</th>
-              <th>DMI (K)</th>
+              <th>Nino1+2 (&deg;C)</th>
+              <th>Nino3 (&deg;C)</th>
+              <th>Nino3.4 (&deg;C)</th>
+              <th>Nino4 (&deg;C)</th>
+              <th>IOD-West (&deg;C)</th>
+              <th>IOD-East (&deg;C)</th>
+              <th>DMI (&deg;C)</th>
               <th>Classification</th>
             </tr>
           </thead>
@@ -214,6 +217,25 @@ export function OceanicEvidence() {
             ))}
           </tbody>
         </table>
+      </div>
+
+      <div className="chart-card" style={{ marginTop: 22 }}>
+        <div className="card-head">
+          <h3>Index values by month</h3>
+          <span className="hint">&deg;C &mdash; June through September 2026</span>
+        </div>
+        <MultiLineChart
+          data={monthlyTimeseries}
+          unit="°C"
+          series={[
+            { key: "nino1_2", name: "Nino1+2", color: "var(--cat-1)" },
+            { key: "nino3", name: "Nino3", color: "var(--cat-2)" },
+            { key: "nino34", name: "Nino3.4", color: "var(--cat-3)" },
+            { key: "nino4", name: "Nino4", color: "var(--cat-4)" },
+            { key: "iod_west", name: "IOD-West", color: "var(--cat-5)" },
+            { key: "iod_east", name: "IOD-East", color: "var(--cat-6)" },
+          ]}
+        />
       </div>
     </div>
   );
