@@ -127,7 +127,7 @@ function FitBounds({ bounds, cover = false }: { bounds: LatLngBoundsExpression; 
       // constrained axis is latitude near the poles, which is fine to
       // crop), so compute the exact extra zoom needed to fill it too.
       const zoom = map.getZoom();
-      const b = L.latLngBounds(bounds);
+      const b = bounds instanceof L.LatLngBounds ? bounds : L.latLngBounds(bounds);
       const nePx = map.project(b.getNorthEast(), zoom);
       const swPx = map.project(b.getSouthWest(), zoom);
       const boundsPx = { x: Math.abs(nePx.x - swPx.x), y: Math.abs(nePx.y - swPx.y) };
