@@ -104,7 +104,7 @@ const BASEMAPS: { name: string; url: string; attribution: string; checked?: bool
   },
 ];
 
-function FitBounds({ bounds, extraZoom = 0 }: { bounds: LatLngBoundsExpression; extraZoom?: number }) {
+function FitBounds({ bounds, cover = false }: { bounds: LatLngBoundsExpression; cover?: boolean }) {
   const map = useMap();
   useEffect(() => {
     // animate:false -- this fires on every region/period/init switch, and an
@@ -115,19 +115,29 @@ function FitBounds({ bounds, extraZoom = 0 }: { bounds: LatLngBoundsExpression; 
     // A synchronous jump has no such race and is appropriate for a
     // programmatic region switch anyway.
     map.fitBounds(bounds, { animate: false });
-    if (extraZoom) {
-      // fitBounds picks the tightest zoom where BOTH dimensions still fit,
-      // constrained by whichever axis is closer to the container's aspect
-      // ratio -- any zoom past that starts cropping that same axis. For a
-      // country-sized region (Ethiopia, Greater Horn, Africa) that axis is
-      // real content (the region's own north/south extent), so nudging
-      // zoom there crops the region itself. "Global" is the one case where
-      // that constrained axis is latitude near the poles, which is fine to
-      // crop -- so only Global gets a boost to shrink its large left/right
-      // basemap padding.
-      map.setZoom(map.getZoom() + extraZoom, { animate: false });
+    if (cover) {
+      // fitBounds ("contain") picks the tightest zoom where BOTH dimensions
+      // still fit, constrained by whichever axis is closer to the
+      // container's aspect ratio -- the other axis is then under-filled,
+      // leaving blank map canvas as padding. For a country-sized region
+      // (Ethiopia, Greater Horn, Africa) that constrained axis is real
+      // content (the region's own north/south extent), so cropping it would
+      // crop the region itself -- not used there. "Global" is the one case
+      // where the under-filled axis is left/right basemap padding (the
+      // constrained axis is latitude near the poles, which is fine to
+      // crop), so compute the exact extra zoom needed to fill it too.
+      const zoom = map.getZoom();
+      const b = L.latLngBounds(bounds);
+      const nePx = map.project(b.getNorthEast(), zoom);
+      const swPx = map.project(b.getSouthWest(), zoom);
+      const boundsPx = { x: Math.abs(nePx.x - swPx.x), y: Math.abs(nePx.y - swPx.y) };
+      const mapPx = map.getSize();
+      const scale = Math.max(mapPx.x / boundsPx.x, mapPx.y / boundsPx.y);
+      if (scale > 1.001) {
+        map.setZoom(zoom + Math.log2(scale), { animate: false });
+      }
     }
-  }, [map, JSON.stringify(bounds), extraZoom]);
+  }, [map, JSON.stringify(bounds), cover]);
   return null;
 }
 
@@ -264,7 +274,7 @@ export function AnomalyLeafletMap({
             <IndexBoxesOverlay boxes={indexBoxes} />
           </LayersControl>
           <ImageOverlay url={assetUrl(overlay.url!)} bounds={bounds} opacity={0.82} />
-          <FitBounds bounds={bounds} extraZoom={region === "global" ? 0.6 : 0} />
+          <FitBounds bounds={bounds} cover={region === "global"} />
           <GridHoverTooltip grid={grid ?? null} />
         </MapContainer>
         {overlay.vmin != null && overlay.vmax != null && (

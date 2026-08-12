@@ -109,8 +109,9 @@ export function AnomalyEvidence() {
       </div>
 
       <Callout>
-        Negative precipitation anomaly = below-normal rainfall for that lead time (dry-leaning). Positive = above-normal
-        (wet-leaning). Positive surface-temperature anomaly = warmer than the model&apos;s own normal.
+        Negative precipitation anomaly = below-normal rainfall for that lead time (dry-leaning).   
+        Positive = above-normal (wet-leaning). 
+        Positive surface-temperature anomaly = warmer than the model&apos;s own normal.
       </Callout>
 
       <div className="control-bar">

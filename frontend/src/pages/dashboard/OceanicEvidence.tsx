@@ -4,6 +4,8 @@ import { getJson } from "../../api/client";
 import type { SstProxyRow, MetaResponse, OverlayInfo, GridResponse } from "../../api/types";
 import { Callout } from "../../components/ui/Callout";
 import { StatTile } from "../../components/ui/StatTile";
+import { Pill } from "../../components/ui/Pill";
+import type { PillTone } from "../../components/ui/Pill";
 import { ControlField } from "../../components/ui/ControlField";
 import { GroupedBarChart } from "../../components/charts/GroupedBarChart";
 import { DivergingBarChart } from "../../components/charts/DivergingBarChart";
@@ -33,15 +35,63 @@ const SST_INDEX_BOXES: IndexBox[] = [
 const SST_INIT = "2026-05-08";
 const MONTHLY_PERIODS = ["Jun", "Jul", "Aug", "Sep"];
 
+// Same +/-0.5degC threshold the backend uses for the Nino3.4 proxy
+// (scripts/05_compute_dynamic_diagnostics.py::classify_value), applied to
+// the other Nino boxes too since they share the same tmpsfc-anomaly
+// methodology and aren't classified server-side.
+function classifyNinoBox(value: number | null): string | null {
+  if (value == null) return null;
+  if (value >= 0.5) return "el_nino_like";
+  if (value <= -0.5) return "la_nina_like";
+  return "neutral_or_weak";
+}
+
+function ninoTone(cls: string): PillTone {
+  if (cls === "el_nino_like") return "dry";
+  if (cls === "la_nina_like") return "wet";
+  return "outline";
+}
+
+// IOD-West/IOD-East don't have an official combined threshold (only their
+// difference, the DMI, does) -- fall back to a sign-only read, matching the
+// convention already used for these two boxes in the stat tiles above.
+function classifyIodBox(value: number | null): string | null {
+  if (value == null) return null;
+  return value < 0 ? "below_normal" : "above_normal";
+}
+
+function dmiTone(cls: string): PillTone {
+  if (cls === "positive_iod_like") return "dry";
+  if (cls === "negative_iod_like") return "wet";
+  return "outline";
+}
+
+function NumCell({ value, cls, tone }: { value: number | null; cls: string | null; tone: PillTone }) {
+  return (
+    <td className="num">
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 4 }}>
+        <span>{value != null ? `${sign(value)}${fmt(value, 2)}` : "—"}</span>
+        {cls && (
+          <Pill tone={tone} small>
+            {titleCase(cls)}
+          </Pill>
+        )}
+      </div>
+    </td>
+  );
+}
+
 export function OceanicEvidence() {
   const { data: meta } = useFetch<MetaResponse>("/api/meta");
   const { data: sst } = useFetch<SstProxyRow[]>("/api/oceanic/sst-proxy");
-  const jjas = sst?.find((r) => r.period === "JJAS");
 
   const initMeta = meta?.initializations.find((i) => i.key === SST_INIT);
   const [period, setPeriod] = useState("JJAS");
   const [overlay, setOverlay] = useState<OverlayInfo | null>(null);
   const [grid, setGrid] = useState<GridResponse | null>(null);
+
+  const selected = sst?.find((r) => r.period === period);
+  const periodLabel = meta?.period_labels[period] ?? period;
 
   useEffect(() => {
     if (!initMeta) return;
@@ -87,7 +137,7 @@ export function OceanicEvidence() {
     <div className="tabpanel">
       <div className="panel-head">
         <h2>Oceanic evidence</h2>
-        <p className="sub">
+        <p className="sub" style={{ maxWidth: "none" }}>
           Model-based ocean-driver proxies built from the NMME tmpsfc anomaly field over standard index boxes. These are
           not official observed ENSO or IOD indices &mdash; treat them as an approximate read on the forecast ocean
           pattern, not a replacement for NOAA/BOM/JMA official product monitoring.
@@ -100,12 +150,47 @@ export function OceanicEvidence() {
         convenient proxy, not the dedicated SST index products issued by NOAA, BOM, or JMA.
       </Callout>
 
-      {jjas && (
-        <div className="grid-4" style={{ margin: "22px 0" }}>
-          <StatTile label="Nino3.4 proxy, JJAS" value={jjas.nino34_anomaly} unit="°C" footLabel="El Nino-like" footTone="dry" />
-          <StatTile label="IOD-West proxy, JJAS" value={jjas.iod_west_anomaly} unit="°C" footLabel={jjas.iod_west_anomaly < 0 ? "Below normal" : "Above normal"} footTone="neutral" />
-          <StatTile label="IOD-East proxy, JJAS" value={jjas.iod_east_anomaly} unit="°C" footLabel={jjas.iod_east_anomaly < 0 ? "Below normal" : "Above normal"} footTone="neutral" />
-          <StatTile label="DMI proxy, JJAS" value={jjas.dmi_proxy} unit="°C" footLabel={titleCase(jjas.dmi_classification)} footTone="neutral" />
+      {initMeta && (
+        <div className="control-bar" style={{ maxWidth: 260, margin: "22px 0 0" }}>
+          <ControlField
+            label="Forecast period"
+            value={period}
+            onChange={setPeriod}
+            options={initMeta.periods.map((p) => [p, meta!.period_labels[p] ?? p])}
+          />
+        </div>
+      )}
+
+      {selected && (
+        <div className="grid-4" style={{ margin: "16px 0 22px" }}>
+          <StatTile
+            label={`Nino3.4 proxy, ${periodLabel}`}
+            value={selected.nino34_anomaly}
+            unit="°C"
+            footLabel={titleCase(selected.nino34_classification)}
+            footTone={ninoTone(selected.nino34_classification)}
+          />
+          <StatTile
+            label={`IOD-West proxy, ${periodLabel}`}
+            value={selected.iod_west_anomaly}
+            unit="°C"
+            footLabel={selected.iod_west_anomaly < 0 ? "Below normal" : "Above normal"}
+            footTone="neutral"
+          />
+          <StatTile
+            label={`IOD-East proxy, ${periodLabel}`}
+            value={selected.iod_east_anomaly}
+            unit="°C"
+            footLabel={selected.iod_east_anomaly < 0 ? "Below normal" : "Above normal"}
+            footTone="neutral"
+          />
+          <StatTile
+            label={`DMI proxy, ${periodLabel}`}
+            value={selected.dmi_proxy}
+            unit="°C"
+            footLabel={titleCase(selected.dmi_classification)}
+            footTone={dmiTone(selected.dmi_classification)}
+          />
         </div>
       )}
 
@@ -114,14 +199,9 @@ export function OceanicEvidence() {
         <span className="hint">NMME tmpsfc anomaly, ocean only &mdash; May 2026 init</span>
       </div>
       {initMeta && (
-        <div className="control-bar" style={{ maxWidth: 260, marginBottom: 12 }}>
-          <ControlField
-            label="Forecast period"
-            value={period}
-            onChange={setPeriod}
-            options={initMeta.periods.map((p) => [p, meta!.period_labels[p] ?? p])}
-          />
-        </div>
+        <p className="hint" style={{ marginBottom: 12 }}>
+          Uses the forecast period selected above.
+        </p>
       )}
       <AnomalyLeafletMap
         overlay={overlay}
@@ -162,25 +242,7 @@ export function OceanicEvidence() {
         </div>
       </div>
 
-      <div className="grid-2" style={{ marginTop: 22 }}>
-        <div className="card">
-          <h3 style={{ fontSize: "0.95rem", marginBottom: 8 }}>El Nino-like ocean pattern</h3>
-          <p style={{ fontSize: "0.87rem", color: "var(--ink-2)" }}>
-            NMME&apos;s tmpsfc-based Nino3.4 proxy is classified el_nino_like across every 2026 forecast period. A warm
-            eastern-Pacific pattern of this kind is one of the classic drivers associated with a dry-risk interpretation
-            for parts of Ethiopia and the Greater Horn during Kiremt, though the exact regional response depends on
-            season and the accompanying circulation state.
-          </p>
-        </div>
-        <div className="card">
-          <h3 style={{ fontSize: "0.95rem", marginBottom: 8 }}>Indian Ocean gradient</h3>
-          <p style={{ fontSize: "0.87rem", color: "var(--ink-2)" }}>
-            The DMI proxy stays neutral-to-weak early in the season, then strengthens toward a positive-IOD-like pattern
-            by August/September. A positive west-minus-east SST gradient can alter moisture transport into the Horn of
-            Africa &mdash; a signal worth tracking alongside the Pacific pattern rather than in isolation.
-          </p>
-        </div>
-      </div>
+      
 
       <h3 style={{ margin: "30px 0 12px", fontSize: "1.05rem", fontFamily: "var(--sans)" }}>Full proxy-index readout</h3>
       <div className="table-scroll">
@@ -195,24 +257,19 @@ export function OceanicEvidence() {
               <th>IOD-West (&deg;C)</th>
               <th>IOD-East (&deg;C)</th>
               <th>DMI (&deg;C)</th>
-              <th>Classification</th>
             </tr>
           </thead>
           <tbody>
             {(sst ?? []).map((r) => (
               <tr key={r.period}>
                 <td className="diag">{r.period}</td>
-                <td className="num">{r.nino1_2_anomaly != null ? `${sign(r.nino1_2_anomaly)}${fmt(r.nino1_2_anomaly, 2)}` : "—"}</td>
-                <td className="num">{r.nino3_anomaly != null ? `${sign(r.nino3_anomaly)}${fmt(r.nino3_anomaly, 2)}` : "—"}</td>
-                <td className="num">{sign(r.nino34_anomaly)}{fmt(r.nino34_anomaly, 2)}</td>
-                <td className="num">{r.nino4_anomaly != null ? `${sign(r.nino4_anomaly)}${fmt(r.nino4_anomaly, 2)}` : "—"}</td>
-                <td className="num">{sign(r.iod_west_anomaly)}{fmt(r.iod_west_anomaly, 2)}</td>
-                <td className="num">{sign(r.iod_east_anomaly)}{fmt(r.iod_east_anomaly, 2)}</td>
-                <td className="num">{sign(r.dmi_proxy)}{fmt(r.dmi_proxy, 2)}</td>
-                <td>
-                  <span className="pill pill-dry pill-sm" style={{ marginRight: 4 }}>{titleCase(r.nino34_classification)}</span>
-                  <span className="pill pill-outline pill-sm">{titleCase(r.dmi_classification)}</span>
-                </td>
+                <NumCell value={r.nino1_2_anomaly} cls={classifyNinoBox(r.nino1_2_anomaly)} tone={ninoTone(classifyNinoBox(r.nino1_2_anomaly) ?? "")} />
+                <NumCell value={r.nino3_anomaly} cls={classifyNinoBox(r.nino3_anomaly)} tone={ninoTone(classifyNinoBox(r.nino3_anomaly) ?? "")} />
+                <NumCell value={r.nino34_anomaly} cls={r.nino34_classification} tone={ninoTone(r.nino34_classification)} />
+                <NumCell value={r.nino4_anomaly} cls={classifyNinoBox(r.nino4_anomaly)} tone={ninoTone(classifyNinoBox(r.nino4_anomaly) ?? "")} />
+                <NumCell value={r.iod_west_anomaly} cls={classifyIodBox(r.iod_west_anomaly)} tone="outline" />
+                <NumCell value={r.iod_east_anomaly} cls={classifyIodBox(r.iod_east_anomaly)} tone="outline" />
+                <NumCell value={r.dmi_proxy} cls={r.dmi_classification} tone={dmiTone(r.dmi_classification)} />
               </tr>
             ))}
           </tbody>
