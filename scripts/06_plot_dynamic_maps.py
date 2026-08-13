@@ -38,7 +38,7 @@ import pandas as pd
 import xarray as xr
 import matplotlib.pyplot as plt
 from matplotlib.colors import TwoSlopeNorm
-from matplotlib.patches import Rectangle
+from matplotlib.patches import Rectangle, Ellipse
 
 
 # ==========================================================
@@ -192,6 +192,22 @@ Z200_NMME_FILES = {
 ERA5_U200_MONTHLY = ERA5_CLIM_DIR / "ERA5_u200_monthly_climatology_1991_2020_JJAS.nc"
 ERA5_U200_JJA = ERA5_CLIM_DIR / "ERA5_u200_JJA_climatology_1991_2020.nc"
 ERA5_U200_JJAS = ERA5_CLIM_DIR / "ERA5_u200_JJAS_climatology_1991_2020.nc"
+
+ERA5_V200_MONTHLY = ERA5_CLIM_DIR / "ERA5_v200_monthly_climatology_1991_2020_JJAS.nc"
+ERA5_V200_JJA = ERA5_CLIM_DIR / "ERA5_v200_JJA_climatology_1991_2020.nc"
+ERA5_V200_JJAS = ERA5_CLIM_DIR / "ERA5_v200_JJAS_climatology_1991_2020.nc"
+
+# Zoomed extent for the TEJ wind-speed/vector figure -- matches the domain
+# shown in Diro, Grimes & Black (2011) Fig. 4 (South Asia -> Indian Ocean ->
+# Africa band), tighter than the "africa_indian" box used for other plots so
+# the jet core isn't squeezed into a small fraction of the frame.
+TEJ_FIG4_BOX = [-20, 75, -20, 32]
+
+# Box the TEJ vector-max ("jet core") search is restricted to, so the
+# algorithm doesn't lock onto the (also strong) subtropical/extratropical
+# westerlies elsewhere in the frame -- roughly the Horn of Africa / Arabian
+# Sea sector where Fig. 4's dashed ellipse sits.
+TEJ_CORE_SEARCH_BOX = [25, 70, 3, 20]
 
 ERA5_OMEGA_FILES = {
     "omega500": {
@@ -658,6 +674,115 @@ def plot_moisture_flux_map(
     print(f"Saved moisture flux map: {out_file}")
 
 
+def find_jet_core(speed: xr.DataArray, search_box: list[float]) -> tuple[float, float, float]:
+    """Locate the (lon, lat) of peak climatological wind speed within
+    search_box, restricting the search away from the extratropical
+    westerlies so it lands on the TEJ core instead. Returns (lon, lat, speed)."""
+    sub = subset_box(speed, search_box)
+    flat = sub.values
+    i, j = np.unravel_index(np.nanargmax(flat), flat.shape)
+    core_lat = float(sub["lat"].values[i])
+    core_lon = float(sub["lon"].values[j])
+    core_speed = float(flat[i, j])
+    return core_lon, core_lat, core_speed
+
+
+def plot_tej_wind_speed_map(
+    u_da: xr.DataArray,
+    v_da: xr.DataArray,
+    title: str,
+    out_file: Path,
+    domain_box: list[float] = TEJ_FIG4_BOX,
+    core_search_box: list[float] = TEJ_CORE_SEARCH_BOX,
+):
+    """200 hPa wind-speed/direction TEJ map, styled after Fig. 4 in Diro,
+    Grimes & Black (2011): filled contour of wind speed magnitude, direction
+    vectors, and a dashed ellipse marking the jet core (max climatological
+    wind speed) instead of the plain u200-only diverging map used before."""
+    u = subset_box(u_da, domain_box).squeeze(drop=True)
+    v = subset_box(v_da, domain_box).squeeze(drop=True)
+
+    if "lat" in u.dims and "lon" in u.dims:
+        u = u.transpose("lat", "lon")
+        v = v.transpose("lat", "lon")
+
+    speed = np.sqrt(u**2 + v**2)
+    speed.attrs["units"] = u.attrs.get("units", "m s-1")
+
+    lon = u["lon"].values
+    lat = u["lat"].values
+    lon2d, lat2d = np.meshgrid(lon, lat)
+
+    nlat, nlon = len(lat), len(lon)
+    stride_lat = max(1, nlat // 22)
+    stride_lon = max(1, nlon // 28)
+    sl = (slice(None, None, stride_lat), slice(None, None, stride_lon))
+
+    levels = np.arange(0, 27.5, 2.5)
+    core_lon, core_lat, core_speed = find_jet_core(speed, core_search_box)
+
+    if HAS_CARTOPY:
+        fig = plt.figure(figsize=(12.5, 7.8))
+        ax = plt.axes(projection=ccrs.PlateCarree())
+        ax.set_extent(domain_box, crs=ccrs.PlateCarree())
+
+        cf = ax.contourf(
+            lon, lat, speed.values,
+            levels=levels, cmap="jet", extend="max",
+            transform=ccrs.PlateCarree(),
+        )
+
+        ax.quiver(
+            lon2d[sl], lat2d[sl], u.values[sl], v.values[sl],
+            transform=ccrs.PlateCarree(),
+            scale=420, width=0.0022, alpha=0.85,
+        )
+
+        ax.add_patch(
+            Ellipse(
+                (core_lon, core_lat), width=18, height=11,
+                edgecolor="red", facecolor="none", linewidth=1.8, linestyle="--",
+                transform=ccrs.PlateCarree(), zorder=5,
+            )
+        )
+
+        add_map_features(ax, draw_labels=True)
+
+    else:
+        fig, ax = plt.subplots(figsize=(12.5, 7.8))
+
+        cf = ax.contourf(lon, lat, speed.values, levels=levels, cmap="jet", extend="max")
+
+        ax.quiver(
+            lon2d[sl], lat2d[sl], u.values[sl], v.values[sl],
+            scale=420, width=0.0022, alpha=0.85,
+        )
+
+        ax.add_patch(
+            Ellipse(
+                (core_lon, core_lat), width=18, height=11,
+                edgecolor="red", facecolor="none", linewidth=1.8, linestyle="--", zorder=5,
+            )
+        )
+
+        ax.set_xlim(domain_box[0], domain_box[1])
+        ax.set_ylim(domain_box[2], domain_box[3])
+        ax.set_xlabel("Longitude")
+        ax.set_ylabel("Latitude")
+
+    cbar = plt.colorbar(cf, ax=ax, orientation="vertical", shrink=0.82, pad=0.035)
+    cbar.set_label("Wind speed (m s⁻¹)", fontsize=11)
+    cbar.ax.tick_params(labelsize=9)
+
+    ax.set_title(title, fontsize=14, fontweight="bold", pad=12)
+
+    out_file.parent.mkdir(parents=True, exist_ok=True)
+    plt.savefig(out_file, dpi=DPI, bbox_inches="tight")
+    plt.close()
+
+    print(f"Saved TEJ wind-speed map: {out_file} (core {core_speed:.1f} m/s at {core_lat:.1f}N, {core_lon:.1f}E)")
+
+
 # ==========================================================
 # PLOT GROUPS
 # ==========================================================
@@ -798,16 +923,18 @@ def plot_nmme_z200_maps():
 
 def plot_era5_u200_tej_maps():
     print("\n==================================================")
-    print("Plotting ERA5 u200 / TEJ climatology maps")
+    print("Plotting ERA5 200 hPa wind speed / TEJ climatology maps")
     print("==================================================")
 
+    # domain_name stays "africa_indian" purely for filename compatibility
+    # with backend/scripts/sync_static_data.py's GALLERY_SOURCES mapping --
+    # the actual plotted extent is the tighter TEJ_FIG4_BOX.
     domain_name = "africa_indian"
-    box = DOMAINS[domain_name]
 
-    # Monthly u200 climatology
-    if ERA5_U200_MONTHLY.exists():
-        da_monthly = open_dataarray(ERA5_U200_MONTHLY, decode_times=True)
-        units = da_monthly.attrs.get("units", "m s-1")
+    # Monthly wind-speed climatology
+    if ERA5_U200_MONTHLY.exists() and ERA5_V200_MONTHLY.exists():
+        u_monthly = open_dataarray(ERA5_U200_MONTHLY, decode_times=True)
+        v_monthly = open_dataarray(ERA5_V200_MONTHLY, decode_times=True)
 
         for month, month_name in {
             6: "June",
@@ -815,11 +942,12 @@ def plot_era5_u200_tej_maps():
             8: "August",
             9: "September",
         }.items():
-            da = select_month(da_monthly, month)
+            u = select_month(u_monthly, month)
+            v = select_month(v_monthly, month)
 
             title = (
-                f"ERA5 200 hPa zonal wind climatology / TEJ\n"
-                f"{month_name} mean, 1991-2020 | negative u = easterly jet"
+                f"ERA5 200 hPa wind speed climatology / Tropical Easterly Jet\n"
+                f"{month_name} mean, 1991-2020"
             )
 
             out_file = (
@@ -827,52 +955,30 @@ def plot_era5_u200_tej_maps():
                 / f"ERA5_u200_TEJ_climatology_{month_name}_{domain_name}.png"
             )
 
-            plot_scalar_map(
-                da=da,
-                title=title,
-                out_file=out_file,
-                domain_box=box,
-                cmap="RdBu_r",
-                symmetric=True,
-                vmin=-35,
-                vmax=35,
-                cbar_label=f"u200 ({units})",
-                figsize=(12, 7.4),
-            )
+            plot_tej_wind_speed_map(u_da=u, v_da=v, title=title, out_file=out_file)
 
-    # Seasonal u200 climatology
+    # Seasonal wind-speed climatology
     seasonal_files = {
-        "JJA": ERA5_U200_JJA,
-        "JJAS": ERA5_U200_JJAS,
+        "JJA": (ERA5_U200_JJA, ERA5_V200_JJA),
+        "JJAS": (ERA5_U200_JJAS, ERA5_V200_JJAS),
     }
 
-    for season, path in seasonal_files.items():
-        if not path.exists():
-            print(f"Skipping missing u200 seasonal file: {path}")
+    for season, (u_path, v_path) in seasonal_files.items():
+        if not u_path.exists() or not v_path.exists():
+            print(f"Skipping missing u200/v200 seasonal file for {season}")
             continue
 
-        da = open_dataarray(path, decode_times=True)
-        units = da.attrs.get("units", "m s-1")
+        u = open_dataarray(u_path, decode_times=True)
+        v = open_dataarray(v_path, decode_times=True)
 
         title = (
-            f"ERA5 200 hPa zonal wind climatology / TEJ\n"
-            f"{season} mean, 1991-2020 | negative u = easterly jet"
+            f"ERA5 200 hPa wind speed climatology / Tropical Easterly Jet\n"
+            f"{season} mean, 1991-2020"
         )
 
         out_file = PLOT_DIRS["tej"] / f"ERA5_u200_TEJ_climatology_{season}_{domain_name}.png"
 
-        plot_scalar_map(
-            da=da,
-            title=title,
-            out_file=out_file,
-            domain_box=box,
-            cmap="RdBu_r",
-            symmetric=True,
-            vmin=-35,
-            vmax=35,
-            cbar_label=f"u200 ({units})",
-            figsize=(12, 7.4),
-        )
+        plot_tej_wind_speed_map(u_da=u, v_da=v, title=title, out_file=out_file)
 
 
 def plot_era5_moisture_flux_maps():

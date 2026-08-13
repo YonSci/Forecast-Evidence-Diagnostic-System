@@ -20,7 +20,7 @@ const CARD_META: Record<string, [string, string]> = {
 
 const GALLERY_MAP: [string, string][] = [
   ["z200_greater_horn_jjas.png", "NMME 200 hPa geopotential height anomaly — Greater Horn — JJAS 2026"],
-  ["tej_climatology_jjas.png", "ERA5 climatology: Tropical Easterly Jet — JJAS"],
+  ["tej_climatology_jjas.png", "ERA5 climatology: 200 hPa wind speed/direction, TEJ core outlined — JJAS"],
   ["moisture_flux_mfc_jjas.png", "ERA5 climatology: 850 hPa moisture flux and convergence — Greater Horn — JJAS"],
   ["omega500_jjas.png", "ERA5 climatology: 500 hPa omega — Greater Horn — JJAS"],
   ["divergence200_jjas.png", "ERA5 climatology: 200 hPa divergence — Greater Horn — JJAS"],

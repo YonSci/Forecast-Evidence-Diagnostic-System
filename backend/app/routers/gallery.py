@@ -13,7 +13,7 @@ _CAPTIONS: dict[str, tuple[str, str]] = {
     "dmi_proxy_chart.png": ("NMME-derived DMI proxy by forecast period", "oceanic"),
     "enso_iod_proxy_chart.png": ("NMME-derived Nino3.4 / IOD-West / IOD-East proxy indices by period", "oceanic"),
     "z200_greater_horn_jjas.png": ("NMME 200 hPa geopotential height anomaly — Greater Horn — JJAS 2026", "circulation"),
-    "tej_climatology_jjas.png": ("ERA5 1991-2020 climatology: 200 hPa zonal wind / Tropical Easterly Jet — JJAS", "circulation"),
+    "tej_climatology_jjas.png": ("ERA5 1991-2020 climatology: 200 hPa wind speed and direction, Tropical Easterly Jet core outlined — JJAS", "circulation"),
     "moisture_flux_mfc_jjas.png": ("ERA5 climatology: 850 hPa moisture flux and moisture-flux convergence — Greater Horn — JJAS", "circulation"),
     "omega500_jjas.png": ("ERA5 climatology: 500 hPa vertical velocity (omega) — Greater Horn — JJAS", "circulation"),
     "divergence200_jjas.png": ("ERA5 climatology: 200 hPa divergence — Greater Horn — JJAS", "circulation"),
