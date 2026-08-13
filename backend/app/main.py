@@ -4,7 +4,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
-from app.config import OVERLAYS_DIR, SST_OVERLAYS_DIR, GALLERY_DIR, FRONTEND_ORIGIN_DEFAULT
+from app.config import OVERLAYS_DIR, SST_OVERLAYS_DIR, ATMOS_OVERLAYS_DIR, GALLERY_DIR, FRONTEND_ORIGIN_DEFAULT
 from app.routers import meta, anomaly, evidence, oceanic, atmospheric, methodology, gallery
 
 app = FastAPI(
@@ -46,6 +46,7 @@ class RevalidateStaticFiles(StaticFiles):
 
 app.mount("/static/overlays", RevalidateStaticFiles(directory=OVERLAYS_DIR), name="overlays")
 app.mount("/static/sst_overlays", RevalidateStaticFiles(directory=SST_OVERLAYS_DIR), name="sst_overlays")
+app.mount("/static/atmos_overlays", RevalidateStaticFiles(directory=ATMOS_OVERLAYS_DIR), name="atmos_overlays")
 app.mount("/static/gallery", RevalidateStaticFiles(directory=GALLERY_DIR), name="gallery")
 
 app.include_router(meta.router)

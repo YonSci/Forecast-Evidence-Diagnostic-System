@@ -1,13 +1,14 @@
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useFetch } from "../../hooks/useFetch";
-import { assetUrl } from "../../api/client";
-import type { TejRow, Cfsv2Row } from "../../api/types";
+import { getJson } from "../../api/client";
+import type { TejRow, Cfsv2Row, OverlayInfo, GridResponse } from "../../api/types";
 import { Callout } from "../../components/ui/Callout";
 import { Pill, directionTone } from "../../components/ui/Pill";
+import { ControlField } from "../../components/ui/ControlField";
 import { MagnitudeBarChart } from "../../components/charts/MagnitudeBarChart";
 import { DivergingBarChart } from "../../components/charts/DivergingBarChart";
 import type { DivergingDatum } from "../../components/charts/DivergingBarChart";
-import { MapFigure } from "../../components/ui/MapFigure";
+import { AnomalyLeafletMap } from "../../components/maps/AnomalyLeafletMap";
 import { fmt } from "../../lib/format";
 
 const CARD_META: Record<string, [string, string]> = {
@@ -18,17 +19,100 @@ const CARD_META: Record<string, [string, string]> = {
   tej_strength: ["TEJ strength (CFSv2)", "Tropical Easterly Jet proxy, −u200"],
 };
 
-const GALLERY_MAP: [string, string][] = [
-  ["z200_greater_horn_jjas.png", "NMME 200 hPa geopotential height anomaly — Greater Horn — JJAS 2026"],
-  ["tej_climatology_jjas.png", "ERA5 climatology: 200 hPa wind speed/direction, TEJ core outlined — JJAS"],
-  ["moisture_flux_mfc_jjas.png", "ERA5 climatology: 850 hPa moisture flux and convergence — Greater Horn — JJAS"],
-  ["omega500_jjas.png", "ERA5 climatology: 500 hPa omega — Greater Horn — JJAS"],
-  ["divergence200_jjas.png", "ERA5 climatology: 200 hPa divergence — Greater Horn — JJAS"],
+const RDBU = "linear-gradient(90deg, #08306b, #c6dbef, #f7f7f7, #fcbba1, #67000d)";
+
+// Ordered for display, starting from TEJ per the requested layout. Each
+// entry's `forecast` flag controls the caption -- z200 is a real
+// per-2026-forecast-period NMME grid (May init); the other five are ERA5
+// 1991-2020 climatology, so their period dropdown switches the
+// climatological month/season, not a forecast lead time (matches
+// scripts/27_generate_atmospheric_leaflet_overlays.py).
+const CIRCULATION_MAPS: { key: string; title: string; unit: string; forecast: boolean; legendGradient: string }[] = [
+  {
+    key: "tej",
+    title: "Tropical Easterly Jet — 200 hPa wind speed",
+    unit: "m/s",
+    forecast: false,
+    legendGradient: "linear-gradient(90deg, #00007f, #0000ff, #00ffff, #7fff7f, #ffff00, #ff7f00, #7f0000)",
+  },
+  {
+    key: "z200",
+    title: "200 hPa geopotential height anomaly",
+    unit: "m",
+    forecast: true,
+    legendGradient: RDBU,
+  },
+  {
+    key: "mfc850",
+    title: "850 hPa moisture-flux convergence",
+    unit: "kg/kg/s",
+    forecast: false,
+    legendGradient: "linear-gradient(90deg, #543005, #bf812d, #f6e8c3, #f5f5f5, #c7eae5, #35978f, #003c30)",
+  },
+  { key: "omega500", title: "500 hPa omega (vertical velocity)", unit: "Pa/s", forecast: false, legendGradient: RDBU },
+  { key: "omega700", title: "700 hPa omega (vertical velocity)", unit: "Pa/s", forecast: false, legendGradient: RDBU },
+  { key: "divergence200", title: "200 hPa divergence", unit: "s⁻¹", forecast: false, legendGradient: RDBU },
 ];
+
+const CIRC_PERIODS = ["Jun", "Jul", "Aug", "Sep", "JJA", "JJAS"];
+const CIRC_PERIOD_LABELS: Record<string, string> = {
+  Jun: "June",
+  Jul: "July",
+  Aug: "August",
+  Sep: "September",
+  JJA: "JJA",
+  JJAS: "JJAS",
+};
+
+function CirculationMapCard({
+  variableKey,
+  title,
+  unit,
+  forecast,
+  legendGradient,
+  period,
+}: {
+  variableKey: string;
+  title: string;
+  unit: string;
+  forecast: boolean;
+  legendGradient: string;
+  period: string;
+}) {
+  const [overlay, setOverlay] = useState<OverlayInfo | null>(null);
+  const [grid, setGrid] = useState<GridResponse | null>(null);
+
+  useEffect(() => {
+    getJson<OverlayInfo>("/api/atmospheric/overlay", { variable: variableKey, period })
+      .then(setOverlay)
+      .catch(() => setOverlay({ available: false }));
+    getJson<GridResponse>("/api/atmospheric/grid", { variable: variableKey, period })
+      .then(setGrid)
+      .catch(() => setGrid(null));
+  }, [variableKey, period]);
+
+  return (
+    <div className="chart-card">
+      <div className="card-head">
+        <h3>{title}</h3>
+        <span className="hint">
+          {forecast ? "NMME 2026 forecast anomaly, May init" : "ERA5 climatology, 1991–2020"} &middot; {unit}
+        </span>
+      </div>
+      <AnomalyLeafletMap
+        overlay={overlay}
+        grid={grid}
+        legendGradient={legendGradient}
+        emptyReason="No rendered map for this period in this build."
+      />
+    </div>
+  );
+}
 
 export function AtmosphericEvidence() {
   const { data: tej } = useFetch<TejRow[]>("/api/atmospheric/tej-climatology");
   const { data: cfsv2 } = useFetch<Cfsv2Row[]>("/api/atmospheric/cfsv2", { domain: "ethiopia" });
+  const [circPeriod, setCircPeriod] = useState("JJAS");
 
   const tejChartData = useMemo(
     () => (tej ?? []).map((r) => ({ label: r.period.slice(0, 3), value: r.value })),
@@ -115,14 +199,31 @@ export function AtmosphericEvidence() {
         </div>
       </div>
 
-      <h3 style={{ margin: "30px 0 14px", fontSize: "1.05rem", fontFamily: "var(--sans)" }}>
-        Circulation diagnostic maps &mdash; JJAS 2026 / climatology
-      </h3>
-      <div className="map-grid">
-        {GALLERY_MAP.map(([file, caption]) => (
-          <MapFigure key={file} src={assetUrl(`/static/gallery/${file}`)} caption={caption} />
-        ))}
+      <div className="card-head" style={{ marginTop: 30 }}>
+        <h3 style={{ fontSize: "1.05rem", fontFamily: "var(--sans)" }}>Circulation diagnostic maps</h3>
+        <span className="hint">Tropical Easterly Jet, geopotential height, moisture flux, vertical motion, divergence</span>
       </div>
+      <div className="control-bar" style={{ maxWidth: 260, margin: "0 0 16px" }}>
+        <ControlField
+          label="Period"
+          value={circPeriod}
+          onChange={setCircPeriod}
+          options={CIRC_PERIODS.map((p) => [p, CIRC_PERIOD_LABELS[p]])}
+        />
+      </div>
+
+      {CIRCULATION_MAPS.map((m) => (
+        <div key={m.key} style={{ marginBottom: 22 }}>
+          <CirculationMapCard
+            variableKey={m.key}
+            title={m.title}
+            unit={m.unit}
+            forecast={m.forecast}
+            legendGradient={m.legendGradient}
+            period={circPeriod}
+          />
+        </div>
+      ))}
     </div>
   );
 }

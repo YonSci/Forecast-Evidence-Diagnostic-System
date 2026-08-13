@@ -43,6 +43,14 @@ if sst_overlays_dst.exists():
 shutil.copytree(sst_overlays_src, sst_overlays_dst)
 print(f"Copied SST overlay tree -> {sst_overlays_dst}")
 
+# ---- 2c. atmospheric circulation overlays: same pattern (TEJ/z200/MFC/omega/divergence) ----
+atmos_overlays_src = PROJECT_ROOT / "outputs" / "maps" / "atmos_overlays"
+atmos_overlays_dst = STATIC / "atmos_overlays"
+if atmos_overlays_dst.exists():
+    shutil.rmtree(atmos_overlays_dst)
+shutil.copytree(atmos_overlays_src, atmos_overlays_dst)
+print(f"Copied atmospheric overlay tree -> {atmos_overlays_dst}")
+
 # ---- 3. gallery: curated report-style figures (resized), non-rainfall diagnostics ----
 DYN = PROJECT_ROOT / "outputs" / "maps" / "dynamic_diagnostics"
 GALLERY_SOURCES = {
