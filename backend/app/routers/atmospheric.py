@@ -17,17 +17,19 @@ DEFAULT_DOMAINS = ["ethiopia", "greater_horn"]
 
 ATMOS_GRID_DIR = ATMOS_OVERLAYS_DIR / "grid_data"
 
-# Ordered for display: TEJ first, then the same order the old static
-# gallery used. z200 is a real per-2026-forecast-period NMME grid (May
-# init); the other five are ERA5 1991-2020 climatology by calendar
-# month/season -- see scripts/27_generate_atmospheric_leaflet_overlays.py.
+# Ordered as a TEJ dynamical-consistency check: jet strength -> jet
+# structure/orientation -> upper-level divergence at the jet exit ->
+# forced ascent -> is moisture actually being supplied -> is it
+# accumulating at low levels. All six are ERA5 1991-2020 climatology by
+# calendar month/season -- none has a per-2026-forecast gridded product
+# yet -- see scripts/27_generate_atmospheric_leaflet_overlays.py.
 ATMOS_VARIABLES: dict[str, dict] = {
-    "tej": {"label": "TEJ (200 hPa wind speed)", "source": "climatology"},
-    "z200": {"label": "200 hPa geopotential height anomaly", "source": "forecast"},
-    "mfc850": {"label": "850 hPa moisture-flux convergence", "source": "climatology"},
-    "omega500": {"label": "500 hPa omega", "source": "climatology"},
-    "omega700": {"label": "700 hPa omega", "source": "climatology"},
-    "divergence200": {"label": "200 hPa divergence", "source": "climatology"},
+    "u200": {"label": "200 hPa zonal wind (TEJ strength)", "source": "climatology"},
+    "u200_vectors": {"label": "200 hPa wind vectors (circulation/jet orientation)", "source": "climatology"},
+    "divergence200": {"label": "200 hPa divergence (upper-level outflow)", "source": "climatology"},
+    "omega500": {"label": "500 hPa vertical velocity (forced ascent)", "source": "climatology"},
+    "qflux850": {"label": "850 hPa moisture flux (is moisture supplied?)", "source": "climatology"},
+    "mfc850": {"label": "850 hPa moisture-flux convergence (is it accumulating?)", "source": "climatology"},
 }
 
 ATMOS_PERIODS = ["Jun", "Jul", "Aug", "Sep", "JJA", "JJAS"]

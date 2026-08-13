@@ -20,38 +20,61 @@ const CARD_META: Record<string, [string, string]> = {
 };
 
 const RDBU = "linear-gradient(90deg, #08306b, #c6dbef, #f7f7f7, #fcbba1, #67000d)";
+const JET = "linear-gradient(90deg, #00007f, #0000ff, #00ffff, #7fff7f, #ffff00, #ff7f00, #7f0000)";
+const YLGNBU = "linear-gradient(90deg, #ffffd9, #edf8b1, #c7e9b4, #7fcdbb, #41b6c4, #1d91c0, #225ea8, #253494, #081d58)";
+const BRBG = "linear-gradient(90deg, #543005, #bf812d, #f6e8c3, #f5f5f5, #c7eae5, #35978f, #003c30)";
 
-// Ordered for display, starting from TEJ per the requested layout. Each
-// entry's `forecast` flag controls the caption -- z200 is a real
-// per-2026-forecast-period NMME grid (May init); the other five are ERA5
-// 1991-2020 climatology, so their period dropdown switches the
-// climatological month/season, not a forecast lead time (matches
-// scripts/27_generate_atmospheric_leaflet_overlays.py).
-const CIRCULATION_MAPS: { key: string; title: string; unit: string; forecast: boolean; legendGradient: string }[] = [
+// A TEJ dynamical-consistency check, not just a list of diagnostics: is
+// the jet where/how strong the forecast implies, does its exit-region
+// divergence favor ascent, is that ascent actually happening, and is
+// moisture both being supplied and accumulating to support it. Every
+// entry is ERA5 1991-2020 climatology (no per-2026-forecast gridded
+// product exists yet for any of these six), so the period dropdown
+// switches the climatological month/season, not a forecast lead time --
+// see scripts/27_generate_atmospheric_leaflet_overlays.py.
+const CIRCULATION_MAPS: { key: string; title: string; blurb: string; unit: string; legendGradient: string }[] = [
   {
-    key: "tej",
-    title: "Tropical Easterly Jet — 200 hPa wind speed",
+    key: "u200",
+    title: "200 hPa zonal wind",
+    blurb: "Primary indicator of TEJ strength.",
     unit: "m/s",
-    forecast: false,
-    legendGradient: "linear-gradient(90deg, #00007f, #0000ff, #00ffff, #7fff7f, #ffff00, #ff7f00, #7f0000)",
+    legendGradient: RDBU,
   },
   {
-    key: "z200",
-    title: "200 hPa geopotential height anomaly",
-    unit: "m",
-    forecast: true,
+    key: "u200_vectors",
+    title: "200 hPa wind vectors",
+    blurb: "Shows the actual circulation and jet orientation.",
+    unit: "m/s",
+    legendGradient: JET,
+  },
+  {
+    key: "divergence200",
+    title: "200 hPa divergence",
+    blurb: "Positive divergence can indicate favorable upper-level outflow.",
+    unit: "s⁻¹",
     legendGradient: RDBU,
+  },
+  {
+    key: "omega500",
+    title: "Vertical velocity (ω500)",
+    blurb: "Forced ascent (negative) or subsidence (positive) beneath the jet.",
+    unit: "Pa/s",
+    legendGradient: RDBU,
+  },
+  {
+    key: "qflux850",
+    title: "850 hPa moisture flux (qV850)",
+    blurb: "Tells whether moisture is actually being supplied.",
+    unit: "kg/kg·m/s",
+    legendGradient: YLGNBU,
   },
   {
     key: "mfc850",
     title: "850 hPa moisture-flux convergence",
+    blurb: "Helps diagnose low-level moisture accumulation.",
     unit: "kg/kg/s",
-    forecast: false,
-    legendGradient: "linear-gradient(90deg, #543005, #bf812d, #f6e8c3, #f5f5f5, #c7eae5, #35978f, #003c30)",
+    legendGradient: BRBG,
   },
-  { key: "omega500", title: "500 hPa omega (vertical velocity)", unit: "Pa/s", forecast: false, legendGradient: RDBU },
-  { key: "omega700", title: "700 hPa omega (vertical velocity)", unit: "Pa/s", forecast: false, legendGradient: RDBU },
-  { key: "divergence200", title: "200 hPa divergence", unit: "s⁻¹", forecast: false, legendGradient: RDBU },
 ];
 
 const CIRC_PERIODS = ["Jun", "Jul", "Aug", "Sep", "JJA", "JJAS"];
@@ -67,15 +90,15 @@ const CIRC_PERIOD_LABELS: Record<string, string> = {
 function CirculationMapCard({
   variableKey,
   title,
+  blurb,
   unit,
-  forecast,
   legendGradient,
   period,
 }: {
   variableKey: string;
   title: string;
+  blurb: string;
   unit: string;
-  forecast: boolean;
   legendGradient: string;
   period: string;
 }) {
@@ -95,10 +118,9 @@ function CirculationMapCard({
     <div className="chart-card">
       <div className="card-head">
         <h3>{title}</h3>
-        <span className="hint">
-          {forecast ? "NMME 2026 forecast anomaly, May init" : "ERA5 climatology, 1991–2020"} &middot; {unit}
-        </span>
+        <span className="hint">ERA5 climatology, 1991–2020 &middot; {unit}</span>
       </div>
+      <p style={{ fontSize: "0.84rem", color: "var(--ink-2)", marginTop: -8, marginBottom: 12 }}>{blurb}</p>
       <AnomalyLeafletMap
         overlay={overlay}
         grid={grid}
@@ -200,9 +222,14 @@ export function AtmosphericEvidence() {
       </div>
 
       <div className="card-head" style={{ marginTop: 30 }}>
-        <h3 style={{ fontSize: "1.05rem", fontFamily: "var(--sans)" }}>Circulation diagnostic maps</h3>
-        <span className="hint">Tropical Easterly Jet, geopotential height, moisture flux, vertical motion, divergence</span>
+        <h3 style={{ fontSize: "1.05rem", fontFamily: "var(--sans)" }}>TEJ dynamical-consistency check</h3>
+        <span className="hint">Jet strength &amp; structure &rarr; upper divergence &rarr; ascent &rarr; moisture supply &amp; accumulation</span>
       </div>
+      <p className="sub" style={{ marginTop: -8, marginBottom: 16, maxWidth: "none" }}>
+        Where the jet sits, its entrance/exit structure, upper-level divergence, forced ascent, and whether moisture is
+        actually being supplied and accumulating at low levels all have to line up for a dry- or wet-risk signal to be
+        dynamically consistent, not just a single-diagnostic coincidence &mdash; these six read together, not in isolation.
+      </p>
       <div className="control-bar" style={{ maxWidth: 260, margin: "0 0 16px" }}>
         <ControlField
           label="Period"
@@ -217,8 +244,8 @@ export function AtmosphericEvidence() {
           <CirculationMapCard
             variableKey={m.key}
             title={m.title}
+            blurb={m.blurb}
             unit={m.unit}
-            forecast={m.forecast}
             legendGradient={m.legendGradient}
             period={circPeriod}
           />

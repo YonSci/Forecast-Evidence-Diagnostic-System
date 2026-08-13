@@ -1,6 +1,102 @@
 {
-  "tej/Jun": {
-    "file": "tej/Jun.png",
+  "u200/Jun": {
+    "file": "u200/Jun.png",
+    "bounds": [
+      [
+        -20,
+        -20
+      ],
+      [
+        32,
+        75
+      ]
+    ],
+    "vmin": -24.0608,
+    "vmax": 24.0608,
+    "unit": "m/s"
+  },
+  "u200/Jul": {
+    "file": "u200/Jul.png",
+    "bounds": [
+      [
+        -20,
+        -20
+      ],
+      [
+        32,
+        75
+      ]
+    ],
+    "vmin": -23.9614,
+    "vmax": 23.9614,
+    "unit": "m/s"
+  },
+  "u200/Aug": {
+    "file": "u200/Aug.png",
+    "bounds": [
+      [
+        -20,
+        -20
+      ],
+      [
+        32,
+        75
+      ]
+    ],
+    "vmin": -23.4169,
+    "vmax": 23.4169,
+    "unit": "m/s"
+  },
+  "u200/Sep": {
+    "file": "u200/Sep.png",
+    "bounds": [
+      [
+        -20,
+        -20
+      ],
+      [
+        32,
+        75
+      ]
+    ],
+    "vmin": -20.5861,
+    "vmax": 20.5861,
+    "unit": "m/s"
+  },
+  "u200/JJA": {
+    "file": "u200/JJA.png",
+    "bounds": [
+      [
+        -20,
+        -20
+      ],
+      [
+        32,
+        75
+      ]
+    ],
+    "vmin": -22.3891,
+    "vmax": 22.3891,
+    "unit": "m/s"
+  },
+  "u200/JJAS": {
+    "file": "u200/JJAS.png",
+    "bounds": [
+      [
+        -20,
+        -20
+      ],
+      [
+        32,
+        75
+      ]
+    ],
+    "vmin": -21.668,
+    "vmax": 21.668,
+    "unit": "m/s"
+  },
+  "u200_vectors/Jun": {
+    "file": "u200_vectors/Jun.png",
     "bounds": [
       [
         -20,
@@ -15,8 +111,8 @@
     "vmax": 25.0,
     "unit": "m/s"
   },
-  "tej/Jul": {
-    "file": "tej/Jul.png",
+  "u200_vectors/Jul": {
+    "file": "u200_vectors/Jul.png",
     "bounds": [
       [
         -20,
@@ -31,8 +127,8 @@
     "vmax": 25.0,
     "unit": "m/s"
   },
-  "tej/Aug": {
-    "file": "tej/Aug.png",
+  "u200_vectors/Aug": {
+    "file": "u200_vectors/Aug.png",
     "bounds": [
       [
         -20,
@@ -47,8 +143,8 @@
     "vmax": 25.0,
     "unit": "m/s"
   },
-  "tej/Sep": {
-    "file": "tej/Sep.png",
+  "u200_vectors/Sep": {
+    "file": "u200_vectors/Sep.png",
     "bounds": [
       [
         -20,
@@ -63,8 +159,8 @@
     "vmax": 25.0,
     "unit": "m/s"
   },
-  "tej/JJA": {
-    "file": "tej/JJA.png",
+  "u200_vectors/JJA": {
+    "file": "u200_vectors/JJA.png",
     "bounds": [
       [
         -20,
@@ -79,8 +175,8 @@
     "vmax": 25.0,
     "unit": "m/s"
   },
-  "tej/JJAS": {
-    "file": "tej/JJAS.png",
+  "u200_vectors/JJAS": {
+    "file": "u200_vectors/JJAS.png",
     "bounds": [
       [
         -20,
@@ -95,8 +191,8 @@
     "vmax": 25.0,
     "unit": "m/s"
   },
-  "z200/Jun": {
-    "file": "z200/Jun.png",
+  "divergence200/Jun": {
+    "file": "divergence200/Jun.png",
     "bounds": [
       [
         -15,
@@ -107,12 +203,12 @@
         55
       ]
     ],
-    "vmin": -48.5549,
-    "vmax": 48.5549,
-    "unit": "m"
+    "vmin": -5.34909e-06,
+    "vmax": 5.34909e-06,
+    "unit": "s\u207b\u00b9"
   },
-  "z200/Jul": {
-    "file": "z200/Jul.png",
+  "divergence200/Jul": {
+    "file": "divergence200/Jul.png",
     "bounds": [
       [
         -15,
@@ -123,12 +219,12 @@
         55
       ]
     ],
-    "vmin": -54.6303,
-    "vmax": 54.6303,
-    "unit": "m"
+    "vmin": -6.28969e-06,
+    "vmax": 6.28969e-06,
+    "unit": "s\u207b\u00b9"
   },
-  "z200/Aug": {
-    "file": "z200/Aug.png",
+  "divergence200/Aug": {
+    "file": "divergence200/Aug.png",
     "bounds": [
       [
         -15,
@@ -139,12 +235,12 @@
         55
       ]
     ],
-    "vmin": -59.7382,
-    "vmax": 59.7382,
-    "unit": "m"
+    "vmin": -6.76546e-06,
+    "vmax": 6.76546e-06,
+    "unit": "s\u207b\u00b9"
   },
-  "z200/Sep": {
-    "file": "z200/Sep.png",
+  "divergence200/Sep": {
+    "file": "divergence200/Sep.png",
     "bounds": [
       [
         -15,
@@ -155,12 +251,12 @@
         55
       ]
     ],
-    "vmin": -65.2568,
-    "vmax": 65.2568,
-    "unit": "m"
+    "vmin": -6.524e-06,
+    "vmax": 6.524e-06,
+    "unit": "s\u207b\u00b9"
   },
-  "z200/JJA": {
-    "file": "z200/JJA.png",
+  "divergence200/JJA": {
+    "file": "divergence200/JJA.png",
     "bounds": [
       [
         -15,
@@ -171,12 +267,12 @@
         55
       ]
     ],
-    "vmin": -52.4548,
-    "vmax": 52.4548,
-    "unit": "m"
+    "vmin": -5.86025e-06,
+    "vmax": 5.86025e-06,
+    "unit": "s\u207b\u00b9"
   },
-  "z200/JJAS": {
-    "file": "z200/JJAS.png",
+  "divergence200/JJAS": {
+    "file": "divergence200/JJAS.png",
     "bounds": [
       [
         -15,
@@ -187,105 +283,9 @@
         55
       ]
     ],
-    "vmin": -55.5329,
-    "vmax": 55.5329,
-    "unit": "m"
-  },
-  "mfc850/Jun": {
-    "file": "mfc850/Jun.png",
-    "bounds": [
-      [
-        -15,
-        20
-      ],
-      [
-        25,
-        55
-      ]
-    ],
-    "vmin": -3.61116e-07,
-    "vmax": 3.61116e-07,
-    "unit": "kg/kg/s"
-  },
-  "mfc850/Jul": {
-    "file": "mfc850/Jul.png",
-    "bounds": [
-      [
-        -15,
-        20
-      ],
-      [
-        25,
-        55
-      ]
-    ],
-    "vmin": -4.02164e-07,
-    "vmax": 4.02164e-07,
-    "unit": "kg/kg/s"
-  },
-  "mfc850/Aug": {
-    "file": "mfc850/Aug.png",
-    "bounds": [
-      [
-        -15,
-        20
-      ],
-      [
-        25,
-        55
-      ]
-    ],
-    "vmin": -3.86938e-07,
-    "vmax": 3.86938e-07,
-    "unit": "kg/kg/s"
-  },
-  "mfc850/Sep": {
-    "file": "mfc850/Sep.png",
-    "bounds": [
-      [
-        -15,
-        20
-      ],
-      [
-        25,
-        55
-      ]
-    ],
-    "vmin": -3.29477e-07,
-    "vmax": 3.29477e-07,
-    "unit": "kg/kg/s"
-  },
-  "mfc850/JJA": {
-    "file": "mfc850/JJA.png",
-    "bounds": [
-      [
-        -15,
-        20
-      ],
-      [
-        25,
-        55
-      ]
-    ],
-    "vmin": -3.74059e-07,
-    "vmax": 3.74059e-07,
-    "unit": "kg/kg/s"
-  },
-  "mfc850/JJAS": {
-    "file": "mfc850/JJAS.png",
-    "bounds": [
-      [
-        -15,
-        20
-      ],
-      [
-        25,
-        55
-      ]
-    ],
-    "vmin": -3.54328e-07,
-    "vmax": 3.54328e-07,
-    "unit": "kg/kg/s"
+    "vmin": -5.84159e-06,
+    "vmax": 5.84159e-06,
+    "unit": "s\u207b\u00b9"
   },
   "omega500/Jun": {
     "file": "omega500/Jun.png",
@@ -383,8 +383,8 @@
     "vmax": 0.0974759,
     "unit": "Pa/s"
   },
-  "omega700/Jun": {
-    "file": "omega700/Jun.png",
+  "qflux850/Jun": {
+    "file": "qflux850/Jun.png",
     "bounds": [
       [
         -15,
@@ -395,12 +395,12 @@
         55
       ]
     ],
-    "vmin": -0.312222,
-    "vmax": 0.312222,
-    "unit": "Pa/s"
+    "vmin": 0.0,
+    "vmax": 0.170639,
+    "unit": "kg/kg\u00b7m/s"
   },
-  "omega700/Jul": {
-    "file": "omega700/Jul.png",
+  "qflux850/Jul": {
+    "file": "qflux850/Jul.png",
     "bounds": [
       [
         -15,
@@ -411,12 +411,12 @@
         55
       ]
     ],
-    "vmin": -0.288808,
-    "vmax": 0.288808,
-    "unit": "Pa/s"
+    "vmin": 0.0,
+    "vmax": 0.184064,
+    "unit": "kg/kg\u00b7m/s"
   },
-  "omega700/Aug": {
-    "file": "omega700/Aug.png",
+  "qflux850/Aug": {
+    "file": "qflux850/Aug.png",
     "bounds": [
       [
         -15,
@@ -427,12 +427,12 @@
         55
       ]
     ],
-    "vmin": -0.28683,
-    "vmax": 0.28683,
-    "unit": "Pa/s"
+    "vmin": 0.0,
+    "vmax": 0.16221,
+    "unit": "kg/kg\u00b7m/s"
   },
-  "omega700/Sep": {
-    "file": "omega700/Sep.png",
+  "qflux850/Sep": {
+    "file": "qflux850/Sep.png",
     "bounds": [
       [
         -15,
@@ -443,12 +443,12 @@
         55
       ]
     ],
-    "vmin": -0.311074,
-    "vmax": 0.311074,
-    "unit": "Pa/s"
+    "vmin": 0.0,
+    "vmax": 0.117793,
+    "unit": "kg/kg\u00b7m/s"
   },
-  "omega700/JJA": {
-    "file": "omega700/JJA.png",
+  "qflux850/JJA": {
+    "file": "qflux850/JJA.png",
     "bounds": [
       [
         -15,
@@ -459,12 +459,12 @@
         55
       ]
     ],
-    "vmin": -0.282496,
-    "vmax": 0.282496,
-    "unit": "Pa/s"
+    "vmin": 0.0,
+    "vmax": 0.1723,
+    "unit": "kg/kg\u00b7m/s"
   },
-  "omega700/JJAS": {
-    "file": "omega700/JJAS.png",
+  "qflux850/JJAS": {
+    "file": "qflux850/JJAS.png",
     "bounds": [
       [
         -15,
@@ -475,12 +475,12 @@
         55
       ]
     ],
-    "vmin": -0.281293,
-    "vmax": 0.281293,
-    "unit": "Pa/s"
+    "vmin": 0.0,
+    "vmax": 0.157946,
+    "unit": "kg/kg\u00b7m/s"
   },
-  "divergence200/Jun": {
-    "file": "divergence200/Jun.png",
+  "mfc850/Jun": {
+    "file": "mfc850/Jun.png",
     "bounds": [
       [
         -15,
@@ -491,12 +491,12 @@
         55
       ]
     ],
-    "vmin": -5.34909e-06,
-    "vmax": 5.34909e-06,
-    "unit": "s\u207b\u00b9"
+    "vmin": -3.61116e-07,
+    "vmax": 3.61116e-07,
+    "unit": "kg/kg/s"
   },
-  "divergence200/Jul": {
-    "file": "divergence200/Jul.png",
+  "mfc850/Jul": {
+    "file": "mfc850/Jul.png",
     "bounds": [
       [
         -15,
@@ -507,12 +507,12 @@
         55
       ]
     ],
-    "vmin": -6.28969e-06,
-    "vmax": 6.28969e-06,
-    "unit": "s\u207b\u00b9"
+    "vmin": -4.02164e-07,
+    "vmax": 4.02164e-07,
+    "unit": "kg/kg/s"
   },
-  "divergence200/Aug": {
-    "file": "divergence200/Aug.png",
+  "mfc850/Aug": {
+    "file": "mfc850/Aug.png",
     "bounds": [
       [
         -15,
@@ -523,12 +523,12 @@
         55
       ]
     ],
-    "vmin": -6.76546e-06,
-    "vmax": 6.76546e-06,
-    "unit": "s\u207b\u00b9"
+    "vmin": -3.86938e-07,
+    "vmax": 3.86938e-07,
+    "unit": "kg/kg/s"
   },
-  "divergence200/Sep": {
-    "file": "divergence200/Sep.png",
+  "mfc850/Sep": {
+    "file": "mfc850/Sep.png",
     "bounds": [
       [
         -15,
@@ -539,12 +539,12 @@
         55
       ]
     ],
-    "vmin": -6.524e-06,
-    "vmax": 6.524e-06,
-    "unit": "s\u207b\u00b9"
+    "vmin": -3.29477e-07,
+    "vmax": 3.29477e-07,
+    "unit": "kg/kg/s"
   },
-  "divergence200/JJA": {
-    "file": "divergence200/JJA.png",
+  "mfc850/JJA": {
+    "file": "mfc850/JJA.png",
     "bounds": [
       [
         -15,
@@ -555,12 +555,12 @@
         55
       ]
     ],
-    "vmin": -5.86025e-06,
-    "vmax": 5.86025e-06,
-    "unit": "s\u207b\u00b9"
+    "vmin": -3.74059e-07,
+    "vmax": 3.74059e-07,
+    "unit": "kg/kg/s"
   },
-  "divergence200/JJAS": {
-    "file": "divergence200/JJAS.png",
+  "mfc850/JJAS": {
+    "file": "mfc850/JJAS.png",
     "bounds": [
       [
         -15,
@@ -571,8 +571,8 @@
         55
       ]
     ],
-    "vmin": -5.84159e-06,
-    "vmax": 5.84159e-06,
-    "unit": "s\u207b\u00b9"
+    "vmin": -3.54328e-07,
+    "vmax": 3.54328e-07,
+    "unit": "kg/kg/s"
   }
 }
