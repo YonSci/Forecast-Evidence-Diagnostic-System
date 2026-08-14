@@ -1,10 +1,12 @@
 import { useEffect, useMemo, useState } from "react";
+import type { CSSProperties } from "react";
 import { useFetch } from "../../hooks/useFetch";
-import { getJson } from "../../api/client";
+import { getJson, assetUrl } from "../../api/client";
 import type { TejRow, Cfsv2Row, OverlayInfo, GridResponse } from "../../api/types";
 import { Callout } from "../../components/ui/Callout";
 import { Pill, directionTone } from "../../components/ui/Pill";
 import { ControlField } from "../../components/ui/ControlField";
+import { useLightbox } from "../../components/ui/Lightbox";
 import { MagnitudeBarChart } from "../../components/charts/MagnitudeBarChart";
 import { DivergingBarChart } from "../../components/charts/DivergingBarChart";
 import type { DivergingDatum } from "../../components/charts/DivergingBarChart";
@@ -130,6 +132,7 @@ function CirculationMapCard({
 }) {
   const [overlay, setOverlay] = useState<OverlayInfo | null>(null);
   const [grid, setGrid] = useState<GridResponse | null>(null);
+  const openLightbox = useLightbox();
 
   useEffect(() => {
     getJson<OverlayInfo>("/api/atmospheric/overlay", { variable: variableKey, period })
@@ -139,6 +142,15 @@ function CirculationMapCard({
       .then(setGrid)
       .catch(() => setGrid(null));
   }, [variableKey, period]);
+
+  const publicationUrl = assetUrl(`/static/atmos_publication/${variableKey}/${variableKey}_${period}.png`);
+  const comparisonUrl = assetUrl(
+    `/static/atmos_publication_comparison/${variableKey}/${variableKey}_${period}_comparison.png`
+  );
+  const linkStyle: CSSProperties = {
+    background: "none", border: "none", padding: 0, font: "inherit", fontSize: "0.78rem",
+    color: "var(--accent)", cursor: "pointer", textDecoration: "underline",
+  };
 
   return (
     <div className="chart-card">
@@ -157,6 +169,32 @@ function CirculationMapCard({
         legendNote={legendNote}
         emptyReason="No rendered map for this period in this build."
       />
+      <div style={{ display: "flex", gap: 16, marginTop: 10 }}>
+        <button
+          type="button"
+          style={linkStyle}
+          onClick={() =>
+            openLightbox({
+              src: publicationUrl,
+              caption: `${periodLabel} ${title} — publication figure (ERA5 1991–2020 climatology, lat/lon labeled, dual-panel).`,
+            })
+          }
+        >
+          View publication figure
+        </button>
+        <button
+          type="button"
+          style={linkStyle}
+          onClick={() =>
+            openLightbox({
+              src: comparisonUrl,
+              caption: `${periodLabel} ${title} — ERA5 climatology vs. CFSv2 2026 target (qualitative comparison, not an anomaly).`,
+            })
+          }
+        >
+          View vs. 2026 target
+        </button>
+      </div>
       <p style={{ fontSize: "0.72rem", color: "var(--muted)", marginTop: 8 }}>
         Data: ERA5 &middot; Reference: 1991&ndash;2020 &middot; Aggregation: {periodLabel} mean &middot; Resolution:
         0.25&deg; &middot; Variable: {title}

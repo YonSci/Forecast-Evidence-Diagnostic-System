@@ -12,6 +12,8 @@ TABLES_DIR = STATIC_DATA / "tables"
 OVERLAYS_DIR = STATIC_DATA / "overlays"
 SST_OVERLAYS_DIR = STATIC_DATA / "sst_overlays"
 ATMOS_OVERLAYS_DIR = STATIC_DATA / "atmos_overlays"
+ATMOS_PUBLICATION_DIR = STATIC_DATA / "atmos_publication"
+ATMOS_PUBLICATION_COMPARISON_DIR = STATIC_DATA / "atmos_publication_comparison"
 GALLERY_DIR = STATIC_DATA / "gallery"
 
 # Same four regions used throughout scripts 04/15/19/21 and the dashboard's

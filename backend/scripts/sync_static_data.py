@@ -67,14 +67,7 @@ GALLERY_SOURCES = {
     "divergence200_jjas.png": DYN / "07_era5_200hpa_divergence/greater_horn/ERA5_divergence200_JJAS_greater_horn.png",
 }
 
-gallery_dst = STATIC / "gallery"
-gallery_dst.mkdir(parents=True, exist_ok=True)
-MAX_W = 1400
-total_kb = 0
-for name, src in GALLERY_SOURCES.items():
-    if not src.exists():
-        print(f"MISSING SOURCE: {src}")
-        continue
+def resize_and_save_png(src: Path, out_path: Path, max_w: int, quantize: bool = False) -> float:
     im = Image.open(src)
     if im.mode in ("RGBA", "P"):
         bg = Image.new("RGB", im.size, (255, 255, 255))
@@ -84,12 +77,56 @@ for name, src in GALLERY_SOURCES.items():
     else:
         im = im.convert("RGB")
     w, h = im.size
-    if w > MAX_W:
-        im = im.resize((MAX_W, int(h * MAX_W / w)), Image.LANCZOS)
-    out_path = gallery_dst / name
+    if w > max_w:
+        im = im.resize((max_w, int(h * max_w / w)), Image.LANCZOS)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    if quantize:
+        # These figures are discrete BoundaryNorm color bands on a white
+        # background, not photographic/gradient content, so a 256-color
+        # adaptive palette is visually lossless here and roughly halves
+        # the file size again on top of the resize (no dithering, so flat
+        # bands stay flat instead of gaining speckle noise). Opt-in only
+        # -- untested against the older continuous-colormap gallery figures.
+        im = im.quantize(colors=256, method=Image.MEDIANCUT, dither=Image.NONE)
     im.save(out_path, format="PNG", optimize=True)
-    kb = out_path.stat().st_size / 1024
+    return out_path.stat().st_size / 1024
+
+
+gallery_dst = STATIC / "gallery"
+gallery_dst.mkdir(parents=True, exist_ok=True)
+MAX_W = 1400
+total_kb = 0
+for name, src in GALLERY_SOURCES.items():
+    if not src.exists():
+        print(f"MISSING SOURCE: {src}")
+        continue
+    kb = resize_and_save_png(src, gallery_dst / name, MAX_W)
     total_kb += kb
     print(f"{name:32s} {kb:7.1f} KB")
 
 print(f"\nGallery total: {total_kb/1024:.2f} MB")
+
+# ---- 4. atmospheric publication figures: compressed PNGs only, all periods.
+# PDFs stay local-only (outputs/maps/atmos_publication{,_comparison}/) --
+# re-run scripts/28_generate_atmospheric_publication_figures.py for those;
+# at 300dpi they're too large (105 MB combined) to commit for a print
+# export the live site doesn't otherwise need.
+for label, subdir in [
+    ("atmos_publication", "atmos_publication"),
+    ("atmos_publication_comparison", "atmos_publication_comparison"),
+]:
+    src_dir = PROJECT_ROOT / "outputs" / "maps" / subdir
+    dst_dir = STATIC / subdir
+    if dst_dir.exists():
+        shutil.rmtree(dst_dir)
+    if not src_dir.exists():
+        print(f"MISSING SOURCE DIR: {src_dir} (skipping {label})")
+        continue
+
+    n = 0
+    kb_total = 0.0
+    for src in src_dir.rglob("*.png"):
+        rel = src.relative_to(src_dir)
+        kb_total += resize_and_save_png(src, dst_dir / rel, MAX_W, quantize=True)
+        n += 1
+    print(f"{label}: {n} PNGs, {kb_total/1024:.2f} MB -> {dst_dir}")
