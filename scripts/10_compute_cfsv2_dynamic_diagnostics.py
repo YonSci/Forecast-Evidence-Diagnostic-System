@@ -422,6 +422,17 @@ def compute_period_diagnostics(period: str) -> tuple[xr.Dataset, list[dict]]:
     u850 = clean_for_merge(u850.interp_like(q850))
     v850 = clean_for_merge(v850.interp_like(q850))
 
+    # sst_proxy is natively on a finer 0.5deg grid (360x720) than every
+    # other CFSv2 field here (1deg, 181x360) -- merging mismatched grids
+    # with join="outer" below unions the coordinate axes instead of
+    # aligning them, so every variable ends up NaN everywhere except its
+    # own native grid points (~89% NaN in the merged output, confirmed).
+    # area_weighted_mean() on the ORIGINAL fine-resolution sst_proxy
+    # (used below for the SST-proxy/IOD/DMI scalar diagnostics) is
+    # unaffected by this -- only the regridded copy that goes into the
+    # merged Dataset needs aligning, same as v200/u850/v850 above.
+    sst_proxy_on_grid = clean_for_merge(sst_proxy.interp_like(u200))
+
     # Derived fields
     tej_strength_map = clean_for_merge(-u200)
     tej_strength_map.attrs["description"] = (
@@ -467,7 +478,7 @@ def compute_period_diagnostics(period: str) -> tuple[xr.Dataset, list[dict]]:
         "strf200": clean_for_merge(strf200),
         "z200": clean_for_merge(z200),
         "z500": clean_for_merge(z500),
-        "sst_proxy": clean_for_merge(sst_proxy),
+        "sst_proxy": sst_proxy_on_grid,
     }
 
     ds_list = []
