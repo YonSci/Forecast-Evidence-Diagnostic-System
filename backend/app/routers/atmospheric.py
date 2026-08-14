@@ -111,6 +111,7 @@ def get_atmospheric_overlay(
         vmin=entry["vmin"],
         vmax=entry["vmax"],
         unit=entry["unit"],
+        legend_gradient=entry.get("legend_gradient"),
     )
 
 

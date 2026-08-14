@@ -50,6 +50,13 @@ function loadCountryBorders(): Promise<GeoJSON.FeatureCollection> {
 }
 
 const BORDER_STYLE: L.PathOptions = { color: "#5b6270", weight: 1, opacity: 0.85, fill: false };
+// Ethiopia is the primary subject of this dashboard, so its outline reads
+// heavier than every other country's -- a plain style object can't
+// distinguish features, so this is a per-feature style function instead.
+const ETHIOPIA_BORDER_STYLE: L.PathOptions = { color: "#14161c", weight: 1.7, opacity: 0.95, fill: false };
+function countryBorderStyle(feature?: GeoJSON.Feature): L.PathOptions {
+  return feature?.properties?.name === "Ethiopia" ? ETHIOPIA_BORDER_STYLE : BORDER_STYLE;
+}
 const EMPTY_FEATURE_COLLECTION: GeoJSON.FeatureCollection = { type: "FeatureCollection", features: [] };
 
 function CountryBordersOverlay() {
@@ -78,7 +85,7 @@ function CountryBordersOverlay() {
           borders reliably paint above the anomaly ImageOverlay regardless
           of which mounts first -- more robust than relying on JSX order. */}
       <Pane name="country-borders-pane" style={{ zIndex: 450 }}>
-        <GeoJSON ref={geoJsonRef} data={EMPTY_FEATURE_COLLECTION} style={BORDER_STYLE} interactive={false} />
+        <GeoJSON ref={geoJsonRef} data={EMPTY_FEATURE_COLLECTION} style={countryBorderStyle} interactive={false} />
       </Pane>
     </LayersControl.Overlay>
   );
@@ -139,6 +146,19 @@ function FitBounds({ bounds, cover = false }: { bounds: LatLngBoundsExpression; 
     }
   }, [map, JSON.stringify(bounds), cover]);
   return null;
+}
+
+/** Decimal places for the legend's numeric end labels, scaled to the
+ * overlay's own magnitude -- a fixed 0-decimal count reads fine for
+ * rainfall (mm) or u200 (m/s) but rounds a small field like omega500
+ * (+-0.15 Pa/s) down to "-0"/"0", which isn't a real value. Fields tiny
+ * enough to need scientific notation are already handled by fmt()'s own
+ * exponential fallback below 0.001, so this only needs to cover the
+ * 0.01-10 range in between. */
+function legendDecimals(maxAbs: number): number {
+  if (maxAbs >= 10) return 0;
+  if (maxAbs >= 1) return 1;
+  return 2;
 }
 
 function nearestIndex(sortedOrUnsorted: number[], target: number): number {
@@ -228,6 +248,8 @@ export function AnomalyLeafletMap({
   emptyReason,
   indexBoxes = [],
   legendGradient = "linear-gradient(90deg, var(--dry), #f5f1ea, var(--wet))",
+  legendTitle = "Anomaly",
+  legendNote,
 }: {
   overlay: OverlayInfo | null;
   grid?: GridResponse | null;
@@ -237,8 +259,19 @@ export function AnomalyLeafletMap({
    * index regions on the Oceanic Evidence SST map). Omit for none. */
   indexBoxes?: IndexBox[];
   /** CSS gradient for the legend bar -- defaults to the rainfall dry/wet
-   * scheme; pass a blue-red gradient for temperature/SST overlays. */
+   * scheme; pass a blue-red gradient for temperature/SST overlays. Ignored
+   * when overlay.legend_gradient is set (a discrete-bin gradient computed
+   * server-side to match the raster's exact color bands). */
   legendGradient?: string;
+  /** Label prefixed to the unit in the legend header -- defaults to
+   * "Anomaly" (correct for the rainfall/SST/z200 overlays this was built
+   * for), but a raw climatological field (e.g. u200) isn't an anomaly at
+   * all, so callers showing one of those should override this. */
+  legendTitle?: string;
+  /** Optional one-line physical-meaning note under the legend's numeric
+   * ends, e.g. "Easterly (←) / Westerly (→)" -- sign alone doesn't say
+   * which direction it means for every variable. */
+  legendNote?: string;
 }) {
   if (!overlay || !overlay.available || !overlay.bounds) {
     return (
@@ -279,12 +312,15 @@ export function AnomalyLeafletMap({
         </MapContainer>
         {overlay.vmin != null && overlay.vmax != null && (
           <div className="leaflet-legend">
-            <div>Anomaly ({overlay.unit})</div>
-            <div className="bar" style={{ background: legendGradient }} />
-            <div className="ends">
-              <span>{fmt(overlay.vmin, 0)}</span>
-              <span>{fmt(overlay.vmax, 0)}</span>
+            <div>
+              {legendTitle} ({overlay.unit})
             </div>
+            <div className="bar" style={{ background: overlay.legend_gradient ?? legendGradient }} />
+            <div className="ends">
+              <span>{fmt(overlay.vmin, legendDecimals(Math.max(Math.abs(overlay.vmin), Math.abs(overlay.vmax))))}</span>
+              <span>{fmt(overlay.vmax, legendDecimals(Math.max(Math.abs(overlay.vmin), Math.abs(overlay.vmax))))}</span>
+            </div>
+            {legendNote && <div className="legend-note">{legendNote}</div>}
           </div>
         )}
       </div>

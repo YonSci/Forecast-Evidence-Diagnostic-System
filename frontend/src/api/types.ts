@@ -60,6 +60,9 @@ export interface OverlayInfo {
   vmin?: number;
   vmax?: number;
   unit?: string;
+  /** CSS linear-gradient with hard color stops matching the discrete bins
+   * baked into the raster -- only set for fixed-scale overlays. */
+  legend_gradient?: string;
 }
 
 export interface EvidenceRow {

@@ -62,7 +62,7 @@ import xarray as xr
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-from matplotlib.colors import Normalize, TwoSlopeNorm
+from matplotlib.colors import BoundaryNorm
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 OUT_DIR = PROJECT_ROOT / "outputs" / "maps" / "atmos_overlays"
@@ -85,7 +85,10 @@ PERIODS = ["Jun", "Jul", "Aug", "Sep", "JJA", "JJAS"]
 MONTH_NUM = {"Jun": 6, "Jul": 7, "Aug": 8, "Sep": 9}
 
 GREATER_HORN_BOX = s06.DOMAINS["greater_horn"]
-TEJ_BOX = s06.TEJ_FIG4_BOX
+# Widened per review feedback: a TEJ diagnostic domain should show the jet
+# from South Asia across the Indian Ocean to Africa, not stop near the
+# Horn/Arabian Sea -- 20W-100E, 20S-40N.
+TEJ_BOX = [-20, 100, -20, 40]
 
 
 def lon_to_merc_x(lon_deg):
@@ -197,6 +200,17 @@ def load_qflux850_magnitude(period: str) -> xr.DataArray | None:
 # jet structure -> upper divergence -> forced ascent -> moisture supply
 # -> moisture accumulation.
 #
+# "levels" are FIXED discrete bin edges, the same for every period of a
+# given variable -- computed once from each field's actual JJAS-domain
+# distribution across all 6 periods (min/max/p99 inspected beforehand),
+# not derived per-period. A per-period percentile-based range (the
+# previous approach) makes different months visually incomparable: June
+# at +-12 m/s and August at +-23 m/s both fill the whole colorbar, which
+# reads as "similar magnitude" when it isn't. Values outside the range
+# are clipped to the end bins rather than using BoundaryNorm's
+# under/over colors, which need explicit per-colormap configuration to
+# render as anything but a hard-to-see default.
+#
 # "vector_loader" (optional) supplies the (u, v) pair quiver-drawn on top
 # of the shaded background for the two "does direction/transport matter"
 # entries (wind vectors, moisture flux). "unit" is asserted rather than
@@ -209,7 +223,7 @@ VARIABLES = {
         "loader": load_u200,
         "box": TEJ_BOX,
         "cmap": "RdBu_r",
-        "norm": None,  # symmetric, computed per-field below
+        "levels": np.arange(-32, 33, 4),
         "unit": "m/s",
         "vector_loader": None,
     },
@@ -217,7 +231,7 @@ VARIABLES = {
         "loader": load_u200_speed,
         "box": TEJ_BOX,
         "cmap": "jet",
-        "norm": lambda da: Normalize(vmin=0, vmax=25),
+        "levels": np.arange(0, 36, 4),
         "unit": "m/s",
         "vector_loader": load_u200_v200,
     },
@@ -225,7 +239,7 @@ VARIABLES = {
         "loader": load_divergence200,
         "box": GREATER_HORN_BOX,
         "cmap": "RdBu_r",
-        "norm": None,
+        "levels": np.arange(-8e-6, 8.1e-6, 2e-6),
         "unit": "s⁻¹",
         "vector_loader": None,
     },
@@ -233,7 +247,7 @@ VARIABLES = {
         "loader": load_omega500,
         "box": GREATER_HORN_BOX,
         "cmap": "RdBu_r",
-        "norm": None,
+        "levels": np.arange(-0.15, 0.151, 0.025),
         "unit": "Pa/s",
         "vector_loader": None,
     },
@@ -241,7 +255,7 @@ VARIABLES = {
         "loader": load_qflux850_magnitude,
         "box": GREATER_HORN_BOX,
         "cmap": "YlGnBu",
-        "norm": None,  # positive-only, computed per-field below
+        "levels": np.arange(0, 0.271, 0.03),
         "unit": "kg/kg·m/s",
         "vector_loader": load_qflux850_qu_qv,
     },
@@ -249,7 +263,7 @@ VARIABLES = {
         "loader": load_mfc850,
         "box": GREATER_HORN_BOX,
         "cmap": "BrBG",
-        "norm": None,
+        "levels": np.arange(-6e-7, 6.1e-7, 1e-7),
         "unit": "kg/kg/s",
         "vector_loader": None,
     },
@@ -260,7 +274,7 @@ def render_overlay(
     da_2d: xr.DataArray,
     box: list[float],
     cmap: str,
-    norm,
+    levels: np.ndarray,
     out_path: Path,
     quiver: tuple[xr.DataArray, xr.DataArray] | None = None,
 ) -> None:
@@ -283,7 +297,14 @@ def render_overlay(
     ax.set_xlim(x_min, x_max)
     ax.set_ylim(y_min, y_max)
     ax.axis("off")
-    ax.pcolormesh(merc_x, merc_y, da_2d.values, cmap=cmap, norm=norm, shading="auto")
+
+    # Discrete meteorological intervals (BoundaryNorm) instead of
+    # continuous shading, on a FIXED scale shared across every period --
+    # clip rather than extend so out-of-range outliers still render as
+    # the nearest end bin instead of vanishing.
+    norm = BoundaryNorm(levels, ncolors=256)
+    data = np.clip(da_2d.values, levels[0], levels[-1])
+    ax.pcolormesh(merc_x, merc_y, data, cmap=cmap, norm=norm, shading="auto")
 
     if quiver is not None:
         u, v = quiver
@@ -313,6 +334,24 @@ def render_overlay(
     out_path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out_path, dpi=100, transparent=True)
     plt.close(fig)
+
+
+def css_hard_stop_gradient(cmap_name: str, levels: np.ndarray) -> str:
+    """A CSS linear-gradient with hard color stops matching the exact
+    discrete bins/colors BoundaryNorm renders into the PNG -- so the
+    legend bar shows the same stepped bands as the map instead of a
+    smooth gradient implying continuous shading that isn't there."""
+    cmap = plt.get_cmap(cmap_name)
+    n = len(levels) - 1
+    colors = [cmap(x) for x in np.linspace(0, 1, n)]
+    hexes = ["#%02x%02x%02x" % tuple(int(round(c * 255)) for c in col[:3]) for col in colors]
+    stops = []
+    for i, hx in enumerate(hexes):
+        lo = 100 * i / n
+        hi = 100 * (i + 1) / n
+        stops.append(f"{hx} {lo:.3f}%")
+        stops.append(f"{hx} {hi:.3f}%")
+    return f"linear-gradient(90deg, {', '.join(stops)})"
 
 
 def round_sig(x: float, sig: int = 6) -> float:
@@ -352,16 +391,8 @@ def main():
                 da = da.transpose("lat", "lon")
 
             unit = cfg["unit"]
-
-            if cfg["norm"] is not None:
-                norm = cfg["norm"](da)
-                vmin, vmax = norm.vmin, norm.vmax
-            elif cfg["cmap"] == "YlGnBu":
-                vmin, vmax = s06.get_positive_limits(da)
-                norm = Normalize(vmin=vmin, vmax=vmax)
-            else:
-                vmin, vmax = s06.get_symmetric_limits(da)
-                norm = TwoSlopeNorm(vmin=vmin, vcenter=0, vmax=vmax)
+            levels = cfg["levels"]
+            vmin, vmax = float(levels[0]), float(levels[-1])
 
             quiver = None
             if cfg["vector_loader"] is not None:
@@ -376,7 +407,7 @@ def main():
                     quiver = (u, v)
 
             out_path = OUT_DIR / var_key / f"{period}.png"
-            render_overlay(da, box, cfg["cmap"], norm, out_path, quiver=quiver)
+            render_overlay(da, box, cfg["cmap"], levels, out_path, quiver=quiver)
 
             lon_min, lon_max, lat_min, lat_max = box
             index[f"{var_key}/{period}"] = {
@@ -385,6 +416,7 @@ def main():
                 "vmin": round_sig(vmin),
                 "vmax": round_sig(vmax),
                 "unit": unit,
+                "legend_gradient": css_hard_stop_gradient(cfg["cmap"], levels),
             }
 
             # Grid JSON for exact-value hover tooltips -- reflects only the

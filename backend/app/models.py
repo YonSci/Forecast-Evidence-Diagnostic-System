@@ -66,6 +66,11 @@ class OverlayInfo(BaseModel):
     vmin: Optional[float] = None
     vmax: Optional[float] = None
     unit: Optional[str] = None
+    # CSS linear-gradient with hard color stops matching the exact discrete
+    # bins baked into the raster (see
+    # scripts/27_generate_atmospheric_leaflet_overlays.py::css_hard_stop_gradient)
+    # -- only set for overlays rendered with a fixed discrete color scale.
+    legend_gradient: Optional[str] = None
 
 
 class EvidenceRow(BaseModel):

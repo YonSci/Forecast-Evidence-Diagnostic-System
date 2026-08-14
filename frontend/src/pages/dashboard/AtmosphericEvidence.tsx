@@ -29,51 +29,73 @@ const BRBG = "linear-gradient(90deg, #543005, #bf812d, #f6e8c3, #f5f5f5, #c7eae5
 // divergence favor ascent, is that ascent actually happening, and is
 // moisture both being supplied and accumulating to support it. Every
 // entry is ERA5 1991-2020 climatology (no per-2026-forecast gridded
-// product exists yet for any of these six), so the period dropdown
-// switches the climatological month/season, not a forecast lead time --
-// see scripts/27_generate_atmospheric_leaflet_overlays.py.
-const CIRCULATION_MAPS: { key: string; title: string; blurb: string; unit: string; legendGradient: string }[] = [
+// product exists yet for any of these six) -- none of these six is an
+// "anomaly": there's no per-2026 forecast grid for any of them to diff
+// against, so what's shown is the raw climatological field itself. The
+// period dropdown switches the climatological month/season, not a
+// forecast lead time -- see scripts/27_generate_atmospheric_leaflet_overlays.py,
+// whose fixed discrete color levels these legendGradient/unit/vmin/vmax
+// values must stay in sync with.
+const CIRCULATION_MAPS: {
+  key: string;
+  title: string;
+  blurb: string;
+  unit: string;
+  legendTitle: string;
+  legendGradient: string;
+  legendNote?: string;
+}[] = [
   {
     key: "u200",
-    title: "200 hPa zonal wind",
+    title: "200-hPa Zonal Wind",
     blurb: "Primary indicator of TEJ strength.",
     unit: "m/s",
+    legendTitle: "u₂₀₀",
     legendGradient: RDBU,
+    legendNote: "Easterly (−)  ·  Westerly (+)",
   },
   {
     key: "u200_vectors",
-    title: "200 hPa wind vectors",
-    blurb: "Shows the actual circulation and jet orientation.",
+    title: "200-hPa Wind Vectors",
+    blurb: "Shows the actual circulation and jet orientation — arrows are direction, shading is speed.",
     unit: "m/s",
+    legendTitle: "Wind speed",
     legendGradient: JET,
   },
   {
     key: "divergence200",
-    title: "200 hPa divergence",
+    title: "200-hPa Divergence",
     blurb: "Positive divergence can indicate favorable upper-level outflow.",
     unit: "s⁻¹",
+    legendTitle: "Divergence",
     legendGradient: RDBU,
+    legendNote: "Convergence (−)  ·  Divergence (+)",
   },
   {
     key: "omega500",
-    title: "Vertical velocity (ω500)",
+    title: "500-hPa Vertical Velocity (ω₅₀₀)",
     blurb: "Forced ascent (negative) or subsidence (positive) beneath the jet.",
     unit: "Pa/s",
+    legendTitle: "ω₅₀₀",
     legendGradient: RDBU,
+    legendNote: "Ascent (−)  ·  Subsidence (+)",
   },
   {
     key: "qflux850",
-    title: "850 hPa moisture flux (qV850)",
-    blurb: "Tells whether moisture is actually being supplied.",
+    title: "850-hPa Moisture Flux (qV₈₅₀)",
+    blurb: "Tells whether moisture is actually being supplied — arrows show transport direction.",
     unit: "kg/kg·m/s",
+    legendTitle: "Moisture flux",
     legendGradient: YLGNBU,
   },
   {
     key: "mfc850",
-    title: "850 hPa moisture-flux convergence",
+    title: "850-hPa Moisture-Flux Convergence",
     blurb: "Helps diagnose low-level moisture accumulation.",
     unit: "kg/kg/s",
+    legendTitle: "MFC",
     legendGradient: BRBG,
+    legendNote: "Divergence (−)  ·  Convergence (+)",
   },
 ];
 
@@ -91,16 +113,20 @@ function CirculationMapCard({
   variableKey,
   title,
   blurb,
-  unit,
+  legendTitle,
   legendGradient,
+  legendNote,
   period,
+  periodLabel,
 }: {
   variableKey: string;
   title: string;
   blurb: string;
-  unit: string;
+  legendTitle: string;
   legendGradient: string;
+  legendNote?: string;
   period: string;
+  periodLabel: string;
 }) {
   const [overlay, setOverlay] = useState<OverlayInfo | null>(null);
   const [grid, setGrid] = useState<GridResponse | null>(null);
@@ -117,16 +143,24 @@ function CirculationMapCard({
   return (
     <div className="chart-card">
       <div className="card-head">
-        <h3>{title}</h3>
-        <span className="hint">ERA5 climatology, 1991–2020 &middot; {unit}</span>
+        <h3>
+          {periodLabel} {title}
+        </h3>
+        <span className="hint">ERA5 &middot; Reference climatology 1991&ndash;2020</span>
       </div>
       <p style={{ fontSize: "0.84rem", color: "var(--ink-2)", marginTop: -8, marginBottom: 12 }}>{blurb}</p>
       <AnomalyLeafletMap
         overlay={overlay}
         grid={grid}
         legendGradient={legendGradient}
+        legendTitle={legendTitle}
+        legendNote={legendNote}
         emptyReason="No rendered map for this period in this build."
       />
+      <p style={{ fontSize: "0.72rem", color: "var(--muted)", marginTop: 8 }}>
+        Data: ERA5 &middot; Reference: 1991&ndash;2020 &middot; Aggregation: {periodLabel} mean &middot; Resolution:
+        0.25&deg; &middot; Variable: {title}
+      </p>
     </div>
   );
 }
@@ -245,9 +279,11 @@ export function AtmosphericEvidence() {
             variableKey={m.key}
             title={m.title}
             blurb={m.blurb}
-            unit={m.unit}
+            legendTitle={m.legendTitle}
             legendGradient={m.legendGradient}
+            legendNote={m.legendNote}
             period={circPeriod}
+            periodLabel={CIRC_PERIOD_LABELS[circPeriod]}
           />
         </div>
       ))}
