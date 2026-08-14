@@ -26,15 +26,26 @@ Two panels per figure, stacked:
     Panel B -- Ethiopia-focused regional view (25E-55E, 0-20N): Sudan,
                South Sudan, Somalia, Kenya, Red Sea, Arabian Peninsula.
 
-Explicitly not attempted here (no data for it): a three-panel
-climatology/target/anomaly comparison, since none of these six fields
-has a per-2026-forecast gridded counterpart to diff against -- what's
-shown is the ERA5 1991-2020 climatology itself, labeled as such.
+Also generates a second figure type: a climatology-vs-target comparison
+(ERA5 1991-2020 climatology alongside the actual CFSv2 June-2026-init
+forecast grid for the same variable/period, side by side, same fixed
+color scale). scripts/09-10 already computed a full gridded CFSv2
+forecast for these exact fields
+(outputs/netcdf/cfsv2_dynamic_diagnostics/) -- previously unused by any
+map, only collapsed to an area-mean scalar table. This is deliberately
+NOT a three-panel climatology/target/anomaly figure: CFSv2 (operational
+forecast) and ERA5 (reanalysis) are different modeling systems, so
+diffing them isn't a like-for-like anomaly the way NMME's own
+climatology-vs-forecast anomalies are elsewhere in this app -- there is
+no CFSv2-own climatology in this project to diff against instead. The
+two fields are shown side by side for qualitative comparison only, with
+that caveat printed on the figure itself.
 
 Outputs
 -------
     outputs/maps/atmos_publication/<variable>/<variable>_<period>.png  (300 dpi)
     outputs/maps/atmos_publication/<variable>/<variable>_<period>.pdf  (vector)
+    outputs/maps/atmos_publication_comparison/<variable>/<variable>_<period>_comparison.{png,pdf}
 
 Run from project root:
     python scripts\\28_generate_atmospheric_publication_figures.py
@@ -71,9 +82,54 @@ s06 = s27.s06
 
 PANEL_A_BOX = [-20, 100, -20, 40]   # large-scale TEJ context
 PANEL_B_BOX = [25, 55, 0, 20]       # Ethiopia-focused regional view
+COMPARISON_OUT_DIR = PROJECT_ROOT / "outputs" / "maps" / "atmos_publication_comparison"
+CFSV2_DIR = PROJECT_ROOT / "outputs" / "netcdf" / "cfsv2_dynamic_diagnostics"
 
 PERIODS = s27.PERIODS
 PERIOD_LABELS = {"Jun": "June", "Jul": "July", "Aug": "August", "Sep": "September", "JJA": "JJA", "JJAS": "JJAS"}
+
+# Which raw CFSv2 grid variable(s) back each of script 27's six variable
+# keys -- mirrors the ERA5-side u/v -> speed, qu/qv -> flux-magnitude
+# derivations already done in script 27, just against the CFSv2 file
+# instead of the ERA5 climatology files.
+CFSV2_VARS = {
+    "u200": ("u200",),
+    "u200_vectors": ("u200", "v200"),
+    "divergence200": ("div200",),
+    "omega500": ("omega500",),
+    "qflux850": ("qu850", "qv850"),
+    "mfc850": ("mfc850",),
+}
+
+
+def load_cfsv2_shade_and_quiver(var_key: str, period: str):
+    """Returns (shade_da, quiver_tuple_or_None) from the CFSv2 June-2026-
+    init gridded forecast, or (None, None) if the file/variable is
+    missing. Shade field matches what script 27 shades for the ERA5 side
+    of the same var_key (raw field, or magnitude for the two vector
+    variables) so the two panels are the same physical quantity."""
+    path = CFSV2_DIR / f"CFSv2_dynamic_diagnostics_{period}_2026.nc"
+    if not path.exists():
+        return None, None
+
+    ds = s06.open_dataset(path, decode_times=False)
+    names = CFSV2_VARS[var_key]
+    if any(n not in ds for n in names):
+        return None, None
+
+    if var_key == "u200_vectors":
+        u, v = ds["u200"], ds["v200"]
+        shade = np.sqrt(u**2 + v**2)
+        shade.attrs["units"] = "m/s"
+        return shade, (u, v)
+
+    if var_key == "qflux850":
+        qu, qv = ds["qu850"], ds["qv850"]
+        shade = np.sqrt(qu**2 + qv**2)
+        shade.attrs["units"] = "kg/kg*m/s"
+        return shade, (qu, qv)
+
+    return ds[names[0]], None
 
 # Display metadata per variable: compact notation (matches the legend
 # title used in the dashboard), full title, and an optional physical-
@@ -276,6 +332,99 @@ def plot_publication_figure(var_key: str, period: str) -> None:
     print(f"Saved: {png_path.name} + {pdf_path.name}")
 
 
+def plot_climatology_vs_target_figure(var_key: str, period: str) -> None:
+    """ERA5 1991-2020 climatology next to the actual CFSv2 June-2026-init
+    forecast grid, same variable/period/box/color scale -- side-by-side
+    comparison only, no anomaly (see module docstring for why)."""
+    cfg = s27.VARIABLES[var_key]
+    disp = DISPLAY[var_key]
+    box = cfg["box"]
+
+    da_clim = cfg["loader"](period)
+    if da_clim is None:
+        print(f"Skipping comparison {var_key}/{period}: ERA5 source missing")
+        return
+
+    quiver_clim = None
+    if cfg["vector_loader"] is not None:
+        uv = cfg["vector_loader"](period)
+        if uv is not None:
+            quiver_clim = uv
+
+    da_target, quiver_target = load_cfsv2_shade_and_quiver(var_key, period)
+    if da_target is None:
+        print(f"Skipping comparison {var_key}/{period}: CFSv2 target missing")
+        return
+
+    def prep(da, quiver):
+        da = s06.subset_box(da, s27.clamp_box_lat(box)).squeeze(drop=True)
+        if "lat" in da.dims and "lon" in da.dims:
+            da = da.transpose("lat", "lon")
+        q = None
+        if quiver is not None:
+            u, v = quiver
+            u = s06.subset_box(u, s27.clamp_box_lat(box)).squeeze(drop=True)
+            v = s06.subset_box(v, s27.clamp_box_lat(box)).squeeze(drop=True)
+            if "lat" in u.dims and "lon" in u.dims:
+                u, v = u.transpose("lat", "lon"), v.transpose("lat", "lon")
+            q = (u, v)
+        return da, q
+
+    da_clim, quiver_clim = prep(da_clim, quiver_clim)
+    da_target, quiver_target = prep(da_target, quiver_target)
+
+    fig = plt.figure(figsize=(15, 7.5))
+    gs = fig.add_gridspec(2, 2, height_ratios=[1, 0.06], width_ratios=[1, 1], hspace=0.35, wspace=0.12, top=0.80, bottom=0.13)
+    ax_clim = fig.add_subplot(gs[0, 0], projection=ccrs.PlateCarree())
+    ax_target = fig.add_subplot(gs[0, 1], projection=ccrs.PlateCarree())
+    cax = fig.add_subplot(gs[1, :])
+
+    render_panel(
+        ax_clim, da_clim, box, cfg["cmap"], cfg["levels"],
+        quiver=quiver_clim, contour_levels=disp["contour_levels"],
+        panel_label="A — ERA5 1991–2020 climatology",
+    )
+    mesh = render_panel(
+        ax_target, da_target, box, cfg["cmap"], cfg["levels"],
+        quiver=quiver_target, contour_levels=disp["contour_levels"],
+        panel_label="B — CFSv2 2026 target (June init)",
+    )
+
+    cbar = fig.colorbar(mesh, cax=cax, orientation="horizontal")
+    cbar.set_label(f"{disp['notation']} ({cfg['unit']})", fontsize=10)
+    cbar.ax.tick_params(labelsize=8)
+
+    period_label = PERIOD_LABELS[period]
+    fig.text(
+        0.5, 0.965, f"{period_label} {disp['notation']} ({cfg['unit']}) — Climatology vs. 2026 Target",
+        fontsize=15, fontweight="bold", ha="center", va="top",
+    )
+    fig.text(0.5, 0.925, disp["title"], fontsize=10.5, ha="center", va="top", color="#333333")
+    fig.text(
+        0.5, 0.895,
+        "Not an anomaly: ERA5 (reanalysis climatology) and CFSv2 (operational forecast) are different\n"
+        "modeling systems, so this is a qualitative side-by-side, not a same-model anomaly.",
+        fontsize=8, ha="center", va="top", color="#9a3b12", style="italic",
+    )
+
+    fig.text(
+        0.5, 0.03,
+        f"Panel A: ERA5, ref. 1991–2020, {period_label} mean, 0.25°  ·  "
+        f"Panel B: CFSv2 NOMADS, June-2026 init, {period_label} mean  ·  Variable: {disp['title']}",
+        fontsize=7.5, ha="center", va="bottom", color="#666666",
+    )
+
+    out_dir = COMPARISON_OUT_DIR / var_key
+    out_dir.mkdir(parents=True, exist_ok=True)
+    png_path = out_dir / f"{var_key}_{period}_comparison.png"
+    pdf_path = out_dir / f"{var_key}_{period}_comparison.pdf"
+    fig.savefig(png_path, dpi=300, bbox_inches="tight")
+    fig.savefig(pdf_path, bbox_inches="tight")
+    plt.close(fig)
+
+    print(f"Saved: {png_path.name} + {pdf_path.name}")
+
+
 def main():
     print("==================================================")
     print("Generate atmospheric publication figures")
@@ -283,7 +432,16 @@ def main():
     for var_key in s27.VARIABLES:
         for period in PERIODS:
             plot_publication_figure(var_key, period)
-    print(f"\nOutput folder: {OUT_DIR}")
+
+    print("\n==================================================")
+    print("Generate climatology-vs-target comparison figures")
+    print("==================================================")
+    for var_key in s27.VARIABLES:
+        for period in PERIODS:
+            plot_climatology_vs_target_figure(var_key, period)
+
+    print(f"\nOutput folders: {OUT_DIR}")
+    print(f"                 {COMPARISON_OUT_DIR}")
 
 
 if __name__ == "__main__":
