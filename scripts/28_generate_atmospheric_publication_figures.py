@@ -26,6 +26,29 @@ Two panels per figure, stacked:
     Panel B -- Ethiopia-focused regional view (25E-55E, 0-20N): Sudan,
                South Sudan, Somalia, Kenya, Red Sea, Arabian Peninsula.
 
+u200 and u200_vectors additionally get a traced TEJ axis line (the
+latitude of maximum 200 hPa wind speed at each longitude, restricted to
+a tropical/subtropical band and to where that maximum is at least
+15 m/s -- see compute_tej_axis()), so "where exactly is the jet core"
+doesn't have to be read off the shading by eye.
+
+u200 additionally gets a solid zero-contour line. This follows from
+scripts/_cvd_check.py, a one-off simulation of protanopia/deuteranopia/
+tritanopia on this script's actual discrete color bins (Coblis-style
+matrices): the near-zero bins were consistently the least separable
+pair under every simulated deficiency, for every diverging palette
+tested -- an inherent property of any diverging colormap fading through
+white at its center, not fixable by picking a different diverging
+scheme without abandoning the (well-established elsewhere in this app)
+blue=negative/red=positive convention. A shape cue (the zero line)
+marks the sign boundary independent of hue for every viewer, not just
+CVD ones. This is deliberately NOT applied to divergence200, omega500,
+or mfc850 despite sharing the same CVD finding: those are small-scale
+spatial-derivative fields, and their zero crossing turned out to be a
+dense tangle of tiny closed contours (confirmed visually) rather than a
+clean sign boundary like u200's smooth wind field -- it cluttered those
+panels instead of clarifying them, so it's restricted to u200 only.
+
 Also generates a second figure type: a climatology-vs-target comparison
 (ERA5 1991-2020 climatology alongside the actual CFSv2 June-2026-init
 forecast grid for the same variable/period, side by side, same fixed
@@ -43,9 +66,10 @@ that caveat printed on the figure itself.
 
 Outputs
 -------
-    outputs/maps/atmos_publication/<variable>/<variable>_<period>.png  (300 dpi)
+    outputs/maps/atmos_publication/<variable>/<variable>_<period>.png  (600 dpi)
     outputs/maps/atmos_publication/<variable>/<variable>_<period>.pdf  (vector)
-    outputs/maps/atmos_publication_comparison/<variable>/<variable>_<period>_comparison.{png,pdf}
+    outputs/maps/atmos_publication/<variable>/<variable>_<period>.svg  (vector)
+    outputs/maps/atmos_publication_comparison/<variable>/<variable>_<period>_comparison.{png,pdf,svg}
 
 Run from project root:
     python scripts\\28_generate_atmospheric_publication_figures.py
@@ -84,6 +108,11 @@ PANEL_A_BOX = [-20, 100, -20, 40]   # large-scale TEJ context
 PANEL_B_BOX = [25, 55, 0, 20]       # Ethiopia-focused regional view
 COMPARISON_OUT_DIR = PROJECT_ROOT / "outputs" / "maps" / "atmos_publication_comparison"
 CFSV2_DIR = PROJECT_ROOT / "outputs" / "netcdf" / "cfsv2_dynamic_diagnostics"
+# 600 dpi (manuscript-quality) is safe to use unconditionally here: these
+# PNGs are local-only (outputs/, gitignored) -- what actually gets synced
+# to the deployed backend is a separately resized/quantized copy (see
+# backend/scripts/sync_static_data.py), so this doesn't affect deploy size.
+PNG_DPI = 600
 
 PERIODS = s27.PERIODS
 PERIOD_LABELS = {"Jun": "June", "Jul": "July", "Aug": "August", "Sep": "September", "JJA": "JJA", "JJAS": "JJAS"}
@@ -204,16 +233,48 @@ def add_map_features(ax, box, draw_labels: bool) -> None:
     gl.ylabel_style = {"size": 8}
 
 
+def compute_tej_axis(u_da, v_da, lat_band=(0, 20), min_speed=15.0):
+    """Traces the TEJ axis: the latitude of maximum 200 hPa wind speed at
+    each longitude, restricted to a tropical/subtropical band so this
+    follows the easterly jet core instead of the (also fast) midlatitude
+    westerlies, and masked to longitudes where that maximum is at least
+    min_speed m/s so the line stops where there's no real jet to trace.
+    u_da/v_da must already share the same (lat, lon) grid/subset used for
+    the panel's shading. Returns (lons, lats) ready to plot as a line."""
+    speed = np.sqrt(u_da.values ** 2 + v_da.values ** 2)
+    lat = u_da["lat"].values
+    lon = u_da["lon"].values
+
+    band_mask = (lat >= min(lat_band)) & (lat <= max(lat_band))
+    if not band_mask.any():
+        return np.array([]), np.array([])
+    lat_band_vals = lat[band_mask]
+    speed_band = speed[band_mask, :]
+
+    safe = np.where(np.isnan(speed_band), -np.inf, speed_band)
+    max_idx = np.argmax(safe, axis=0)
+    max_speed = speed_band[max_idx, np.arange(speed_band.shape[1])]
+    max_lat = lat_band_vals[max_idx]
+
+    keep = np.isfinite(max_speed) & (max_speed >= min_speed)
+    return lon[keep], max_lat[keep]
+
+
 def render_panel(
     ax, da_2d, box, cmap, levels,
-    quiver=None, contour_levels=None, panel_label: str = "",
+    quiver=None, contour_levels=None, zero_contour=False, axis_line=None, panel_label: str = "",
 ):
     lon, lat = da_2d["lon"].values, da_2d["lat"].values
     data = np.clip(da_2d.values, levels[0], levels[-1])
     norm = BoundaryNorm(levels, ncolors=256)
 
+    # rasterized=True: with thousands of grid cells, an SVG/PDF backend
+    # would otherwise emit one vector path per cell -- 25 MB+ per SVG,
+    # confirmed. This keeps only the mesh fill as an embedded raster
+    # (matching what the PDF backend already does automatically) while
+    # text, contours, gridlines, and coastlines stay true vector paths.
     mesh = ax.pcolormesh(
-        lon, lat, data, cmap=cmap, norm=norm, shading="auto", transform=ccrs.PlateCarree(),
+        lon, lat, data, cmap=cmap, norm=norm, shading="auto", transform=ccrs.PlateCarree(), rasterized=True,
     )
 
     if quiver is not None:
@@ -232,12 +293,37 @@ def render_panel(
             width=0.0022, alpha=0.85, transform=ccrs.PlateCarree(),
         )
 
+    # A solid zero-contour helps every reader (not just color-vision-
+    # deficient ones) tell the blue side from the red side without relying
+    # on hue alone -- CVD simulation (Coblis-style matrices) on this
+    # palette's discrete bins showed the near-zero bins are the least
+    # separable under protanopia/deuteranopia, exactly where this line
+    # matters most. Not used for the two sequential (speed-magnitude)
+    # variables, which have no zero crossing to mark.
+    if zero_contour and levels[0] < 0 < levels[-1]:
+        ax.contour(
+            lon, lat, da_2d.values, levels=[0],
+            colors="#1a1a1a", linewidths=1.1, linestyles="solid", transform=ccrs.PlateCarree(), zorder=4,
+        )
+
     if contour_levels is not None:
         cs = ax.contour(
             lon, lat, da_2d.values, levels=contour_levels,
             colors="black", linewidths=0.8, transform=ccrs.PlateCarree(),
         )
         ax.clabel(cs, inline=True, fontsize=7, fmt="%g")
+
+    if axis_line is not None:
+        axis_lon, axis_lat = axis_line
+        if len(axis_lon) > 1:
+            ax.plot(
+                axis_lon, axis_lat, color="#e6a817", linewidth=2.4, solid_capstyle="round",
+                transform=ccrs.PlateCarree(), zorder=6,
+            )
+            ax.text(
+                axis_lon[-1], axis_lat[-1], "  TEJ axis", color="#8a6200", fontsize=7.5, fontweight="bold",
+                va="center", ha="left", transform=ccrs.PlateCarree(), zorder=6,
+            )
 
     add_map_features(ax, box, draw_labels=True)
     ax.text(
@@ -262,6 +348,21 @@ def plot_publication_figure(var_key: str, period: str) -> None:
         if uv is not None:
             quiver_full = uv
 
+    # TEJ axis line needs u/v regardless of whether this panel is shaded
+    # by signed u200 (no vector_loader of its own) or by speed
+    # (u200_vectors, which already has quiver_full) -- load separately for
+    # u200 so the axis still draws on top of the signed-wind panel.
+    axis_uv_full = None
+    if var_key in ("u200", "u200_vectors"):
+        axis_uv_full = quiver_full if quiver_full is not None else s27.load_u200_v200(period)
+
+    # Restricted to u200 only -- verified empirically: divergence200,
+    # omega500, and mfc850 are small-scale spatial-derivative fields whose
+    # zero crossing is a dense tangle of tiny closed contours (confirmed
+    # visually, not a clean sign boundary like u200's smooth wind field),
+    # so a zero line clutters those panels instead of clarifying them.
+    zero_contour = var_key == "u200"
+
     def subset_for(box):
         da = s06.subset_box(da_full, s27.clamp_box_lat(box)).squeeze(drop=True)
         if "lat" in da.dims and "lon" in da.dims:
@@ -274,10 +375,18 @@ def plot_publication_figure(var_key: str, period: str) -> None:
             if "lat" in u.dims and "lon" in u.dims:
                 u, v = u.transpose("lat", "lon"), v.transpose("lat", "lon")
             q = (u, v)
-        return da, q
+        axis = None
+        if axis_uv_full is not None:
+            au, av = axis_uv_full
+            au = s06.subset_box(au, s27.clamp_box_lat(box)).squeeze(drop=True)
+            av = s06.subset_box(av, s27.clamp_box_lat(box)).squeeze(drop=True)
+            if "lat" in au.dims and "lon" in au.dims:
+                au, av = au.transpose("lat", "lon"), av.transpose("lat", "lon")
+            axis = compute_tej_axis(au, av)
+        return da, q, axis
 
-    da_a, quiver_a = subset_for(PANEL_A_BOX)
-    da_b, quiver_b = subset_for(PANEL_B_BOX)
+    da_a, quiver_a, axis_a = subset_for(PANEL_A_BOX)
+    da_b, quiver_b, axis_b = subset_for(PANEL_B_BOX)
 
     fig = plt.figure(figsize=(10, 12.5))
     # top/bottom reserve fixed bands for the 3-line title block and the
@@ -290,12 +399,12 @@ def plot_publication_figure(var_key: str, period: str) -> None:
 
     render_panel(
         ax_a, da_a, PANEL_A_BOX, cfg["cmap"], cfg["levels"],
-        quiver=quiver_a, contour_levels=disp["contour_levels"],
+        quiver=quiver_a, contour_levels=disp["contour_levels"], zero_contour=zero_contour, axis_line=axis_a,
         panel_label="A — Large-scale TEJ context",
     )
     mesh = render_panel(
         ax_b, da_b, PANEL_B_BOX, cfg["cmap"], cfg["levels"],
-        quiver=quiver_b, contour_levels=disp["contour_levels"],
+        quiver=quiver_b, contour_levels=disp["contour_levels"], zero_contour=zero_contour, axis_line=axis_b,
         panel_label="B — Ethiopia focus",
     )
 
@@ -325,11 +434,13 @@ def plot_publication_figure(var_key: str, period: str) -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
     png_path = out_dir / f"{var_key}_{period}.png"
     pdf_path = out_dir / f"{var_key}_{period}.pdf"
-    fig.savefig(png_path, dpi=300, bbox_inches="tight")
+    svg_path = out_dir / f"{var_key}_{period}.svg"
+    fig.savefig(png_path, dpi=PNG_DPI, bbox_inches="tight")
     fig.savefig(pdf_path, bbox_inches="tight")
+    fig.savefig(svg_path, bbox_inches="tight")
     plt.close(fig)
 
-    print(f"Saved: {png_path.name} + {pdf_path.name}")
+    print(f"Saved: {png_path.name} + {pdf_path.name} + {svg_path.name}")
 
 
 def plot_climatology_vs_target_figure(var_key: str, period: str) -> None:
@@ -356,7 +467,22 @@ def plot_climatology_vs_target_figure(var_key: str, period: str) -> None:
         print(f"Skipping comparison {var_key}/{period}: CFSv2 target missing")
         return
 
-    def prep(da, quiver):
+    # TEJ axis line for both panels -- see plot_publication_figure for why
+    # u200 needs its own u/v load (its own panel shades signed u200, not
+    # speed, so it has no vector_loader/quiver of its own).
+    axis_uv_clim = axis_uv_target = None
+    if var_key in ("u200", "u200_vectors"):
+        axis_uv_clim = quiver_clim if quiver_clim is not None else s27.load_u200_v200(period)
+        axis_uv_target = quiver_target if quiver_target is not None else load_cfsv2_shade_and_quiver("u200_vectors", period)[1]
+
+    # Restricted to u200 only -- verified empirically: divergence200,
+    # omega500, and mfc850 are small-scale spatial-derivative fields whose
+    # zero crossing is a dense tangle of tiny closed contours (confirmed
+    # visually, not a clean sign boundary like u200's smooth wind field),
+    # so a zero line clutters those panels instead of clarifying them.
+    zero_contour = var_key == "u200"
+
+    def prep(da, quiver, axis_uv):
         da = s06.subset_box(da, s27.clamp_box_lat(box)).squeeze(drop=True)
         if "lat" in da.dims and "lon" in da.dims:
             da = da.transpose("lat", "lon")
@@ -368,10 +494,18 @@ def plot_climatology_vs_target_figure(var_key: str, period: str) -> None:
             if "lat" in u.dims and "lon" in u.dims:
                 u, v = u.transpose("lat", "lon"), v.transpose("lat", "lon")
             q = (u, v)
-        return da, q
+        axis = None
+        if axis_uv is not None:
+            au, av = axis_uv
+            au = s06.subset_box(au, s27.clamp_box_lat(box)).squeeze(drop=True)
+            av = s06.subset_box(av, s27.clamp_box_lat(box)).squeeze(drop=True)
+            if "lat" in au.dims and "lon" in au.dims:
+                au, av = au.transpose("lat", "lon"), av.transpose("lat", "lon")
+            axis = compute_tej_axis(au, av)
+        return da, q, axis
 
-    da_clim, quiver_clim = prep(da_clim, quiver_clim)
-    da_target, quiver_target = prep(da_target, quiver_target)
+    da_clim, quiver_clim, axis_clim = prep(da_clim, quiver_clim, axis_uv_clim)
+    da_target, quiver_target, axis_target = prep(da_target, quiver_target, axis_uv_target)
 
     fig = plt.figure(figsize=(15, 7.5))
     gs = fig.add_gridspec(2, 2, height_ratios=[1, 0.06], width_ratios=[1, 1], hspace=0.35, wspace=0.12, top=0.80, bottom=0.13)
@@ -381,12 +515,12 @@ def plot_climatology_vs_target_figure(var_key: str, period: str) -> None:
 
     render_panel(
         ax_clim, da_clim, box, cfg["cmap"], cfg["levels"],
-        quiver=quiver_clim, contour_levels=disp["contour_levels"],
+        quiver=quiver_clim, contour_levels=disp["contour_levels"], zero_contour=zero_contour, axis_line=axis_clim,
         panel_label="A — ERA5 1991–2020 climatology",
     )
     mesh = render_panel(
         ax_target, da_target, box, cfg["cmap"], cfg["levels"],
-        quiver=quiver_target, contour_levels=disp["contour_levels"],
+        quiver=quiver_target, contour_levels=disp["contour_levels"], zero_contour=zero_contour, axis_line=axis_target,
         panel_label="B — CFSv2 2026 target (June init)",
     )
 
@@ -418,11 +552,13 @@ def plot_climatology_vs_target_figure(var_key: str, period: str) -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
     png_path = out_dir / f"{var_key}_{period}_comparison.png"
     pdf_path = out_dir / f"{var_key}_{period}_comparison.pdf"
-    fig.savefig(png_path, dpi=300, bbox_inches="tight")
+    svg_path = out_dir / f"{var_key}_{period}_comparison.svg"
+    fig.savefig(png_path, dpi=PNG_DPI, bbox_inches="tight")
     fig.savefig(pdf_path, bbox_inches="tight")
+    fig.savefig(svg_path, bbox_inches="tight")
     plt.close(fig)
 
-    print(f"Saved: {png_path.name} + {pdf_path.name}")
+    print(f"Saved: {png_path.name} + {pdf_path.name} + {svg_path.name}")
 
 
 def main():
