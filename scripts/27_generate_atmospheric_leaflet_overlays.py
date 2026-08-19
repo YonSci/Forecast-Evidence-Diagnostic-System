@@ -25,12 +25,28 @@ physically meaningful over land AND ocean, so no land/ocean clip mask is
 applied -- full rectangular domain, country borders drawn separately by
 the frontend's GeoJSON borders layer.
 
+Every variable is generated at TWO scopes -- "large" (LARGE_SCALE_BOX,
+South Asia across the Indian Ocean to Africa) and "regional"
+(REGIONAL_BOX, Ethiopia/Sudan/Somalia/Kenya/Red Sea/Arabia) -- the same
+two boxes scripts/28's publication figures use as Panel A/B, so the
+dashboard's scope toggle and the publication dual-panel figure always
+agree on what "large-scale" and "regional" mean.
+
 Direction vectors (u200_vectors, qflux850) are baked into the raster
 itself as a matplotlib quiver on top of the shaded background, rather
 than a real Leaflet vector layer -- arrow density is fixed at render
 time instead of rescaling with zoom, which is an acceptable trade-off
-against building a genuine interactive vector layer. The hover tooltip
-grid still reflects only the shaded (scalar) field, not the vectors.
+against building a genuine interactive vector layer. u200/u200_vectors
+also get a traced TEJ axis line (see compute_tej_axis) and u200 alone
+gets labeled threshold contours plus a solid zero-contour line -- the
+same three additions scripts/28 already applies to the publication
+figures, shared from here so the two never drift apart. (divergence200/
+omega500/mfc850 deliberately do NOT get a zero-contour: confirmed
+visually in the publication-figure work that those small-scale
+spatial-derivative fields turn a zero line into a dense, unreadable
+tangle instead of a clean sign boundary like u200's smooth wind field.)
+The hover-tooltip grid always reflects only the shaded scalar field,
+never the vectors/contours/axis line.
 
 All six are ERA5 1991-2020 climatology, available by calendar month
 (Jun-Sep) and JJA/JJAS season -- there is no per-2026-forecast gridded
@@ -41,10 +57,10 @@ TEJ-consistency set and stays out of this script.)
 
 Outputs
 -------
-    outputs/maps/atmos_overlays/<variable>/<period>.png
+    outputs/maps/atmos_overlays/<variable>/<scope>/<period>.png
     outputs/maps/atmos_overlays/overlay_index.json
-        { "<variable>/<period>": {file, bounds, vmin, vmax, unit} }
-    outputs/maps/atmos_overlays/grid_data/<variable>/<period>.json
+        { "<variable>/<scope>/<period>": {file, bounds, vmin, vmax, unit, legend_gradient} }
+    outputs/maps/atmos_overlays/grid_data/<variable>/<scope>/<period>.json
 
 Run from project root:
     python scripts\\27_generate_atmospheric_leaflet_overlays.py
@@ -84,11 +100,11 @@ MERCATOR_R = 6378137.0
 PERIODS = ["Jun", "Jul", "Aug", "Sep", "JJA", "JJAS"]
 MONTH_NUM = {"Jun": 6, "Jul": 7, "Aug": 8, "Sep": 9}
 
-GREATER_HORN_BOX = s06.DOMAINS["greater_horn"]
-# Widened per review feedback: a TEJ diagnostic domain should show the jet
-# from South Asia across the Indian Ocean to Africa, not stop near the
-# Horn/Arabian Sea -- 20W-100E, 20S-40N.
-TEJ_BOX = [-20, 100, -20, 40]
+# Canonical two-scope domains, shared with scripts/28's Panel A/B so the
+# dashboard scope toggle and the publication dual-panel figure agree.
+LARGE_SCALE_BOX = [-20, 100, -20, 40]   # South Asia -> Indian Ocean -> Africa
+REGIONAL_BOX = [25, 55, 0, 20]          # Ethiopia, Sudan, South Sudan, Somalia, Kenya, Red Sea, Arabia
+SCOPES = {"large": LARGE_SCALE_BOX, "regional": REGIONAL_BOX}
 
 
 def lon_to_merc_x(lon_deg):
@@ -103,6 +119,33 @@ def lat_to_merc_y(lat_deg):
 def clamp_box_lat(box: list[float]) -> list[float]:
     lon_min, lon_max, lat_min, lat_max = box
     return [lon_min, lon_max, max(lat_min, -WEB_MERCATOR_MAX_LAT), min(lat_max, WEB_MERCATOR_MAX_LAT)]
+
+
+def compute_tej_axis(u_da, v_da, lat_band=(0, 20), min_speed=15.0):
+    """Traces the TEJ axis: the latitude of maximum 200 hPa wind speed at
+    each longitude, restricted to a tropical/subtropical band so this
+    follows the easterly jet core instead of the (also fast) midlatitude
+    westerlies, and masked to longitudes where that maximum is at least
+    min_speed m/s so the line stops where there's no real jet to trace.
+    u_da/v_da must already share the same (lat, lon) grid/subset used for
+    the panel's shading. Returns (lons, lats) ready to plot as a line."""
+    speed = np.sqrt(u_da.values ** 2 + v_da.values ** 2)
+    lat = u_da["lat"].values
+    lon = u_da["lon"].values
+
+    band_mask = (lat >= min(lat_band)) & (lat <= max(lat_band))
+    if not band_mask.any():
+        return np.array([]), np.array([])
+    lat_band_vals = lat[band_mask]
+    speed_band = speed[band_mask, :]
+
+    safe = np.where(np.isnan(speed_band), -np.inf, speed_band)
+    max_idx = np.argmax(safe, axis=0)
+    max_speed = speed_band[max_idx, np.arange(speed_band.shape[1])]
+    max_lat = lat_band_vals[max_idx]
+
+    keep = np.isfinite(max_speed) & (max_speed >= min_speed)
+    return lon[keep], max_lat[keep]
 
 
 # ==========================================================
@@ -200,8 +243,8 @@ def load_qflux850_magnitude(period: str) -> xr.DataArray | None:
 # jet structure -> upper divergence -> forced ascent -> moisture supply
 # -> moisture accumulation.
 #
-# "levels" are FIXED discrete bin edges, the same for every period of a
-# given variable -- computed once from each field's actual JJAS-domain
+# "levels" are FIXED discrete bin edges, the same for every period AND
+# scope of a given variable -- computed once from each field's actual
 # distribution across all 6 periods (min/max/p99 inspected beforehand),
 # not derived per-period. A per-period percentile-based range (the
 # previous approach) makes different months visually incomparable: June
@@ -213,59 +256,75 @@ def load_qflux850_magnitude(period: str) -> xr.DataArray | None:
 #
 # "vector_loader" (optional) supplies the (u, v) pair quiver-drawn on top
 # of the shaded background for the two "does direction/transport matter"
-# entries (wind vectors, moisture flux). "unit" is asserted rather than
-# read from the source netCDF's GRIB-derived attrs, which render as e.g.
-# "m s**-1" or "kg kg-1 s-1 approximately" -- not fit for display.
+# entries (wind vectors, moisture flux). "axis_line"/"contour_levels"/
+# "zero_contour" are u200-only (see module docstring for why the other
+# three diverging fields don't get a zero-contour). "unit" is asserted
+# rather than read from the source netCDF's GRIB-derived attrs, which
+# render as e.g. "m s**-1" or "kg kg-1 s-1 approximately" -- not fit for
+# display; uses the same "unit s⁻¹"-style notation throughout rather
+# than mixing "m/s"/"m s-1"/"m*s-1".
 # ==========================================================
 
 VARIABLES = {
     "u200": {
         "loader": load_u200,
-        "box": TEJ_BOX,
         "cmap": "RdBu_r",
         "levels": np.arange(-32, 33, 4),
-        "unit": "m/s",
+        "unit": "m s⁻¹",
         "vector_loader": None,
+        "axis_line": True,
+        "contour_levels": [-40, -30, -20, -10],
+        "zero_contour": True,
     },
     "u200_vectors": {
         "loader": load_u200_speed,
-        "box": TEJ_BOX,
         "cmap": "jet",
         "levels": np.arange(0, 36, 4),
-        "unit": "m/s",
+        "unit": "m s⁻¹",
         "vector_loader": load_u200_v200,
+        "axis_line": True,
+        "contour_levels": None,
+        "zero_contour": False,
     },
     "divergence200": {
         "loader": load_divergence200,
-        "box": GREATER_HORN_BOX,
         "cmap": "RdBu_r",
         "levels": np.arange(-8e-6, 8.1e-6, 2e-6),
         "unit": "s⁻¹",
         "vector_loader": None,
+        "axis_line": False,
+        "contour_levels": None,
+        "zero_contour": False,
     },
     "omega500": {
         "loader": load_omega500,
-        "box": GREATER_HORN_BOX,
         "cmap": "RdBu_r",
         "levels": np.arange(-0.15, 0.151, 0.025),
-        "unit": "Pa/s",
+        "unit": "Pa s⁻¹",
         "vector_loader": None,
+        "axis_line": False,
+        "contour_levels": None,
+        "zero_contour": False,
     },
     "qflux850": {
         "loader": load_qflux850_magnitude,
-        "box": GREATER_HORN_BOX,
         "cmap": "YlGnBu",
         "levels": np.arange(0, 0.271, 0.03),
-        "unit": "kg/kg·m/s",
+        "unit": "kg kg⁻¹ m s⁻¹",
         "vector_loader": load_qflux850_qu_qv,
+        "axis_line": False,
+        "contour_levels": None,
+        "zero_contour": False,
     },
     "mfc850": {
         "loader": load_mfc850,
-        "box": GREATER_HORN_BOX,
         "cmap": "BrBG",
         "levels": np.arange(-6e-7, 6.1e-7, 1e-7),
-        "unit": "kg/kg/s",
+        "unit": "kg kg⁻¹ s⁻¹",
         "vector_loader": None,
+        "axis_line": False,
+        "contour_levels": None,
+        "zero_contour": False,
     },
 }
 
@@ -277,6 +336,9 @@ def render_overlay(
     levels: np.ndarray,
     out_path: Path,
     quiver: tuple[xr.DataArray, xr.DataArray] | None = None,
+    contour_levels: list[float] | None = None,
+    zero_contour: bool = False,
+    axis_line: tuple[np.ndarray, np.ndarray] | None = None,
 ) -> None:
     lon = da_2d["lon"].values
     lat = da_2d["lat"].values
@@ -331,6 +393,25 @@ def render_overlay(
             color="black", scale=scale, scale_units="width", width=0.0022, alpha=0.85,
         )
 
+    # Solid zero-contour (u200 only, see module docstring) -- a shape cue
+    # marking the sign boundary independent of hue, which a CVD simulation
+    # (scripts/_cvd_check.py) showed matters since the near-zero bins are
+    # the least separable pair under every simulated color-vision
+    # deficiency, for every diverging palette used here.
+    if zero_contour and levels[0] < 0 < levels[-1]:
+        ax.contour(merc_x, merc_y, data, levels=[0], colors="#1a1a1a", linewidths=1.3, linestyles="solid", zorder=4)
+
+    if contour_levels is not None:
+        cs = ax.contour(merc_x, merc_y, da_2d.values, levels=contour_levels, colors="black", linewidths=0.9)
+        ax.clabel(cs, inline=True, fontsize=8, fmt="%g")
+
+    if axis_line is not None:
+        axis_lon, axis_lat = axis_line
+        if len(axis_lon) > 1:
+            axis_x = lon_to_merc_x(axis_lon)
+            axis_y = lat_to_merc_y(axis_lat)
+            ax.plot(axis_x, axis_y, color="#e6a817", linewidth=2.6, solid_capstyle="round", zorder=6)
+
     out_path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out_path, dpi=100, transparent=True)
     plt.close(fig)
@@ -378,65 +459,81 @@ def main():
     written = 0
 
     for var_key, cfg in VARIABLES.items():
-        box = clamp_box_lat(cfg["box"])
+        for scope, raw_box in SCOPES.items():
+            box = clamp_box_lat(raw_box)
 
-        for period in PERIODS:
-            da = cfg["loader"](period)
-            if da is None:
-                print(f"Skipping {var_key}/{period}: source file missing")
-                continue
+            for period in PERIODS:
+                da = cfg["loader"](period)
+                if da is None:
+                    print(f"Skipping {var_key}/{scope}/{period}: source file missing")
+                    continue
 
-            da = s06.subset_box(da, box).squeeze(drop=True)
-            if "lat" in da.dims and "lon" in da.dims:
-                da = da.transpose("lat", "lon")
+                da = s06.subset_box(da, box).squeeze(drop=True)
+                if "lat" in da.dims and "lon" in da.dims:
+                    da = da.transpose("lat", "lon")
 
-            unit = cfg["unit"]
-            levels = cfg["levels"]
-            vmin, vmax = float(levels[0]), float(levels[-1])
+                unit = cfg["unit"]
+                levels = cfg["levels"]
+                vmin, vmax = float(levels[0]), float(levels[-1])
 
-            quiver = None
-            if cfg["vector_loader"] is not None:
-                uv = cfg["vector_loader"](period)
-                if uv is not None:
-                    u, v = uv
-                    u = s06.subset_box(u, box).squeeze(drop=True)
-                    v = s06.subset_box(v, box).squeeze(drop=True)
-                    if "lat" in u.dims and "lon" in u.dims:
-                        u = u.transpose("lat", "lon")
-                        v = v.transpose("lat", "lon")
-                    quiver = (u, v)
+                quiver = None
+                if cfg["vector_loader"] is not None:
+                    uv = cfg["vector_loader"](period)
+                    if uv is not None:
+                        u, v = uv
+                        u = s06.subset_box(u, box).squeeze(drop=True)
+                        v = s06.subset_box(v, box).squeeze(drop=True)
+                        if "lat" in u.dims and "lon" in u.dims:
+                            u = u.transpose("lat", "lon")
+                            v = v.transpose("lat", "lon")
+                        quiver = (u, v)
 
-            out_path = OUT_DIR / var_key / f"{period}.png"
-            render_overlay(da, box, cfg["cmap"], levels, out_path, quiver=quiver)
+                axis_line = None
+                if cfg["axis_line"]:
+                    uv_axis = quiver if quiver is not None else load_u200_v200(period)
+                    if uv_axis is not None:
+                        au, av = uv_axis
+                        au = s06.subset_box(au, box).squeeze(drop=True)
+                        av = s06.subset_box(av, box).squeeze(drop=True)
+                        if "lat" in au.dims and "lon" in au.dims:
+                            au = au.transpose("lat", "lon")
+                            av = av.transpose("lat", "lon")
+                        axis_line = compute_tej_axis(au, av)
 
-            lon_min, lon_max, lat_min, lat_max = box
-            index[f"{var_key}/{period}"] = {
-                "file": f"{var_key}/{period}.png",
-                "bounds": [[lat_min, lon_min], [lat_max, lon_max]],
-                "vmin": round_sig(vmin),
-                "vmax": round_sig(vmax),
-                "unit": unit,
-                "legend_gradient": css_hard_stop_gradient(cfg["cmap"], levels),
-            }
+                out_path = OUT_DIR / var_key / scope / f"{period}.png"
+                render_overlay(
+                    da, box, cfg["cmap"], levels, out_path, quiver=quiver,
+                    contour_levels=cfg["contour_levels"], zero_contour=cfg["zero_contour"], axis_line=axis_line,
+                )
 
-            # Grid JSON for exact-value hover tooltips -- reflects only the
-            # shaded scalar field, not the baked-in vectors. Thinned since
-            # the underlying ERA5 grids are far finer than needed for a
-            # tooltip lookup.
-            da_thin = da.isel(lat=slice(None, None, 2), lon=slice(None, None, 2))
-            lats = [round(float(v), 3) for v in da_thin["lat"].values]
-            lons = [round(float(v), 3) for v in da_thin["lon"].values]
-            values = [[to_json_value(v) for v in row] for row in da_thin.values]
+                lon_min, lon_max, lat_min, lat_max = box
+                index[f"{var_key}/{scope}/{period}"] = {
+                    "file": f"{var_key}/{scope}/{period}.png",
+                    "bounds": [[lat_min, lon_min], [lat_max, lon_max]],
+                    "vmin": round_sig(vmin),
+                    "vmax": round_sig(vmax),
+                    "unit": unit,
+                    "legend_gradient": css_hard_stop_gradient(cfg["cmap"], levels),
+                }
 
-            grid_path = GRID_OUT_DIR / var_key / f"{period}.json"
-            grid_path.parent.mkdir(parents=True, exist_ok=True)
-            grid_path.write_text(
-                json.dumps({"lats": lats, "lons": lons, "values": values, "unit": unit}, separators=(",", ":")),
-                encoding="utf-8",
-            )
+                # Grid JSON for exact-value hover tooltips -- reflects only
+                # the shaded scalar field, not the baked-in vectors/
+                # contours/axis line. Thinned since the underlying ERA5
+                # grids are far finer than needed for a tooltip lookup.
+                da_thin = da.isel(lat=slice(None, None, 2), lon=slice(None, None, 2))
+                lats = [round(float(v), 3) for v in da_thin["lat"].values]
+                lons = [round(float(v), 3) for v in da_thin["lon"].values]
+                values = [[to_json_value(v) for v in row] for row in da_thin.values]
 
-            written += 1
-            print(f"Saved: {out_path}")
+                grid_path = GRID_OUT_DIR / var_key / scope / f"{period}.json"
+                grid_path.parent.mkdir(parents=True, exist_ok=True)
+                grid_path.write_text(
+                    json.dumps({"lats": lats, "lons": lons, "values": values, "unit": unit}, separators=(",", ":")),
+                    encoding="utf-8",
+                )
+
+                written += 1
+                print(f"Saved: {out_path}")
 
     index_path = OUT_DIR / "overlay_index.json"
     index_path.write_text(json.dumps(index, indent=2), encoding="utf-8")

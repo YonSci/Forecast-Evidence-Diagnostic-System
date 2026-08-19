@@ -148,6 +148,93 @@ function FitBounds({ bounds, cover = false }: { bounds: LatLngBoundsExpression; 
   return null;
 }
 
+/** Rounds a lat/lon tick spacing to a "nice" number (1/2/5 * 10^n) close
+ * to `range / targetTicks`, the same convention cartopy/matplotlib
+ * gridline pickers use, so ticks land on round degree values instead of
+ * odd fractions. */
+function niceStep(range: number, targetTicks = 6): number {
+  const raw = range / targetTicks;
+  const mag = Math.pow(10, Math.floor(Math.log10(raw)));
+  const norm = raw / mag;
+  let step: number;
+  if (norm < 1.5) step = 1;
+  else if (norm < 3) step = 2;
+  else if (norm < 7) step = 5;
+  else step = 10;
+  return step * mag;
+}
+
+function computeTicks(min: number, max: number, targetTicks = 6): number[] {
+  const step = niceStep(max - min, targetTicks);
+  const start = Math.ceil(min / step) * step;
+  const ticks: number[] = [];
+  for (let v = start; v <= max + 1e-9; v += step) {
+    ticks.push(Math.round(v / step) * step);
+  }
+  return ticks;
+}
+
+function formatDegree(v: number, axis: "lat" | "lon"): string {
+  const rounded = Math.round(v * 100) / 100;
+  if (rounded === 0) return "0°";
+  const hemi = axis === "lat" ? (rounded > 0 ? "N" : "S") : rounded > 0 ? "E" : "W";
+  return `${Math.abs(rounded)}°${hemi}`;
+}
+
+/** Leaflet has no native axis-tick concept -- everything renders on the
+ * map canvas itself, so these labels sit just inside the map edges
+ * rather than outside it (the closest practical equivalent to a
+ * cartopy-style labeled gridline in a web map). Dashed lines + divIcon
+ * labels, imperative (like CountryBordersOverlay/GridHoverTooltip
+ * above) since react-leaflet has no declarative way to manage a
+ * variable-count set of layers computed from the current bounds. */
+function Graticule({ bounds }: { bounds: LatLngBoundsExpression }) {
+  const map = useMap();
+  const groupRef = useRef<L.LayerGroup | null>(null);
+
+  useEffect(() => {
+    if (!groupRef.current) {
+      groupRef.current = L.layerGroup().addTo(map);
+    }
+    const group = groupRef.current;
+    group.clearLayers();
+
+    const b = bounds instanceof L.LatLngBounds ? bounds : L.latLngBounds(bounds);
+    const latMin = b.getSouth();
+    const latMax = b.getNorth();
+    const lonMin = b.getWest();
+    const lonMax = b.getEast();
+
+    const lineStyle: L.PolylineOptions = {
+      color: "#8a8f9a", weight: 0.6, opacity: 0.55, dashArray: "3 4", interactive: false,
+    };
+
+    for (const lat of computeTicks(latMin, latMax)) {
+      L.polyline([[lat, lonMin], [lat, lonMax]], lineStyle).addTo(group);
+      L.marker([lat, lonMin], {
+        icon: L.divIcon({ className: "graticule-label", html: formatDegree(lat, "lat"), iconAnchor: [-4, 8] }),
+        interactive: false,
+        keyboard: false,
+      }).addTo(group);
+    }
+
+    for (const lon of computeTicks(lonMin, lonMax)) {
+      L.polyline([[latMin, lon], [latMax, lon]], lineStyle).addTo(group);
+      L.marker([latMin, lon], {
+        icon: L.divIcon({ className: "graticule-label", html: formatDegree(lon, "lon"), iconAnchor: [-14, -2] }),
+        interactive: false,
+        keyboard: false,
+      }).addTo(group);
+    }
+
+    return () => {
+      group.clearLayers();
+    };
+  }, [map, JSON.stringify(bounds)]);
+
+  return null;
+}
+
 /** Decimal places for the legend's numeric end labels, scaled to the
  * overlay's own magnitude -- a fixed 0-decimal count reads fine for
  * rainfall (mm) or u200 (m/s) but rounds a small field like omega500
@@ -308,22 +395,23 @@ export function AnomalyLeafletMap({
           </LayersControl>
           <ImageOverlay url={assetUrl(overlay.url!)} bounds={bounds} opacity={0.82} />
           <FitBounds bounds={bounds} cover={region === "global"} />
+          <Graticule bounds={bounds} />
           <GridHoverTooltip grid={grid ?? null} />
         </MapContainer>
-        {overlay.vmin != null && overlay.vmax != null && (
-          <div className="leaflet-legend">
-            <div>
-              {legendTitle} ({overlay.unit})
-            </div>
-            <div className="bar" style={{ background: overlay.legend_gradient ?? legendGradient }} />
-            <div className="ends">
-              <span>{fmt(overlay.vmin, legendDecimals(Math.max(Math.abs(overlay.vmin), Math.abs(overlay.vmax))))}</span>
-              <span>{fmt(overlay.vmax, legendDecimals(Math.max(Math.abs(overlay.vmin), Math.abs(overlay.vmax))))}</span>
-            </div>
-            {legendNote && <div className="legend-note">{legendNote}</div>}
-          </div>
-        )}
       </div>
+      {overlay.vmin != null && overlay.vmax != null && (
+        <div className="leaflet-legend">
+          <div>
+            {legendTitle} ({overlay.unit})
+          </div>
+          <div className="bar" style={{ background: overlay.legend_gradient ?? legendGradient }} />
+          <div className="ends">
+            <span>{fmt(overlay.vmin, legendDecimals(Math.max(Math.abs(overlay.vmin), Math.abs(overlay.vmax))))}</span>
+            <span>{fmt(overlay.vmax, legendDecimals(Math.max(Math.abs(overlay.vmin), Math.abs(overlay.vmax))))}</span>
+          </div>
+          {legendNote && <div className="legend-note">{legendNote}</div>}
+        </div>
+      )}
     </div>
   );
 }

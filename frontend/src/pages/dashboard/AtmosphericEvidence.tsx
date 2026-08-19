@@ -38,6 +38,11 @@ const BRBG = "linear-gradient(90deg, #543005, #bf812d, #f6e8c3, #f5f5f5, #c7eae5
 // forecast lead time -- see scripts/27_generate_atmospheric_leaflet_overlays.py,
 // whose fixed discrete color levels these legendGradient/unit/vmin/vmax
 // values must stay in sync with.
+// defaultScope: the wind fields default to "large" (the jet spans
+// continents, so the wide South-Asia-to-Africa view is the informative
+// one); the other four default to "regional" (the Ethiopia-focused view
+// is the locally relevant signal). Either can be toggled to the other
+// scope in the UI -- both are always generated (scripts/27).
 const CIRCULATION_MAPS: {
   key: string;
   title: string;
@@ -46,23 +51,26 @@ const CIRCULATION_MAPS: {
   legendTitle: string;
   legendGradient: string;
   legendNote?: string;
+  defaultScope: "large" | "regional";
 }[] = [
   {
     key: "u200",
     title: "200-hPa Zonal Wind",
     blurb: "Primary indicator of TEJ strength.",
-    unit: "m/s",
+    unit: "m s⁻¹",
     legendTitle: "u₂₀₀",
     legendGradient: RDBU,
     legendNote: "Easterly (−)  ·  Westerly (+)",
+    defaultScope: "large",
   },
   {
     key: "u200_vectors",
     title: "200-hPa Wind Vectors",
     blurb: "Shows the actual circulation and jet orientation — arrows are direction, shading is speed.",
-    unit: "m/s",
+    unit: "m s⁻¹",
     legendTitle: "Wind speed",
     legendGradient: JET,
+    defaultScope: "large",
   },
   {
     key: "divergence200",
@@ -72,34 +80,43 @@ const CIRCULATION_MAPS: {
     legendTitle: "Divergence",
     legendGradient: RDBU,
     legendNote: "Convergence (−)  ·  Divergence (+)",
+    defaultScope: "regional",
   },
   {
     key: "omega500",
     title: "500-hPa Vertical Velocity (ω₅₀₀)",
     blurb: "Forced ascent (negative) or subsidence (positive) beneath the jet.",
-    unit: "Pa/s",
+    unit: "Pa s⁻¹",
     legendTitle: "ω₅₀₀",
     legendGradient: RDBU,
     legendNote: "Ascent (−)  ·  Subsidence (+)",
+    defaultScope: "regional",
   },
   {
     key: "qflux850",
     title: "850-hPa Moisture Flux (qV₈₅₀)",
     blurb: "Tells whether moisture is actually being supplied — arrows show transport direction.",
-    unit: "kg/kg·m/s",
+    unit: "kg kg⁻¹ m s⁻¹",
     legendTitle: "Moisture flux",
     legendGradient: YLGNBU,
+    defaultScope: "regional",
   },
   {
     key: "mfc850",
     title: "850-hPa Moisture-Flux Convergence",
     blurb: "Helps diagnose low-level moisture accumulation.",
-    unit: "kg/kg/s",
+    unit: "kg kg⁻¹ s⁻¹",
     legendTitle: "MFC",
     legendGradient: BRBG,
     legendNote: "Divergence (−)  ·  Convergence (+)",
+    defaultScope: "regional",
   },
 ];
+
+const SCOPE_LABELS: Record<"large" | "regional", string> = {
+  large: "Large-scale",
+  regional: "Ethiopia focus",
+};
 
 const CIRC_PERIODS = ["Jun", "Jul", "Aug", "Sep", "JJA", "JJAS"];
 const CIRC_PERIOD_LABELS: Record<string, string> = {
@@ -120,6 +137,7 @@ function CirculationMapCard({
   legendNote,
   period,
   periodLabel,
+  defaultScope,
 }: {
   variableKey: string;
   title: string;
@@ -129,19 +147,21 @@ function CirculationMapCard({
   legendNote?: string;
   period: string;
   periodLabel: string;
+  defaultScope: "large" | "regional";
 }) {
   const [overlay, setOverlay] = useState<OverlayInfo | null>(null);
   const [grid, setGrid] = useState<GridResponse | null>(null);
+  const [scope, setScope] = useState<"large" | "regional">(defaultScope);
   const openLightbox = useLightbox();
 
   useEffect(() => {
-    getJson<OverlayInfo>("/api/atmospheric/overlay", { variable: variableKey, period })
+    getJson<OverlayInfo>("/api/atmospheric/overlay", { variable: variableKey, scope, period })
       .then(setOverlay)
       .catch(() => setOverlay({ available: false }));
-    getJson<GridResponse>("/api/atmospheric/grid", { variable: variableKey, period })
+    getJson<GridResponse>("/api/atmospheric/grid", { variable: variableKey, scope, period })
       .then(setGrid)
       .catch(() => setGrid(null));
-  }, [variableKey, period]);
+  }, [variableKey, scope, period]);
 
   const publicationUrl = assetUrl(`/static/atmos_publication/${variableKey}/${variableKey}_${period}.png`);
   const comparisonUrl = assetUrl(
@@ -159,6 +179,18 @@ function CirculationMapCard({
           {periodLabel} {title}
         </h3>
         <span className="hint">ERA5 &middot; Reference climatology 1991&ndash;2020</span>
+      </div>
+      <div className="scope-toggle" style={{ marginBottom: 12 }}>
+        {(["large", "regional"] as const).map((s) => (
+          <button
+            key={s}
+            type="button"
+            className={s === scope ? "active" : undefined}
+            onClick={() => setScope(s)}
+          >
+            {SCOPE_LABELS[s]}
+          </button>
+        ))}
       </div>
       <p style={{ fontSize: "0.84rem", color: "var(--ink-2)", marginTop: -8, marginBottom: 12 }}>{blurb}</p>
       <AnomalyLeafletMap
@@ -197,7 +229,7 @@ function CirculationMapCard({
       </div>
       <p style={{ fontSize: "0.72rem", color: "var(--muted)", marginTop: 8 }}>
         Data: ERA5 &middot; Reference: 1991&ndash;2020 &middot; Aggregation: {periodLabel} mean &middot; Resolution:
-        0.25&deg; &middot; Variable: {title}
+        0.25&deg; &middot; Domain: {SCOPE_LABELS[scope]} &middot; Variable: {title}
       </p>
     </div>
   );
@@ -279,7 +311,7 @@ export function AtmosphericEvidence() {
             <h3>ERA5 TEJ strength climatology (1991&ndash;2020)</h3>
             <span className="hint">m s&#8315;&sup1;</span>
           </div>
-          <MagnitudeBarChart data={tejChartData} unit="m/s" />
+          <MagnitudeBarChart data={tejChartData} unit="m s⁻¹" />
           <p style={{ fontSize: "0.8rem", color: "var(--muted)", marginTop: 8 }}>
             Climatological baseline only &mdash; describes the normal jet, not the 2026 anomaly.
           </p>
@@ -322,6 +354,7 @@ export function AtmosphericEvidence() {
             legendNote={m.legendNote}
             period={circPeriod}
             periodLabel={CIRC_PERIOD_LABELS[circPeriod]}
+            defaultScope={m.defaultScope}
           />
         </div>
       ))}

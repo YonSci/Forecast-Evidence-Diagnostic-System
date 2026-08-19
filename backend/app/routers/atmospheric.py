@@ -23,16 +23,26 @@ ATMOS_GRID_DIR = ATMOS_OVERLAYS_DIR / "grid_data"
 # accumulating at low levels. All six are ERA5 1991-2020 climatology by
 # calendar month/season -- none has a per-2026-forecast gridded product
 # yet -- see scripts/27_generate_atmospheric_leaflet_overlays.py.
+# default_scope: which of the two boxes best fits each variable's own
+# story by default -- the wind fields default to the wide TEJ-context
+# view (the jet spans continents), the other four default to the
+# Ethiopia-focused regional view (that's the locally relevant signal).
+# Either can still be toggled to the other scope in the UI.
 ATMOS_VARIABLES: dict[str, dict] = {
-    "u200": {"label": "200 hPa zonal wind (TEJ strength)", "source": "climatology"},
-    "u200_vectors": {"label": "200 hPa wind vectors (circulation/jet orientation)", "source": "climatology"},
-    "divergence200": {"label": "200 hPa divergence (upper-level outflow)", "source": "climatology"},
-    "omega500": {"label": "500 hPa vertical velocity (forced ascent)", "source": "climatology"},
-    "qflux850": {"label": "850 hPa moisture flux (is moisture supplied?)", "source": "climatology"},
-    "mfc850": {"label": "850 hPa moisture-flux convergence (is it accumulating?)", "source": "climatology"},
+    "u200": {"label": "200 hPa zonal wind (TEJ strength)", "source": "climatology", "default_scope": "large"},
+    "u200_vectors": {"label": "200 hPa wind vectors (circulation/jet orientation)", "source": "climatology", "default_scope": "large"},
+    "divergence200": {"label": "200 hPa divergence (upper-level outflow)", "source": "climatology", "default_scope": "regional"},
+    "omega500": {"label": "500 hPa vertical velocity (forced ascent)", "source": "climatology", "default_scope": "regional"},
+    "qflux850": {"label": "850 hPa moisture flux (is moisture supplied?)", "source": "climatology", "default_scope": "regional"},
+    "mfc850": {"label": "850 hPa moisture-flux convergence (is it accumulating?)", "source": "climatology", "default_scope": "regional"},
 }
 
 ATMOS_PERIODS = ["Jun", "Jul", "Aug", "Sep", "JJA", "JJAS"]
+
+# Same two domains scripts/27 and 28 both generate from -- "large" (South
+# Asia -> Indian Ocean -> Africa, the full TEJ context) and "regional"
+# (Ethiopia/Sudan/Somalia/Kenya/Red Sea/Arabia).
+ATMOS_SCOPES = ["large", "regional"]
 
 
 @lru_cache(maxsize=1)
@@ -43,9 +53,9 @@ def _atmos_overlay_index() -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-@lru_cache(maxsize=64)
-def _atmos_grid_data(variable: str, period: str) -> dict | None:
-    path = ATMOS_GRID_DIR / variable / f"{period}.json"
+@lru_cache(maxsize=128)
+def _atmos_grid_data(variable: str, scope: str, period: str) -> dict | None:
+    path = ATMOS_GRID_DIR / variable / scope / f"{period}.json"
     if not path.exists():
         return None
     return json.loads(path.read_text(encoding="utf-8"))
@@ -93,14 +103,17 @@ def get_circulation_variables() -> list[dict]:
 @router.get("/overlay", response_model=OverlayInfo)
 def get_atmospheric_overlay(
     variable: str = Query(...),
+    scope: str = Query("regional"),
     period: str = Query(...),
 ) -> OverlayInfo:
     """Circulation-diagnostic raster for the Leaflet map -- see
-    scripts/27_generate_atmospheric_leaflet_overlays.py."""
-    if variable not in ATMOS_VARIABLES or period not in ATMOS_PERIODS:
+    scripts/27_generate_atmospheric_leaflet_overlays.py. `scope` is
+    "large" (South Asia -> Indian Ocean -> Africa) or "regional"
+    (Ethiopia-focused)."""
+    if variable not in ATMOS_VARIABLES or scope not in ATMOS_SCOPES or period not in ATMOS_PERIODS:
         return OverlayInfo(available=False)
 
-    entry = _atmos_overlay_index().get(f"{variable}/{period}")
+    entry = _atmos_overlay_index().get(f"{variable}/{scope}/{period}")
     if entry is None:
         return OverlayInfo(available=False)
 
@@ -118,12 +131,13 @@ def get_atmospheric_overlay(
 @router.get("/grid", response_model=GridResponse)
 def get_atmospheric_grid(
     variable: str = Query(...),
+    scope: str = Query("regional"),
     period: str = Query(...),
 ) -> GridResponse:
-    if variable not in ATMOS_VARIABLES or period not in ATMOS_PERIODS:
-        raise HTTPException(status_code=404, detail=f"Unknown variable/period: {variable}/{period}")
+    if variable not in ATMOS_VARIABLES or scope not in ATMOS_SCOPES or period not in ATMOS_PERIODS:
+        raise HTTPException(status_code=404, detail=f"Unknown variable/scope/period: {variable}/{scope}/{period}")
 
-    data = _atmos_grid_data(variable, period)
+    data = _atmos_grid_data(variable, scope, period)
     if data is None:
         raise HTTPException(status_code=404, detail="No grid data for this combination.")
     return GridResponse(**data)

@@ -104,8 +104,12 @@ s27 = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(s27)
 s06 = s27.s06
 
-PANEL_A_BOX = [-20, 100, -20, 40]   # large-scale TEJ context
-PANEL_B_BOX = [25, 55, 0, 20]       # Ethiopia-focused regional view
+# Same two boxes script 27 generates the dashboard's "large"/"regional"
+# scope overlays from -- shared from there (not redefined here) so the
+# publication dual-panel figure and the dashboard scope toggle always
+# agree on what "large-scale" and "regional" mean.
+PANEL_A_BOX = s27.LARGE_SCALE_BOX
+PANEL_B_BOX = s27.REGIONAL_BOX
 COMPARISON_OUT_DIR = PROJECT_ROOT / "outputs" / "maps" / "atmos_publication_comparison"
 CFSV2_DIR = PROJECT_ROOT / "outputs" / "netcdf" / "cfsv2_dynamic_diagnostics"
 # 600 dpi (manuscript-quality) is safe to use unconditionally here: these
@@ -116,6 +120,20 @@ PNG_DPI = 600
 
 PERIODS = s27.PERIODS
 PERIOD_LABELS = {"Jun": "June", "Jul": "July", "Aug": "August", "Sep": "September", "JJA": "JJA", "JJAS": "JJAS"}
+
+# Comparison figure uses a single fixed box per variable (unlike the
+# dashboard's scope toggle, this figure type isn't interactive) -- same
+# large/regional split as ATMOS_VARIABLES' default_scope in
+# backend/app/routers/atmospheric.py: the wind fields default to the
+# wide TEJ-context view, the other four to the Ethiopia-focused one.
+DEFAULT_SCOPE_BOX = {
+    "u200": PANEL_A_BOX,
+    "u200_vectors": PANEL_A_BOX,
+    "divergence200": PANEL_B_BOX,
+    "omega500": PANEL_B_BOX,
+    "qflux850": PANEL_B_BOX,
+    "mfc850": PANEL_B_BOX,
+}
 
 # Which raw CFSv2 grid variable(s) back each of script 27's six variable
 # keys -- mirrors the ERA5-side u/v -> speed, qu/qv -> flux-magnitude
@@ -169,38 +187,32 @@ DISPLAY = {
     "u200": {
         "notation": "u₂₀₀",
         "title": "200-hPa Zonal Wind",
-        "note": "Negative: anomalously easterly → stronger TEJ.  Positive: westerly.",
-        "contour_levels": [-40, -30, -20, -10],
+        "note": "Negative: easterly (stronger TEJ).  Positive: westerly.",
     },
     "u200_vectors": {
         "notation": "Wind speed",
         "title": "200-hPa Wind Vectors",
         "note": "Arrows show direction; shading shows speed.",
-        "contour_levels": None,
     },
     "divergence200": {
         "notation": "∇·V₂₀₀",
         "title": "200-hPa Divergence",
         "note": "Negative: convergence.  Positive: divergence (favorable upper-level outflow).",
-        "contour_levels": None,
     },
     "omega500": {
         "notation": "ω₅₀₀",
         "title": "500-hPa Vertical Velocity",
         "note": "Negative: forced ascent.  Positive: subsidence.",
-        "contour_levels": None,
     },
     "qflux850": {
         "notation": "qV₈₅₀",
         "title": "850-hPa Moisture Flux",
         "note": "Arrows show transport direction; shading shows flux magnitude.",
-        "contour_levels": None,
     },
     "mfc850": {
         "notation": "MFC₈₅₀",
         "title": "850-hPa Moisture-Flux Convergence",
         "note": "Negative: divergence.  Positive: convergence (moisture accumulating).",
-        "contour_levels": None,
     },
 }
 
@@ -233,31 +245,9 @@ def add_map_features(ax, box, draw_labels: bool) -> None:
     gl.ylabel_style = {"size": 8}
 
 
-def compute_tej_axis(u_da, v_da, lat_band=(0, 20), min_speed=15.0):
-    """Traces the TEJ axis: the latitude of maximum 200 hPa wind speed at
-    each longitude, restricted to a tropical/subtropical band so this
-    follows the easterly jet core instead of the (also fast) midlatitude
-    westerlies, and masked to longitudes where that maximum is at least
-    min_speed m/s so the line stops where there's no real jet to trace.
-    u_da/v_da must already share the same (lat, lon) grid/subset used for
-    the panel's shading. Returns (lons, lats) ready to plot as a line."""
-    speed = np.sqrt(u_da.values ** 2 + v_da.values ** 2)
-    lat = u_da["lat"].values
-    lon = u_da["lon"].values
-
-    band_mask = (lat >= min(lat_band)) & (lat <= max(lat_band))
-    if not band_mask.any():
-        return np.array([]), np.array([])
-    lat_band_vals = lat[band_mask]
-    speed_band = speed[band_mask, :]
-
-    safe = np.where(np.isnan(speed_band), -np.inf, speed_band)
-    max_idx = np.argmax(safe, axis=0)
-    max_speed = speed_band[max_idx, np.arange(speed_band.shape[1])]
-    max_lat = lat_band_vals[max_idx]
-
-    keep = np.isfinite(max_speed) & (max_speed >= min_speed)
-    return lon[keep], max_lat[keep]
+# compute_tej_axis lives in script 27 now (the dashboard overlays need it
+# too) -- use s27.compute_tej_axis, not a local copy, so the axis-line
+# logic can't drift between the two scripts.
 
 
 def render_panel(
@@ -361,7 +351,7 @@ def plot_publication_figure(var_key: str, period: str) -> None:
     # zero crossing is a dense tangle of tiny closed contours (confirmed
     # visually, not a clean sign boundary like u200's smooth wind field),
     # so a zero line clutters those panels instead of clarifying them.
-    zero_contour = var_key == "u200"
+    zero_contour = cfg["zero_contour"]
 
     def subset_for(box):
         da = s06.subset_box(da_full, s27.clamp_box_lat(box)).squeeze(drop=True)
@@ -382,7 +372,7 @@ def plot_publication_figure(var_key: str, period: str) -> None:
             av = s06.subset_box(av, s27.clamp_box_lat(box)).squeeze(drop=True)
             if "lat" in au.dims and "lon" in au.dims:
                 au, av = au.transpose("lat", "lon"), av.transpose("lat", "lon")
-            axis = compute_tej_axis(au, av)
+            axis = s27.compute_tej_axis(au, av)
         return da, q, axis
 
     da_a, quiver_a, axis_a = subset_for(PANEL_A_BOX)
@@ -399,12 +389,12 @@ def plot_publication_figure(var_key: str, period: str) -> None:
 
     render_panel(
         ax_a, da_a, PANEL_A_BOX, cfg["cmap"], cfg["levels"],
-        quiver=quiver_a, contour_levels=disp["contour_levels"], zero_contour=zero_contour, axis_line=axis_a,
+        quiver=quiver_a, contour_levels=cfg["contour_levels"], zero_contour=zero_contour, axis_line=axis_a,
         panel_label="A — Large-scale TEJ context",
     )
     mesh = render_panel(
         ax_b, da_b, PANEL_B_BOX, cfg["cmap"], cfg["levels"],
-        quiver=quiver_b, contour_levels=disp["contour_levels"], zero_contour=zero_contour, axis_line=axis_b,
+        quiver=quiver_b, contour_levels=cfg["contour_levels"], zero_contour=zero_contour, axis_line=axis_b,
         panel_label="B — Ethiopia focus",
     )
 
@@ -449,7 +439,7 @@ def plot_climatology_vs_target_figure(var_key: str, period: str) -> None:
     comparison only, no anomaly (see module docstring for why)."""
     cfg = s27.VARIABLES[var_key]
     disp = DISPLAY[var_key]
-    box = cfg["box"]
+    box = DEFAULT_SCOPE_BOX[var_key]
 
     da_clim = cfg["loader"](period)
     if da_clim is None:
@@ -480,7 +470,7 @@ def plot_climatology_vs_target_figure(var_key: str, period: str) -> None:
     # zero crossing is a dense tangle of tiny closed contours (confirmed
     # visually, not a clean sign boundary like u200's smooth wind field),
     # so a zero line clutters those panels instead of clarifying them.
-    zero_contour = var_key == "u200"
+    zero_contour = cfg["zero_contour"]
 
     def prep(da, quiver, axis_uv):
         da = s06.subset_box(da, s27.clamp_box_lat(box)).squeeze(drop=True)
@@ -501,7 +491,7 @@ def plot_climatology_vs_target_figure(var_key: str, period: str) -> None:
             av = s06.subset_box(av, s27.clamp_box_lat(box)).squeeze(drop=True)
             if "lat" in au.dims and "lon" in au.dims:
                 au, av = au.transpose("lat", "lon"), av.transpose("lat", "lon")
-            axis = compute_tej_axis(au, av)
+            axis = s27.compute_tej_axis(au, av)
         return da, q, axis
 
     da_clim, quiver_clim, axis_clim = prep(da_clim, quiver_clim, axis_uv_clim)
@@ -515,12 +505,12 @@ def plot_climatology_vs_target_figure(var_key: str, period: str) -> None:
 
     render_panel(
         ax_clim, da_clim, box, cfg["cmap"], cfg["levels"],
-        quiver=quiver_clim, contour_levels=disp["contour_levels"], zero_contour=zero_contour, axis_line=axis_clim,
+        quiver=quiver_clim, contour_levels=cfg["contour_levels"], zero_contour=zero_contour, axis_line=axis_clim,
         panel_label="A — ERA5 1991–2020 climatology",
     )
     mesh = render_panel(
         ax_target, da_target, box, cfg["cmap"], cfg["levels"],
-        quiver=quiver_target, contour_levels=disp["contour_levels"], zero_contour=zero_contour, axis_line=axis_target,
+        quiver=quiver_target, contour_levels=cfg["contour_levels"], zero_contour=zero_contour, axis_line=axis_target,
         panel_label="B — CFSv2 2026 target (June init)",
     )
 
