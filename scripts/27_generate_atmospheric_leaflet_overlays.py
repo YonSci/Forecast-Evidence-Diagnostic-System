@@ -97,8 +97,20 @@ _spec.loader.exec_module(s06)
 WEB_MERCATOR_MAX_LAT = 85.05112878
 MERCATOR_R = 6378137.0
 
-PERIODS = ["Jun", "Jul", "Aug", "Sep", "JJA", "JJAS"]
-MONTH_NUM = {"Jun": 6, "Jul": 7, "Aug": 8, "Sep": 9}
+MONTH_NUM = {
+    "Jan": 1, "Feb": 2, "Mar": 3, "Apr": 4, "May": 5, "Jun": 6,
+    "Jul": 7, "Aug": 8, "Sep": 9, "Oct": 10, "Nov": 11, "Dec": 12,
+}
+
+# All twelve calendar months plus the two season aggregates. Not every
+# variable has every period: the six TEJ-consistency fields come from the
+# JJAS-only ERA5 download in script 02 and simply have no Jan-May or
+# Oct-Dec to render, so their loaders return None for those and the main
+# loop skips them. The low-level-jet fields (scripts 29-31) do cover all
+# twelve. The overlay index is therefore sparse by design, and the page
+# reads it to decide which periods each variable offers rather than
+# assuming a single shared list.
+PERIODS = list(MONTH_NUM.keys()) + ["JJA", "JJAS"]
 
 # Canonical two-scope domains, shared with scripts/28's Panel A/B so the
 # dashboard scope toggle and the publication dual-panel figure agree.
@@ -152,12 +164,27 @@ def compute_tej_axis(u_da, v_da, lat_band=(0, 20), min_speed=15.0):
 # Per-period source loaders
 # ==========================================================
 
+def has_month(obj: xr.DataArray | xr.Dataset, month: int) -> bool:
+    """Whether a monthly climatology actually carries this calendar month.
+
+    The JJAS-only sources cover months 6-9, so asking them for January
+    must come back as "not available" rather than raising out of
+    .sel(month=1)."""
+    if "month" not in obj.coords and "month" not in obj.dims:
+        return False
+    return month in np.atleast_1d(obj["month"].values).tolist()
+
+
 def load_u200_v200(period: str) -> tuple[xr.DataArray, xr.DataArray] | None:
     if period in MONTH_NUM:
         if not (s06.ERA5_U200_MONTHLY.exists() and s06.ERA5_V200_MONTHLY.exists()):
             return None
-        u = s06.select_month(s06.open_dataarray(s06.ERA5_U200_MONTHLY, decode_times=True), MONTH_NUM[period])
-        v = s06.select_month(s06.open_dataarray(s06.ERA5_V200_MONTHLY, decode_times=True), MONTH_NUM[period])
+        u = s06.open_dataarray(s06.ERA5_U200_MONTHLY, decode_times=True)
+        v = s06.open_dataarray(s06.ERA5_V200_MONTHLY, decode_times=True)
+        if not has_month(u, MONTH_NUM[period]):
+            return None
+        u = s06.select_month(u, MONTH_NUM[period])
+        v = s06.select_month(v, MONTH_NUM[period])
     else:
         u_path = {"JJA": s06.ERA5_U200_JJA, "JJAS": s06.ERA5_U200_JJAS}[period]
         v_path = {"JJA": s06.ERA5_V200_JJA, "JJAS": s06.ERA5_V200_JJAS}[period]
@@ -188,6 +215,8 @@ def load_climatology_da(monthly_path: Path, jja_path: Path, jjas_path: Path, per
         if not monthly_path.exists():
             return None
         da = s06.open_dataarray(monthly_path, decode_times=True)
+        if not has_month(da, MONTH_NUM[period]):
+            return None
         return s06.select_month(da, MONTH_NUM[period])
     path = {"JJA": jja_path, "JJAS": jjas_path}[period]
     if not path.exists():
@@ -210,7 +239,10 @@ def load_mfc_dataset(period: str) -> xr.Dataset | None:
     if period in MONTH_NUM:
         if not files["monthly"].exists():
             return None
-        return s06.select_month_ds(s06.open_dataset(files["monthly"], decode_times=True), MONTH_NUM[period])
+        ds = s06.open_dataset(files["monthly"], decode_times=True)
+        if not has_month(ds, MONTH_NUM[period]):
+            return None
+        return s06.select_month_ds(ds, MONTH_NUM[period])
     path = files[period]
     if not path.exists():
         return None
@@ -225,6 +257,72 @@ def load_mfc850(period: str) -> xr.DataArray | None:
 def load_qflux850_qu_qv(period: str) -> tuple[xr.DataArray, xr.DataArray] | None:
     ds = load_mfc_dataset(period)
     return None if ds is None else (ds["qu850"], ds["qv850"])
+
+
+# ----------------------------------------------------------
+# Low-level (Somali) jet -- scripts/31 writes one file per period
+# holding the sub-600-hPa column search, so unlike the fields above
+# there is no month selection to do here.
+# ----------------------------------------------------------
+
+LLJ_DIR = PROJECT_ROOT / "outputs" / "netcdf" / "dynamic_diagnostics"
+LLJ_PATHWAY_FILE = PROJECT_ROOT / "outputs" / "tables" / "era5_lowlevel_jet_pathway.json"
+
+
+def load_llj_dataset(period: str) -> xr.Dataset | None:
+    path = LLJ_DIR / f"ERA5_lowlevel_jet_{period}_climatology_1991_2020.nc"
+    if not path.exists():
+        return None
+    return s06.open_dataset(path, decode_times=False)
+
+
+def load_llj_speed(period: str) -> xr.DataArray | None:
+    ds = load_llj_dataset(period)
+    return None if ds is None else ds["llj_speed"]
+
+
+# Core height is only meaningful where there is a coherent jet to have a
+# core. Unmasked, the field is dominated by terrain rather than by
+# circulation: over the Ethiopian highlands the surface sits near 750-800
+# hPa, so the only levels left in the searched stack are the top few and
+# the "core" pins to those everywhere, painting the highlands a uniform
+# high-core color that is really just a map of the ground. Blanking the
+# slow grid points leaves the actual jets -- Somali, African Easterly --
+# and drops the topography.
+LLJ_LEVEL_MIN_SPEED = 8.0   # m/s, matches scripts/31's PATHWAY_STOP_SPEED
+
+
+def load_llj_level(period: str) -> xr.DataArray | None:
+    ds = load_llj_dataset(period)
+    if ds is None:
+        return None
+    return ds["llj_level"].where(ds["llj_speed"] >= LLJ_LEVEL_MIN_SPEED)
+
+
+def load_llj_uv(period: str) -> tuple[xr.DataArray, xr.DataArray] | None:
+    ds = load_llj_dataset(period)
+    return None if ds is None else (ds["llj_u"], ds["llj_v"])
+
+
+def load_llj_pathway(period: str) -> tuple[np.ndarray, np.ndarray] | None:
+    """The traced Somali jet core pathway for this period, or None for a
+    period in which scripts/31 found no jet (the boreal-winter months)."""
+    if not LLJ_PATHWAY_FILE.exists():
+        return None
+    entry = json.loads(LLJ_PATHWAY_FILE.read_text(encoding="utf-8")).get(period)
+    if not entry or not entry.get("pathway"):
+        return None
+    path = entry["pathway"]
+    return np.asarray(path["lon"], dtype=float), np.asarray(path["lat"], dtype=float)
+
+
+def load_llj_core(period: str) -> tuple[float, float] | None:
+    if not LLJ_PATHWAY_FILE.exists():
+        return None
+    entry = json.loads(LLJ_PATHWAY_FILE.read_text(encoding="utf-8")).get(period)
+    if not entry or not entry.get("core") or not entry["core"].get("is_jet"):
+        return None
+    return float(entry["core"]["lon"]), float(entry["core"]["lat"])
 
 
 def load_qflux850_magnitude(period: str) -> xr.DataArray | None:
@@ -326,6 +424,40 @@ VARIABLES = {
         "contour_levels": None,
         "zero_contour": False,
     },
+    # Low-level (Somali) jet, from the sub-600-hPa column search in
+    # scripts/31. YlGnBu rather than a warm-topped sequential map so the
+    # jet reads as the DARK end, which also keeps the quiver arrows
+    # legible where the flow is slow and lets the fast core carry the
+    # visual weight.
+    "llj_speed": {
+        "loader": load_llj_speed,
+        "cmap": "YlGnBu",
+        "levels": np.arange(0, 29, 2),
+        "unit": "m s⁻¹",
+        "vector_loader": load_llj_uv,
+        "axis_line": False,
+        "contour_levels": None,
+        "zero_contour": False,
+        "pathway_loader": load_llj_pathway,
+        "core_loader": load_llj_core,
+    },
+    # Binned from 700 hPa rather than from 600: the jet core is observed
+    # between about 850 and 975 hPa, so starting the scale at the top of
+    # the searched stack would spend most of the colorbar on subtropical
+    # grid points that have nothing to do with the jet. Values above 700
+    # hPa clip into the end bin.
+    "llj_level": {
+        "loader": load_llj_level,
+        "cmap": "cividis",
+        "levels": np.arange(700, 1001, 25),
+        "unit": "hPa",
+        "vector_loader": None,
+        "axis_line": False,
+        "contour_levels": None,
+        "zero_contour": False,
+        "pathway_loader": load_llj_pathway,
+        "core_loader": load_llj_core,
+    },
 }
 
 
@@ -339,6 +471,8 @@ def render_overlay(
     contour_levels: list[float] | None = None,
     zero_contour: bool = False,
     axis_line: tuple[np.ndarray, np.ndarray] | None = None,
+    pathway: tuple[np.ndarray, np.ndarray] | None = None,
+    core: tuple[float, float] | None = None,
 ) -> None:
     lon = da_2d["lon"].values
     lat = da_2d["lat"].values
@@ -411,6 +545,36 @@ def render_overlay(
             axis_x = lon_to_merc_x(axis_lon)
             axis_y = lat_to_merc_y(axis_lat)
             ax.plot(axis_x, axis_y, color="#e6a817", linewidth=2.6, solid_capstyle="round", zorder=6)
+
+    # Somali jet core pathway: a near-black line inside a white halo,
+    # deliberately NOT the amber the TEJ axis uses. The pathway has to
+    # stay readable on two colormaps that disagree about which end is
+    # dark -- it crosses the dark-blue high end of YlGnBu on llj_speed and
+    # the pale-yellow high end of cividis on llj_level -- and amber
+    # vanishes against the latter. Light/dark contrast survives both, and
+    # survives color-vision deficiency, where a single hue would not.
+    # Clipped to the panel so a pathway traced across the full download
+    # domain doesn't draw outside a regional box.
+    if pathway is not None:
+        path_lon, path_lat = pathway
+        inside = (
+            (path_lon >= lon_min) & (path_lon <= lon_max)
+            & (path_lat >= lat_min) & (path_lat <= lat_max)
+        )
+        if inside.sum() > 1:
+            px = lon_to_merc_x(path_lon[inside])
+            py = lat_to_merc_y(path_lat[inside])
+            ax.plot(px, py, color="#ffffff", linewidth=5.6, solid_capstyle="round", alpha=0.9, zorder=6)
+            ax.plot(px, py, color="#141414", linewidth=2.4, solid_capstyle="round", zorder=7)
+
+    if core is not None:
+        core_lon, core_lat = core
+        if lon_min <= core_lon <= lon_max and lat_min <= core_lat <= lat_max:
+            ax.plot(
+                lon_to_merc_x(core_lon), lat_to_merc_y(core_lat),
+                marker="o", markersize=10, markerfacecolor="#ffffff",
+                markeredgecolor="#141414", markeredgewidth=2.2, zorder=8,
+            )
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out_path, dpi=100, transparent=True)
@@ -500,14 +664,18 @@ def main():
                             av = av.transpose("lat", "lon")
                         axis_line = compute_tej_axis(au, av)
 
+                pathway = cfg["pathway_loader"](period) if cfg.get("pathway_loader") else None
+                core = cfg["core_loader"](period) if cfg.get("core_loader") else None
+
                 out_path = OUT_DIR / var_key / scope / f"{period}.png"
                 render_overlay(
                     da, box, cfg["cmap"], levels, out_path, quiver=quiver,
                     contour_levels=cfg["contour_levels"], zero_contour=cfg["zero_contour"], axis_line=axis_line,
+                    pathway=pathway, core=core,
                 )
 
                 lon_min, lon_max, lat_min, lat_max = box
-                index[f"{var_key}/{scope}/{period}"] = {
+                entry = {
                     "file": f"{var_key}/{scope}/{period}.png",
                     "bounds": [[lat_min, lon_min], [lat_max, lon_max]],
                     "vmin": round_sig(vmin),
@@ -515,6 +683,25 @@ def main():
                     "unit": unit,
                     "legend_gradient": css_hard_stop_gradient(cfg["cmap"], levels),
                 }
+
+                # Carried through to the page so the jet-core position can
+                # be stated numerically in the caption instead of only
+                # being marked on the raster.
+                if cfg.get("core_loader") and LLJ_PATHWAY_FILE.exists():
+                    record = json.loads(LLJ_PATHWAY_FILE.read_text(encoding="utf-8")).get(period) or {}
+                    core_meta = record.get("core")
+                    if core_meta and core_meta.get("is_jet"):
+                        entry["jet_core"] = {
+                            "lon": round(core_meta["lon"], 2),
+                            "lat": round(core_meta["lat"], 2),
+                            "level_hpa": round(core_meta["level"], 0),
+                            "speed_ms": round(core_meta["speed"], 1),
+                            "crosses_equator": bool(core_meta.get("crosses_equator", False)),
+                        }
+                    else:
+                        entry["jet_core"] = None
+
+                index[f"{var_key}/{scope}/{period}"] = entry
 
                 # Grid JSON for exact-value hover tooltips -- reflects only
                 # the shaded scalar field, not the baked-in vectors/

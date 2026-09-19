@@ -71,6 +71,19 @@ class OverlayInfo(BaseModel):
     # scripts/27_generate_atmospheric_leaflet_overlays.py::css_hard_stop_gradient)
     # -- only set for overlays rendered with a fixed discrete color scale.
     legend_gradient: Optional[str] = None
+    # Traced Somali jet core for this period, on the low-level-jet
+    # overlays only. Explicitly null (rather than absent) for a
+    # low-level-jet period in which no jet was found, which is the
+    # expected result outside the monsoon season.
+    jet_core: Optional["JetCore"] = None
+
+
+class JetCore(BaseModel):
+    lon: float
+    lat: float
+    level_hpa: float
+    speed_ms: float
+    crosses_equator: bool
 
 
 class EvidenceRow(BaseModel):

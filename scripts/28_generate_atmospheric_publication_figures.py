@@ -86,6 +86,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.colors import BoundaryNorm
+import matplotlib.patheffects as pe
 
 import cartopy.crs as ccrs
 import cartopy.feature as cfeature
@@ -119,7 +120,12 @@ CFSV2_DIR = PROJECT_ROOT / "outputs" / "netcdf" / "cfsv2_dynamic_diagnostics"
 PNG_DPI = 600
 
 PERIODS = s27.PERIODS
-PERIOD_LABELS = {"Jun": "June", "Jul": "July", "Aug": "August", "Sep": "September", "JJA": "JJA", "JJAS": "JJAS"}
+PERIOD_LABELS = {
+    "Jan": "January", "Feb": "February", "Mar": "March", "Apr": "April",
+    "May": "May", "Jun": "June", "Jul": "July", "Aug": "August",
+    "Sep": "September", "Oct": "October", "Nov": "November", "Dec": "December",
+    "JJA": "JJA", "JJAS": "JJAS",
+}
 
 # Comparison figure uses a single fixed box per variable (unlike the
 # dashboard's scope toggle, this figure type isn't interactive) -- same
@@ -133,6 +139,8 @@ DEFAULT_SCOPE_BOX = {
     "omega500": PANEL_B_BOX,
     "qflux850": PANEL_B_BOX,
     "mfc850": PANEL_B_BOX,
+    "llj_speed": PANEL_A_BOX,
+    "llj_level": PANEL_A_BOX,
 }
 
 # Which raw CFSv2 grid variable(s) back each of script 27's six variable
@@ -146,6 +154,10 @@ CFSV2_VARS = {
     "omega500": ("omega500",),
     "qflux850": ("qu850", "qv850"),
     "mfc850": ("mfc850",),
+    # No entry for llj_speed/llj_level: the CFSv2 extraction only carries
+    # 200 and 850 hPa, so there is no sub-600-hPa stack on the forecast
+    # side to run the same column search against. Those two get the
+    # single-panel publication figure but no 2026-comparison figure.
 }
 
 
@@ -159,8 +171,11 @@ def load_cfsv2_shade_and_quiver(var_key: str, period: str):
     if not path.exists():
         return None, None
 
+    names = CFSV2_VARS.get(var_key)
+    if names is None:
+        return None, None
+
     ds = s06.open_dataset(path, decode_times=False)
-    names = CFSV2_VARS[var_key]
     if any(n not in ds for n in names):
         return None, None
 
@@ -214,6 +229,16 @@ DISPLAY = {
         "title": "850-hPa Moisture-Flux Convergence",
         "note": "Negative: divergence.  Positive: convergence (moisture accumulating).",
     },
+    "llj_speed": {
+        "notation": "|V|ₘₐₓ",
+        "title": "Low-Level Jet Speed (Somali jet)",
+        "note": "Strongest wind below 600 hPa.  White-cased line: traced core pathway; dot: core.",
+    },
+    "llj_level": {
+        "notation": "pₘₐₓ",
+        "title": "Low-Level Jet Core Height",
+        "note": "Pressure of the sub-600-hPa wind maximum.  Drawn only where wind reaches 8 m s⁻¹.",
+    },
 }
 
 
@@ -253,6 +278,7 @@ def add_map_features(ax, box, draw_labels: bool) -> None:
 def render_panel(
     ax, da_2d, box, cmap, levels,
     quiver=None, contour_levels=None, zero_contour=False, axis_line=None, panel_label: str = "",
+    pathway=None, core=None,
 ):
     lon, lat = da_2d["lon"].values, da_2d["lat"].values
     data = np.clip(da_2d.values, levels[0], levels[-1])
@@ -313,6 +339,39 @@ def render_panel(
             ax.text(
                 axis_lon[-1], axis_lat[-1], "  TEJ axis", color="#8a6200", fontsize=7.5, fontweight="bold",
                 va="center", ha="left", transform=ccrs.PlateCarree(), zorder=6,
+            )
+
+    # Somali jet core pathway -- same amber-on-dark treatment as the
+    # dashboard overlay (scripts/27), clipped to this panel's box so a
+    # pathway traced across the whole domain doesn't run outside a
+    # regional panel.
+    if pathway is not None:
+        path_lon, path_lat = pathway
+        lon_min, lon_max, lat_min, lat_max = box
+        inside = (
+            (path_lon >= lon_min) & (path_lon <= lon_max)
+            & (path_lat >= lat_min) & (path_lat <= lat_max)
+        )
+        if inside.sum() > 1:
+            px, py = path_lon[inside], path_lat[inside]
+            ax.plot(px, py, color="#ffffff", linewidth=5.0, solid_capstyle="round", alpha=0.9,
+                    transform=ccrs.PlateCarree(), zorder=6)
+            ax.plot(px, py, color="#141414", linewidth=2.2, solid_capstyle="round",
+                    transform=ccrs.PlateCarree(), zorder=7)
+            ax.text(
+                px[-1], py[-1], "  LLJ pathway", color="#141414", fontsize=7.5, fontweight="bold",
+                va="center", ha="left", transform=ccrs.PlateCarree(), zorder=7,
+                path_effects=[pe.withStroke(linewidth=2.5, foreground="white")],
+            )
+
+    if core is not None:
+        core_lon, core_lat = core
+        lon_min, lon_max, lat_min, lat_max = box
+        if lon_min <= core_lon <= lon_max and lat_min <= core_lat <= lat_max:
+            ax.plot(
+                core_lon, core_lat, marker="o", markersize=8, markerfacecolor="#ffffff",
+                markeredgecolor="#141414", markeredgewidth=2.0,
+                transform=ccrs.PlateCarree(), zorder=8,
             )
 
     add_map_features(ax, box, draw_labels=True)
@@ -387,15 +446,18 @@ def plot_publication_figure(var_key: str, period: str) -> None:
     ax_b = fig.add_subplot(gs[1], projection=ccrs.PlateCarree())
     cax = fig.add_subplot(gs[2])
 
+    pathway = cfg["pathway_loader"](period) if cfg.get("pathway_loader") else None
+    core = cfg["core_loader"](period) if cfg.get("core_loader") else None
+
     render_panel(
         ax_a, da_a, PANEL_A_BOX, cfg["cmap"], cfg["levels"],
         quiver=quiver_a, contour_levels=cfg["contour_levels"], zero_contour=zero_contour, axis_line=axis_a,
-        panel_label="A — Large-scale TEJ context",
+        panel_label="A — Large-scale context", pathway=pathway, core=core,
     )
     mesh = render_panel(
         ax_b, da_b, PANEL_B_BOX, cfg["cmap"], cfg["levels"],
         quiver=quiver_b, contour_levels=cfg["contour_levels"], zero_contour=zero_contour, axis_line=axis_b,
-        panel_label="B — Ethiopia focus",
+        panel_label="B — Ethiopia focus", pathway=pathway, core=core,
     )
 
     cbar = fig.colorbar(mesh, cax=cax, orientation="horizontal")

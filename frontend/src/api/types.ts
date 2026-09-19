@@ -63,6 +63,26 @@ export interface OverlayInfo {
   /** CSS linear-gradient with hard color stops matching the discrete bins
    * baked into the raster -- only set for fixed-scale overlays. */
   legend_gradient?: string;
+  /** Traced Somali jet core, on the low-level-jet overlays only. Null for
+   * a period in which no jet was found. */
+  jet_core?: JetCore | null;
+}
+
+export interface JetCore {
+  lon: number;
+  lat: number;
+  level_hpa: number;
+  speed_ms: number;
+  crosses_equator: boolean;
+}
+
+export interface CirculationVariable {
+  key: string;
+  label: string;
+  source: string;
+  default_scope: "large" | "regional";
+  /** Periods this variable actually has rendered overlays for. */
+  periods: string[];
 }
 
 export interface EvidenceRow {

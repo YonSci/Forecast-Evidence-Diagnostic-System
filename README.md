@@ -65,6 +65,26 @@ pip install -r backend/requirements-dev.txt   # adds Pillow, only needed for thi
 python backend/scripts/sync_static_data.py
 ```
 
+**Low-level (Somali) jet maps** — the Atmospheric Evidence page's two low-level-jet
+diagnostics come from a separate, all-months ERA5 download, because the main ERA5 pull
+(`scripts/02`) covers JJAS only and four pressure levels, which cannot locate a jet core
+that moves in height. Run in order:
+
+```bash
+python scripts/29_download_era5_lowlevel_winds.py     # u/v, every level <= 600 hPa, Jan-Dec, 1991-2020 (~2.8 GB)
+python scripts/30_download_era5_surface_pressure.py   # to mask ERA5's below-ground extrapolation
+python scripts/31_compute_lowlevel_jet_diagnostics.py # column search, core location, traced pathway
+python scripts/27_generate_atmospheric_leaflet_overlays.py
+python scripts/28_generate_atmospheric_publication_figures.py
+python backend/scripts/sync_static_data.py
+```
+
+`scripts/29` is chunked one file per year and skips what it already has, so an interrupted
+download resumes by re-running it. `scripts/31` must run before `27`/`28`: those read the
+jet core and pathway it writes to `outputs/tables/`, and will otherwise render the maps
+without the pathway line. `31` prints a loud banner if it built the climatology from fewer
+than all thirty years.
+
 ## Deploying
 
 You'll need your own GitHub, Vercel, and Render accounts — none of that is set up in this

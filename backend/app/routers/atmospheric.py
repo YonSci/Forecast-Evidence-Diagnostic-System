@@ -35,9 +35,22 @@ ATMOS_VARIABLES: dict[str, dict] = {
     "omega500": {"label": "500 hPa vertical velocity (forced ascent)", "source": "climatology", "default_scope": "regional"},
     "qflux850": {"label": "850 hPa moisture flux (is moisture supplied?)", "source": "climatology", "default_scope": "regional"},
     "mfc850": {"label": "850 hPa moisture-flux convergence (is it accumulating?)", "source": "climatology", "default_scope": "regional"},
+    "llj_speed": {"label": "Low-level jet speed, max below 600 hPa (Somali jet)", "source": "climatology", "default_scope": "large"},
+    "llj_level": {"label": "Low-level jet core height (pressure of the sub-600-hPa maximum)", "source": "climatology", "default_scope": "large"},
 }
 
-ATMOS_PERIODS = ["Jun", "Jul", "Aug", "Sep", "JJA", "JJAS"]
+# All twelve calendar months plus the two season aggregates. Which of
+# these a given variable actually has is NOT uniform -- the six TEJ
+# fields are generated from a JJAS-only ERA5 download and the two
+# low-level-jet fields from an all-months one -- so this list is only the
+# set of period names that are valid to ask for. /circulation-variables
+# reports the real per-variable availability, read from the overlay index
+# rather than hardcoded, so it cannot drift from what scripts/27 wrote.
+ATMOS_PERIODS = [
+    "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+    "JJA", "JJAS",
+]
 
 # Same two domains scripts/27 and 28 both generate from -- "large" (South
 # Asia -> Indian Ocean -> Africa, the full TEJ context) and "regional"
@@ -92,12 +105,25 @@ def get_cfsv2(domain: str = Query("ethiopia")) -> list[dict]:
     return _clean(df[df.domain == domain])
 
 
+def _periods_for(variable: str) -> list[str]:
+    """Which periods this variable was actually rendered for, in
+    ATMOS_PERIODS order. Derived from the overlay index so a variable
+    whose source data covers only part of the year advertises only what
+    exists, instead of offering months that render as an empty panel."""
+    index = _atmos_overlay_index()
+    available = {
+        key.split("/")[2]
+        for key in index
+        if key.startswith(f"{variable}/")
+    }
+    return [p for p in ATMOS_PERIODS if p in available]
+
+
 @router.get("/circulation-variables")
 def get_circulation_variables() -> list[dict]:
-    """Ordered list of the interactive circulation maps below, with a flag
-    for whether each is a real 2026 NMME forecast field (z200) or an ERA5
-    1991-2020 climatology by calendar month/season (everything else)."""
-    return [{"key": k, **v} for k, v in ATMOS_VARIABLES.items()]
+    """Ordered list of the interactive circulation maps below, each with
+    the set of periods it actually has rendered."""
+    return [{"key": k, **v, "periods": _periods_for(k)} for k, v in ATMOS_VARIABLES.items()]
 
 
 @router.get("/overlay", response_model=OverlayInfo)
@@ -125,6 +151,7 @@ def get_atmospheric_overlay(
         vmax=entry["vmax"],
         unit=entry["unit"],
         legend_gradient=entry.get("legend_gradient"),
+        jet_core=entry.get("jet_core"),
     )
 
 
