@@ -1,0 +1,15 @@
+period,core_lon,core_lat,core_level_hpa,core_speed_ms,is_jet,crosses_equator
+Jan,43.0,13.25,975.0,11.93,False,False
+Feb,43.0,13.0,950.0,11.59,False,False
+Mar,42.75,13.25,950.0,11.43,False,False
+Apr,42.75,13.25,950.0,11.65,False,False
+May,39.0,0.5,875.0,12.37,True,True
+Jun,53.25,10.25,925.0,24.82,True,True
+Jul,55.25,11.25,900.0,28.04,True,True
+Aug,53.0,10.75,925.0,26.14,True,True
+Sep,51.75,9.75,950.0,20.11,True,True
+Oct,38.0,2.5,850.0,10.91,False,False
+Nov,42.75,13.25,950.0,13.81,False,False
+Dec,43.0,13.25,975.0,13.11,False,False
+JJA,53.5,10.75,925.0,26.22,True,True
+JJAS,52.75,10.25,925.0,24.51,True,True
